@@ -86,4 +86,27 @@ public class FileManagerImpl implements FileManager {
             Logger.getLogger(FileManagerImpl.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
+
+    @Override
+    public void exportRandomSequence(final int[] array) {
+        try {
+            Date d = new Date();
+            File exportFile = new File("RandomSequence" + d.getYear() + "" + d.getMonth() + "" + d.getDay() + "-ADP-" + d.getHours() + "-" + d.getMinutes() +"-" +d.getSeconds() +"_"+array.length+"-length" +".rnd");
+            FileWriter fout;
+
+            fout = new FileWriter(exportFile);
+
+
+
+            for (int i = 0; i < array.length; i++) {
+                fout.write(String.valueOf(array[i])+"\n");
+            }
+
+            fout.flush();
+
+            fout.close();
+        } catch (IOException ex) {
+            Logger.getLogger(FileManagerImpl.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
 }

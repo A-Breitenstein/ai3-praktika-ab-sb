@@ -12,6 +12,7 @@ import java.util.Map;
  */
 public interface FileManager {
 
+
     /**
      * Returns an array containing numbers of the file at path.
      * The Numbers in that file have to be concatenated with white spaces, like " ".
@@ -36,5 +37,11 @@ public interface FileManager {
      * @param iterations iterations of the algorithm loop
      */
     void exportTimelineCSV(Map<String, MonitorRecord> recordMap, int iterations);
+
+    /**
+     * Export RandomSequence
+     * @param array with numbers from -128 to 127
+     */
+    void exportRandomSequence(final int[] array);
 
 }
