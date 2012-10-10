@@ -31,6 +31,7 @@ public class Runner {
 
         for (int size = stepRange; size <= maxSize; size+=stepRange){
             valuesArray = randomManager.initRandomArray(size, 100, -100);
+            fileManager.exportRandomSequence(valuesArray);
             testFolgeOnAllAlgos(valuesArray, algoList);  
         }
         if(exportFolgen) fileManager.exportCSV(Monitor.getRecordMap(),Monitor.getAlgoIterations());
