@@ -16,7 +16,7 @@ public class MonitorRecord implements Comparable {
     final static int ZERO = 0;
 
     public final static String CSVFILEHEAD_SD = "Anzahl;Algorithmus;maxTeilsumme;Index1;Index2;Zeit (inkl. Zaehlen);Zeit (exkl. Zaehlen);Summe aller Zugriffe;Matrix Zugriffe";
-    public final static String CSVFILEHEAD_TL = "Algorithmus;Anzahl;TimelineValue;Zeit (inkl. Zaehlen);Zeit (exkl. Zaehlen)";
+    public final static String CSVFILEHEAD_TL = "Zeit (inkl. Zaehlen);Zeit (exkl. Zaehlen)";
 
 
     int quantity = 0, maxTeilsumme = 0, folgeHits = 0, memoryHits = 0;
@@ -83,6 +83,9 @@ public class MonitorRecord implements Comparable {
         pMonitoredTimer = monitoredTimer;
         timeValues.add(TimeInNsec.val(pRawTimer.getElapsedTime(), pMonitoredTimer.getElapsedTime()));     
     }
+    public String getRecordName(){
+        return algoName+"-"+quantity;
+    }
     @Deprecated
     public static MonitorRecord makeRecord(String name) {
         return new MonitorRecord(name,ZERO);
@@ -92,12 +95,11 @@ public class MonitorRecord implements Comparable {
     }
     @Deprecated
     public String getTimeLine(){
-        String tmp = algoName+" Anzahl "+quantity+" Iterations "+timeValues.size()+"\n";
-        tmp+="timeRaw    ;     timeMonitored \n";
+        StringBuffer sbuffer = new StringBuffer();
         for (TimeInNsec elem : timeValues) {
-            tmp+=elem.toString()+"\n";
+            sbuffer.append(elem.getTimeMonitoredMsec()+";"+elem.getTimeRawMsec()+"\n");
         }
-        return tmp;
+        return sbuffer.toString();
     }
     public String getTimeLineCVS(){
         TimeInNsec elem = timeValues.get(0);
@@ -199,7 +201,7 @@ class TimeInNsec{
         return new TimeInNsec(timeRaw,timeMonitored);
     }
     public String toString(){
-        return getTimeRawMsec()+" ; "+getTimeMonitoredMsec();
+        return getTimeRawMsec()+";"+getTimeMonitoredMsec();
     }
     public String getTimeRawMsec(){
         return String.format("%.4f", timeRaw /1000000.d);

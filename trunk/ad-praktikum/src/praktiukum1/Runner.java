@@ -19,7 +19,7 @@ public class Runner {
     public static void main(String[] args) {
 
         
-        startTests(AlgorithmFactory.getAlgorithmsAsList(),1000,100,false,true,0);
+        startTests(AlgorithmFactory.getAlgorithmsAsList(),1000,100,false,true,10);
 //        testOnGivenFile("folge.dat");   
 //        testAlgoVsAlgo();
     }
@@ -27,15 +27,14 @@ public class Runner {
     public static void startTests(List<AlgorithmObject> algoList,int maxSize,int stepRange,boolean exportFolgen, boolean exportTimeline, int iterations){
         int valuesArray[];
 
-        if(iterations > 0)Monitor.setALGO_ITERATIONS(iterations);
+        if(iterations > 1)Monitor.setALGO_ITERATIONS(iterations);
 
         for (int size = stepRange; size <= maxSize; size+=stepRange){
             valuesArray = randomManager.initRandomArray(size, 100, -100);
-            fileManager.exportRandomSequence(valuesArray);
+            if(exportFolgen)fileManager.exportRandomSequence(valuesArray);
             testFolgeOnAllAlgos(valuesArray, algoList);  
         }
-        if(exportFolgen) fileManager.exportCSV(Monitor.getRecordMap(),Monitor.getAlgoIterations());
-
+        fileManager.exportCSV(Monitor.getRecordMap(),Monitor.getAlgoIterations());
         if(exportTimeline) fileManager.exportTimelineCSV(Monitor.getRecordMap(),Monitor.getAlgoIterations());
 
     }
@@ -60,8 +59,6 @@ public class Runner {
                     monitoredTimer.timerEnd();
                     
                     mr.setTimers(rawTimer, monitoredTimer);
-
-                    mr.toString();
                 }
                 
             }
@@ -97,6 +94,6 @@ public class Runner {
         startTests(Arrays.asList(AlgorithmFactory.maxTeilsumme2(),
                                  AlgorithmFactory.maxTeilsumme2_buch(),
                                  AlgorithmFactory.maxTeilsummeRekursiv()),
-                                 10000,1000,false,true,0);
+                                 10000,1000,false,false,1);
     }
 }

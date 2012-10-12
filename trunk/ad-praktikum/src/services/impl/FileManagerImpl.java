@@ -68,20 +68,17 @@ public class FileManagerImpl implements FileManager {
     public void exportTimelineCSV(Map<String, MonitorRecord> recordMap, int iterations) {
         try {
             Date d = new Date();
-            File exportFile = new File("Timeline" + d.getYear() + "" + d.getMonth() + "" + d.getDay() + "-ADP-" + d.getHours() + "-" + d.getMinutes() +"-" +d.getSeconds() +"_"+iterations+"-iterations" +".csv");
-            FileWriter fout;
-
-            fout = new FileWriter(exportFile);
-
-            fout.write(MonitorRecord.CSVFILEHEAD_TL + "\n");
             List<MonitorRecord> list = new ArrayList<MonitorRecord>(recordMap.values());
             Collections.sort(list);
-            for (MonitorRecord mr : list)
-                fout.write(mr.getTimeLineCVS() + "\n");
-
-            fout.flush();
-
-            fout.close();
+            for (MonitorRecord mr : list){
+                File exportFile = new File(mr.getRecordName()+"-Timeline" + d.getYear() + "" + d.getMonth() + "" + d.getDay() + "-ADP-" + d.getHours() + "-" + d.getMinutes() +"-" +d.getSeconds() +"_"+iterations+"-iterations" +".csv");
+                FileWriter fout;
+                fout = new FileWriter(exportFile);
+                fout.write(MonitorRecord.CSVFILEHEAD_TL + "\n");       
+                fout.write(mr.getTimeLine());
+                fout.flush();
+                fout.close();
+            }
         } catch (IOException ex) {
             Logger.getLogger(FileManagerImpl.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -99,7 +96,7 @@ public class FileManagerImpl implements FileManager {
 
 
             for (int i = 0; i < array.length; i++) {
-                fout.write(String.valueOf(array[i])+"\n");
+                fout.write(String.valueOf(array[i])+" ");
             }
 
             fout.flush();
