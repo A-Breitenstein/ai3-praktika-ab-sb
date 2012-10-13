@@ -1,7 +1,7 @@
 #!/bin/bash 
 # <Description of this shell script>
-# <Your name> 
-# <Date>
+# <Breitenstein, Bartel> 
+# <10.10.2012>
 
 # ------------------------------------------------------------
 # This function shows the help text for this bash script
