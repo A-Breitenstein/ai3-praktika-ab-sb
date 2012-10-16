@@ -19,8 +19,9 @@ public class Runner {
     public static void main(String[] args) {
 
         
-        startTests(AlgorithmFactory.getAlgorithmsAsList(),1000,100,false,true,10);
-//        testOnGivenFile("folge.dat");   
+        startTests(AlgorithmFactory.getAlgorithmsAsList(),1000,100,false,false,10);
+//        testOnGivenFile("folge.dat",Arrays.asList(AlgorithmFactory.maxTeilsummeRekursiv()));
+//        testOnGivenFile("folge.dat",AlgorithmFactory.getAlgorithmsAsList());
 //        testAlgoVsAlgo();
     }
 
@@ -64,8 +65,8 @@ public class Runner {
             }
     }
 
-    public static void testOnGivenFile(String path){
-        testFolgeOnAllAlgos(fileManager.fetchFolgeFromFile(path),AlgorithmFactory.getAlgorithmsAsList());
+    public static void testOnGivenFile(String path,List<AlgorithmObject> list){
+        testFolgeOnAllAlgos(fileManager.fetchFolgeFromFile(path),list);
         fileManager.exportCSV(Monitor.getRecordMap(),Monitor.getAlgoIterations());
     }
     public static void singleTestCase(){
