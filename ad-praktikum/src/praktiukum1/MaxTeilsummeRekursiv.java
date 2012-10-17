@@ -6,7 +6,7 @@ package praktiukum1;
 
 /**
  *
- * @author Sven
+ * @author abg667
  */
 final class MaxTeilsummeRekursiv extends AbstractAlgorithmObject {
     StringBuffer strackTrace = new StringBuffer();

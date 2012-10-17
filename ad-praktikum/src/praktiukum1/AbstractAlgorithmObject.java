@@ -7,7 +7,7 @@ package praktiukum1;
 
 /**
  *
- * @author Sven
+ * @author abg667
  */
 class AbstractAlgorithmObject implements AlgorithmObject {
     protected String name = "AbstractAlgorithmObject";
