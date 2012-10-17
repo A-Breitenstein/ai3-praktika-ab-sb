@@ -10,7 +10,7 @@ import java.util.List;
 
 /**
  *
- * @author Sven
+ * @author abg667
  */
 public class MonitorRecord implements Comparable {
     final static int ZERO = 0;

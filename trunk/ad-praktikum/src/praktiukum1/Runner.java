@@ -9,20 +9,20 @@ import services.service.RandomManager;
 import java.util.List;
 
 /**
- * Test
- * @author Sven
+ *
+ * @author abg667
  */
 public class Runner {
     static FileManager fileManager = new FileManagerImpl();
     static RandomManager randomManager = new RandomManagerImpl();
-
+  
     public static void main(String[] args) {
 
         
-        startTests(AlgorithmFactory.getAlgorithmsAsList(),1000,100,false,false,10);
+//        startTests(AlgorithmFactory.getAlgorithmsAsList(),5000,500,false,true,10);
 //        testOnGivenFile("folge.dat",Arrays.asList(AlgorithmFactory.maxTeilsummeRekursiv()));
 //        testOnGivenFile("folge.dat",AlgorithmFactory.getAlgorithmsAsList());
-//        testAlgoVsAlgo();
+        testAlgoVsAlgo();
     }
 
     public static void startTests(List<AlgorithmObject> algoList,int maxSize,int stepRange,boolean exportFolgen, boolean exportTimeline, int iterations){
@@ -95,6 +95,6 @@ public class Runner {
         startTests(Arrays.asList(AlgorithmFactory.maxTeilsumme2(),
                                  AlgorithmFactory.maxTeilsumme2_buch(),
                                  AlgorithmFactory.maxTeilsummeRekursiv()),
-                                 10000,1000,false,false,1);
+                                 10000,1000,false,true,10);
     }
 }

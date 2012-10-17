@@ -43,4 +43,7 @@ public final class Monitor {
     public static Map<String, MonitorRecord> getRecordMap() {
         return recordMap;
     }
+    public static void reset(){
+        recordMap.clear();
+    }
 }

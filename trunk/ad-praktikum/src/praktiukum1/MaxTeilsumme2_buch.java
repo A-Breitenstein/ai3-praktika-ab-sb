@@ -6,7 +6,7 @@ package praktiukum1;
 
 /**
  *
- * @author Sven
+ * @author abg667
  */
 final class MaxTeilsumme2_buch extends AbstractAlgorithmObject {
 

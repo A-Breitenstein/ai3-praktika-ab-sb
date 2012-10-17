@@ -6,7 +6,7 @@ package praktiukum1;
 
 /**
  *
- * @author Sven
+ * @author abg667
  */
 public interface AlgorithmParameter {
     int[] getValuesArray();

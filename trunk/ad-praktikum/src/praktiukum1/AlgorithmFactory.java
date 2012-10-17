@@ -11,7 +11,7 @@ import java.util.List;
 
 /**
  *
- * @author Sven
+ * @author abg667
  */
 public final class AlgorithmFactory {
     private AlgorithmFactory(){}

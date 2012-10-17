@@ -6,6 +6,7 @@ import java.util.Random;
  *
  * @author abg667
  */
+@Deprecated
 public class Main {
     
     final static String maxT3 = "maxTeilsumme3";
