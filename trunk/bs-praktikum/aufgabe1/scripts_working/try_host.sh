@@ -1,13 +1,15 @@
 #!/bin/bash
 
 
-#default values
-delayInSec=10
-
-
 usage() {
-	echo " for help -h"
-	exit 0
+	
+	echo "
+	 try_host [-h|-s <sec>] <hostname>|<IP-Address>
+
+	 -h		:Nur Ausgabe der \"Usage Message\"
+	 -s <sec>	:Der Ping wird zyklisch alle <sec> Sekunden ausgef¨¹hrt
+			 Fehlt die -s Option, wird der ping alle 10 Sekunden ausgef¨¹hrt."
+	exit 1 
 }
 
 tryHost() {
@@ -53,7 +55,7 @@ case $1 in
 	"-h")
 		usage
 		;;
-	#wenn der erste parameter -s dann muss der zweite eine zahl groeÃŸer 0 sein
+	#wenn der erste parameter -s dann muss der zweite eine zahl groe?er 0 sein
 	"-s")	case $2 in
 			"")
 				usage
