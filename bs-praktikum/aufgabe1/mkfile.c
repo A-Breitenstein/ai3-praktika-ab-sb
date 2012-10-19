@@ -11,10 +11,10 @@ ausgegeben werden.
 
 //includes
 #include <stdio.h>
-
+#include <string.h>
 //DEFINITIONS
-char[] msg_ask_filename = "Name der neuen Datei: ";
-char[31] filename;
+char* msg_ask_filename = "Name der zu erstellenden Datei: ";
+char filename[30];
 
 //PROTOTYPES
 
@@ -22,11 +22,15 @@ char[31] filename;
 //MAIN
 int main(){
 
-	int fd;
+	int fh;
 
 	printf(msg_ask_filename);
-	filename = getchar();
-	fd = creat(filename,0700);
+	//scanf("%s",filename);
+	fgets(filename,31,stdin);
+	int iLaenge = strlen(filename);
+	//printf("Länge: %d\n", iLaenge);
+	filename[iLaenge] = 0x0;
+	fh = creat(filename,0700);
 
 	if(-1 == fh){
 		printf("Fehler beim erstellen der Datei: %s\n", filename);
