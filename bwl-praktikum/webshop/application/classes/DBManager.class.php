@@ -13,13 +13,16 @@ class DBManager{
     mysql_select_db($__DATABASE['dbname'])or die("cannot select DB");
     return true;
 
-  }
+      }
 
+    /**
+     * @param $sql  - hallo wtf
+     * @return mixed
+     */
+ public function query($sql)
+ {
+      $result =  mysql_query($sql,$this->dbh) OR die("<pre>\n".$sql."</pre>\n".mysql_error());  //Specify connection handler when doing query
 
-  public function query($sql)
-  {     
-       $result =  mysql_query($sql,$this->dbh) OR die("<pre>\n".$sql."</pre>\n".mysql_error());  //Specify connection handler when doing query 
-       
        return  $result;
   }
 
