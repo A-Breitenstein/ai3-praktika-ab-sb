@@ -6,7 +6,7 @@ class ClassLoader{
     }
     public static function autoload($className){
 
-        foreach(self::$class_paths as $classPath){
+        foreach(self::$class_paths as $key => $classPath){
             $filePath = $classPath . $className .".class.php";
             if(file_exists($filePath)){
                 include_once($filePath);
@@ -15,7 +15,7 @@ class ClassLoader{
             }
         }
         ErrorReporter::logMessage("ClassLoader::autoload(".$className.") => ".$className." not found");
-        die('Couldn´t find class: <strong>' . $className . '</strong> !');
+        die('Couldnï¿½t find class: <strong>' . $className . '</strong> !');
             
     }
 }

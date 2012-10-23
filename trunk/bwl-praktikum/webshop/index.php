@@ -29,4 +29,5 @@ ErrorReporter::logPageRequest();
 
 //starting main Application
 $app = Application::start();
+//include(APP_PATH . "view/phtml/default_view.phtml");
 ?>

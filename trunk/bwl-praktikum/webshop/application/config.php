@@ -1,6 +1,6 @@
 <?php 
 $__CONFIG = array();
-$__CONFIG["path"] = "bwl-praktikum";
+$__CONFIG["path"] = "webshop";
 $__CONFIG["default_controller"] = "welcome";
 
 /* class paths */
@@ -11,6 +11,10 @@ APP_PATH . "model\classes\\",
 APP_PATH . "view\classes\\",
 APP_PATH . "classes\\"
 );
+$__CLASSPATHS["controller_classes"]  = APP_PATH . "controller\classes\\";
+$__CLASSPATHS["model_classes"] = APP_PATH . "model\classes\\";
+$__CLASSPATHS["view_classes"]  = APP_PATH . "view\classes\\";
+$__CLASSPATHS["app_classes"]   = APP_PATH . "classes\\";
 
 /* database infos */
 $__DATABASE = array();
