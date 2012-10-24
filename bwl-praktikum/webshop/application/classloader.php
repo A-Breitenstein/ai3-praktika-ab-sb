@@ -15,7 +15,7 @@ class ClassLoader{
             }
         }
         ErrorReporter::logMessage("ClassLoader::autoload(".$className.") => ".$className." not found");
-        die('Couldn�t find class: <strong>' . $className . '</strong> !');
+        die('Couldnt find class: <strong>' . $className . '</strong> !');
             
     }
 }
