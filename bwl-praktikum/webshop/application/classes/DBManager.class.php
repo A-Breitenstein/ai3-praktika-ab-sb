@@ -9,11 +9,10 @@ class DBManager{
   }
   
   public function connect(){
-    $this->dbh = mysql_connect($__DATABASE['hostname'], $__DATABASE['user'], $__DATABASE['pass'],true)or die("cannot connect"); //Store data connection specifier in object
-    mysql_select_db($__DATABASE['dbname'])or die("cannot select DB");
+    $this->dbh = mysql_connect(Registry::$settings['database']['hostname'], Registry::$settings['database']['user'], Registry::$settings['database']['pass'],true)or die("cannot connect"); //Store data connection specifier in object
+    mysql_select_db(Registry::$settings['database']['dbname'])or die("cannot select DB:" .Registry::$settings['database']['dbname']);
     return true;
-
-      }
+  }
 
     /**
      * @param $sql  - hallo wtf

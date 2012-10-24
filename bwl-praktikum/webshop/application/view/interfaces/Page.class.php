@@ -10,6 +10,7 @@ interface Page
 {
     //public function showPage(Header $header,Topbar $topbar, Leftbar $leftbar, Footer $footer);
     public function showPage($LayoutElemMap);
+    public function setContentView(View $contentView);
     public function getLayoutElem($name);
     public function getLayoutElemNames();
     public static function create();

@@ -18,5 +18,5 @@ $__DATABASE = array();
 $__DATABASE['hostname'] = 'localhost';
 $__DATABASE['user'] = 'root';
 $__DATABASE['pass'] = '';
-$__DATABASE['dbname'] ="bwl_praktikum";
+$__DATABASE['dbname'] = 'webshop';
 ?>
