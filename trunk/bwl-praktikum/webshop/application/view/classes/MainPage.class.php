@@ -19,7 +19,7 @@ class MainPage implements Page
 
         </head>
         <body>
-            <div id="MainPage">
+            <div id="MainPage" >
                  <div id="TopBar" style="width: 100%;height:15%;background-color: gray;">
                      <?php $LayoutElemMap['topbar']->show(); ?>
                  </div>
