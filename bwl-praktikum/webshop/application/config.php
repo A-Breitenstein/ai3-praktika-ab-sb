@@ -5,16 +5,12 @@ $__CONFIG["default_controller"] = "welcome";
 
 /* class paths */
 $__CLASSPATHS = array();
-array_push($__CLASSPATHS,
-APP_PATH . "controller\classes\\",
-APP_PATH . "model\classes\\",
-APP_PATH . "view\classes\\",
-APP_PATH . "classes\\"
-);
 $__CLASSPATHS["controller_classes"]  = APP_PATH . "controller\classes\\";
 $__CLASSPATHS["model_classes"] = APP_PATH . "model\classes\\";
 $__CLASSPATHS["view_classes"]  = APP_PATH . "view\classes\\";
 $__CLASSPATHS["app_classes"]   = APP_PATH . "classes\\";
+$__CLASSPATHS["mapper_classes"] = APP_PATH . "model\mapper\impl\\";
+$__CLASSPATHS["mapper_interfaces"] = APP_PATH . "model\mapper\interfaces";
 
 /* database infos */
 $__DATABASE = array();
