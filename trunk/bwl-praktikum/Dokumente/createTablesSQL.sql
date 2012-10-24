@@ -21,12 +21,12 @@ create table bestellung_teile(
 	
 create table teile(
 	TNr int primary key AUTO_INCREMENT,
-	Bezeichung varchar(50),
+	Bezeichung varchar(25),
 	Preis int,
 	Typ varchar(25),
-	Verkaufstyp varchar(25),
+	Angeboten boolean,
 	Bild BLOB,
-	Beschreibung varchar(25)
+	Beschreibung text
 	);
 	
 create table struktur(
@@ -64,12 +64,12 @@ CREATE TABLE bestellung_teile
 CREATE TABLE teile
   (
      tnr          INT PRIMARY KEY auto_increment,
-     bezeichung   VARCHAR(50),
+     bezeichung   VARCHAR(25),
      preis        INT,
      typ          VARCHAR(25),
-     verkaufstyp  VARCHAR(25),
+     angeboten    BOOLEAN,
      bild         BLOB,
-     beschreibung VARCHAR(25)
+     beschreibung TEXT
   );
 
 CREATE TABLE struktur
