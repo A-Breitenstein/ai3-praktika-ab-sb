@@ -11,8 +11,16 @@
  */
 interface BestellungMapper {
     
+    /**
+     * Gibt die Bestellung zurück, die zur $bestellnr gehört.
+     * 
+     */
     public static function getBestellungById($bestellNr);
     
+    /**
+     * Gibt die Bestellungen zurück, die zur $kundeId gehören.
+     * 
+     */
     public static function getListOfBestellungByKundeId($kundeId);
 }
 
