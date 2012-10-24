@@ -10,12 +10,13 @@
  * @author abg667
  */
 interface TeileMapper {
-    
+    public function getAlleProdukte();
     /**
      * Gibt alle Teile zurück;
      * 
      */
-    public function getAllTeile();
+
+    //public function getAllTeile();
     
     /**
      * Gibt das Teil anhand der Teilnummer zurück. 

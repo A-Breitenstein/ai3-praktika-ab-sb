@@ -12,9 +12,10 @@ class Request
 
     public static function val($get, $post)
     {
+
         $obj = new Request();
-        $obj->$get = $get;
-        $obj->$post = $post;
+        $obj->get = $get;
+        $obj->post = $post;
 
         return $obj;
     }

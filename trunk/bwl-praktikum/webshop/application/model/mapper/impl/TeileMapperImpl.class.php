@@ -12,9 +12,9 @@
  */
 class TeileMapperImpl implements TeileMapper {
 
-    private $query_getListOfTeileByBezeichung = "SELECT * FROM teile WHERE bezeichung LIKE = '%%s%'";
+    private $query_getListOfTeileByBezeichung = "SELECT * FROM teile WHERE bezeichung LIKE '%s'";
     private $query_getListOfUnterteilOfTeileById = "SELECT * FROM teile t, struktur s WHERE t.'%s' = s.otnr";
-    private $query_getOberteilOfTeileById = "SELECT * FROM teile t, struktur s WHERE t.'%s = s.utnr";
+    private $query_getOberteilOfTeileById = "SELECT * FROM teile t, struktur s WHERE t.'%s' = s.utnr";
     private $query_getTeileById = "SELECT * FROM teile WHERE tnr = '%s'";
     private $query_getAllTeileSelected = "SELECT * FROM teile WHERE verkaufstyp = '%s'";
     private $query_getAllTeile = "SELECT * FROM teile";
@@ -38,13 +38,13 @@ class TeileMapperImpl implements TeileMapper {
     }
     
     public function getListOfTeileByBezeichung($bezeichnung) {
-        $sql = printf(self::$query_getListOfTeileByBezeichung, $bezeichnung);
 
+       $sql = sprintf($this->query_getListOfTeileByBezeichung,"%".$bezeichnung."%");
         return $this->createListeOfTeilWithAllCollumns($sql);
     }
 
     public function getListOfUnterteilOfTeileById($tNr) {
-        $sql = printf(self::$query_getListOfUnterteilOfTeileById, $tNr);
+        $sql = printf($this->query_getListOfUnterteilOfTeileById, $tNr);
 
         return $this->dbm->query($sql);
     }
