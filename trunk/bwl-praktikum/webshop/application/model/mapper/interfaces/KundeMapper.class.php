@@ -15,13 +15,13 @@ interface KundeMapper {
      * Gibt den Kunden mit der angegebenen Kundennummer zurück.
      * 
      */
-    public static function getUserById($kundenNr);
+    public function getUserById($kundenNr);
     
     /**
      * Gibt den Kunden anhand der eMail zurück.
      * 
      */
-    public static function getUserByEmail($email);
+    public function getUserByEmail($email);
     
 }
 

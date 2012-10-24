@@ -12,25 +12,46 @@
  */
 class BestellungMapperImpl implements BestellungMapper {
 
-    private static $query_getBestellungById = "SELECT * FROM bestellung WHERE bestellnr = '%s'";
-    private static $query_getListOfBestellungByKundeId = "SELECT * FROM bestellung WHERE kundenr = '%s'";
-    private static $dbm;
+    private $query_getBestellungById = "SELECT * FROM bestellung WHERE bestellnr = '%s'";
+    private $query_getListOfBestellungByKundeId = "SELECT * FROM bestellung WHERE kundenr = '%s'";
+    private $dbm;
     
     public function __construct() {
         $this->dbm = DBManager::create();
+        $this->dbm->connect();
+    }
+    
+    public function __destruct() {
+        $this->dbm->close();
+    }
+    
+    public static function make(){
+        $name = __CLASS__;
+        return new $name();
     } 
     
-    public static function getBestellungById($bestellNr) {
+    public function getBestellungById($bestellNr) {
         $sql = printf(self::$query_getBestellungById, $bestellNr);
         
-        return $this->dbm->query($sql);
+       $row = $this->dbm->fetch_assoc($sql);
+       $bestellung = Bestellung::neu($row['bestellnr'], $row['kundennr'], $row['bestelldatum']);
     }
 
-    public static function getListOfBestellungByKundeId($kundeId) {
+    public function getListOfBestellungByKundeId($kundeId) {
         $sql = printf(self::$query_getListOfBestellungByKundeId, $kundeId);
         
-        return $this->dbm->query($sql);
+        $result = $this->dbm->query($sql);
+        $ListOfBestellung = array();
+        while($row = mysql_fetch_array($result,MYSQL_ASSOC)){
+            
+            $bestellung = Bestellung::neu($row['bestellnr'], $row['kundennr'], $row['bestelldatum']);
+            
+            array_push($ListOfBestellung, $bestellung);
+        }
+        return $ListOfBestellung; 
     }
+    
+    
 
     
 }
