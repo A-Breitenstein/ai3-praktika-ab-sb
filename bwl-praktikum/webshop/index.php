@@ -24,7 +24,6 @@ Registry::$settings['database'] = &$__DATABASE;
 
 
 
-
 ErrorReporter::logPageRequest();
 
 //starting main Application

@@ -28,7 +28,7 @@ interface TeileMapper {
      * Gibt eine Liste von Teilen zurück, ähnlich der Bezeichnung.
      * 
      */
-    public function getListOfTeileByBezeichung($bezeichnung);
+    public function getListOfTeileByBezeichnung($bezeichnung);
     
     /**
      * Gibt eine Liste von Unterteilen anhand der Teilnummer zurück.
