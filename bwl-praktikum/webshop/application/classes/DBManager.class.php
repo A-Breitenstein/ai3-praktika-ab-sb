@@ -43,6 +43,6 @@ class DBManager{
   public static function create(){
     $classname = __CLASS__;
     return new $classname();
-  }
+  } 
 }
 
