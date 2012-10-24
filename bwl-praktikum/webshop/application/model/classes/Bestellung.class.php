@@ -15,6 +15,16 @@ class Bestellung {
     private $kundenNr;
     private $bestellDatum;
     
+    public function __construct($bestellNr, $kundenNr, $bestellDatum) {
+        $this->bestellNr = $bestellNr;
+        $this->kundenNr = $kundenNr;
+        $this->bestellDatum = $bestellDatum;
+    }
+    
+    public static function neu($bestellNr,$kundenNr,$bestellDatum){
+        
+        return new Bestellung($bestellNr, $kundenNr, $bestellDatum);
+    }
     
     //Getter & Setter
     public function getBestellNr() {

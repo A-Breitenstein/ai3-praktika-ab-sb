@@ -19,6 +19,19 @@ class Teile {
     private $bild;
     private $beschreibung;
     
+    public function __construct($teileNr,$bezeichung,$preis,$typ,$verkaufstyp,$bild,$beschreibung) {
+        $this->teileNr = $teileNr;
+        $this->bezeichung = $bezeichung;
+        $this->preis = $preis;
+        $this->typ = $typ;
+        $this->verkaufstyp = $verkaufstyp;
+        $this->bild = $bild;
+        $this->beschreibung = $beschreibung;
+    }
+    
+    public static function neu($teileNr,$bezeichung,$preis,$typ,$verkaufstyp,$bild,$beschreibung){
+        return new Teile($teileNr, $bezeichung, $preis, $typ, $verkaufstyp, $bild, $beschreibung);
+    }
     
     //Getter & Setter
     public function getTeileNr() {

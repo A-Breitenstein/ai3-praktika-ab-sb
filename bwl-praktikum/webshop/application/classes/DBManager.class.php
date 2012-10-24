@@ -25,7 +25,7 @@ class DBManager{
 
        return  $result;
   }
-
+  
   public function fetch($sql)
   {
        return mysql_fetch_array($this->query($sql));
@@ -43,6 +43,6 @@ class DBManager{
   public static function create(){
     $classname = __CLASS__;
     return new $classname();
-  } 
+ } 
 }
 

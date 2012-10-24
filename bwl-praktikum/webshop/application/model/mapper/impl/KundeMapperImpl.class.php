@@ -11,26 +11,37 @@
  * @author abg667
  */
 class KundeMapperImpl implements KundeMapper {
-    
-    private static $query_getUserById = "SELECT * FROM kunde WHERE kundennr = '%s'";
-    private static $query_getUserByEmail = "SELECT * FROM kunde WHERE email = '%s'";
-    private static $dbm;
-    
+
+    private $query_getUserById = "SELECT * FROM kunde WHERE kundennr = '%s'";
+    private $query_getUserByEmail = "SELECT * FROM kunde WHERE email = '%s'";
+    private $dbm;
+
     public function __construct() {
         $this->dbm = DBManager::create();
+        $this->dbm->connect();
+    }
+
+    public function __destruct() {
+        $this->dbm->close();
+    }
+
+    public static function make(){
+        $name = __CLASS__;
+        return new $name();
     }
     
-    public static function getUserById($kundenNr){
+    public function getUserById($kundenNr) {
         $sql = printf(self::$query_getUserById, $kundenNr);
-        
+
         return $this->dbm->query($sql);
     }
-    
-    public static function getUserByEmail($email){
+
+    public function getUserByEmail($email) {
         $sql = printf(self::$query_getUserByEmail, $email);
-        
+
         return $this->dbm->query($sql);
     }
+
 }
 
 ?>
