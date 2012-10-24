@@ -14,26 +14,24 @@ public function applyDataToView(array $dataMap) {
     }
 public function show() {
   echo('
-   <div>
-    <table border="1" style="width: 75%;margin: 10%">
-        <tr>
-            <td colspan="3" ><input type="text" id="search_string" onfocus="javascript:edi_feld_focused=true;"onblur="javascript:edi_feld_focused=false;" value="Suchbegriff" style="width: 100%;" ></td>
-            <td colspan="3" onclick="javascript:search()">suchknpog </td>
-        </tr>
-        <tr>
-          ');
-              foreach ($this->dataMap['products'] as $product){
-                  echo('<td>'.$product->getTeileNr().'</td>');
-                  echo('<td>'.$product->getBezeichung().'</td>');
-                  echo('<td>'.$product->getPreis().'</td>');
-                  echo('<td>'.$product->getTyp().'</td>');
-                  echo('<td>'.$product->getBild().'</td>');
-                  echo('<td>'.$product->getBeschreibung().'</td>');
-              }
+    <div style="margin-top: 5%;width: 100%">
+   <div style="margin-bottom: 5%;margin-left:10%;margin-right:10%width: 80%; ">
 
-       echo(' </tr>
-    </table>
-   </div> ');
+            <div style="float:left; width: 50%;"><input type="text" id="search_string" onfocus="javascript:edi_feld_focused=true;"onblur="javascript:edi_feld_focused=false;" value="Suchbegriff" style="width: 100%;" ></div>
+            <div onclick="javascript:search()" style="float:left;width:15%;border: 1px solid black;"> Suchen </div>
+   </div>');
+
+              foreach ($this->dataMap['products'] as $product){
+
+                echo('<div style="float:left;height: 25%;width: 80%;margin-left: 10%;margin-right: 10%;border: 1px solid black">
+                      <div style="float: left;height:100%;width: 20%;"> Bild'.$product->getBild().'</div>
+                      <div style="float: left;height: 25%;width: 25%;">Typ:'.$product->getTyp().'</div>
+                      <div style="float: left;height: 25%;width: 45%;">Teile-Nr.'.$product->getTeileNr().'</div>
+                      <div style="float: left;height: 75%;width: 70%;">Beschreibung:'.$product->getBeschreibung().'<br> Preis: '.$product->getPreis().'</div>
+            </div>');
+              }
+           echo('</div>');
+
 
     }
 public static function create() {
