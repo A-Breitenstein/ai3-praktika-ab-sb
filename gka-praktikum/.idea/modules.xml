@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/Gka-praktikum.iml" filepath="$PROJECT_DIR$/Gka-praktikum.iml" />
+      <module fileurl="file://$PROJECT_DIR$/gka-praktikum.iml" filepath="$PROJECT_DIR$/gka-praktikum.iml" />
     </modules>
   </component>
 </project>
