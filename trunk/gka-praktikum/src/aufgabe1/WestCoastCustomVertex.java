@@ -12,7 +12,7 @@ import java.util.List;
  */
 public class WestCoastCustomVertex {
     public int step;
-    public List nachbarn;
+    public List<String> nachbarn;
     public String vertex;
     public WestCoastCustomVertex(String vertex,int steps,List nachbarn){
         this.step = steps;

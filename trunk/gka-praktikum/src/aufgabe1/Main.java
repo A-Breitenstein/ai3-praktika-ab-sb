@@ -108,12 +108,25 @@ public class Main {
         }
         List<String> A_seine_nachbarn = getBenachbarteKnoten(g,"a");
         List<WestCoastCustomVertex> listeVertex = new ArrayList<WestCoastCustomVertex>();
+
         listeVertex.add(new WestCoastCustomVertex("a",0,A_seine_nachbarn));
+
         for(String vertex : A_seine_nachbarn){
             WestCoastCustomVertex customVertex = new WestCoastCustomVertex(vertex);
             if(!listeVertex.contains(customVertex)){
                 customVertex.step= 0+1;
             }
+        }
+        for(WestCoastCustomVertex wccv:listeVertex){
+            for(String vertex: wccv.nachbarn){
+                WestCoastCustomVertex customVertex = new WestCoastCustomVertex(vertex);
+                if(!listeVertex.contains(customVertex)){
+                    customVertex.step= wccv.step+1;
+                    customVertex.nachbarn = getBenachbarteKnoten(g,customVertex.vertex);
+                    listeVertex.add(customVertex);
+                }
+            }
+
         }
 
 
