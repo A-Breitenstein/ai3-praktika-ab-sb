@@ -2,9 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" readonly="true" id="0d3a19f6-53c9-48a0-a91a-3a8aa280cbbf" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/aufgabe1/Main.java" afterPath="$PROJECT_DIR$/src/aufgabe1/Main.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/aufgabe1/WestCoastCustomVertex.java" afterPath="$PROJECT_DIR$/src/aufgabe1/WestCoastCustomVertex.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/samples/JGraphAdapterDemo.java" afterPath="$PROJECT_DIR$/src/samples/JGraphAdapterDemo.java" />
     </list>
     <ignored path="gka-praktikum.iws" />
@@ -63,10 +63,19 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="JGraphAdapterDemo.java" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="JGraphAdapterDemo.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/samples/JGraphAdapterDemo.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="42" column="52" selection-start="1029" selection-end="1029" vertical-scroll-proportion="0.427256">
+            <state line="49" column="42" selection-start="1294" selection-end="1294" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="GKAFileManager.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/aufgabe1/GKAFileManager.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="68" column="0" selection-start="2301" selection-end="2301" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -81,13 +90,22 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Main.java" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="Main.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/aufgabe1/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="25" column="46" selection-start="631" selection-end="631" vertical-scroll-proportion="0.0">
+            <state line="123" column="62" selection-start="4212" selection-end="4212" vertical-scroll-proportion="0.6169429">
               <folding>
                 <element signature="e#822#839#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="WestCoastCustomVertex.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/aufgabe1/WestCoastCustomVertex.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="16" column="61" selection-start="376" selection-end="376" vertical-scroll-proportion="0.0">
+              <folding />
             </state>
           </provider>
         </entry>
@@ -102,8 +120,9 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/src/aufgabe1/Main.java" />
         <option value="$PROJECT_DIR$/src/samples/JGraphAdapterDemo.java" />
+        <option value="$PROJECT_DIR$/src/aufgabe1/WestCoastCustomVertex.java" />
+        <option value="$PROJECT_DIR$/src/aufgabe1/Main.java" />
       </list>
     </option>
   </component>
@@ -240,7 +259,13 @@
       <option name="VM_PARAMETERS" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
+      <RunnerSettings RunnerId="Debug">
+        <option name="DEBUG_PORT" value="" />
+        <option name="TRANSPORT" value="0" />
+        <option name="LOCAL" value="true" />
+      </RunnerSettings>
       <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Debug" />
       <ConfigurationWrapper RunnerId="Run" />
       <method />
     </configuration>
@@ -448,7 +473,11 @@
       <created>1351165672108</created>
       <updated>1351165672108</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="gka-praktikum:&#10;graphdateien pfade&#10;">
+      <created>1351166951112</created>
+      <updated>1351166951112</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -462,7 +491,7 @@
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39928058" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="IDEtalk Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -518,7 +547,7 @@
     <option name="SHOW_VCS_ERROR_NOTIFICATIONS" value="true" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" value="gka-praktikum:&#10;blöder import und rumgeschiebe scheint zu spinnen&#10;" />
+    <option name="LAST_COMMIT_MESSAGE" value="gka-praktikum:&#10;so in etwa&#10;" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="false" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
@@ -532,6 +561,8 @@
     <option name="SHOW_FILE_HISTORY_AS_TREE" value="false" />
     <option name="FILE_HISTORY_SPLITTER_PROPORTION" value="0.6" />
     <MESSAGE value="gka-praktikum:&#10;blöder import und rumgeschiebe scheint zu spinnen&#10;" />
+    <MESSAGE value="gka-praktikum:&#10;graphdateien pfade&#10;" />
+    <MESSAGE value="gka-praktikum:&#10;so in etwa&#10;" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -555,19 +586,33 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/aufgabe1/Main.java">
+    <entry file="file://$PROJECT_DIR$/src/aufgabe1/GKAFileManager.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="25" column="46" selection-start="631" selection-end="631" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="e#822#839#0" expanded="true" />
-          </folding>
+        <state line="68" column="0" selection-start="2301" selection-end="2301" vertical-scroll-proportion="0.0">
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/samples/JGraphAdapterDemo.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="42" column="52" selection-start="1029" selection-end="1029" vertical-scroll-proportion="0.427256">
+        <state line="49" column="42" selection-start="1294" selection-end="1294" vertical-scroll-proportion="0.0">
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/aufgabe1/WestCoastCustomVertex.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="16" column="61" selection-start="376" selection-end="376" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/aufgabe1/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="123" column="62" selection-start="4212" selection-end="4212" vertical-scroll-proportion="0.6169429">
+          <folding>
+            <element signature="e#822#839#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
