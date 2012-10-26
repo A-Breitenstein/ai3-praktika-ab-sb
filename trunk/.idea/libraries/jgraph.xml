@@ -1,0 +1,14 @@
+<component name="libraryTable">
+  <library name="jgraph">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/Downloads/jgrapht-0.8.3/lib/jgraph.jar!/" />
+      <root url="jar://$USER_HOME$/Downloads/jgrapht-0.8.3/lib/junit.jar!/" />
+      <root url="jar://$USER_HOME$/Downloads/jgrapht-0.8.3/lib/svnant.jar!/" />
+      <root url="jar://$USER_HOME$/Downloads/jgrapht-0.8.3/lib/svnClientAdapter.jar!/" />
+      <root url="jar://$USER_HOME$/Downloads/jgrapht-0.8.3/lib/TGGraphLayout.jar!/" />
+      <root url="jar://$USER_HOME$/Downloads/jgrapht-0.8.3/lib/xmlunit1.0.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
