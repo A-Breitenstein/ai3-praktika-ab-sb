@@ -23,7 +23,7 @@ public class Main {
 
     public static void qwe(String[] args) {
 
-        Graph g = GKAFileManager.importGraph("Z:\\AI3\\GKA\\graph1.gka");
+        Graph g = GKAFileManager.importGraph("graph1.gka");
         String startVertex = "a";
         String targetVertex = "f";
         String currentVertex = "a";
@@ -99,7 +99,7 @@ public class Main {
         System.out.println(sum);
     }
     public static void main(String[] args){
-        Graph g = GKAFileManager.importGraph("Z:\\AI3\\GKA\\graph1.gka");
+        Graph g = GKAFileManager.importGraph("graph1.gka");
         //System.out.println(getBenachbarteKnoten(g, "a"));
         String startVertex = "a";
 
