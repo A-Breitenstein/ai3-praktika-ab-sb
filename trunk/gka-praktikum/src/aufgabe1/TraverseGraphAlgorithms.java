@@ -132,19 +132,27 @@ public class TraverseGraphAlgorithms {
         map.put(startVertex,new CustomVertex(startVertex,0,getAdjacentVertexes(g,startVertex)));
 
         __depthFirst(g, map.get(startVertex), map, 1);
-        System.out.println(map.values());
-        System.out.println(getShortestPath(new ArrayList<CustomVertex>(map.values()), map.get(targetVertex)));
+        System.out.println("Vertices: " + map.values());
+        //System.out.println("Shortestpath: "+getShortestPath(new ArrayList<CustomVertex>(map.values()), map.get(targetVertex)));
+        System.out.println("allPaths: ");
+        _findAllPaths(new ArrayList<CustomVertex>(map.values()),
+                                    map.get(targetVertex),
+                                    new ArrayList<CustomVertex>(Arrays.asList(map.get(targetVertex))));
     }
-    public static String getShortestPath(List<CustomVertex> vertexList,CustomVertex target){
-        List<CustomVertex> path = new ArrayList<CustomVertex>(Arrays.asList(target));
+    private static String reversePath(List<CustomVertex> path){
         StringBuilder sb = new StringBuilder();
-        path = _getShortestPath(vertexList,target,path);
         ListIterator<CustomVertex> iter = path.listIterator(path.size());
         while(iter.hasPrevious()){
 
             sb.append(iter.previous().label);
         }
-        return sb.toString();
+        return  sb.toString();
+    }
+    public static String getShortestPath(List<CustomVertex> vertexList,CustomVertex target){
+        List<CustomVertex> path = new ArrayList<CustomVertex>(Arrays.asList(target));
+        path = _getShortestPath(vertexList,target,path);
+        return reversePath(path);
+
     }
     private static List<CustomVertex> _getShortestPath(List<CustomVertex> vertexList,CustomVertex target,List<CustomVertex> path){
         if(target.step == 0) return  path;
@@ -159,6 +167,22 @@ public class TraverseGraphAlgorithms {
             System.out.println(vertexList);
             System.exit(1);
             return null;
+        }
+    }
+    public static void findAllPaths(List<CustomVertex> vertexList,CustomVertex target,List<CustomVertex> path){
+    }
+    public static void _findAllPaths(List<CustomVertex> vertexList,CustomVertex target,List<CustomVertex> path){
+        if(target.step == 0)
+            System.out.println(reversePath(path));
+        else{
+            for(CustomVertex vertex : vertexList){
+                if(target.step-1 == vertex.step && vertex.adjacentStringVertexes.contains(target.label)){
+                    path.add(vertex);
+                       _findAllPaths(vertexList, vertex, path);
+                    path.remove(vertex);
+                }
+            }
+
         }
     }
 }
