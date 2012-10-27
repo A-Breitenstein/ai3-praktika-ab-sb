@@ -95,9 +95,13 @@ public class Main {
     }
 
     public static void main(String[] args) {
-        Graph g = GKAFileManager.importGraph("graph1.gka");
-        List<CustomVertex> customVertexList = breadthFirst(g,"a","f");
-        System.out.println(customVertexList);
+        Graph g1 = GKAFileManager.importGraph("graph1.gka");
+        Graph g2 = GKAFileManager.importGraph("graph2.gka");
+        List<CustomVertex> customVertexListG1 = breadthFirst(g1,"a","f");
+        List<CustomVertex> customVertexListG2 = breadthFirst(g2,"a","f");
+
+        System.out.println("Graph1: gerichtet: "+customVertexListG1);
+        System.out.println("Graph2: ungerichtet: "+customVertexListG2);
     }
 
     public static void test(String[] args) {

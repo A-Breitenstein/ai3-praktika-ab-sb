@@ -3,7 +3,9 @@ package aufgabe1;
 import org.jgrapht.Graph;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 /**
  * Created with IntelliJ IDEA.
@@ -53,7 +55,8 @@ public class TraverseGraphAlgorithms {
         }
     }
 
-    private static List<String> getAdjacentVertexes(Graph g, String sourceVertex) {
+    @Deprecated
+    private static List<String> getAdjacentVertexes_OLD(Graph g, String sourceVertex) {
         List<String> targetList = new ArrayList<String>();
         String s, t;
         for (Object edge : g.edgeSet()) {
@@ -64,5 +67,16 @@ public class TraverseGraphAlgorithms {
             }
         }
         return targetList;
+    }
+    private  static  List<String> getAdjacentVertexes(Graph g,String sourceVertex){
+        Set<String> neighborList = new HashSet<String>();
+        for(Object targetVertex : g.vertexSet()){
+            if(g.getEdge(sourceVertex,targetVertex) != null){
+                neighborList.add(targetVertex.toString());
+            }
+        }
+        neighborList.remove(sourceVertex);
+
+        return new ArrayList<String>(neighborList);
     }
 }
