@@ -16,7 +16,7 @@ public class TraverseGraphAlgorithms {
 
     final static private int START_STEP = 0;
 
-    public static List<CustomVertex> breadthFirst(Graph graph, String startVertex, String targetVertex){
+    public static List<CustomVertex> breadthFirst(Graph graph, String startVertex, String targetVertex) {
         List<CustomVertex> customVertexList = new ArrayList<CustomVertex>();
         //startVertex
         List<String> startAdjacentList = getAdjacentVertexes(graph, startVertex);
@@ -31,29 +31,27 @@ public class TraverseGraphAlgorithms {
 
     }
 
-    private static List<CustomVertex> _breadthFirst(Graph graph, List<CustomVertex> customVertexList, CustomVertex targetVertex){
+    private static List<CustomVertex> _breadthFirst(Graph graph, List<CustomVertex> customVertexList, CustomVertex targetVertex) {
 
         List<CustomVertex> newVertexList = new ArrayList<CustomVertex>(customVertexList);
 
-        for(CustomVertex vertex: customVertexList){
-            for(String s: vertex.adjacentStringVertexes){
+        for (CustomVertex vertex : customVertexList) {
+            for (String s : vertex.adjacentStringVertexes) {
                 CustomVertex newCustomVertex = new CustomVertex(s);
-                if(!(customVertexList.contains(newCustomVertex))){
+                if (!(newVertexList.contains(newCustomVertex))) {
                     newCustomVertex.step = vertex.step + 1;
-                    newCustomVertex.adjacentStringVertexes = new ArrayList<String>(getAdjacentVertexes(graph,newCustomVertex.label));
+                    newCustomVertex.adjacentStringVertexes = new ArrayList<String>(getAdjacentVertexes(graph, newCustomVertex.label));
                     newVertexList.add(newCustomVertex);
                 }
             }
         }
 
-        if(!(newVertexList.contains(targetVertex))){
+        if (!(newVertexList.contains(targetVertex))) {
             return _breadthFirst(graph, newVertexList, targetVertex);
-        }else{
+        } else {
             return newVertexList;
         }
-
     }
-
 
     private static List<String> getAdjacentVertexes(Graph g, String sourceVertex) {
         List<String> targetList = new ArrayList<String>();
@@ -67,5 +65,4 @@ public class TraverseGraphAlgorithms {
         }
         return targetList;
     }
-
 }
