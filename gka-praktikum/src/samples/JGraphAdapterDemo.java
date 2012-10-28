@@ -40,7 +40,7 @@ public class JGraphAdapterDemo extends JApplet {
      */
     public void init(  ) {
         // create a JGraphT graph
-        Graph g = GKAFileManager.importGraph("C:\\Javay\\test\\gka-praktikum\\graph_k5.gka");
+        Graph g = GKAFileManager.importGraph("C:\\Javay\\aufgabe1\\gka-praktikum\\graph_k5.gka");
 
         // create a visualization using JGraph, via an adapter
         m_jgAdapter = new JGraphModelAdapter( g );
