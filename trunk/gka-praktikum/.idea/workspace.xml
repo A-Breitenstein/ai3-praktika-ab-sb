@@ -2,8 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" readonly="true" id="0d3a19f6-53c9-48a0-a91a-3a8aa280cbbf" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test/aufgabe1" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test/aufgabe1/TraverseGraphAlgorithmsTest.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gka-praktikum.iml" afterPath="$PROJECT_DIR$/gka-praktikum.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/aufgabe1/Main.java" afterPath="$PROJECT_DIR$/src/aufgabe1/Main.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/aufgabe1/TraverseGraphAlgorithms.java" afterPath="$PROJECT_DIR$/src/aufgabe1/TraverseGraphAlgorithms.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/samples/JGraphAdapterDemo.java" afterPath="$PROJECT_DIR$/src/samples/JGraphAdapterDemo.java" />
     </list>
     <ignored path="gka-praktikum.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -64,7 +70,7 @@
       <file leaf-file-name="JGraphAdapterDemo.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/samples/JGraphAdapterDemo.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="49" column="40" selection-start="1294" selection-end="1294" vertical-scroll-proportion="0.0">
+            <state line="115" column="8" selection-start="3144" selection-end="3144" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -91,8 +97,10 @@
       <file leaf-file-name="Main.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/aufgabe1/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="97" column="0" selection-start="2980" selection-end="2980" vertical-scroll-proportion="0.0">
-              <folding />
+            <state line="6" column="0" selection-start="116" selection-end="116" vertical-scroll-proportion="0.0">
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -100,28 +108,27 @@
       <file leaf-file-name="TraverseGraphAlgorithms.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/aufgabe1/TraverseGraphAlgorithms.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="60" column="29" selection-start="2267" selection-end="2267" vertical-scroll-proportion="0.38414633">
+            <state line="6" column="0" selection-start="67" selection-end="67" vertical-scroll-proportion="0.19844358">
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="e#527#541#0" expanded="true" />
+                <element signature="e#1235#1249#0" expanded="true" />
+                <element signature="e#2350#2367#0" expanded="true" />
+                <element signature="e#4629#4651#0" expanded="true" />
+                <element signature="e#6389#6397#0" expanded="true" />
+                <element signature="e#6858#6866#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="List.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="jar://D:/Program Files/Java/jdk1.7.0/src.zip!/java/util/List.java">
+      <file leaf-file-name="TraverseGraphAlgorithmsTest.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/test/aufgabe1/TraverseGraphAlgorithmsTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="142" column="0" selection-start="5523" selection-end="5523" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ArrayList.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="jar://D:/Program Files/Java/jdk1.7.0/src.zip!/java/util/ArrayList.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="251" column="23" selection-start="9209" selection-end="9209" vertical-scroll-proportion="0.0">
-              <folding />
+            <state line="20" column="11" selection-start="405" selection-end="405" vertical-scroll-proportion="0.0">
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -129,11 +136,8 @@
       <file leaf-file-name="CustomVertex.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/aufgabe1/CustomVertex.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="32" column="0" selection-start="786" selection-end="786" vertical-scroll-proportion="0.0">
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#944#952#0" expanded="true" />
-              </folding>
+            <state line="18" column="31" selection-start="379" selection-end="379" vertical-scroll-proportion="0.0">
+              <folding />
             </state>
           </provider>
         </entry>
@@ -150,9 +154,12 @@
       <list>
         <option value="$PROJECT_DIR$/src/samples/JGraphAdapterDemo.java" />
         <option value="$PROJECT_DIR$/src/aufgabe1/WestCoastCustomVertex.java" />
-        <option value="$PROJECT_DIR$/src/aufgabe1/Main.java" />
         <option value="$PROJECT_DIR$/src/aufgabe1/CustomVertex.java" />
+        <option value="$PROJECT_DIR$/src/aufgabe1/test/TraverseGraphAlgorithmsTest.java" />
+        <option value="$PROJECT_DIR$/test/test/TraverseGraphAlgorithmsTest.java" />
+        <option value="$PROJECT_DIR$/test/aufgabe1/TraverseGraphAlgorithmsTest.java" />
         <option value="$PROJECT_DIR$/src/aufgabe1/TraverseGraphAlgorithms.java" />
+        <option value="$PROJECT_DIR$/src/aufgabe1/Main.java" />
       </list>
     </option>
   </component>
@@ -161,9 +168,10 @@
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds">
-    <option name="x" value="578" />
-    <option name="width" value="788" />
-    <option name="height" value="738" />
+    <option name="x" value="-8" />
+    <option name="y" value="-8" />
+    <option name="width" value="1296" />
+    <option name="height" value="1010" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -204,17 +212,6 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="Scope">
-        <subPane subId="Project Files">
-          <PATH>
-            <PATH_ELEMENT USER_OBJECT="Root">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-        </subPane>
-      </pane>
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -230,6 +227,24 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="gka-praktikum" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="gka-praktikum" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="gka-praktikum" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="test" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="aufgabe1" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -271,11 +286,24 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
+      <pane id="Scope">
+        <subPane subId="Project Files">
+          <PATH>
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
     </panes>
   </component>
   <component name="PropertiesComponent">
+    <property name="last_directory_selection" value="$PROJECT_DIR$/test" />
     <property name="GoToFile.includeJavaFiles" value="false" />
     <property name="project.structure.last.edited" value="Libraries" />
+    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit4" />
     <property name="OverrideImplement.combined" value="true" />
     <property name="project.structure.proportion" value="0.13706294" />
     <property name="options.splitter.main.proportions" value="0.3" />
@@ -287,15 +315,24 @@
     <property name="MemberChooser.copyJavadoc" value="false" />
     <property name="GoToClass.toSaveIncludeLibraries" value="false" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="MemberChooser.showClasses" value="true" />
+    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.includeInheritedMembers" value="false" />
     <property name="Repository.Attach.Sources" value="false" />
+    <property name="MemberChooser.showClasses" value="true" />
     <property name="GoToClass.includeLibraries" value="false" />
-    <property name="options.splitter.details.proportions" value="0.2" />
-    <property name="options.searchVisible" value="true" />
-    <property name="Downloaded.Files.Path" value="E:\Projekte\IntelliJ\AI3\GKA\gka-praktikum\lib" />
     <property name="dynamic.classpath" value="false" />
+    <property name="Downloaded.Files.Path" value="E:\Projekte\IntelliJ\AI3\GKA\gka-praktikum\lib" />
+    <property name="options.searchVisible" value="true" />
+    <property name="options.splitter.details.proportions" value="0.2" />
   </component>
-  <component name="RunManager" selected="Application.Main">
+  <component name="RecentsManager">
+    <key name="CreateTestDialog.RecentsKey">
+      <recent name="aufgabe1.test" />
+    </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="" />
+    </key>
+  </component>
+  <component name="RunManager" selected="JUnit.TraverseGraphAlgorithmsTest">
     <configuration default="false" name="JGraphAdapterDemo" type="Applet" factoryName="Applet" temporary="true">
       <module name="gka-praktikum" />
       <option name="MAIN_CLASS_NAME" value="samples.JGraphAdapterDemo" />
@@ -345,6 +382,40 @@
       <ConfigurationWrapper RunnerId="Run" />
       <method />
     </configuration>
+    <configuration default="false" name="TraverseGraphAlgorithmsTest" type="JUnit" factoryName="JUnit" temporary="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="aufgabe1.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <module name="gka-praktikum" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="aufgabe1" />
+      <option name="MAIN_CLASS_NAME" value="aufgabe1.TraverseGraphAlgorithmsTest" />
+      <option name="METHOD_NAME" />
+      <option name="TEST_OBJECT" value="class" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="moduleWithDependencies" />
+      </option>
+      <envs />
+      <patterns />
+      <RunnerSettings RunnerId="Debug">
+        <option name="DEBUG_PORT" value="" />
+        <option name="TRANSPORT" value="0" />
+        <option name="LOCAL" value="true" />
+      </RunnerSettings>
+      <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Debug" />
+      <ConfigurationWrapper RunnerId="Run" />
+      <method />
+    </configuration>
     <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin">
       <module name="" />
       <option name="VM_PARAMETERS" value="-Xmx512m -Xms256m -XX:MaxPermSize=250m" />
@@ -365,24 +436,6 @@
       <method>
         <option name="AntTarget" enabled="false" />
         <option name="BuildArtifacts" enabled="false" />
-        <option name="Maven.BeforeRunTask" enabled="false" />
-      </method>
-    </configuration>
-    <configuration default="true" type="Applet" factoryName="Applet">
-      <module name="" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="HTML_FILE_NAME" />
-      <option name="HTML_USED" value="false" />
-      <option name="WIDTH" value="400" />
-      <option name="HEIGHT" value="300" />
-      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
-      <option name="VM_PARAMETERS" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <method>
-        <option name="AntTarget" enabled="false" />
-        <option name="BuildArtifacts" enabled="false" />
-        <option name="Make" enabled="true" />
         <option name="Maven.BeforeRunTask" enabled="false" />
       </method>
     </configuration>
@@ -412,6 +465,24 @@
       <envs />
       <properties />
       <listeners />
+      <method>
+        <option name="AntTarget" enabled="false" />
+        <option name="BuildArtifacts" enabled="false" />
+        <option name="Make" enabled="true" />
+        <option name="Maven.BeforeRunTask" enabled="false" />
+      </method>
+    </configuration>
+    <configuration default="true" type="Applet" factoryName="Applet">
+      <module name="" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="HTML_FILE_NAME" />
+      <option name="HTML_USED" value="false" />
+      <option name="WIDTH" value="400" />
+      <option name="HEIGHT" value="300" />
+      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
+      <option name="VM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
       <method>
         <option name="AntTarget" enabled="false" />
         <option name="BuildArtifacts" enabled="false" />
@@ -465,9 +536,10 @@
         <option name="Maven.BeforeRunTask" enabled="false" />
       </method>
     </configuration>
-    <list size="2">
+    <list size="3">
       <item index="0" class="java.lang.String" itemvalue="Applet.JGraphAdapterDemo" />
       <item index="1" class="java.lang.String" itemvalue="Application.Main" />
+      <item index="2" class="java.lang.String" itemvalue="JUnit.TraverseGraphAlgorithmsTest" />
     </list>
     <configuration name="&lt;template&gt;" type="WebApp" default="true" selected="false">
       <Host>localhost</Host>
@@ -491,7 +563,7 @@
     <option name="SHOW_MERGE_SOURCES_IN_ANNOTATE" value="true" />
     <option name="FORCE_UPDATE" value="false" />
     <option name="IGNORE_EXTERNALS" value="false" />
-    <configuration useDefault="true">C:\Users\Qiqi\AppData\Roaming\Subversion</configuration>
+    <configuration useDefault="true">C:\Users\Akatsuki\AppData\Roaming\Subversion</configuration>
     <myIsUseDefaultProxy>false</myIsUseDefaultProxy>
     <supportedVersion>125</supportedVersion>
   </component>
@@ -499,20 +571,20 @@
     <option name="myMappingRoots">
       <list>
         <SvnCopyRootSimple>
-          <option name="myVcsRoot" value="D:\Alex\HAW\AI-3\GKA\Praktikum\gka-praktikum" />
-          <option name="myCopyRoot" value="D:\Alex\HAW\AI-3\GKA\Praktikum\gka-praktikum" />
+          <option name="myVcsRoot" value="E:\Projekte\IntelliJ\AI3\GKA\gka-praktikum" />
+          <option name="myCopyRoot" value="E:\Projekte\IntelliJ\AI3\GKA\gka-praktikum" />
         </SvnCopyRootSimple>
         <SvnCopyRootSimple>
-          <option name="myVcsRoot" value="D:\Alex\HAW\AI-3\GKA\Praktikum\gka-praktikum\.idea" />
-          <option name="myCopyRoot" value="D:\Alex\HAW\AI-3\GKA\Praktikum\gka-praktikum\.idea" />
+          <option name="myVcsRoot" value="E:\Projekte\IntelliJ\AI3\GKA\gka-praktikum\.idea" />
+          <option name="myCopyRoot" value="E:\Projekte\IntelliJ\AI3\GKA\gka-praktikum\.idea" />
         </SvnCopyRootSimple>
       </list>
     </option>
     <option name="myMoreRealMappingRoots">
       <list>
         <SvnCopyRootSimple>
-          <option name="myVcsRoot" value="D:\Alex\HAW\AI-3\GKA\Praktikum\gka-praktikum" />
-          <option name="myCopyRoot" value="D:\Alex\HAW\AI-3\GKA\Praktikum\gka-praktikum" />
+          <option name="myVcsRoot" value="E:\Projekte\IntelliJ\AI3\GKA\gka-praktikum" />
+          <option name="myCopyRoot" value="E:\Projekte\IntelliJ\AI3\GKA\gka-praktikum" />
         </SvnCopyRootSimple>
       </list>
     </option>
@@ -539,33 +611,33 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="578" y="0" width="788" height="738" extended-state="0" />
+    <frame x="-8" y="-8" width="1296" height="1010" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3297362" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24981017" sideWeight="0.62794614" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.41206896" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3275862" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32891247" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.53064513" sideWeight="0.77272725" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.35172415" sideWeight="0.9986226" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Documentation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="FLOATING" visible="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" x="783" y="100" width="483" height="538" />
-      <window_info id="IDEtalk Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="IDEtalk" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Data Sources" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Dilbert" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3297362" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32941177" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24981017" sideWeight="0.62794614" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4117647" sideWeight="0.49675325" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="IDEtalk Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.28470588" sideWeight="0.29220778" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="IDEtalk" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32705882" sideWeight="0.4935065" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32891247" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.20860389" sideWeight="0.67294115" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.28470588" sideWeight="0.7021104" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Documentation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="FLOATING" visible="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" x="783" y="100" width="483" height="538" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32972974" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
@@ -606,7 +678,7 @@
     <option name="SHOW_VCS_ERROR_NOTIFICATIONS" value="true" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" value="gka-praktikum:&#10;fixed mehrfaches vorkommen von Knoten" />
+    <option name="LAST_COMMIT_MESSAGE" value="gka-praktikum:&#10;test ordner, +test depthFirst mit string" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="false" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
@@ -624,6 +696,7 @@
     <MESSAGE value="gka-praktikum:&#10;so in etwa&#10;" />
     <MESSAGE value="gka-praktikum:&#10;Algorithmus funzt, nur bugt das prädikat contains(Object) von List komischerweise, beim debuggen verhält er sich komisch, Haltepunkt setzen und durchgehen!&#10;" />
     <MESSAGE value="gka-praktikum:&#10;fixed mehrfaches vorkommen von Knoten" />
+    <MESSAGE value="gka-praktikum:&#10;test ordner, +test depthFirst mit string" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -643,16 +716,6 @@
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/.idea/dictionaries/Qiqi.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/samples/JGraphAdapterDemo.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="49" column="40" selection-start="1294" selection-end="1294" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/aufgabe1/GKAFileManager.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="68" column="0" selection-start="2301" selection-end="2301" vertical-scroll-proportion="0.0" />
@@ -663,36 +726,56 @@
         <state line="52" column="19" selection-start="1806" selection-end="1806" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/aufgabe1/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="97" column="0" selection-start="2980" selection-end="2980" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="jar://D:/Program Files/Java/jdk1.7.0/src.zip!/java/util/List.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="142" column="0" selection-start="5523" selection-end="5523" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="jar://D:/Program Files/Java/jdk1.7.0/src.zip!/java/util/ArrayList.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="251" column="23" selection-start="9209" selection-end="9209" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/aufgabe1/CustomVertex.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="32" column="0" selection-start="786" selection-end="786" vertical-scroll-proportion="0.0">
+        <state line="18" column="31" selection-start="379" selection-end="379" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://E:/Directlinks/jgraphT/jgrapht-0.8.3/jgrapht-jdk1.6.jar!/org/jgrapht/Graph.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="5" column="17" selection-start="136" selection-end="169" vertical-scroll-proportion="-2.72">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/aufgabe1/TraverseGraphAlgorithmsTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="20" column="11" selection-start="405" selection-end="405" vertical-scroll-proportion="0.0">
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#944#952#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/samples/JGraphAdapterDemo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="115" column="8" selection-start="3144" selection-end="3144" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/aufgabe1/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="6" column="0" selection-start="116" selection-end="116" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/aufgabe1/TraverseGraphAlgorithms.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="60" column="29" selection-start="2267" selection-end="2267" vertical-scroll-proportion="0.38414633">
+        <state line="6" column="0" selection-start="67" selection-end="67" vertical-scroll-proportion="0.19844358">
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#527#541#0" expanded="true" />
+            <element signature="e#1235#1249#0" expanded="true" />
+            <element signature="e#2350#2367#0" expanded="true" />
+            <element signature="e#4629#4651#0" expanded="true" />
+            <element signature="e#6389#6397#0" expanded="true" />
+            <element signature="e#6858#6866#0" expanded="true" />
           </folding>
         </state>
       </provider>
