@@ -55,38 +55,10 @@ public class TraverseGraphAlgorithms {
 
     //DEPTH FIRST-@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
     // first implementation off depthFirst, cant work with CustomVertexs
-    @Deprecated
-    public static void depthFirst(Graph g, String startVertex, String targetVertex) {
-        Map<String, Integer> map = new HashMap<String, Integer>();
-        map.put(startVertex, 0);
 
-        _depthFirst(g, startVertex, map, 1);
-        System.out.println(map);
-    }
-
-    @Deprecated
-    public static void _depthFirst(Graph g, String currentVertex, Map<String, Integer> checkedMap, int steps) {
-        List<String> neighborsList = getAdjacentVertexes(g, currentVertex);
-        for (String neighbor : neighborsList) {
-            // wenn die map den nachbar schon enthält, dann gucke ob der aktuelle steps wert
-            // besser ist als der bereits eingetragene. Ist er besser,dann suche von da nach eventuell neuen wegen
-            // andernfalls stoppe.
-            if (checkedMap.containsKey(neighbor)) {
-                if (checkedMap.get(neighbor) > steps) {
-                    checkedMap.put(neighbor, steps);
-                    _depthFirst(g, neighbor, checkedMap, steps + 1);
-                }
-
-            } else {
-                checkedMap.put(neighbor, steps);
-                _depthFirst(g, neighbor, checkedMap, steps + 1);
-            }
-
-        }
-    }
 
     // this one works with Customvertexes
-    private static void __depthFirst(Graph g, CustomVertex currentVertex, Map<String, CustomVertex> checkedMap, int steps) {
+    private static void _depthFirst(Graph g, CustomVertex currentVertex, Map<String, CustomVertex> checkedMap, int steps) {
         //List<String> neighborsList = getAdjacentVertexes(g,currentVertex.label);
 
         for (String neighbor : currentVertex.adjacentStringVertexes) {
@@ -96,22 +68,22 @@ public class TraverseGraphAlgorithms {
             if (checkedMap.containsKey(neighbor)) {
                 if (checkedMap.get(neighbor).step > steps) {
                     checkedMap.get(neighbor).step = steps;
-                    __depthFirst(g, checkedMap.get(neighbor), checkedMap, steps + 1);
+                    _depthFirst(g, checkedMap.get(neighbor), checkedMap, steps + 1);
                 }
 
             } else {
                 checkedMap.put(neighbor, new CustomVertex(neighbor, steps, getAdjacentVertexes(g, neighbor)));
-                __depthFirst(g, checkedMap.get(neighbor), checkedMap, steps + 1);
+                _depthFirst(g, checkedMap.get(neighbor), checkedMap, steps + 1);
             }
 
         }
     }
 
-    public static void depthFirst__2(Graph g, String startVertex, String targetVertex) {
+    public static void depthFirst(Graph g, String startVertex, String targetVertex) {
         Map<String, CustomVertex> map = new HashMap<String, CustomVertex>();
         map.put(startVertex, new CustomVertex(startVertex, 0, getAdjacentVertexes(g, startVertex)));
 
-        __depthFirst(g, map.get(startVertex), map, 1);
+        _depthFirst(g, map.get(startVertex), map, 1);
         System.out.println("Vertices: " + map.values());
         //System.out.println("Shortestpath: "+getShortestPath(new ArrayList<CustomVertex>(map.values()), map.get(targetVertex)));
         System.out.println("allPaths: ");
@@ -147,19 +119,7 @@ public class TraverseGraphAlgorithms {
         }
     }
 
-    @Deprecated
-    private static List<String> getAdjacentVertexes_OLD(Graph g, String sourceVertex) {
-        List<String> targetList = new ArrayList<String>();
-        String s, t;
-        for (Object edge : g.edgeSet()) {
-            s = g.getEdgeSource(edge).toString();
-            t = g.getEdgeTarget(edge).toString();
-            if (sourceVertex.equals(s) && !(targetList.contains(t))) {
-                targetList.add(t);
-            }
-        }
-        return targetList;
-    }
+
 
     private static List<String> getAdjacentVertexes(Graph g, String sourceVertex) {
         Set<String> neighborList = new HashSet<String>();
@@ -173,8 +133,7 @@ public class TraverseGraphAlgorithms {
         return new ArrayList<String>(neighborList);
     }
 
-    // TODO:Kann weg?
-/*
+
     public static String getShortestPath(List<CustomVertex> vertexList,CustomVertex target){
         List<CustomVertex> path = new ArrayList<CustomVertex>(Arrays.asList(target));
         path = _getShortestPath(vertexList,target,path);
@@ -197,6 +156,6 @@ public class TraverseGraphAlgorithms {
             return null;
         }
     }
-*/
+
 
 }
