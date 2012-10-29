@@ -13,16 +13,26 @@ import java.util.*;
 public class TraverseGraphAlgorithms {
 
     final static private int START_STEP = 0;
+    private static long GRAPH_ACCESS_COUNTER = 0;
 
+    //ACCESS_COUNTER-@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+    public static long getAccessCounter(String graphName){
+        long tmp = GRAPH_ACCESS_COUNTER;
+        GRAPH_ACCESS_COUNTER = 0;
+        System.out.println("Accesses on "+graphName+": "+tmp);
+        return  tmp;
+    }
     //BREADTH FIRST-@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
     public static List<CustomVertex> breadthFirst(Graph graph, String startVertex, String targetVertex) {
         List<CustomVertex> customVertexList = new ArrayList<CustomVertex>();
         //startVertex
+
         List<String> startAdjacentList = getAdjacentVertexes(graph, startVertex);
         CustomVertex vStart = new CustomVertex(startVertex, START_STEP, startAdjacentList);
         //targetVertex
-        List<String> targetAdjacentList = getAdjacentVertexes(graph, targetVertex);
-        CustomVertex vTarget = new CustomVertex(targetVertex, -1, targetAdjacentList);
+//        List<String> targetAdjacentList = getAdjacentVertexes(graph, targetVertex);
+//        CustomVertex vTarget = new CustomVertex(targetVertex, -1, targetAdjacentList);
+        CustomVertex vTarget = new CustomVertex(targetVertex);
 
         customVertexList.add(vStart);
 
@@ -35,14 +45,18 @@ public class TraverseGraphAlgorithms {
         List<CustomVertex> newVertexList = new ArrayList<CustomVertex>(customVertexList);
 
         for (CustomVertex vertex : customVertexList) {
-            for (String s : vertex.adjacentStringVertexes) {
-                CustomVertex newCustomVertex = new CustomVertex(s);
-                if (!(newVertexList.contains(newCustomVertex))) {
-                    newCustomVertex.step = vertex.step + 1;
-                    newCustomVertex.adjacentStringVertexes = new ArrayList<String>(getAdjacentVertexes(graph, newCustomVertex.label));
-                    newVertexList.add(newCustomVertex);
+
+            if(!(vertex.isChecked())){
+                for (String s : vertex.adjacentStringVertexes) {
+                    CustomVertex newCustomVertex = new CustomVertex(s);
+                    if (!(newVertexList.contains(newCustomVertex))) {
+                        newCustomVertex.step = vertex.step + 1;
+                        newCustomVertex.adjacentStringVertexes = new ArrayList<String>(getAdjacentVertexes(graph, newCustomVertex.label));
+                        newVertexList.add(newCustomVertex);
+                    }
                 }
             }
+            vertex.checked();
         }
 
         if (!(newVertexList.contains(targetVertex))) {
@@ -124,6 +138,7 @@ public class TraverseGraphAlgorithms {
     private static List<String> getAdjacentVertexes(Graph g, String sourceVertex) {
         Set<String> neighborList = new HashSet<String>();
         for (Object targetVertex : g.vertexSet()) {
+            GRAPH_ACCESS_COUNTER++;
             if (g.getEdge(sourceVertex, targetVertex) != null) {
                 neighborList.add(targetVertex.toString());
             }

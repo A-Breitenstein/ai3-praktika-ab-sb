@@ -15,15 +15,26 @@ public class CustomVertex {
     public int step;
     public List<String> adjacentStringVertexes;
     public String label;
+    private boolean checked;
 
     public CustomVertex(String label, int steps, List<String> adjacentStringVertexes) {
         this.step = steps;
         this.label = label;
         this.adjacentStringVertexes = adjacentStringVertexes;
+        this.checked = false;
     }
 
     public CustomVertex(String label) {
         this.label = label;
+        this.checked = false;
+    }
+
+    public boolean isChecked(){
+            return this.checked;
+    }
+
+    public void checked(){
+        this.checked = true;
     }
 
     @Override
