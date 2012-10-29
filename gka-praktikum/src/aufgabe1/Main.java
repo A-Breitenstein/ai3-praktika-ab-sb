@@ -44,11 +44,11 @@ public class Main {
         System.out.println("---------DEPTH FIRST---------------");
 
         System.out.println("Graph1:");
-        depthFirst__2(g1,"a","f");
+        depthFirst(g1, "a", "f");
         System.out.println("Graph2:");
-        depthFirst__2(g2,"a","f");
+        depthFirst(g2, "a", "f");
         System.out.println("Graph K5:");
-        depthFirst__2(g3,"a","d");
+        depthFirst(g3, "a", "d");
     }
     public static CustomVertex getVertex(List<CustomVertex> list,String name){
         for(CustomVertex vertex : list){
