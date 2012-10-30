@@ -52,4 +52,12 @@ public class CustomVertex {
 
         return strings.toString() + ":" + adjacentStringVertexes.toString();
     }
+    public static CustomVertex getVertex(List<CustomVertex> list,String name){
+        for(CustomVertex vertex : list){
+            if(vertex.label.equals(name)){
+                return vertex;
+            }
+        }
+        return  null;
+    }
 }

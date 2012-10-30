@@ -68,10 +68,21 @@ public class TraverseGraphAlgorithms {
 
 
     //DEPTH FIRST-@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-    // first implementation off depthFirst, cant work with CustomVertexs
+
+    public static List<CustomVertex> depthFirst(Graph g, String startVertex, String targetVertex) {
+        Map<String, CustomVertex> map = new HashMap<String, CustomVertex>();
+        map.put(startVertex, new CustomVertex(startVertex, 0, getAdjacentVertexes(g, startVertex)));
+        _depthFirst(g, map.get(startVertex), map, 1);
 
 
-    // this one works with Customvertexes
+        List<CustomVertex>list =  new ArrayList<CustomVertex>();
+        for(Object name : g.vertexSet()){
+            list.add(map.get(name));
+        }
+        return  list;
+    }
+
+
     private static void _depthFirst(Graph g, CustomVertex currentVertex, Map<String, CustomVertex> checkedMap, int steps) {
         //List<String> neighborsList = getAdjacentVertexes(g,currentVertex.label);
 
@@ -93,19 +104,6 @@ public class TraverseGraphAlgorithms {
         }
     }
 
-    public static void depthFirst(Graph g, String startVertex, String targetVertex) {
-        Map<String, CustomVertex> map = new HashMap<String, CustomVertex>();
-        map.put(startVertex, new CustomVertex(startVertex, 0, getAdjacentVertexes(g, startVertex)));
-
-        _depthFirst(g, map.get(startVertex), map, 1);
-        System.out.println("Vertices: " + map.values());
-        //System.out.println("Shortestpath: "+getShortestPath(new ArrayList<CustomVertex>(map.values()), map.get(targetVertex)));
-        System.out.println("allPaths: ");
-        findAllPaths(new ArrayList<CustomVertex>(map.values()),
-                map.get(targetVertex),
-                new ArrayList<CustomVertex>(Arrays.asList(map.get(targetVertex))));
-    }
-
     //UTIL FUNCTIONS-@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 
     private static String reversePath(List<CustomVertex> path) {
@@ -118,14 +116,19 @@ public class TraverseGraphAlgorithms {
         return sb.toString();
     }
 
-    public static void findAllPaths(List<CustomVertex> vertexList, CustomVertex target, List<CustomVertex> path) {
+    public static List<String> findAllPaths(List<CustomVertex> vertexList, CustomVertex target) {
+        List<String> validPaths = new ArrayList<String>();
+        _findAllPaths(vertexList, target,new ArrayList<CustomVertex>(Arrays.asList(target)),validPaths);
+       return  validPaths;
+    }
+    private static void _findAllPaths(List<CustomVertex> vertexList, CustomVertex target, List<CustomVertex> path,List<String> validPaths) {
         if (target.step == 0)
-            System.out.println(reversePath(path));
+            validPaths.add(reversePath(path));
         else {
             for (CustomVertex vertex : vertexList) {
                 if (target.step - 1 == vertex.step && vertex.adjacentStringVertexes.contains(target.label)) {
                     path.add(vertex);
-                    findAllPaths(vertexList, vertex, path);
+                    _findAllPaths(vertexList, vertex, path,validPaths);
                     path.remove(vertex);
                 }
             }
@@ -171,6 +174,8 @@ public class TraverseGraphAlgorithms {
             return null;
         }
     }
-
+    public static int getPathLength(List<String> paths){
+        return paths.get(0).length()-1;
+    }
 
 }

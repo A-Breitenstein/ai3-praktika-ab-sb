@@ -25,7 +25,7 @@ public class Main {
         target = getVertex(customVertexListG1,"f");
         System.out.println("Graph1: gerichtet: "+customVertexListG1);
 //        System.out.println("Graph1 Path: "+getShortestPath(customVertexListG1,target));
-        findAllPaths(customVertexListG1, target, new ArrayList<CustomVertex>(Arrays.asList(target)));
+        System.out.println(findAllPaths(customVertexListG1, target));
 
 
 
@@ -34,7 +34,7 @@ public class Main {
         target = getVertex(customVertexListG2,"f");
         System.out.println("Graph2: ungerichtet: "+customVertexListG2);
 //        System.out.println("Graph2 Path: "+getShortestPath(customVertexListG2,target));
-        findAllPaths(customVertexListG2, target, new ArrayList<CustomVertex>(Arrays.asList(target)));
+        System.out.println(findAllPaths(customVertexListG2, target));
 
 
         List<CustomVertex> customVertexListG3 = breadthFirst(g3,"a","d");
@@ -42,12 +42,13 @@ public class Main {
         target = getVertex(customVertexListG3,"d");
         System.out.println("Graph K5: ungerichtet: "+customVertexListG3);
 //        System.out.println("Graph2 Path: "+getShortestPath(customVertexListG2,target));
-        findAllPaths(customVertexListG3, target, new ArrayList<CustomVertex>(Arrays.asList(target)));
+        System.out.println(findAllPaths(customVertexListG3, target));
 
         System.out.println("---------DEPTH FIRST---------------");
 
         System.out.println("Graph1:");
-        depthFirst(g1, "a", "f");
+        List<CustomVertex> depthFirstGraph1 = depthFirst(g1, "a", "f");
+        System.out.println(findAllPaths(depthFirstGraph1, CustomVertex.getVertex(depthFirstGraph1, "f")));
         getAccessCounter("Graph1");
         System.out.println("Graph2:");
         depthFirst(g2, "a", "f");

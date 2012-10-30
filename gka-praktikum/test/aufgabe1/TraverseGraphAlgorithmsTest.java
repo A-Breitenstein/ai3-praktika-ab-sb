@@ -1,9 +1,14 @@
 package aufgabe1;
 
+import com.sun.org.apache.xpath.internal.SourceTree;
 import org.jgrapht.Graph;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 import static junit.framework.Assert.*;
 import static aufgabe1.TraverseGraphAlgorithms.*;
@@ -68,11 +73,45 @@ public class TraverseGraphAlgorithmsTest {
     }
 
     @Test
-    public void testDepthFirst__2() throws Exception {
-    }
+    public void testDepthFirst() throws Exception {
 
+        List<CustomVertex> listGraph1 = depthFirst(g1, "a", "f");
+        List<CustomVertex> listGraph2 = depthFirst(g2,"a","f");
+        List<CustomVertex> listGraph3 = depthFirst(g3,"a","d");
+
+        List<String> pathsGraph1 = findAllPaths(listGraph1,CustomVertex.getVertex(listGraph1,"f"));
+        List<String> pathsGraph2 = findAllPaths(listGraph2,CustomVertex.getVertex(listGraph2,"f"));
+        List<String> pathsGraph3 = findAllPaths(listGraph3,CustomVertex.getVertex(listGraph3,"d"));
+
+        assertEquals(pathsGraph1.toString(),"[acdef, akdef, akgef]");
+        assertEquals(pathsGraph2.toString(),"[acf]");
+        assertEquals(pathsGraph3.toString(),"[ad]");
+
+        assertEquals(getPathLength(pathsGraph1),4);
+        assertEquals(getPathLength(pathsGraph2),2);
+        assertEquals(getPathLength(pathsGraph3),1);
+
+    }
+    @Test
+    public void testGraphK5DepthFirst(){
+        List<CustomVertex> listGraphK5 = TraverseGraphAlgorithms.depthFirst(g3,"a","d");
+        System.out.println("Zugriffe auf vollstaendigen Graphen K5: "+getAccessCounter());
+        List<String> vertexNames = new ArrayList<String>(g3.vertexSet());
+        vertexNames.remove("a");
+        int lengthFromVertexAtoTargetVertex;
+        for (String targetVertex : vertexNames ){
+            lengthFromVertexAtoTargetVertex = getPathLength(findAllPaths(listGraphK5,CustomVertex.getVertex(listGraphK5,targetVertex)));
+            assertEquals(lengthFromVertexAtoTargetVertex,1);
+        }
+    }
     @Test
     public void testFindAllPaths() throws Exception {
 
+    }
+    @Test
+    public void testExportGraph() throws Exception {
+        GKAFileManager.exportGraph(g1,"g1Export");
+        GKAFileManager.exportGraph(g2,"g2Export");
+        GKAFileManager.exportGraph(g3,"g3Export");
     }
 }

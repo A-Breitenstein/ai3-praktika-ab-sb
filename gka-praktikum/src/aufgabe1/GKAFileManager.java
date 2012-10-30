@@ -110,4 +110,61 @@ public class GKAFileManager {
            Graphs.addEdgeWithVertices(graph,source,target);
         }
     }
+
+   public static void exportGraph(Graph graph,String path){
+       try{
+            File file = new File(path);
+           FileWriter fw = new FileWriter(file);
+           if(graph instanceof Pseudograph){
+               fw.write(UNGERICHTET+"\n");
+
+               for(Object sourceVertex : graph.vertexSet()){
+                   for (Object targetVertex : graph.vertexSet()) {
+                       if (graph.getEdge(sourceVertex, targetVertex) != null) {
+                           fw.write(sourceVertex+","+targetVertex+"\n");
+                       }
+                   }
+               }
+           }else if(graph instanceof WeightedPseudograph){
+               fw.write(UNGERICHTET+"\n");
+               fw.write(GEWICHTET+"\n");
+               for(Object sourceVertex : graph.vertexSet()){
+                   for (Object targetVertex : graph.vertexSet()) {
+                         Object obj = graph.getEdge(sourceVertex,targetVertex);
+                       if (obj != null) {
+                           fw.write(sourceVertex+","+targetVertex+","+graph.getEdgeWeight(obj)+"\n");
+                       }
+                   }
+               }
+           }else if(graph instanceof ListenableDirectedWeightedGraph ){
+               fw.write(GERICHTET+"\n");
+               fw.write(GEWICHTET+"\n");
+               for(Object sourceVertex : graph.vertexSet()){
+                   for (Object targetVertex : graph.vertexSet()) {
+                       Object obj = graph.getEdge(sourceVertex,targetVertex);
+                       if (obj != null) {
+                           fw.write(sourceVertex+","+targetVertex+","+graph.getEdgeWeight(obj)+"\n");
+                       }
+                   }
+               }
+           }else if(graph instanceof  DirectedPseudograph){
+               fw.write(GERICHTET+"\n");
+               for(Object sourceVertex : graph.vertexSet()){
+                   for (Object targetVertex : graph.vertexSet()) {
+                       if (graph.getEdge(sourceVertex, targetVertex) != null) {
+                           fw.write(sourceVertex+","+targetVertex+"\n");
+                       }
+                   }
+               }
+           }else {
+               System.out.println("Couldn´t export graph: "+graph.getClass().toString());
+               fw.close();
+               System.exit(1);
+           }
+
+           fw.close();
+       }catch (IOException e){
+           e.printStackTrace();
+       }
+   }
 }
