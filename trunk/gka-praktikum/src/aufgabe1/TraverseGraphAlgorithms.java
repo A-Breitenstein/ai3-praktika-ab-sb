@@ -19,8 +19,10 @@ public class TraverseGraphAlgorithms {
     public static long getAccessCounter(String graphName){
         long tmp = GRAPH_ACCESS_COUNTER;
         GRAPH_ACCESS_COUNTER = 0;
-        System.out.println("Accesses on "+graphName+": "+tmp);
         return  tmp;
+    }
+    public static void initializeAccessCounter(){
+        GRAPH_ACCESS_COUNTER = 0;
     }
     //BREADTH FIRST-@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
     public static List<CustomVertex> breadthFirst(Graph graph, String startVertex, String targetVertex) {
