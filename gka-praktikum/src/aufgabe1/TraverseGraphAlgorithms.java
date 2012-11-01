@@ -28,18 +28,14 @@ public class TraverseGraphAlgorithms {
     public static List<CustomVertex> breadthFirst(Graph graph, String startVertex, String targetVertex) {
         List<CustomVertex> customVertexList = new ArrayList<CustomVertex>();
         //startVertex
-
         List<String> startAdjacentList = getAdjacentVertexes(graph, startVertex);
         CustomVertex vStart = new CustomVertex(startVertex, START_STEP, startAdjacentList);
         //targetVertex
-//        List<String> targetAdjacentList = getAdjacentVertexes(graph, targetVertex);
-//        CustomVertex vTarget = new CustomVertex(targetVertex, -1, targetAdjacentList);
         CustomVertex vTarget = new CustomVertex(targetVertex);
 
         customVertexList.add(vStart);
 
         return _breadthFirst(graph, customVertexList, vTarget);
-
     }
 
     private static List<CustomVertex> _breadthFirst(Graph graph, List<CustomVertex> customVertexList, CustomVertex targetVertex) {
@@ -118,6 +114,15 @@ public class TraverseGraphAlgorithms {
         return sb.toString();
     }
 
+    /**
+     * Bestimmt alle möglichen Wege auf der gegebnen
+     * VertexList --[ diese enthält alle Markierten Knoten
+     * sowie ihre Entferung (step) von dem Start Knoten (der Knoten mit der Entferung 0)
+     * und deren benachbarte Knoten ]--
+     * @param vertexList  "Tabelle" siehe oben
+     * @param target    Ziel Vertex
+     * @return   Liste von Strings mit den kürzesten möglichen Pfaden
+     */
     public static List<String> findAllPaths(List<CustomVertex> vertexList, CustomVertex target) {
         List<String> validPaths = new ArrayList<String>();
         _findAllPaths(vertexList, target,new ArrayList<CustomVertex>(Arrays.asList(target)),validPaths);
@@ -139,7 +144,12 @@ public class TraverseGraphAlgorithms {
     }
 
 
-
+    /**
+     *     Liefert die Benachbarten Knoten von einem gegebnen Knoten
+     * @param g  ein befülltes Graph Element aus dem JGraphT Paket
+     * @param sourceVertex  Der Knoten von dem die Nachbarn bestimmt werden sollen
+     * @return  Liste von Benachbarten Knoten als Strings
+     */
     private static List<String> getAdjacentVertexes(Graph g, String sourceVertex) {
         Set<String> neighborList = new HashSet<String>();
         for (Object targetVertex : g.vertexSet()) {
@@ -153,7 +163,12 @@ public class TraverseGraphAlgorithms {
         return new ArrayList<String>(neighborList);
     }
 
-
+    /**
+     *  Bestimmt den kürsten Weg auf einer gegeben vertexList
+     * @param vertexList
+     * @param target
+     * @return  liefert den kürzesten Weg zurück
+     */
     public static String getShortestPath(List<CustomVertex> vertexList,CustomVertex target){
         List<CustomVertex> path = new ArrayList<CustomVertex>(Arrays.asList(target));
         path = _getShortestPath(vertexList,target,path);

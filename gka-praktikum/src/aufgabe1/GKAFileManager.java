@@ -16,7 +16,6 @@ import java.util.List;
  * User: Sven
  * Date: 25.10.12
  * Time: 20:06
- * To change this template use File | Settings | File Templates.
  */
 public class GKAFileManager {
 
@@ -25,6 +24,28 @@ public class GKAFileManager {
     final private static String GEWICHTET = "#gewichtet";
     final private static String ATTRIBUTIERT = "#attributiert";
 
+    /**
+     * Führt IO Operationen auf dem gegebenen GKA file aus
+     * und liefert die Informationen als Liste von Listen mit Strings
+     *  <p>
+     * Example GKA File:
+     * #gerichtet
+     * #gewichtet
+     * Hamburg,Bremen,123
+     * Bremen,Hamburg,123
+     * Hamburg,Berlin,289
+     * </p>
+     * =>
+     * <p>
+     *  List<List<String>>
+     * [ [#gerichtet,#gewichtet],
+     *  [Hamburg,Bremen,123],
+     *  [Bremen,Hamburg,123],
+     *  [Hamburg,Berlin,289] ]
+     * </p>
+     * @param path  FilePath
+     * @return    List of List of Strings
+     */
     private static List<List<String>> importGKAFile(String path){
         final InputStream inputStream;
         BufferedReader br;
@@ -64,6 +85,12 @@ public class GKAFileManager {
 
     }
 
+    /**
+     * Importiert einen Graphen aus dem GKA Datei Format nach JGraphT Graph
+     *
+     * @param path Pfad wo sich die GKA Datei befindet
+     * @return  JGraphT Graph
+     */
     public static Graph importGraph(String path){
         List<List<String>> graphList = importGKAFile(path);
         Graph graph = null;
@@ -92,7 +119,12 @@ public class GKAFileManager {
         }
         return graph;
     }
-
+    /**
+     * Fügt in einen gegebenen Graphen die Knoten,Kanten und Gewichte ein
+     *
+     * @param graph  der Graph in den die Knoten und Kanten eingefügt werden sollen
+     * @param graphList  die Knoten,Kanten und Gewicht Informationen aus dem GKA file
+     */
     private static void addVertexesAndEdgesWeighted(Graph graph, List<List<String>> graphList){
         for (int i = 1; i < graphList.size(); i++) {
             String source = graphList.get(i).get(0),
@@ -102,6 +134,13 @@ public class GKAFileManager {
             Graphs.addEdgeWithVertices(graph,source,target,weight);
         }
     }
+
+    /**
+     * Fügt in einen gegebenen Graphen die Knoten und Kanten ein
+     *
+     * @param graph  der Graph in den die Knoten und Kanten eingefügt werden sollen
+     * @param graphList  die Knoten und Kanten informationen aus dem GKA file
+     */
     private static void addVertexesAndEdges(Graph graph, List<List<String>> graphList){
         for (int i = 1; i < graphList.size(); i++) {
             String source = graphList.get(i).get(0),
@@ -111,6 +150,12 @@ public class GKAFileManager {
         }
     }
 
+    /**
+     *  Exportiert einen gegeben Graphen in das gka file Format
+     *
+     * @param graph ein Graph der das Graph <JGraphT> interface implementiert
+     * @param path  in welches Verzeichnis exportiert werden soll
+     */
    public static void exportGraph(Graph graph,String path){
        try{
             File file = new File(path);
