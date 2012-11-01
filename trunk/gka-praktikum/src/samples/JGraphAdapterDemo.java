@@ -30,7 +30,7 @@ import org.jgrapht.ext.JGraphModelAdapter;
  */
 public class JGraphAdapterDemo extends JApplet {
     private static final Color     DEFAULT_BG_COLOR = Color.decode( "#FAFBFF" );
-    private static final Dimension DEFAULT_SIZE = new Dimension(1600, 1000);
+    private static final Dimension DEFAULT_SIZE = new Dimension(800, 600);
 
     //
     private JGraphModelAdapter m_jgAdapter;
@@ -40,7 +40,7 @@ public class JGraphAdapterDemo extends JApplet {
      */
     public void init(  ) {
         // create a JGraphT graph
-        Graph g = GKAFileManager.importGraph("C:\\Javay\\aufgabe1\\gka-praktikum\\graph_k5.gka");
+        Graph g = GKAFileManager.importGraph("C:\\Users\\Sven\\IdeaProjects\\gka-praktikum\\graph_k5.gka");
 
         // create a visualization using JGraph, via an adapter
         m_jgAdapter = new JGraphModelAdapter( g );
@@ -51,37 +51,15 @@ public class JGraphAdapterDemo extends JApplet {
         getContentPane(  ).add( jgraph );
         resize( DEFAULT_SIZE );
 
-        // add some sample data (graph manipulated via JGraphT)
-//        g.addVertex( "v1" );
-//        g.addVertex( "v2" );
-//        g.addVertex( "v3" );
-//        g.addVertex( "v4" );
-//
-//        g.addEdge( "v1", "v2" );
-//        g.addEdge( "v2", "v3" );
-//        g.addEdge( "v3", "v1" );
-//        g.addEdge( "v4", "v3" );
-//
-//        // position vertices nicely within JGraph component
-//        positionVertexAt( "v1", 130, 40 );
-//        positionVertexAt( "v2", 60, 200 );
-//        positionVertexAt( "v3", 310, 230 );
-//        positionVertexAt( "v4", 380, 70 );
-//
-        // that's all there is to it!...
-
         Set<String> stringSet = g.vertexSet();
         Random rand = new Random();
         for(String s : stringSet){
            int code = s.hashCode();
-            int x = rand.nextInt(1400)+100,
-                y = rand.nextInt(800)+100;
+            int x = rand.nextInt(600)+100,
+                y = rand.nextInt(400)+100;
 
             positionVertexAt(s, x, y);
-
         }
-
-        System.out.println(g.toString());
     }
 
 

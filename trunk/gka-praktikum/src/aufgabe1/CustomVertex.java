@@ -9,7 +9,6 @@ import java.util.List;
  * User: abg667
  * Date: 26.10.12
  * Time: 18:24
- * To change this template use File | Settings | File Templates.
  */
 public class CustomVertex {
     public int step;
