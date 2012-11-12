@@ -22,7 +22,7 @@ create table bestellung_teile(
 create table teile(
 	TNr int primary key AUTO_INCREMENT,
 	Bezeichung varchar(25),
-	Preis number(8,2),
+	Preis numeric(8,2),
 	Typ varchar(25),
 	Angeboten boolean,
 	Bild varchar(100),
@@ -65,7 +65,7 @@ CREATE TABLE teile
   (
      tnr          INT PRIMARY KEY auto_increment,
      bezeichung   VARCHAR(25),
-     preis        NUMBER(8,2),
+     preis        NUMERIC(8,2),
      typ          VARCHAR(25),
      angeboten    BOOLEAN,
      bild         VARCHAR(100),
