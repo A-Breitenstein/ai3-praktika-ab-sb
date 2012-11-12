@@ -65,10 +65,10 @@ CREATE TABLE teile
   (
      tnr          INT PRIMARY KEY auto_increment,
      bezeichung   VARCHAR(25),
-     preis        INT,
+     preis        NUMBER(8,2),
      typ          VARCHAR(25),
      angeboten    BOOLEAN,
-     bild         BLOB,
+     bild         VARCHAR(100),
      beschreibung TEXT
   );
 
