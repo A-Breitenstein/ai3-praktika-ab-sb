@@ -21,7 +21,7 @@ create table bestellung_teile(
 	
 create table teile(
 	TNr int primary key AUTO_INCREMENT,
-	Bezeichung varchar(25),
+	Bezeichnung varchar(25),
 	Preis numeric(8,2),
 	Typ varchar(25),
 	Angeboten boolean,
@@ -64,7 +64,7 @@ CREATE TABLE bestellung_teile
 CREATE TABLE teile
   (
      tnr          INT PRIMARY KEY auto_increment,
-     bezeichung   VARCHAR(25),
+     bezeichnung   VARCHAR(25),
      preis        NUMERIC(8,2),
      typ          VARCHAR(25),
      angeboten    BOOLEAN,
