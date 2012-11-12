@@ -79,3 +79,7 @@ CREATE TABLE struktur
      menge INT NOT NULL,
      PRIMARY KEY(otnr, utnr)
   );  
+  
+  
+  INSERT INTO `teile` (`Bezeichnung` , `Preis` , `Typ` , `Angeboten` , `Bild` , `Beschreibung` )
+VALUES ('Zylinder A4', '90.80', 'Kleinteil', NULL , 'view/images/170px-Cylinder.svg.png', 'Maße 55mm 106mm 22mm' ) 
