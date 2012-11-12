@@ -22,10 +22,10 @@ create table bestellung_teile(
 create table teile(
 	TNr int primary key AUTO_INCREMENT,
 	Bezeichung varchar(25),
-	Preis int,
+	Preis number(8,2),
 	Typ varchar(25),
 	Angeboten boolean,
-	Bild BLOB,
+	Bild varchar(100),
 	Beschreibung text
 	);
 	
