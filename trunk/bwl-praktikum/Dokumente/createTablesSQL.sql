@@ -81,5 +81,13 @@ CREATE TABLE struktur
   );  
   
   
-  INSERT INTO `teile` (`Bezeichnung` , `Preis` , `Typ` , `Angeboten` , `Bild` , `Beschreibung` )
+INSERT INTO `teile` (`Bezeichnung` , `Preis` , `Typ` , `Angeboten` , `Bild` , `Beschreibung` )
 VALUES ('Zylinder A4', '90.80', 'Kleinteil', NULL , 'application/view/images/170px-Cylinder.svg.png', 'Maße 55mm 106mm 22mm' ) 
+
+INSERT INTO `teile` (`Bezeichnung` , `Preis` , `Typ` , `Angeboten` , `Bild` , `Beschreibung` ) VALUES ('BMW', '30000.00', 'Auto', true , 'application/view/images/bmw.jpg', 'Ein Auto das fähr, Brum Brum. Aus Bayern!!!' )
+INSERT INTO `teile` (`Bezeichnung` , `Preis` , `Typ` , `Angeboten` , `Bild` , `Beschreibung` ) VALUES ('Reifen', '450.23', 'Autozubehoer', true , 'application/view/images/reifen.jpg', 'Ist Rund und passt an fast jedes Auto.' )
+INSERT INTO `teile` (`Bezeichnung` , `Preis` , `Typ` , `Angeboten` , `Bild` , `Beschreibung` ) VALUES ('Hupe', '34.56', 'Autozubehoer', false , 'application/view/images/hupe.jpg', 'Macht geraeusche und ist laut.' )
+INSERT INTO `teile` (`Bezeichnung` , `Preis` , `Typ` , `Angeboten` , `Bild` , `Beschreibung` ) VALUES ('Scheinwerfer', '23.53', 'Autozubehoer', false , 'application/view/images/scheinwerfer.jpg', 'Hell, achtung!!! Nicht direkt reingucken!' )
+INSERT INTO `teile` (`Bezeichnung` , `Preis` , `Typ` , `Angeboten` , `Bild` , `Beschreibung` ) VALUES ('Jaguar', '23000000.00', 'Auto', true , 'application/view/images/jaguar.jpg', 'Ein sehr tolles und altes Auto' )
+INSERT INTO `teile` (`Bezeichnung` , `Preis` , `Typ` , `Angeboten` , `Bild` , `Beschreibung` ) VALUES ('Putzmittel', '9.67', 'Autoputzmittel', true , 'application/view/images/putzmittel.jpg', 'Macht das Auto super duper glitzernd.' )
+INSERT INTO `teile` (`Bezeichnung` , `Preis` , `Typ` , `Angeboten` , `Bild` , `Beschreibung` ) VALUES ('Lenkrad', '45.23', 'Autozubehoer', false , 'application/view/images/lenkrad.jpg', 'Ohne das Teil wirds schwer.' )
