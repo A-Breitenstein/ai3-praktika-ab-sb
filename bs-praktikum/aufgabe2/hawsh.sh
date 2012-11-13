@@ -1,56 +1,55 @@
-#!/bin/bash 
-# <hawsh, HAW-Shell. In Funktionalität stark eingeschraenkte Shell.>
-# <Breitenstein, Bartel> 
-# <11.11.2012>
+// <hawsh, HAW-Shell. In Funktionalität stark eingeschraenkte Shell.>
+// <Breitenstein, Bartel> 
+// <11.11.2012>
 
 
-#var initializiation
+//var initializiation
 quit = false;
 
-#Main---
-main(){
-while $quit != true; do
+//Main---
+int main(){
+while (quit != true){
 
 	type_prompt();
 	read_command(&command);
 
-	if command == "quit")
-	then
+	if(command == "quit")){
+	
 
 		quit = true;
 	
-	else
+	}else{
 
-		if lastZeichenUnd(command)
-		then
+		if(lastZeichenUnd(command)){
+		
 	
 			PIDstatus = fork();
 			
-			if PIDstatus < 0
-			then
+			if(PIDstatus < 0){
+			
 	
 				echo "Unable to fork"	
 	
-				if PIDstatus == 0
+				if(PIDstatus == 0){
 				then
 					execve(command,0)
-				fi
-			fi
+				}
+			}
 	
-		else
-			if PIDstatus > 0
-			then
+		}else{
+			if(PIDstatus > 0){
+			
 				wait(PIDstatus, &status, 0)
-			else
+			}else{
 				execve(command,0)
-			fi		
-		fi
+			}		
+		}
 	
-	fi
+	}
 
-done
 }
-#letztes Zeichen berechnen
-lastZeichenUnd(){
+
+//letztes Zeichen berechnen
+bool lastZeichenUnd(char[] *command){
 	
 }
