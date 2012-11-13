@@ -37,6 +37,10 @@ public class Car implements Runnable {
 
             try {
                 Thread.sleep(roundTime);
+
+                if(SimRace.crashed)
+                    break;
+
 //                System.out.println(cThread.getName() + "Auto :"+ this.id + " ist eine rundenZeit von" + roundTime + " in Runde: " + i + " gefahren!");
                 System.out.println("Auto = " + id + " Runde = " + (i+1) + " Zeit = " + roundTime);
                 summedRoundTime += roundTime;

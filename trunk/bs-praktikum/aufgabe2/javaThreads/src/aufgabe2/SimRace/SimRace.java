@@ -16,6 +16,8 @@ public class SimRace {
     static List<Thread> threadList = new ArrayList<Thread>();
 
     static long cars = 10, rounds = 5;
+    static boolean crashed = false;
+    static boolean finished = false;
 
     public static void main(String[] args) {
         for (int i = 0; i < cars; i++) {
@@ -30,6 +32,11 @@ public class SimRace {
             t.start();
         }
 
+        //Crash
+        Crash crash = Crash.create(rounds);
+        Thread crashThread = new Thread(crash);
+        crashThread.start();
+
         //Join only needed, if Threads need to be finished before next process
         for(Thread t: threadList){
             try {
@@ -39,15 +46,30 @@ public class SimRace {
             }
         }
 
-        Comparator<Car> carComparator = new CarComparator();
 
-        Collections.sort(carList, carComparator);
+        if(crashed){
 
-        System.out.println("Rangliste:");
+            System.out.println("Ein Unfall hat sich ereignet!\nDas Rennen wurde abgebrochen.");
 
-        for(Car car: carList)
-            System.out.println(car.toString());
+        }else{
 
+            finished = true;
+
+            Comparator<Car> carComparator = new CarRangfolgenComparator();
+
+            Collections.sort(carList, carComparator);
+
+            System.out.println("Rangliste:");
+
+            for(Car car: carList)
+                System.out.println(car.toString());
+
+        }
     }
+
+    public static void setCrash() {
+        crashed = true;
+    }
+
 
 }
