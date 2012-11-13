@@ -15,7 +15,7 @@ public class SimRace {
     static List<Car> carList = new ArrayList<Car>();
     static List<Thread> threadList = new ArrayList<Thread>();
 
-    static long cars = 10, rounds = 5;
+    static long cars = 3, rounds = 5;
     static boolean crashed = false;
     static boolean finished = false;
 
@@ -28,6 +28,8 @@ public class SimRace {
             threadList.add(new Thread(car));
         }
 
+        //Rennen wird gestartet!
+        System.out.println("### Auf die Plaetze, fertig, Los ! ###");
         for(Thread t: threadList){
             t.start();
         }
