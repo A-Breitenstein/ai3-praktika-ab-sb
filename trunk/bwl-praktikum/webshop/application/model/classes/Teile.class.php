@@ -42,7 +42,7 @@ class Teile {
         $this->teileNr = $teileNr;
     }
 
-    public function getBezeichung() {
+    public function getBezeichnung() {
         return $this->bezeichung;
     }
 
