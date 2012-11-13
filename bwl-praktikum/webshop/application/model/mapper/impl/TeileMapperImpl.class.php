@@ -87,10 +87,10 @@ class TeileMapperImpl implements TeileMapper {
     private function createListeOfTeilWithAllCollumns($sql){
         $result = $this->dbm->query($sql);
         $ListOfTeile = array();
-        while($row = mysql_fetch_array($result,MYSQL_ASSOC)){
-            
-            $teile = Teile::neu($row['tnr'], $row['bezeichnung'], $row['preis'],$row['typ'], $row['verkaufstyp'], $row['bild'],$row['beschreibung']);
-            
+        //mysql_fetch_array($result,MYSQL_ASSOC)
+        while($row = mysql_fetch_assoc($result)){
+            $teile = Teile::neu($row['TNr'], $row['Bezeichnung'], $row['Preis'],$row['Typ'], $row['Verkaufstyp'], $row['Bild'],$row['Beschreibung']);
+
             array_push($ListOfTeile, $teile);
         }
         return $ListOfTeile;

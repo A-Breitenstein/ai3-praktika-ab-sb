@@ -36,7 +36,7 @@ class Products_Controller implements Controller
         $search_string = $request->get["search"];
         if(!empty($search_string)){
             // fetch sql data
-            $resultSet = TeileMapperImpl::make()->getListOfTeileByBezeichung(mysql_real_escape_string($search_string));
+            $resultSet = TeileMapperImpl::make()->getListOfTeileByBezeichnung(mysql_real_escape_string($search_string));
         }else{
             // fetch sql data
             $resultSet = TeileMapperImpl::make()->getAlleProdukte();

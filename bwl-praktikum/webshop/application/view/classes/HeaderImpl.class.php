@@ -11,7 +11,7 @@ class HeaderImpl implements Header{
     private $headerElemsArray = array();
 
     public function __construct(){
-        array_push($this->headerElemsArray,'<meta charset="UTF-8" />');
+        array_push($this->headerElemsArray,'<meta http-equiv="content-type" content="text/html; charset=ISO-8859-1">');
     }
     public function printHeader()
     {

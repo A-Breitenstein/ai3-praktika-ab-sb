@@ -22,12 +22,12 @@ public function show() {
    </div>');
 
               foreach ($this->dataMap['products'] as $product){
-
                 echo('<div style="float:left;height: 25%;width: 80%;margin-left: 10%;margin-right: 10%;border: 1px solid black">
-                      <div style="float: left;height:100%;width: 20%;"> Bild'.$product->getBild().'</div>
-                      <div style="float: left;height: 25%;width: 25%;">Typ:'.$product->getTyp().'</div>
-                      <div style="float: left;height: 25%;width: 45%;">Teile-Nr.'.$product->getTeileNr().'</div>
-                      <div style="float: left;height: 75%;width: 70%;">Beschreibung:'.$product->getBeschreibung().'<br> Preis: '.$product->getPreis().'</div>
+                      <div style="float: left;height:100%;width: 20%;"> <img width=80%  height=80% src="'.$product->getBild().'" ></div>
+                      <div style="float: left;height: 25%;width: 25%;">Bezeichnung: '.$product->getBezeichnung().'</div>
+                      <div style="float: left;height: 25%;width: 25%;">Typ: '.$product->getTyp().'</div>
+                      <div style="float: left;height: 25%;width: 25%;">Teile-Nr.'.$product->getTeileNr().'</div>
+                      <div style="float: left;height: 75%;width: 70%;">Preis: '.$product->getPreis().'<br>Beschreibung:'.$product->getBeschreibung().'</div>
             </div>');
               }
            echo('</div>');
