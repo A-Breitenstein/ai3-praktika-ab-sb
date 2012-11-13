@@ -28,7 +28,8 @@ public class RandomManager  {
         long number;
         Random random = new Random();
 
-        upperBound += (1 + Math.abs(lowerBound));
+        if(lowerBound < 0)
+            upperBound += (1 + Math.abs(lowerBound));
 
         number = random.nextInt(upperBound)+lowerBound;
 

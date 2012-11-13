@@ -8,7 +8,7 @@ import java.util.Comparator;
  * Date: 13.11.12
  * Time: 01:34
  */
-public class CarComparator implements Comparator<Car> {
+public class CarRangfolgenComparator implements Comparator<Car> {
 
     @Override
     public int compare(Car o1, Car o2) {
