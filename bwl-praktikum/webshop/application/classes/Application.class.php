@@ -14,9 +14,11 @@ class Application{
     }
     public function route(){
         $pagename = Registry::$controller[strtolower( $this->getRequestedPage($_SERVER['REQUEST_URI']))];
-        if($pagename === "Controller" ){
+
+        if($pagename === "Controller" || $pagename == null ){
             $pagename = Registry::$controller["default"];
         }
+
         $controller = $this->getController($pagename);
         $controller->showPage(Request::val($_GET,$_POST));
     }

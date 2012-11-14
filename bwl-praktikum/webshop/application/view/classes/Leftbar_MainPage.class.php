@@ -11,9 +11,9 @@ class Leftbar_MainPage implements Leftbar
       private $dataMap;
     public function show()
     {   echo('
-        <div id="menu_entry1"> Produkte A</div>
-        <div id="menu_entry2"> Produkte B</div>
-        <div id="menu_entry3"> Produkte C</div>
+        <div id="menu_entry1"> <a href="products">Produkte</a></div>
+        <div id="menu_entry2"> <a href="products?search=Jaguar">Jaguar</a></div>
+        <div id="menu_entry3"> <a href="products?search=BMW">BMW</a></div>
     ');
     }
 

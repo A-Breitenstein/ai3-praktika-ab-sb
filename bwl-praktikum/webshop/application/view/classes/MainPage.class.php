@@ -18,7 +18,7 @@ class MainPage implements Page
             <?php $LayoutElemMap['header']->printHeader(); ?>
 
         </head>
-        <body>
+        <body style="margin: 0px;">
             <div id="MainPage" >
                  <div id="TopBar" style="width: 100%;height:15%;background-color: gray;">
                      <?php $LayoutElemMap['topbar']->show(); ?>
@@ -26,10 +26,10 @@ class MainPage implements Page
                 <div id="LeftBar" style="float:left;width: 25%;height:80%;background-color: #7fffd4;">
                     <?php $LayoutElemMap['leftbar']->show(); ?>
                 </div>
-                <div id="ContentView" style="float:left;width: 75%;height: 80%;background-color: #deb887;">
+                <div id="ContentView" style="float:left; overflow-y:auto;width: 75%;height: 80%;background-color: #deb887;">
                     <?php $LayoutElemMap['contentview']->show(); ?>
                 </div>
-                <div id="Footer" style="float:left;width: 100%;height: 5%">
+                <div id="Footer" style="float:left;width: 100%;height: 5%;background-color: yellow">
                     <?php $LayoutElemMap['footer']->show(); ?>
                 </div>
 

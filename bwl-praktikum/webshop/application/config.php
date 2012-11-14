@@ -2,7 +2,7 @@
 $__CONFIG = array();
 $__CONFIG["path"] = "webshop";
 $__CONFIG["default_controller"] = "welcome";
-
+$__CONFIG["IMG_PATH"] = "application/view/images/";
 /* class paths */
 $__CLASSPATHS = array();
 $__CLASSPATHS["controller_classes"]  = APP_PATH . "controller\classes\\";
@@ -12,6 +12,8 @@ $__CLASSPATHS["view_interfaces"] = APP_PATH . "view\interfaces\\";
 $__CLASSPATHS["app_classes"]   = APP_PATH . "classes\\";
 $__CLASSPATHS["mapper_classes"] = APP_PATH . "model\mapper\impl\\";
 $__CLASSPATHS["mapper_interfaces"] = APP_PATH . "model\mapper\interfaces\\";
+
+
 
 /* database infos */
 $__DATABASE = array();
