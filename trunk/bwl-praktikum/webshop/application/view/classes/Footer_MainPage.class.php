@@ -12,8 +12,8 @@ class Footer_MainPage implements Footer
     public function show()
     {
         echo('
-            <div id="Contact"> Kontakt</div>
-            <div id="Help"> Hilfe </div>
+            <div id="Contact" style="float: left"> Kontakt </div>
+            <div id="Help" style="float: left"> Hilfe </div>
         ');
     }
 

@@ -6,7 +6,6 @@ error_reporting(E_ALL & ~E_NOTICE);
 
 define("BASE_PATH",dirname(realpath(__FILE__))."\\");
 define("APP_PATH",BASE_PATH . "application\\");
-
 require_once(APP_PATH . "config.php");
 define("PATH",$_CONFIG['path']);
 
@@ -25,7 +24,7 @@ Registry::$settings['database'] = &$__DATABASE;
 
 
 ErrorReporter::logPageRequest();
-
+session_start();
 //starting main Application
 $app = Application::start();
 //include(APP_PATH . "view/phtml/default_view.phtml");
