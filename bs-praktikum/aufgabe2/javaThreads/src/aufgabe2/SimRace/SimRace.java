@@ -48,7 +48,6 @@ public class SimRace {
             }
         }
 
-
         if(crashed){
 
             System.out.println("Ein Unfall hat sich ereignet!\nDas Rennen wurde abgebrochen.");
