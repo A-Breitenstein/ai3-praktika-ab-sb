@@ -1,5 +1,6 @@
 package aufgabe1;
 
+import aufgabe2.AttributedGraph;
 import org.jgrapht.Graph;
 import org.jgrapht.Graphs;
 import org.jgrapht.ListenableGraph;
@@ -7,9 +8,7 @@ import org.jgrapht.graph.*;
 
 import java.io.*;
 import java.nio.charset.Charset;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
+import java.util.*;
 
 /**
  * Created with IntelliJ IDEA.
@@ -99,18 +98,32 @@ public class GKAFileManager {
         if(graphAttributes.contains(UNGERICHTET)){
             if(graphAttributes.contains(GEWICHTET)){
                 graph = new WeightedPseudograph(DefaultWeightedEdge.class);
-                addVertexesAndEdges(graph, graphList);
+                addVertexesAndEdgesWeighted(graph, graphList);
+
+                if(graphAttributes.contains(ATTRIBUTIERT))
+                    graph = AttributedGraph.create(graph,createAttributeMap(graphList));
+
             }else{
                 graph = new Pseudograph(DefaultEdge.class);
                 addVertexesAndEdges(graph, graphList);
+                if(graphAttributes.contains(ATTRIBUTIERT))
+                    graph = AttributedGraph.create(graph,createAttributeMap(graphList));
+
+
             }
         }else if(graphAttributes.contains(GERICHTET)){
             if(graphAttributes.contains(GEWICHTET)){
                 graph = new ListenableDirectedWeightedGraph(DefaultWeightedEdge.class);
                 addVertexesAndEdgesWeighted(graph,graphList);
+
+                if(graphAttributes.contains(ATTRIBUTIERT))
+                    graph = AttributedGraph.create(graph,createAttributeMap(graphList));
             }else{
                 graph = new DirectedPseudograph(DefaultEdge.class);
                 addVertexesAndEdges(graph, graphList);
+
+                if(graphAttributes.contains(ATTRIBUTIERT))
+                    graph = AttributedGraph.create(graph,createAttributeMap(graphList));
             }
         }else{
             System.out.println("Fehler, Graph kann nicht importiert werden:");
@@ -126,15 +139,42 @@ public class GKAFileManager {
      * @param graphList  die Knoten,Kanten und Gewicht Informationen aus dem GKA file
      */
     private static void addVertexesAndEdgesWeighted(Graph graph, List<List<String>> graphList){
-        for (int i = 1; i < graphList.size(); i++) {
-            String source = graphList.get(i).get(0),
-                    target = graphList.get(i).get(1);
-            double weight = Double.parseDouble(graphList.get(i).get(2));
+        //Fix für attributierte Graphen
+        if((graphList.get(1).size()==3)){
+            for (int i = 1; i < graphList.size(); i++) {
+                String source = graphList.get(i).get(0),
+                        target = graphList.get(i).get(1);
+                double weight = Double.parseDouble(graphList.get(i).get(2));
 
-            Graphs.addEdgeWithVertices(graph,source,target,weight);
+                Graphs.addEdgeWithVertices(graph,source,target,weight);
+            }
+
+        }else if((graphList.get(1).size()==5)){
+            for (int i = 1; i < graphList.size(); i++) {
+                String source = graphList.get(i).get(0),
+                        target = graphList.get(i).get(2);
+                double weight = Double.parseDouble(graphList.get(i).get(4));
+
+                Graphs.addEdgeWithVertices(graph,source,target,weight);
+            }
         }
     }
 
+    private static Map<String,Integer> createAttributeMap(List<List<String>> graphList){
+        Map<String,Integer> result = new HashMap<String, Integer>();
+        List<List<String>> graphList2 = graphList.subList(1, graphList.size() - 1);
+       for (List<String> s : graphList2) {
+            result.put(s.get(0),Integer.valueOf(s.get(1)));
+            result.put(s.get(2),Integer.valueOf(s.get(3)));
+        }
+
+        return result;
+    }
+
+    public static void main(String[] args) {
+        Graph g = importGraph("graph3_a2.gka");
+        System.out.println(g);
+    }
     /**
      * Fügt in einen gegebenen Graphen die Knoten und Kanten ein
      *
@@ -142,11 +182,20 @@ public class GKAFileManager {
      * @param graphList  die Knoten und Kanten informationen aus dem GKA file
      */
     private static void addVertexesAndEdges(Graph graph, List<List<String>> graphList){
-        for (int i = 1; i < graphList.size(); i++) {
-            String source = graphList.get(i).get(0),
-                    target = graphList.get(i).get(1);
+        if((graphList.get(1).size()==4)){
+            for (int i = 1; i < graphList.size(); i++) {
+                String source = graphList.get(i).get(0),
+                        target = graphList.get(i).get(2);
 
-           Graphs.addEdgeWithVertices(graph,source,target);
+                Graphs.addEdgeWithVertices(graph,source,target);
+            }
+        }else{
+            for (int i = 1; i < graphList.size(); i++) {
+                String source = graphList.get(i).get(0),
+                        target = graphList.get(i).get(1);
+
+                Graphs.addEdgeWithVertices(graph,source,target);
+            }
         }
     }
 
