@@ -119,6 +119,7 @@ public class TraverseGraphAlgorithms {
      * VertexList --[ diese enthält alle Markierten Knoten
      * sowie ihre Entferung (step) von dem Start Knoten (der Knoten mit der Entferung 0)
      * und deren benachbarte Knoten ]--
+     *
      * @param vertexList  "Tabelle" siehe oben
      * @param target    Ziel Vertex
      * @return   Liste von Strings mit den kürzesten möglichen Pfaden
@@ -145,7 +146,8 @@ public class TraverseGraphAlgorithms {
 
 
     /**
-     *     Liefert die Benachbarten Knoten von einem gegebnen Knoten
+     * Liefert die Benachbarten Knoten von einem gegebnen Knoten
+     *
      * @param g  ein befülltes Graph Element aus dem JGraphT Paket
      * @param sourceVertex  Der Knoten von dem die Nachbarn bestimmt werden sollen
      * @return  Liste von Benachbarten Knoten als Strings
@@ -165,6 +167,7 @@ public class TraverseGraphAlgorithms {
 
     /**
      *  Bestimmt den kürsten Weg auf einer gegeben vertexList
+     *
      * @param vertexList
      * @param target
      * @return  liefert den kürzesten Weg zurück
