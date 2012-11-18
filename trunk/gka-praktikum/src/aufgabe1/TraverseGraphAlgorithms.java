@@ -1,7 +1,6 @@
 package aufgabe1;
 
 import org.jgrapht.Graph;
-
 import java.util.*;
 
 /**
