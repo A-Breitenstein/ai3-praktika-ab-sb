@@ -1,9 +1,8 @@
 package aufgabe1;
 
-import aufgabe2.AttributedGraph;
+import aufgabe2.AttributedGraphImpl;
 import org.jgrapht.Graph;
 import org.jgrapht.Graphs;
-import org.jgrapht.ListenableGraph;
 import org.jgrapht.graph.*;
 
 import java.io.*;
@@ -101,13 +100,13 @@ public class GKAFileManager {
                 addVertexesAndEdgesWeighted(graph, graphList);
 
                 if(graphAttributes.contains(ATTRIBUTIERT))
-                    graph = AttributedGraph.create(graph,createAttributeMap(graphList));
+                    graph = AttributedGraphImpl.create(graph, createAttributeMap(graphList));
 
             }else{
                 graph = new Pseudograph(DefaultEdge.class);
                 addVertexesAndEdges(graph, graphList);
                 if(graphAttributes.contains(ATTRIBUTIERT))
-                    graph = AttributedGraph.create(graph,createAttributeMap(graphList));
+                    graph = AttributedGraphImpl.create(graph, createAttributeMap(graphList));
 
 
             }
@@ -117,13 +116,13 @@ public class GKAFileManager {
                 addVertexesAndEdgesWeighted(graph,graphList);
 
                 if(graphAttributes.contains(ATTRIBUTIERT))
-                    graph = AttributedGraph.create(graph,createAttributeMap(graphList));
+                    graph = AttributedGraphImpl.create(graph, createAttributeMap(graphList));
             }else{
                 graph = new DirectedPseudograph(DefaultEdge.class);
                 addVertexesAndEdges(graph, graphList);
 
                 if(graphAttributes.contains(ATTRIBUTIERT))
-                    graph = AttributedGraph.create(graph,createAttributeMap(graphList));
+                    graph = AttributedGraphImpl.create(graph, createAttributeMap(graphList));
             }
         }else{
             System.out.println("Fehler, Graph kann nicht importiert werden:");
