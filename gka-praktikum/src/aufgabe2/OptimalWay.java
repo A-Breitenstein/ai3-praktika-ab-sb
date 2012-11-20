@@ -2,8 +2,6 @@ package aufgabe2;
 
 import aufgabe1.CustomVertex;
 import org.jgrapht.Graph;
-import org.jgrapht.graph.DefaultEdge;
-import org.jgrapht.graph.DefaultWeightedEdge;
 
 import java.util.*;
 
@@ -15,11 +13,12 @@ public class OptimalWay {
 
     final static String EMPTY = "";
     final static int OMEGA = Integer.MAX_VALUE;
+    static String smallestVertex = "";
 
-    public static List<CustomVertex> dijkstra(Graph graph, String sourceVertex, String targetVertex){
+    public static Map<String,CustomVertex> dijkstra(Graph graph, String sourceVertex, String targetVertex){
         Set<String> vertexSet = graph.vertexSet();
         Map<String,CustomVertex> customVertexMap = new HashMap<String, CustomVertex>();
-        double distance,newDistance;
+        double distance;
         for (String s : vertexSet)
             customVertexMap.put(s,new CustomVertex(OMEGA,getAdjacentVertexes(graph,s),s,false,EMPTY));
 
@@ -30,31 +29,33 @@ public class OptimalWay {
             customVertexMap.get(adjacentVertex).setDistance(distance).setPredecessor(sourceVertex);
         }
 
-
-
         while(!isTargetVertexOK(customVertexMap,targetVertex)){
             for (String vertexName : customVertexMap.keySet()) {
-                CustomVertex vertex =customVertexMap.get(vertexName);
+                CustomVertex vertex = customVertexMap.get(vertexName);
 
-                if(vertex.getDistance() < Integer.MAX_VALUE && !vertex.isOK()){
-                    for (String adjacentVertexName : vertex.adjacentStringVertexes) {
-                        CustomVertex adjacentVertex = customVertexMap.get(adjacentVertexName);
-                        if(!adjacentVertex.isOK()){
-
-                            distance = graph.getEdgeWeight(graph.getEdge(vertex.label, adjacentVertexName));
-                            newDistance = vertex.getDistance()+distance;
-                            if(newDistance < adjacentVertex.getDistance())
-                                adjacentVertex.setDistance(newDistance).setPredecessor(vertex.label);
-                        }
-                    }
-
-
-                }
+                if(vertex.getDistance() < Integer.MAX_VALUE && !vertex.isOK())
+                    _dijkstra(graph, customVertexMap, vertexName);
             }
-            getSmallestDistanceNeighbor(customVertexMap);
-
+            smallestVertex = getSmallestDistanceNeighbor(customVertexMap);
+            _dijkstra(graph, customVertexMap, smallestVertex);
         }
-        return null;
+        return customVertexMap;
+    }
+
+    static void _dijkstra(Graph graph, Map<String,CustomVertex> vertexMap, String smallestVertex){
+        CustomVertex vertex = vertexMap.get(smallestVertex);
+        double distance, newDistance;
+
+        for (String adjacentVertexName : vertex.adjacentStringVertexes) {
+            CustomVertex adjacentVertex = vertexMap.get(adjacentVertexName);
+            if(!adjacentVertex.isOK()){
+
+                distance = graph.getEdgeWeight(graph.getEdge(vertex.label, adjacentVertexName));
+                newDistance = vertex.getDistance()+distance;
+                if(newDistance < adjacentVertex.getDistance())
+                    adjacentVertex.setDistance(newDistance).setPredecessor(vertex.label);
+            }
+        }
     }
 
     private static String getSmallestDistanceNeighbor(Map<String,CustomVertex> map) {
@@ -70,6 +71,8 @@ public class OptimalWay {
         }
 
         if(smallestDistanceVertex.isEmpty()){System.out.println("keinen kleinsten Vertex gefunden!"); System.exit(1);}
+
+        map.get(smallestDistanceVertex).setOK();
 
         return smallestDistanceVertex;
     }
