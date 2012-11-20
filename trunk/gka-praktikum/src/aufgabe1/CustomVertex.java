@@ -61,9 +61,8 @@ public class CustomVertex {
         return this;
     }
 
-    public CustomVertex addDistance(double distance){
-        setDistance(this.distance += distance);
-        return this;
+    public String getPredecessor(){
+        return predecessor;
     }
 
     public double getDistance() {
@@ -76,9 +75,7 @@ public class CustomVertex {
 
     @Override
     public boolean equals(Object obj) {
-        if (obj == null) return false;
-        if (!(obj instanceof CustomVertex)) return false;
-        return ((CustomVertex) obj).label.equals(this.label);
+        return obj != null && obj instanceof CustomVertex && ((CustomVertex) obj).label.equals(this.label);
     }
 
     @Override
@@ -86,6 +83,12 @@ public class CustomVertex {
         List<String> strings = new ArrayList<String>();
         strings.add(label);
         strings.add(String.valueOf(step));
+        strings.add("predecessor:");
+        strings.add(String.valueOf(predecessor));
+        strings.add("distance:");
+        strings.add(String.valueOf(distance));
+        strings.add("Flagged:");
+        strings.add(String.valueOf(checked));
 
         return strings.toString() + ":" + adjacentStringVertexes.toString();
     }
