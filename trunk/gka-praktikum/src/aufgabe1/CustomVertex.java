@@ -12,20 +12,22 @@ import java.util.List;
  */
 public class CustomVertex {
     public int step;
+
     public List<String> adjacentStringVertexes;
+
     public String label;
     private boolean checked;
     private String predecessor;
     private double distance;
     private double attribute;
     private double heuristic;
-
     public CustomVertex(String label, int steps, List<String> adjacentStringVertexes) {
         this.step = steps;
         this.label = label;
         this.adjacentStringVertexes = adjacentStringVertexes;
         this.checked = false;
     }
+
     public CustomVertex(double distance,double attribute,double heuristic, List<String> adjacentStringVertexes, String label, boolean checked, String predecessor){
         this(distance,adjacentStringVertexes, label, checked, predecessor);
         this.attribute = attribute;
@@ -38,7 +40,6 @@ public class CustomVertex {
         this.checked = checked;
         this.predecessor = predecessor;
     }
-
     public CustomVertex(String label) {
         this.label = label;
         this.checked = false;
@@ -78,6 +79,7 @@ public class CustomVertex {
     public boolean isOK(){
         return isChecked();
     }
+
     public CustomVertex setAttribute(double attribute){
         this.attribute = attribute;
         return  this;
@@ -92,7 +94,6 @@ public class CustomVertex {
     public double getHeuristic(){
         return heuristic;
     }
-
     @Override
     public boolean equals(Object obj) {
         return obj != null && obj instanceof CustomVertex && ((CustomVertex) obj).label.equals(this.label);
@@ -110,6 +111,11 @@ public class CustomVertex {
         strings.add("Flagged: "+String.valueOf(checked));
 
         return strings.toString() + ":" + adjacentStringVertexes.toString();
+    }
+
+    @Override
+    public int hashCode() {
+        return label != null ? label.hashCode() : 0;
     }
     public static CustomVertex getVertex(List<CustomVertex> list,String name){
         for(CustomVertex vertex : list){
