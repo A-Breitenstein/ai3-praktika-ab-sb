@@ -4,21 +4,23 @@ import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Rectangle;
 
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
 
 import javax.swing.JApplet;
 import java.awt.geom.Rectangle2D;
-import java.util.Random;
-import java.util.Set;
 
+import aufgabe1.CustomVertex;
 import aufgabe1.GKAFileManager;
+import aufgabe2.AttributedGraph;
+import aufgabe2.OptimalWay;
 import org.jgraph.JGraph;
 import org.jgraph.graph.DefaultGraphCell;
 import org.jgraph.graph.GraphConstants;
 
+import org.jgraph.graph.Port;
 import org.jgrapht.Graph;
 import org.jgrapht.ext.JGraphModelAdapter;
+import org.jgraph.graph.DefaultEdge;
 
 
 /**
@@ -29,9 +31,9 @@ import org.jgrapht.ext.JGraphModelAdapter;
  * @since Aug 3, 2003
  */
 public class JGraphAdapterDemo extends JApplet {
-    private static final Color     DEFAULT_BG_COLOR = Color.decode( "#FAFBFF" );
+    private static final Color   DEFAULT_BG_COLOR = Color.decode( "#FAFBFF" );
     private static final Dimension DEFAULT_SIZE = new Dimension(800, 600);
-
+    private static Set<CustomVertex> path;
     //
     private JGraphModelAdapter m_jgAdapter;
 
@@ -40,21 +42,23 @@ public class JGraphAdapterDemo extends JApplet {
      */
     public void init(  ) {
         // create a JGraphT graph
-        Graph g = GKAFileManager.importGraph("C:\\Users\\Sven\\IdeaProjects\\gka-praktikum\\graph_k5.gka");
-
+        Graph g = GKAFileManager.importGraph("C:\\Users\\Sven\\IdeaProjects\\gka-praktikum\\graph3_a2.gka");
+        Map<String,CustomVertex> pathMap = OptimalWay.aaaaaaStern((AttributedGraph)g,"Husum","Hamburg");
+        path = OptimalWay.getPathInSout("Husum","Hamburg",pathMap);
         // create a visualization using JGraph, via an adapter
         m_jgAdapter = new JGraphModelAdapter( g );
 
         JGraph jgraph = new JGraph( m_jgAdapter );
 
-        adjustDisplaySettings( jgraph );
+        adjustDisplaySettings(jgraph);
         getContentPane(  ).add( jgraph );
         resize( DEFAULT_SIZE );
 
+        OptimalWay.colorMe(m_jgAdapter,path);
         Set<String> stringSet = g.vertexSet();
         Random rand = new Random();
         for(String s : stringSet){
-           int code = s.hashCode();
+            int code = s.hashCode();
             int x = rand.nextInt(600)+100,
                 y = rand.nextInt(400)+100;
 
@@ -86,7 +90,6 @@ public class JGraphAdapterDemo extends JApplet {
         DefaultGraphCell cell = m_jgAdapter.getVertexCell( vertex );
         Map              attr = cell.getAttributes(  );
         Rectangle2D       b    = GraphConstants.getBounds(attr);
-
 
         GraphConstants.setBounds( attr, new Rectangle( x, y, (int)b.getWidth(),(int) b.getHeight()) );
 

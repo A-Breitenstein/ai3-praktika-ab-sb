@@ -3,8 +3,11 @@ package aufgabe2;
 import aufgabe1.CustomVertex;
 import aufgabe1.GKAFileManager;
 import org.junit.Test;
+import static aufgabe2.OptimalWay.*;
 
+import java.util.List;
 import java.util.Map;
+import java.util.Set;
 
 /**
  * Created with IntelliJ IDEA.
@@ -43,16 +46,8 @@ public class OptimalWayTest {
         System.out.println("--- aaaaStern ---");
         getPathInSout("Husum","Hamburg",husumHamburg);
         getPathInSout("Minden","Hamburg",mindenHamburg);
-        getPathInSout("Münster","Hamburg",muensterHamburg);
+        Set<CustomVertex> list = getPathInSout("Münster","Hamburg",muensterHamburg);
+        System.out.println(list);
+    }
 
-    }
-    private void getPathInSout(String start,String target,Map<String,CustomVertex> map){
-        System.out.println(" || ------ von "+start+" nach "+target+" ------ ||");
-        while(!start.equals(target)){
-            System.out.println(target);
-            target = map.get(target).getPredecessor();
-            if(start.equals(target))
-                System.out.println(target);
-        }
-    }
 }

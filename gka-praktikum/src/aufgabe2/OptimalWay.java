@@ -1,9 +1,15 @@
 package aufgabe2;
 
 import aufgabe1.CustomVertex;
+import javafx.scene.control.Cell;
+import org.jgraph.graph.*;
 import org.jgrapht.Graph;
+import org.jgrapht.ext.JGraphModelAdapter;
 
+import java.awt.*;
+import java.awt.geom.Rectangle2D;
 import java.util.*;
+import java.util.List;
 
 /**
  * Date: 18.11.12
@@ -43,7 +49,7 @@ public class OptimalWay {
         return customVertexMap;
     }
 
-    static void _dijkstra(Graph graph, Map<String,CustomVertex> vertexMap, String smallestVertex){
+    private static void _dijkstra(Graph graph, Map<String,CustomVertex> vertexMap, String smallestVertex){
         CustomVertex vertex = vertexMap.get(smallestVertex);
         double distance, newDistance;
 
@@ -158,4 +164,46 @@ public class OptimalWay {
         return vertexName;
     }
 
+
+
+    public static Set<CustomVertex> getPathInSout(String start,String target,Map<String,CustomVertex> map){
+        Set<CustomVertex> weg = new HashSet<CustomVertex>();
+        System.out.println(" || ------ von "+start+" nach "+target+" ------ ||");
+        while(!start.equals(target)){
+            weg.add(map.get(target));
+            System.out.println(target);
+            target = map.get(target).getPredecessor();
+            if(start.equals(target)){
+                weg.add(map.get(target));
+                System.out.println(target);
+            }
+        }
+        return weg;
+    }
+
+    public static void colorMe(JGraphModelAdapter graphModelAdapter, Set<CustomVertex> vertexPathSet){
+        DefaultGraphCell cell;
+        Map attrisVertex,attrisEdge;
+        DefaultEdge edge;
+        for (CustomVertex vertex : vertexPathSet) {
+            cell = graphModelAdapter.getVertexCell(vertex.label);
+            attrisVertex = cell.getAttributes();
+            GraphConstants.setBackground(attrisVertex, new Color(63, 232, 93));
+
+            Iterator<DefaultEdge> iter = graphModelAdapter.edges(cell.getChildren().get(0));
+            while(iter.hasNext()){
+                edge = iter.next();
+                String predecessor = vertex.getPredecessor();
+                String current = vertex.label;
+                String target = ((DefaultPort)edge.getTarget()).getParent().toString();
+                String source = ((DefaultPort)edge.getSource()).getParent().toString();
+                if((current.equals(source) && predecessor.equals(target))||(current.equals(target) && predecessor.equals(source))){
+                   attrisEdge = edge.getAttributes();
+                    GraphConstants.setLineColor(attrisEdge,new Color(220, 80, 205));
+                    GraphConstants.setLineWidth(attrisEdge,20);
+                }
+            }
+
+        }
+    }
 }
