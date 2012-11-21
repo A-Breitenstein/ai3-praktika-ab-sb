@@ -42,8 +42,8 @@ public class JGraphAdapterDemo extends JApplet {
      */
     public void init(  ) {
         // create a JGraphT graph
-        Graph g = GKAFileManager.importGraph("C:\\Users\\Sven\\IdeaProjects\\gka-praktikum\\graph3_a2.gka");
-        String start = "Husum", target = "Hamburg";
+        Graph g = GKAFileManager.importGraph("Z:\\AI3\\GKA\\gka-praktikum\\graph_alex.gka");
+        String start = "Leeds", target = "Hokkaido";
 
         Map<String,CustomVertex> pathMap = OptimalWay.aaaaaaStern((AttributedGraph)g,start,target);
         path = OptimalWay.getPathInSout(start,target,pathMap);
@@ -69,11 +69,14 @@ public class JGraphAdapterDemo extends JApplet {
                 newPoint = new Point2D(x,y);
 
                 for(Point2D point : pointList){
-//                    if(newPoint.equals(point)) continue;
-                    if(newPoint.same(point)){
+                    if(newPoint.equals(point)){
                         System.out.println("neu würfeln...");
                         continue;
                     }
+//                    if(newPoint.same(point)){
+//                        System.out.println("neu würfeln...");
+//                        continue;
+//                    }
                 }
                 pointList.add(newPoint);
                 break;
@@ -137,17 +140,17 @@ class Point2D{
 
         Point2D point2D = (Point2D) o;
         double upperBound_x,lowerBound_x,
-               upperBound_y,lowerBound_y,up = 1.25,down = 0.75;
+               upperBound_y,lowerBound_y,up = 1.50,down = 0.50;
 
-        upperBound_x = point2D.x*up;
-        lowerBound_x = point2D.x*down;
+        upperBound_x = x*up;
+        lowerBound_x = x*down;
 
-        upperBound_y = point2D.y*up;
-        lowerBound_y = point2D.y*down;
+        upperBound_y = y*up;
+        lowerBound_y = y*down;
 
-        if(!between(x,lowerBound_x,upperBound_x)) return false;
+        if(!between(point2D.x,lowerBound_x,upperBound_x)) return false;
 
-        if(!between(y,lowerBound_y,upperBound_y)) return false;
+        if(!between(point2D.y,lowerBound_y,upperBound_y)) return false;
 
         return true;
     }

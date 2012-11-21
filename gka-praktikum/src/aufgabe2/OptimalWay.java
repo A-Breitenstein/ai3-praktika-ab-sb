@@ -1,7 +1,6 @@
 package aufgabe2;
 
 import aufgabe1.CustomVertex;
-import javafx.scene.control.Cell;
 import org.jgraph.graph.*;
 import org.jgrapht.Graph;
 import org.jgrapht.ext.JGraphModelAdapter;
