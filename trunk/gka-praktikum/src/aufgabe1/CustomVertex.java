@@ -17,6 +17,8 @@ public class CustomVertex {
     private boolean checked;
     private String predecessor;
     private double distance;
+    private double attribute;
+    private double heuristic;
 
     public CustomVertex(String label, int steps, List<String> adjacentStringVertexes) {
         this.step = steps;
@@ -24,7 +26,11 @@ public class CustomVertex {
         this.adjacentStringVertexes = adjacentStringVertexes;
         this.checked = false;
     }
-
+    public CustomVertex(double distance,double attribute,double heuristic, List<String> adjacentStringVertexes, String label, boolean checked, String predecessor){
+        this(distance,adjacentStringVertexes, label, checked, predecessor);
+        this.attribute = attribute;
+        this.heuristic = heuristic;
+    }
     public CustomVertex(double distance, List<String> adjacentStringVertexes, String label, boolean checked, String predecessor) {
         this.distance = distance;
         this.adjacentStringVertexes = adjacentStringVertexes;
@@ -72,6 +78,20 @@ public class CustomVertex {
     public boolean isOK(){
         return isChecked();
     }
+    public CustomVertex setAttribute(double attribute){
+        this.attribute = attribute;
+        return  this;
+    }
+    public double getAttribute(){
+        return attribute;
+    }
+    public CustomVertex setHeuristic(double heuristic){
+        this.heuristic = heuristic;
+        return this;
+    }
+    public double getHeuristic(){
+        return heuristic;
+    }
 
     @Override
     public boolean equals(Object obj) {
@@ -83,12 +103,11 @@ public class CustomVertex {
         List<String> strings = new ArrayList<String>();
         strings.add(label);
         strings.add(String.valueOf(step));
-        strings.add("predecessor:");
-        strings.add(String.valueOf(predecessor));
-        strings.add("distance:");
-        strings.add(String.valueOf(distance));
-        strings.add("Flagged:");
-        strings.add(String.valueOf(checked));
+        strings.add("predecessor: "+String.valueOf(predecessor));
+        strings.add("distance: "+String.valueOf(distance) );
+        strings.add("attribute: "+String.valueOf(attribute));
+        strings.add("heuristicValue: "+String.valueOf(heuristic));
+        strings.add("Flagged: "+String.valueOf(checked));
 
         return strings.toString() + ":" + adjacentStringVertexes.toString();
     }
