@@ -202,6 +202,7 @@ public class OptimalWay {
                     GraphConstants.setLineColor(attrisEdge,new Color(220, 80, 205));
                     GraphConstants.setLineWidth(attrisEdge,20);
                 }
+
             }
 
         }
