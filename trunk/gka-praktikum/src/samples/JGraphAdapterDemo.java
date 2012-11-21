@@ -17,10 +17,8 @@ import org.jgraph.JGraph;
 import org.jgraph.graph.DefaultGraphCell;
 import org.jgraph.graph.GraphConstants;
 
-import org.jgraph.graph.Port;
 import org.jgrapht.Graph;
 import org.jgrapht.ext.JGraphModelAdapter;
-import org.jgraph.graph.DefaultEdge;
 
 
 /**
@@ -32,8 +30,10 @@ import org.jgraph.graph.DefaultEdge;
  */
 public class JGraphAdapterDemo extends JApplet {
     private static final Color   DEFAULT_BG_COLOR = Color.decode( "#FAFBFF" );
-    private static final Dimension DEFAULT_SIZE = new Dimension(800, 600);
+    private static final Dimension DEFAULT_SIZE = new Dimension(925, 900);
     private static Set<CustomVertex> path;
+    int kante = 25, hoehe = 800 , breite = 800;
+
     //
     private JGraphModelAdapter m_jgAdapter;
 
@@ -42,8 +42,8 @@ public class JGraphAdapterDemo extends JApplet {
      */
     public void init(  ) {
         // create a JGraphT graph
-        Graph g = GKAFileManager.importGraph("Z:\\AI3\\GKA\\gka-praktikum\\graph_alex.gka");
-        String start = "Leeds", target = "Hokkaido";
+        Graph g = GKAFileManager.importGraph("E:\\Projekte\\IntelliJ\\AI3\\GKA\\gka-praktikum\\graph_alex.gka");
+        String start = "New London", target = "Hokkaido";
 
         Map<String,CustomVertex> pathMap = OptimalWay.aaaaaaStern((AttributedGraph)g,start,target);
         path = OptimalWay.getPathInSout(start,target,pathMap);
@@ -60,27 +60,39 @@ public class JGraphAdapterDemo extends JApplet {
         Set<String> stringSet = g.vertexSet();
         Random rand = new Random();
         List<Point2D> pointList = new ArrayList<Point2D>();
-        Point2D newPoint;
+        Point2D newPoint, point;
+
         for(String s : stringSet){
 
-            while(true){
-                int x = rand.nextInt(600)+100,
-                    y = rand.nextInt(400)+100;
-                newPoint = new Point2D(x,y);
+            int x = rand.nextInt(breite)+kante,
+                y = rand.nextInt(hoehe)+kante;
 
-                for(Point2D point : pointList){
-                    if(newPoint.equals(point)){
-                        System.out.println("neu würfeln...");
-                        continue;
-                    }
-//                    if(newPoint.same(point)){
-//                        System.out.println("neu würfeln...");
-//                        continue;
-//                    }
+            newPoint = new Point2D(x,y);
+
+            for(int i = 0; i < pointList.size(); i++){
+
+                point = pointList.get(i);
+
+                for (Point2D point2D : pointList) {
+                    if(newPoint.xRange(point) && newPoint.yRange(point))
+                        i = 0;
                 }
-                pointList.add(newPoint);
-                break;
+
+                while(newPoint.xRange(point) && newPoint.yRange(point)){
+                    //System.out.println("-same-");
+                    newPoint.x = rand.nextInt(breite)+kante;
+                    if(newPoint.xRange(point)){
+                        newPoint.y = rand.nextInt(hoehe)+kante;
+                    }
+
+                    System.out.println("newPoint: "+newPoint + " point: "+ point );
+
+                }
             }
+
+            pointList.add(newPoint);
+            System.out.println("-added-: " + s);
+
             positionVertexAt(s, newPoint.x, newPoint.y);
         }
     }
@@ -121,11 +133,39 @@ public class JGraphAdapterDemo extends JApplet {
 class Point2D{
     public int x;
     public int y;
+    private static double margin = 100d;
 
     Point2D(int x, int y) {
         this.x = x;
         this.y = y;
     }
+
+    @Override
+    public String toString() {
+        return "Point2D{" +
+                "x=" + x +
+                ", y=" + y +
+                '}';
+    }
+
+    public boolean xRange(Point2D newPoint){
+        Point2D oldPoint = (Point2D)this;
+        double marXP = oldPoint.x + margin,
+                marXM = oldPoint.x - margin,
+                newX = newPoint.x;
+
+        return !((newX > marXP) || (marXM > newX));
+    }
+
+    public boolean yRange(Point2D newPoint){
+        Point2D oldPoint = (Point2D)this;
+        double marYP = oldPoint.y + margin,
+                marYM = oldPoint.y - margin,
+                newY = newPoint.y;
+
+        return !((newY > marYP) || (marYM > newY));
+    }
+
     public boolean same(Point2D newP2d){
         Point2D p2d = (Point2D)this;
         double margin = 2d;
