@@ -1,13 +1,12 @@
 package samples;
 
-import java.awt.Color;
-import java.awt.Dimension;
-import java.awt.Rectangle;
+import java.awt.*;
 
 import java.util.*;
 
 import javax.swing.JApplet;
 import java.awt.geom.Rectangle2D;
+import java.util.List;
 
 import aufgabe1.CustomVertex;
 import aufgabe1.GKAFileManager;
@@ -30,9 +29,9 @@ import org.jgrapht.ext.JGraphModelAdapter;
  */
 public class JGraphAdapterDemo extends JApplet {
     private static final Color   DEFAULT_BG_COLOR = Color.decode( "#FAFBFF" );
-    private static final Dimension DEFAULT_SIZE = new Dimension(925, 900);
+    private static final Dimension DEFAULT_SIZE = new Dimension(800, 800);
     private static Set<CustomVertex> path;
-    int kante = 25, hoehe = 800 , breite = 800;
+    int kante = 25, hoehe = 600 , breite = 600;
 
     //
     private JGraphModelAdapter m_jgAdapter;
@@ -55,7 +54,6 @@ public class JGraphAdapterDemo extends JApplet {
         path = OptimalWay.getPathInSout(start,target,pathMap);
         // create a visualization using JGraph, via an adapter
         m_jgAdapter = new JGraphModelAdapter( g );
-
         JGraph jgraph = new JGraph( m_jgAdapter );
 
         adjustDisplaySettings(jgraph);
@@ -139,7 +137,7 @@ public class JGraphAdapterDemo extends JApplet {
 class Point2D{
     public int x;
     public int y;
-    private static double margin = 100d;
+    private static double margin = 75d;
 
     Point2D(int x, int y) {
         this.x = x;
@@ -170,44 +168,5 @@ class Point2D{
                 newY = newPoint.y;
 
         return !((newY > marYP) || (marYM > newY));
-    }
-
-    public boolean same(Point2D newP2d){
-        Point2D p2d = (Point2D)this;
-        double margin = 2d;
-
-        return !((newP2d.x < p2d.x*margin || newP2d.x > p2d.x*margin) && (newP2d.y < p2d.y*margin || newP2d.y > p2d.y*margin));
-    }
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-
-        Point2D point2D = (Point2D) o;
-        double upperBound_x,lowerBound_x,
-               upperBound_y,lowerBound_y,up = 1.50,down = 0.50;
-
-        upperBound_x = x*up;
-        lowerBound_x = x*down;
-
-        upperBound_y = y*up;
-        lowerBound_y = y*down;
-
-        if(!between(point2D.x,lowerBound_x,upperBound_x)) return false;
-
-        if(!between(point2D.y,lowerBound_y,upperBound_y)) return false;
-
-        return true;
-    }
-
-    @Override
-    public int hashCode() {
-        int result = x;
-        result = 31 * result + y;
-        return result;
-    }
-    private boolean between(double val,double startIntervall,double endIntervall){
-        return val>= startIntervall && val<=endIntervall;
     }
 }

@@ -16,7 +16,7 @@ import java.util.List;
 public class OptimalWay {
 
     final static String EMPTY = "";
-    final static int OMEGA = Integer.MAX_VALUE;
+    final static double OMEGA = Double.MAX_VALUE;
     static String smallestVertex = "";
 
     public static int dijkstraCounter = 0, aSternCounter = 0;
@@ -25,6 +25,8 @@ public class OptimalWay {
         dijkstraCounter = 0;
         Set<String> vertexSet = graph.vertexSet();
         Map<String,CustomVertex> customVertexMap = new HashMap<String, CustomVertex>();
+        Set<String> openList = new HashSet<String>();
+
         double distance;
         for (String s : vertexSet){
             customVertexMap.put(s,new CustomVertex(OMEGA,getAdjacentVertexes(graph,s),s,false,EMPTY));
@@ -32,6 +34,7 @@ public class OptimalWay {
         }
 
         //Init Start Vertex
+        openList.add(sourceVertex);
         customVertexMap.get(sourceVertex).setDistance(0).setPredecessor(sourceVertex).setOK();
         dijkstraCounter++;
         for (String adjacentVertex : customVertexMap.get(sourceVertex).adjacentStringVertexes) {
@@ -43,26 +46,28 @@ public class OptimalWay {
         }
         // solange suchen wie der TargetVertex nicht ok ist geht nicht, da es sein kann das man den TargetVertex
         // garnicht erreichen kann. Dann wird er niee ok hier muss noch ein workaround rein
-        while(!isTargetVertexOK(customVertexMap,targetVertex)){
+        while(!openList.isEmpty() &&!isTargetVertexOK(customVertexMap,targetVertex)){
             for (String vertexName : customVertexMap.keySet()) {
                 CustomVertex vertex = customVertexMap.get(vertexName);
                 dijkstraCounter++;
                 if(vertex.getDistance() < Integer.MAX_VALUE && !vertex.isOK())
-                    _dijkstra(graph, customVertexMap, vertexName);
+                    _dijkstra(graph, customVertexMap, vertexName, openList);
             }
             smallestVertex = getSmallestDistanceNeighbor(customVertexMap);
-            _dijkstra(graph, customVertexMap, smallestVertex);
+            openList.remove(smallestVertex);
+            _dijkstra(graph, customVertexMap, smallestVertex, openList);
         }
         return customVertexMap;
     }
 
-    private static void _dijkstra(Graph graph, Map<String,CustomVertex> vertexMap, String smallestVertex){
+    private static void _dijkstra(Graph graph, Map<String,CustomVertex> vertexMap, String smallestVertex, Set<String> openList){
         CustomVertex vertex = vertexMap.get(smallestVertex);
         dijkstraCounter++;
         double distance, newDistance;
 
         for (String adjacentVertexName : vertex.adjacentStringVertexes) {
             CustomVertex adjacentVertex = vertexMap.get(adjacentVertexName);
+            openList.add(adjacentVertex.label);
             dijkstraCounter++;
             if(!adjacentVertex.isOK()){
 
@@ -189,17 +194,28 @@ public class OptimalWay {
 
 
     public static Set<CustomVertex> getPathInSout(String start,String target,Map<String,CustomVertex> map){
+        String ziel = target;
         Set<CustomVertex> weg = new HashSet<CustomVertex>();
         System.out.println(" || ------ von "+start+" nach "+target+" ------ ||");
+        List<String> strings = new ArrayList<String>();
         while(!start.equals(target)){
             weg.add(map.get(target));
-            System.out.println(target);
+            strings.add(0,target);
+//            System.out.print(target);
+//            System.out.print(" <- ");
             target = map.get(target).getPredecessor();
             if(start.equals(target)){
                 weg.add(map.get(target));
-                System.out.println(target);
+                strings.add(0,target);
+//                System.out.println(target);
             }
         }
+        for (int i = 0; i < strings.size(); i++) {
+            System.out.print(strings.get(i));
+            if(i < strings.size()-1)
+                System.out.print(" -> ");
+        }
+        System.out.println(": distance = " + map.get(ziel).getDistance());
         return weg;
     }
 

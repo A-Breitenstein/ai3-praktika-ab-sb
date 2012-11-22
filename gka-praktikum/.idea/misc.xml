@@ -21,6 +21,13 @@
             </SvnBranchConfiguration>
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/.idea">
+          <value>
+            <SvnBranchConfiguration>
+              <option name="trunkUrl" value="https://ai3-praktika-ab-sb.googlecode.com/svn/trunk" />
+            </SvnBranchConfiguration>
+          </value>
+        </entry>
       </map>
     </option>
     <option name="mySupportsUserInfoFilter" value="true" />
