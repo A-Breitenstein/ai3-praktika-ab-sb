@@ -42,10 +42,16 @@ public class JGraphAdapterDemo extends JApplet {
      */
     public void init(  ) {
         // create a JGraphT graph
-        Graph g = GKAFileManager.importGraph("E:\\Projekte\\IntelliJ\\AI3\\GKA\\gka-praktikum\\graph_alex.gka");
-        String start = "New London", target = "Hokkaido";
+        Graph g = GKAFileManager.importGraph("Z:\\AI3\\GKA\\gka-praktikum\\graph_alex.gka");
+        String start = "Dublin", target = "Hokkaido";
+//
+//        Graph g = GKAFileManager.importGraph("Z:\\AI3\\GKA\\gka-praktikum\\graph3_a2.gka");
+//        String start = "Husum", target = "Hamburg";
+//        String start = "Münster", target = "Hamburg";
+//        String start = "Minden", target = "Hamburg";
 
         Map<String,CustomVertex> pathMap = OptimalWay.aaaaaaStern((AttributedGraph)g,start,target);
+//        Map<String,CustomVertex> pathMap = OptimalWay.dijkstra((AttributedGraph)g,start,target);
         path = OptimalWay.getPathInSout(start,target,pathMap);
         // create a visualization using JGraph, via an adapter
         m_jgAdapter = new JGraphModelAdapter( g );
@@ -56,7 +62,7 @@ public class JGraphAdapterDemo extends JApplet {
         getContentPane(  ).add( jgraph );
         resize( DEFAULT_SIZE );
 
-        OptimalWay.colorMe(m_jgAdapter,path);
+        OptimalWay.colorMe(m_jgAdapter,path,start,target);
         Set<String> stringSet = g.vertexSet();
         Random rand = new Random();
         List<Point2D> pointList = new ArrayList<Point2D>();
