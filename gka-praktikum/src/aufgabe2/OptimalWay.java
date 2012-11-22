@@ -6,7 +6,6 @@ import org.jgrapht.Graph;
 import org.jgrapht.ext.JGraphModelAdapter;
 
 import java.awt.*;
-import java.awt.geom.Rectangle2D;
 import java.util.*;
 import java.util.List;
 
@@ -20,25 +19,36 @@ public class OptimalWay {
     final static int OMEGA = Integer.MAX_VALUE;
     static String smallestVertex = "";
 
+    public static int dijkstraCounter = 0, aSternCounter = 0;
+
     public static Map<String,CustomVertex> dijkstra(Graph graph, String sourceVertex, String targetVertex){
+        dijkstraCounter = 0;
         Set<String> vertexSet = graph.vertexSet();
         Map<String,CustomVertex> customVertexMap = new HashMap<String, CustomVertex>();
         double distance;
-        for (String s : vertexSet)
+        for (String s : vertexSet){
             customVertexMap.put(s,new CustomVertex(OMEGA,getAdjacentVertexes(graph,s),s,false,EMPTY));
+            dijkstraCounter++;
+        }
 
         //Init Start Vertex
         customVertexMap.get(sourceVertex).setDistance(0).setPredecessor(sourceVertex).setOK();
+        dijkstraCounter++;
         for (String adjacentVertex : customVertexMap.get(sourceVertex).adjacentStringVertexes) {
+            dijkstraCounter++;
             distance = graph.getEdgeWeight(graph.getEdge(sourceVertex, adjacentVertex));
+            dijkstraCounter++;
             customVertexMap.get(adjacentVertex).setDistance(distance).setPredecessor(sourceVertex);
+            dijkstraCounter++;
         }
         // solange suchen wie der TargetVertex nicht ok ist geht nicht, da es sein kann das man den TargetVertex
         // garnicht erreichen kann. Dann wird er niee ok hier muss noch ein workaround rein
         while(!isTargetVertexOK(customVertexMap,targetVertex)){
+            dijkstraCounter++;
             for (String vertexName : customVertexMap.keySet()) {
+                dijkstraCounter++;
                 CustomVertex vertex = customVertexMap.get(vertexName);
-
+                dijkstraCounter++;
                 if(vertex.getDistance() < Integer.MAX_VALUE && !vertex.isOK())
                     _dijkstra(graph, customVertexMap, vertexName);
             }
@@ -50,13 +60,16 @@ public class OptimalWay {
 
     private static void _dijkstra(Graph graph, Map<String,CustomVertex> vertexMap, String smallestVertex){
         CustomVertex vertex = vertexMap.get(smallestVertex);
+        dijkstraCounter++;
         double distance, newDistance;
 
         for (String adjacentVertexName : vertex.adjacentStringVertexes) {
             CustomVertex adjacentVertex = vertexMap.get(adjacentVertexName);
+            dijkstraCounter++;
             if(!adjacentVertex.isOK()){
 
                 distance = graph.getEdgeWeight(graph.getEdge(vertex.label, adjacentVertexName));
+                dijkstraCounter++;
                 newDistance = vertex.getDistance()+distance;
                 if(newDistance < adjacentVertex.getDistance())
                     adjacentVertex.setDistance(newDistance).setPredecessor(vertex.label);
@@ -101,11 +114,13 @@ public class OptimalWay {
 
 
     public static Map<String,CustomVertex> aaaaaaStern(AttributedGraph graph,String sourceVertex,String targetVertex){
+        aSternCounter = 0;
         Map<String,CustomVertex> customVertexMap = new HashMap<String, CustomVertex>();
         double distance;
-        for (String vertex : (Set<String>) graph.vertexSet())
+        for (String vertex : (Set<String>) graph.vertexSet()){
             customVertexMap.put(vertex,new CustomVertex(OMEGA,graph.getAttribute(vertex),OMEGA,getAdjacentVertexes(graph,vertex),vertex,false,EMPTY));
-
+            aSternCounter++;
+        }
         Set<String> openList = new HashSet<String>();
         //Init Start Vertex
         openList.add(sourceVertex);
@@ -114,12 +129,15 @@ public class OptimalWay {
                 .setPredecessor(sourceVertex)
                 .setHeuristic(customVertexMap.get(sourceVertex).getAttribute())
                 .setOK();
+        aSternCounter+=2;
 
         CustomVertex currentVertex,neighborVertex;
         // solange wie die "openList" nicht leer ist und der TargetVertex nicht OK laufe
         while(!openList.isEmpty() && !isTargetVertexOK(customVertexMap,targetVertex)){
+            aSternCounter++;
             // den vertex mit dem kleinesten heuristischen Schätzwert finden
             currentVertex = customVertexMap.get(findSmallestEstimatorInOpenList(openList, customVertexMap));
+            aSternCounter++;
             // aus der Openliste entfernen und auf OK setzen
             openList.remove(currentVertex.label);
             currentVertex.setOK();
@@ -128,7 +146,9 @@ public class OptimalWay {
             for (String neighborName :  currentVertex.adjacentStringVertexes) {
 
                 neighborVertex = customVertexMap.get(neighborName);
+                aSternCounter++;
                 distance = currentVertex.getDistance()+graph.getEdgeWeight(graph.getEdge(currentVertex.label,neighborName));
+                aSternCounter++;
                 // falls die neue Distanz kleiner ist als die bereits eingetragene im nachbarVertex und
                 // dieser noch nicht OK gesetzt ist tue folgendes...
                 if(!neighborVertex.isOK() && neighborVertex.getDistance() > distance ){
@@ -137,6 +157,7 @@ public class OptimalWay {
                             .setDistance(distance)
                             .setHeuristic(neighborVertex.getAttribute()+distance);
                     openList.add(neighborName);
+                    aSternCounter++;
                 }
             }
         }
