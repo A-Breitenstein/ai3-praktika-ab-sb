@@ -44,9 +44,7 @@ public class OptimalWay {
         // solange suchen wie der TargetVertex nicht ok ist geht nicht, da es sein kann das man den TargetVertex
         // garnicht erreichen kann. Dann wird er niee ok hier muss noch ein workaround rein
         while(!isTargetVertexOK(customVertexMap,targetVertex)){
-            dijkstraCounter++;
             for (String vertexName : customVertexMap.keySet()) {
-                dijkstraCounter++;
                 CustomVertex vertex = customVertexMap.get(vertexName);
                 dijkstraCounter++;
                 if(vertex.getDistance() < Integer.MAX_VALUE && !vertex.isOK())
@@ -104,6 +102,8 @@ public class OptimalWay {
         Set<String> neighborList = new HashSet<String>();
         for (Object targetVertex : g.vertexSet()) {
             if (g.getEdge(sourceVertex, targetVertex) != null) {
+                aSternCounter++;
+                dijkstraCounter++;
                 neighborList.add(targetVertex.toString());
             }
         }
@@ -124,6 +124,7 @@ public class OptimalWay {
         Set<String> openList = new HashSet<String>();
         //Init Start Vertex
         openList.add(sourceVertex);
+        aSternCounter++;
         customVertexMap.get(sourceVertex)
                 .setDistance(0)
                 .setPredecessor(sourceVertex)
@@ -144,20 +145,21 @@ public class OptimalWay {
 
             // für alle Nachbarn des currentVertexes untersuchen...
             for (String neighborName :  currentVertex.adjacentStringVertexes) {
-
+                aSternCounter++;
                 neighborVertex = customVertexMap.get(neighborName);
                 aSternCounter++;
                 distance = currentVertex.getDistance()+graph.getEdgeWeight(graph.getEdge(currentVertex.label,neighborName));
-                aSternCounter++;
+                aSternCounter+=4;
                 // falls die neue Distanz kleiner ist als die bereits eingetragene im nachbarVertex und
                 // dieser noch nicht OK gesetzt ist tue folgendes...
                 if(!neighborVertex.isOK() && neighborVertex.getDistance() > distance ){
+                    aSternCounter++;
                     neighborVertex
                             .setPredecessor(currentVertex.label)
                             .setDistance(distance)
                             .setHeuristic(neighborVertex.getAttribute()+distance);
                     openList.add(neighborName);
-                    aSternCounter++;
+                    aSternCounter+=2;
                 }
             }
         }
@@ -201,14 +203,20 @@ public class OptimalWay {
         return weg;
     }
 
-    public static void colorMe(JGraphModelAdapter graphModelAdapter, Set<CustomVertex> vertexPathSet){
+    public static void colorMe(JGraphModelAdapter graphModelAdapter, Set<CustomVertex> vertexPathSet, String startVertex, String targetVertex){
         DefaultGraphCell cell;
         Map attrisVertex,attrisEdge;
         DefaultEdge edge;
         for (CustomVertex vertex : vertexPathSet) {
             cell = graphModelAdapter.getVertexCell(vertex.label);
             attrisVertex = cell.getAttributes();
-            GraphConstants.setBackground(attrisVertex, new Color(63, 232, 93));
+            if(vertex.label.equals(startVertex)){
+                GraphConstants.setBackground(attrisVertex, new Color(72, 128, 232));
+            }else if(vertex.label.equals(targetVertex)){
+                GraphConstants.setBackground(attrisVertex, new Color(232, 60, 71));
+            }else {
+                GraphConstants.setBackground(attrisVertex, new Color(63, 232, 93));
+            }
 
             Iterator<DefaultEdge> iter = graphModelAdapter.edges(cell.getChildren().get(0));
             while(iter.hasNext()){
@@ -219,8 +227,8 @@ public class OptimalWay {
                 String source = ((DefaultPort)edge.getSource()).getParent().toString();
                 if((current.equals(source) && predecessor.equals(target))||(current.equals(target) && predecessor.equals(source))){
                    attrisEdge = edge.getAttributes();
-                    GraphConstants.setLineColor(attrisEdge,new Color(220, 80, 205));
-                    GraphConstants.setLineWidth(attrisEdge,20);
+                    GraphConstants.setLineColor(attrisEdge,new Color(255, 39, 221));
+                    GraphConstants.setLineWidth(attrisEdge,5);
                 }
 
             }
