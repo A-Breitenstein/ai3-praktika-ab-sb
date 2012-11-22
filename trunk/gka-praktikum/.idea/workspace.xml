@@ -1,18 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="BookmarkManager">
-    <bookmark url="file://$PROJECT_DIR$/src/samples/JGraphAdapterDemo.java" description="graph_visualisation" line="44" />
-    <bookmark url="file://$PROJECT_DIR$/test/aufgabe2/OptimalWayTest.java" description="Test_A*" line="38" />
-    <bookmark url="file://$PROJECT_DIR$/test/aufgabe2/OptimalWayTest.java" description="Test_dijkstra" line="18" />
+    <bookmark url="file://$PROJECT_DIR$/src/samples/JGraphAdapterDemo.java" description="graph_visualisation" line="43" />
+    <bookmark url="file://$PROJECT_DIR$/test/aufgabe2/OptimalWayTest.java" description="Test_A*" line="45" />
+    <bookmark url="file://$PROJECT_DIR$/test/aufgabe2/OptimalWayTest.java" description="Test_dijkstra" line="19" />
     <bookmark url="file://$PROJECT_DIR$/src/aufgabe2/OptimalWay.java" description="dijkstra" line="23" />
-    <bookmark url="file://$PROJECT_DIR$/src/aufgabe2/OptimalWay.java" description="_dijkstra" line="58" />
-    <bookmark url="file://$PROJECT_DIR$/src/aufgabe2/OptimalWay.java" description="A*" line="115" />
+    <bookmark url="file://$PROJECT_DIR$/src/aufgabe2/OptimalWay.java" description="_dijkstra" line="62" />
+    <bookmark url="file://$PROJECT_DIR$/src/aufgabe2/OptimalWay.java" description="A*" line="120" />
   </component>
   <component name="ChangeListManager">
     <list default="true" readonly="true" id="0d3a19f6-53c9-48a0-a91a-3a8aa280cbbf" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/aufgabe2/OptimalWay.java" afterPath="$PROJECT_DIR$/src/aufgabe2/OptimalWay.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/samples/JGraphAdapterDemo.java" afterPath="$PROJECT_DIR$/src/samples/JGraphAdapterDemo.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/aufgabe2/OptimalWayTest.java" afterPath="$PROJECT_DIR$/test/aufgabe2/OptimalWayTest.java" />
     </list>
     <ignored path="gka-praktikum.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -44,7 +46,20 @@
         <option name="CONDITION" value="" />
         <option name="LOG_MESSAGE" value="" />
       </breakpoint>
-      <breakpoint url="file://$PROJECT_DIR$/src/samples/JGraphAdapterDemo.java" line="83" class="samples.JGraphAdapterDemo" package="samples">
+      <breakpoint url="file://$PROJECT_DIR$/src/samples/JGraphAdapterDemo.java" line="81" class="samples.JGraphAdapterDemo" package="samples">
+        <option name="ENABLED" value="true" />
+        <option name="LOG_ENABLED" value="false" />
+        <option name="LOG_EXPRESSION_ENABLED" value="false" />
+        <option name="SUSPEND_POLICY" value="SuspendAll" />
+        <option name="COUNT_FILTER_ENABLED" value="false" />
+        <option name="COUNT_FILTER" value="0" />
+        <option name="CONDITION_ENABLED" value="false" />
+        <option name="CLASS_FILTERS_ENABLED" value="false" />
+        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
+        <option name="CONDITION" value="" />
+        <option name="LOG_MESSAGE" value="" />
+      </breakpoint>
+      <breakpoint url="file://$PROJECT_DIR$/src/samples/JGraphAdapterDemo.java" line="56" class="samples.JGraphAdapterDemo" package="samples">
         <option name="ENABLED" value="true" />
         <option name="LOG_ENABLED" value="false" />
         <option name="LOG_EXPRESSION_ENABLED" value="false" />
@@ -144,12 +159,15 @@
       <file leaf-file-name="OptimalWay.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/aufgabe2/OptimalWay.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="115" column="0" selection-start="4439" selection-end="4439" vertical-scroll-proportion="0.33281493">
+            <state line="217" column="45" selection-start="9033" selection-end="9033" vertical-scroll-proportion="0.43087557">
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#716#738#0" expanded="true" />
-                <element signature="e#4647#4669#0" expanded="true" />
-                <element signature="e#4993#5001#0" expanded="true" />
+                <element signature="e#784#792#0" expanded="true" />
+                <element signature="e#4895#4917#0" expanded="true" />
+                <element signature="e#5241#5249#0" expanded="true" />
+                <element signature="e#8211#8225#0" expanded="true" />
+                <element signature="e#8355#8363#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -158,8 +176,10 @@
       <file leaf-file-name="JGraphAdapterDemo.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/samples/JGraphAdapterDemo.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="44" column="0" selection-start="1080" selection-end="1080" vertical-scroll-proportion="0.0">
-              <folding />
+            <state line="56" column="53" selection-start="1881" selection-end="1881" vertical-scroll-proportion="0.0">
+              <folding>
+                <element signature="e#2186#2195#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -167,7 +187,7 @@
       <file leaf-file-name="OptimalWayTest.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/test/aufgabe2/OptimalWayTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="38" column="3" selection-start="1526" selection-end="1526" vertical-scroll-proportion="0.0">
+            <state line="20" column="8" selection-start="374" selection-end="399" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -176,16 +196,7 @@
       <file leaf-file-name="graph_alex.gka" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/graph_alex.gka">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="4" column="8" selection-start="85" selection-end="93" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="AttributedGraph.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/aufgabe2/AttributedGraph.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="14" column="28" selection-start="321" selection-end="321" vertical-scroll-proportion="0.0">
+            <state line="23" column="32" selection-start="545" selection-end="545" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -194,16 +205,7 @@
       <file leaf-file-name="CustomVertex.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/aufgabe1/CustomVertex.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="99" column="22" selection-start="2633" selection-end="2633" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="TraverseGraphAlgorithms.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/aufgabe1/TraverseGraphAlgorithms.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="70" column="46" selection-start="2781" selection-end="2781" vertical-scroll-proportion="0.0">
+            <state line="75" column="23" selection-start="2016" selection-end="2024" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -249,10 +251,10 @@
         <option value="$PROJECT_DIR$/src/aufgabe1/CustomVertex.java" />
         <option value="$PROJECT_DIR$/src/aufgabe2/AttributedGraph.java" />
         <option value="$PROJECT_DIR$/src/aufgabe2/AttributedGraphImpl.java" />
-        <option value="$PROJECT_DIR$/test/aufgabe2/OptimalWayTest.java" />
         <option value="$PROJECT_DIR$/graph_alex.gka" />
-        <option value="$PROJECT_DIR$/src/samples/JGraphAdapterDemo.java" />
+        <option value="$PROJECT_DIR$/test/aufgabe2/OptimalWayTest.java" />
         <option value="$PROJECT_DIR$/src/aufgabe2/OptimalWay.java" />
+        <option value="$PROJECT_DIR$/src/samples/JGraphAdapterDemo.java" />
       </list>
     </option>
   </component>
@@ -650,7 +652,13 @@
       </option>
       <envs />
       <patterns />
+      <RunnerSettings RunnerId="Debug">
+        <option name="DEBUG_PORT" value="" />
+        <option name="TRANSPORT" value="0" />
+        <option name="LOCAL" value="true" />
+      </RunnerSettings>
       <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Debug" />
       <ConfigurationWrapper RunnerId="Run" />
       <method />
     </configuration>
@@ -665,7 +673,13 @@
       <option name="VM_PARAMETERS" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
+      <RunnerSettings RunnerId="Debug">
+        <option name="DEBUG_PORT" value="" />
+        <option name="TRANSPORT" value="0" />
+        <option name="LOCAL" value="true" />
+      </RunnerSettings>
       <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Debug" />
       <ConfigurationWrapper RunnerId="Run" />
       <method />
     </configuration>
@@ -882,7 +896,11 @@
       <created>1353587450196</created>
       <updated>1353587450196</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="gka-praktikum:&#10;bookmarks">
+      <created>1353588674133</created>
+      <updated>1353588674133</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -909,23 +927,23 @@
     <frame x="1672" y="-8" width="1696" height="1066" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Dilbert" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25591397" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32968238" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Dilbert" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25591397" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32903227" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3268817" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24981017" sideWeight="0.62794614" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.41904762" sideWeight="0.494388" order="3" side_tool="false" content_ui="tabs" x="32" y="338" width="1679" height="1057" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="FLOATING" visible="true" weight="0.41827956" sideWeight="0.494388" order="3" side_tool="false" content_ui="tabs" x="4" y="1" width="1679" height="1393" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.63809526" sideWeight="0.50187063" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32928678" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.28387097" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32473117" sideWeight="0.4935065" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32473117" sideWeight="0.9990901" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32968238" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.17657879" sideWeight="0.3623656" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32852563" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.17657879" sideWeight="0.744086" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.60967743" sideWeight="0.696419" order="2" side_tool="false" content_ui="tabs" x="4" y="0" width="1677" height="1019" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.17657879" sideWeight="0.6752688" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="FLOATING" visible="true" weight="0.60967743" sideWeight="0.696419" order="2" side_tool="false" content_ui="tabs" x="4" y="0" width="1677" height="1019" />
       <window_info id="Documentation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="FLOATING" visible="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" x="783" y="100" width="483" height="538" />
       <window_info id="IDEtalk Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="IDEtalk" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -974,7 +992,7 @@
     <option name="SHOW_VCS_ERROR_NOTIFICATIONS" value="true" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" value="gka-praktikum:&#10;letzte Schleifarbeiten" />
+    <option name="LAST_COMMIT_MESSAGE" value="gka-praktikum:&#10;bookmarks" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="false" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
@@ -1000,6 +1018,7 @@
     <MESSAGE value="gka-praktikum:&#10;dijkstra" />
     <MESSAGE value="gka-praktikum:&#10;Freelancer Graph eingefügt" />
     <MESSAGE value="gka-praktikum:&#10;letzte Schleifarbeiten" />
+    <MESSAGE value="gka-praktikum:&#10;bookmarks" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -1009,16 +1028,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/graph2.gka">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/graph3.gka">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="6" selection-start="66" selection-end="66" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/graph4.gka">
       <provider selected="true" editor-type-id="text-editor">
         <state line="2" column="10" selection-start="47" selection-end="47" vertical-scroll-proportion="0.0" />
@@ -1039,16 +1048,6 @@
         <state line="581" column="0" selection-start="21678" selection-end="21678" vertical-scroll-proportion="0.19607843" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/aufgabe1/GKAFileManager.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="166" column="0" selection-start="6189" selection-end="6189" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/graph_alex.gka">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="8" selection-start="85" selection-end="93" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/aufgabe2/AttributedGraph.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="14" column="28" selection-start="321" selection-end="321" vertical-scroll-proportion="0.0" />
@@ -1064,40 +1063,73 @@
         <state line="19" column="49" selection-start="442" selection-end="442" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/test/aufgabe1/TraverseGraphAlgorithmsTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="33" column="29" selection-start="742" selection-end="742" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/aufgabe1/CustomVertex.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="99" column="22" selection-start="2633" selection-end="2633" vertical-scroll-proportion="0.0">
+        <state line="75" column="23" selection-start="2016" selection-end="2024" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/graph_alex.gka">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="23" column="32" selection-start="545" selection-end="545" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/aufgabe1/GKAFileManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="166" column="0" selection-start="6189" selection-end="6189" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/test/aufgabe2/OptimalWayTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="38" column="3" selection-start="1526" selection-end="1526" vertical-scroll-proportion="0.0">
+        <state line="20" column="8" selection-start="374" selection-end="399" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test/aufgabe1/TraverseGraphAlgorithmsTest.java">
+    <entry file="jar://$PROJECT_DIR$/lib/jgraph-5.13.0.0-sources.jar!/org/jgraph/graph/GraphConstants.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="33" column="29" selection-start="742" selection-end="742" vertical-scroll-proportion="0.0" />
+        <state line="683" column="23" selection-start="21014" selection-end="21014" vertical-scroll-proportion="0.33333334">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/lib/jgrapht-0.8.3-sources.jar!/org/jgrapht/ext/JGraphModelAdapter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="350" column="24" selection-start="13030" selection-end="13030" vertical-scroll-proportion="0.9032815">
+          <folding />
+        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/samples/JGraphAdapterDemo.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="44" column="0" selection-start="1080" selection-end="1080" vertical-scroll-proportion="0.0">
-          <folding />
+        <state line="56" column="53" selection-start="1881" selection-end="1881" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="e#2186#2195#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/aufgabe2/OptimalWay.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="115" column="0" selection-start="4439" selection-end="4439" vertical-scroll-proportion="0.33281493">
+        <state line="217" column="45" selection-start="9033" selection-end="9033" vertical-scroll-proportion="0.43087557">
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#716#738#0" expanded="true" />
-            <element signature="e#4647#4669#0" expanded="true" />
-            <element signature="e#4993#5001#0" expanded="true" />
+            <element signature="e#784#792#0" expanded="true" />
+            <element signature="e#4895#4917#0" expanded="true" />
+            <element signature="e#5241#5249#0" expanded="true" />
+            <element signature="e#8211#8225#0" expanded="true" />
+            <element signature="e#8355#8363#0" expanded="true" />
           </folding>
         </state>
       </provider>
