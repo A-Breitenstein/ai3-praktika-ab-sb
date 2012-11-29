@@ -84,6 +84,7 @@ public class Mensa {
             getKasse().bezahlen(student);
         } catch (InterruptedException e) {
             Thread.currentThread().interrupt();
+            String s = "suds";
         }
 
     }
