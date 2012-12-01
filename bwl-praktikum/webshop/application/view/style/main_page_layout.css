@@ -1,0 +1,46 @@
+body{
+    margin: 0px;
+}
+div#MainPage{
+    height: 600px;
+}
+div#TopBar{
+    float: left;
+    width: 100%;
+    height: 15%;
+    background-color: #ffd700;
+}
+div#LeftBar{
+    float: left;
+    width: 25%;
+    height: 80%;
+    background-color: #7ffad4;
+}
+div#ContentView{
+    float: left;
+    overflow-y: auto;
+    width: 75%;
+    height: 80%;
+    background-color: #deb887;
+}
+div#Footer{
+    float: left;
+    width: 100%;
+    height: 5%;
+    background-color: yellow;
+}
+.footer_buttons{
+    float: left;
+    margin-left: 5px;
+}
+
+/*
+  buttons
+*/
+div#btn_show_basket{
+   float: left;
+}
+div#Help{}
+div#Contact{}
+div#Admin{}
+

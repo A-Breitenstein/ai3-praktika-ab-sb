@@ -13,7 +13,9 @@ class Products_Controller implements Controller
     {
         // creating MainPage and modifing header information
         $page = MainPage::create();
-        $page->getLayoutElem("header")->addHeaderElem('<script type="text/javascript">
+        $page->getLayoutElem("header")->addHeaderElem('<link rel="stylesheet" type="text/css" href="'.Registry::$settings['config']['CSS_PATH'].'products_view_layout.css">');
+        $page->getLayoutElem("header")->addHeaderElem('
+        <script type="text/javascript">
                  var edi_feld_focused = false;
                  var basket = new Basket();
                  document.onkeydown = function(e){
@@ -54,7 +56,7 @@ class Products_Controller implements Controller
 
                     }
                 };
-        </script>');
+         </script>');
         // deciding which content to build
         // this $request->get doesnt mean get, its the PHP $_GET which is wraped in Request class
         ErrorReporter::logVarExport(__CLASS__."::showPage(request) => request get export",$request->get);
@@ -62,20 +64,22 @@ class Products_Controller implements Controller
         $search_string = $request->get["search"];
         $basketItem = $request->get["itemID"];
         if(!empty($basketItem)){
-            $count = $_SESSION[mysql_real_escape_string($basketItem)];
+            if(empty($_SESSION["basket"]))
+                $_SESSION["basket"] = array();
+
+            $itemID = mysql_real_escape_string($basketItem);
+            $count = $_SESSION["basket"][$itemID];
             if(!empty($count)){
-               $_SESSION[mysql_real_escape_string($basketItem)] = $count+1;
+               $_SESSION["basket"][$itemID] = $count+1;
             }else{
-               $_SESSION[mysql_real_escape_string($basketItem)] = 1;
+               $_SESSION["basket"][$itemID] = 1;
             }
-
         }
-        var_dump($_SESSION);
-
         if(!empty($search_string)){
             // fetch sql data
+            var_dump(mysql_real_escape_string($search_string));
             $resultSet = TeileMapperImpl::make()->getListOfTeileByBezeichnung(mysql_real_escape_string($search_string));
-            $prev_search = "serach=".$search_string."&";
+            $prev_search = "search=".$search_string."&";
         }else{
             // fetch sql data
             $resultSet = TeileMapperImpl::make()->getAlleProdukte();

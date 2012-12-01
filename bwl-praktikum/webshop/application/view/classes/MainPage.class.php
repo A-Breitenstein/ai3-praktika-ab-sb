@@ -12,24 +12,24 @@ class MainPage implements Page
     public function showPage($LayoutElemMap){
 
 
-    ?>
+    ?><!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN">
     <html>
         <head>
             <?php $LayoutElemMap['header']->printHeader(); ?>
 
         </head>
-        <body style="margin: 0px;">
+        <body>
             <div id="MainPage" >
-                 <div id="TopBar" style="width: 100%;height:15%;background-color: gray;">
+                 <div id="TopBar">
                      <?php $LayoutElemMap['topbar']->show(); ?>
                  </div>
-                <div id="LeftBar" style="float:left;width: 25%;height:80%;background-color: #7fffd4;">
+                <div id="LeftBar">
                     <?php $LayoutElemMap['leftbar']->show(); ?>
                 </div>
-                <div id="ContentView" style="float:left; overflow-y:auto;width: 75%;height: 80%;background-color: #deb887;">
+                <div id="ContentView">
                     <?php $LayoutElemMap['contentview']->show(); ?>
                 </div>
-                <div id="Footer" style="float:left;width: 100%;height: 5%;background-color: yellow">
+                <div id="Footer">
                     <?php $LayoutElemMap['footer']->show(); ?>
                 </div>
 
@@ -47,6 +47,8 @@ class MainPage implements Page
             "contentview" => Default_View::create(),
             "header" => HeaderImpl::create()
         );
+
+        $this->layoutElementMap["header"]->addHeaderElem('<link rel="stylesheet" type="text/css" href="'.Registry::$settings['config']['CSS_PATH'].'main_page_layout.css">');
     }
     public static function create()
     {

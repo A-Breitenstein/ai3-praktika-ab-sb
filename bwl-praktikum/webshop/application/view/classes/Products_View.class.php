@@ -14,21 +14,20 @@ public function applyDataToView(array $dataMap) {
     }
 public function show() {
   echo('
-    <div style="margin-top: 5%;width: 100%">
-   <div style="margin-bottom: 5%;margin-left:10%;margin-right:10%width: 80%; ">
-
-            <div style="float:left; width: 50%;"><input type="text" id="search_string" onfocus="javascript:edi_feld_focused=true;"onblur="javascript:edi_feld_focused=false;" value="Suchbegriff" style="width: 100%;" ></div>
-            <div onclick="javascript:search()" style="float:left;width:15%;border: 1px solid black;"> Suchen </div>
-   </div>');
+    <div idproduct_content">
+        <div id="product_search_field">
+            <input type="text" id="search_string" onfocus="javascript:edi_feld_focused=true;" onblur="javascript:edi_feld_focused=false;" value="Suchbegriff">
+            <div id="product_search_button" onclick="javascript:search()"> Suchen </div>
+        </div>');
 
               foreach ($this->dataMap['products'] as $product){
-                echo('<div style="float:left;height: 25%;width: 80%;margin-left: 10%;margin-right: 10%;border: 1px solid black;padding-top:4px;">
-                      <div style="float: left;height:100%;width: 20%;margin:2%"> <img width=80%  height=80% src="'.$product->getBild().'" ></div>
-                      <div style="float: left;height: 25%;width: 25%;">Bezeichnung: '.$product->getBezeichnung().'</div>
-                      <div style="float: left;height: 25%;width: 25%;">Typ: '.$product->getTyp().'</div>
-                      <div style="float: left;height: 25%;width: 25%;">Teile-Nr.'.$product->getTeileNr().'</div>
-                      <div style="float: left;height: 75%;width: 65%;">Preis: '.$product->getPreis().'<br>Beschreibung:'.$product->getBeschreibung().'</div>
-                      <div style="float: left;height: 75%;width: 10%;" onclick="location.href=\'products?'.$this->dataMap['prev_search'].'itemID='.$product->getTeileNr().'\'" >  <img width=60% height=50% src="'.Registry::$settings['config']["IMG_PATH"].'empty_basket.gif"> </div>
+                echo('<div id="product_entry">
+                      <div id="product_img"> <img id="img" src="'.$product->getBild().'" ></div>
+                      <div id="product_name">Bezeichnung: '.$product->getBezeichnung().'</div>
+                      <div id="product_typ">Typ: '.$product->getTyp().'</div>
+                      <div id="product_id">Teile-Nr.'.$product->getTeileNr().'</div>
+                      <div id="product_price">Preis: '.$product->getPreis().'<br>Beschreibung:'.$product->getBeschreibung().'</div>
+                      <div id="product_add_to_basket" onclick="location.href=\'products?'.$this->dataMap['prev_search'].'itemID='.$product->getTeileNr().'\'" >  <img width=60% height=50% src="'.Registry::$settings['config']["IMG_PATH"].'empty_basket.gif"> </div>
             </div>');
               }
            echo('</div>');
