@@ -91,3 +91,34 @@ INSERT INTO `teile` (`Bezeichnung` , `Preis` , `Typ` , `Angeboten` , `Bild` , `B
 INSERT INTO `teile` (`Bezeichnung` , `Preis` , `Typ` , `Angeboten` , `Bild` , `Beschreibung` ) VALUES ('Jaguar', '23000000.00', 'Auto', true , 'application/view/images/jaguar.jpg', 'Ein sehr tolles und altes Auto' )
 INSERT INTO `teile` (`Bezeichnung` , `Preis` , `Typ` , `Angeboten` , `Bild` , `Beschreibung` ) VALUES ('Putzmittel', '9.67', 'Autoputzmittel', true , 'application/view/images/putzmittel.jpg', 'Macht das Auto super duper glitzernd.' )
 INSERT INTO `teile` (`Bezeichnung` , `Preis` , `Typ` , `Angeboten` , `Bild` , `Beschreibung` ) VALUES ('Lenkrad', '45.23', 'Autozubehoer', false , 'application/view/images/lenkrad.jpg', 'Ohne das Teil wirds schwer.' )
+
+
+
+
+INSERT INTO `teile` (`Bezeichnung` , `Preis` , `Typ` , `Angeboten` , `Bild` , `Beschreibung` ) 
+VALUES ('Autositz', '699.25', 'Autozubehoer', true , 'application/view/images/autositz.jpg', 'Ohne das Teil wirds schwer.' );
+
+
+INSERT INTO `teile` (`Bezeichnung` , `Preis` , `Typ` , `Angeboten` , `Bild` , `Beschreibung` )
+VALUES ('Kopfstütze, '55.55', 'Autozubehoer', false , 'application/view/images/kopfstuetze.jpg', 'Haelt den Kopf' );
+
+
+INSERT INTO `teile` (`Bezeichnung` , `Preis` , `Typ` , `Angeboten` , `Bild` , `Beschreibung` )
+VALUES ('Sitzschiene', '22.50', 'Autozubehoer', false , 'application/view/images/sitzschiene.jpg', 'Zum anlehnen');
+
+
+INSERT INTO `teile` (`Bezeichnung` , `Preis` , `Typ` , `Angeboten` , `Bild` , `Beschreibung` )
+VALUES ('Rueckenlehne', '90.99', 'Autozubehoer', false , 'application/view/images/rueckenlehne.jpg', 'Ohne das Teil wirds schwer.' );
+
+
+INSERT INTO `teile` (`Bezeichnung` , `Preis` , `Typ` , `Angeboten` , `Bild` , `Beschreibung` )
+VALUES ('U-Stahl, '70.50', 'Autozubehoer', false , 'application/view/images/ustahl.jpg', 'Ohne das Teil wirds schwer.' );
+
+
+INSERT INTO `teile` (`Bezeichnung` , `Preis` , `Typ` , `Angeboten` , `Bild` , `Beschreibung` )
+VALUES ('Schrauben', '10.25', 'Autozubehoer', false , 'application/view/images/schrauben.jpg', 'Ohne das Teil wirds schwer.' );
+
+
+INSERT INTO `teile` (`Bezeichnung` , `Preis` , `Typ` , `Angeboten` , `Bild` , `Beschreibung` )
+VALUES ('Motor', '699.25', 'Autozubehoer', false , 'application/view/images/motor.jpg', 'Ohne das Teil wirds schwer.' );
+
