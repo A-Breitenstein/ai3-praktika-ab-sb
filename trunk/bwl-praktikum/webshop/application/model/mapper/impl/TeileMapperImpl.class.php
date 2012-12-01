@@ -44,26 +44,26 @@ class TeileMapperImpl implements TeileMapper {
     }
 
     public function getListOfUnterteilOfTeileById($tNr) {
-        $sql = printf($this->query_getListOfUnterteilOfTeileById, $tNr);
+        $sql = sprintf($this->query_getListOfUnterteilOfTeileById, $tNr);
 
         return $this->dbm->query($sql);
     }
 
     public function getOberteilOfTeileById($tNr) {
-        $sql = printf(self::$query_getOberteilOfTeileById, $tNr);
+        $sql = ssprintf($this->query_getOberteilOfTeileById, $tNr);
 
-        return $this->dbm->query($sql);
+        return $this->dbm->fetch($sql);
     }
 
     public function getTeileById($tNr) {
-        $sql = printf(self::$query_getTeileById, $tNr);
-
-        return $this->dbm->query($sql);
+        $sql = sprintf($this->query_getTeileById, $tNr);
+        $row = $this->dbm->fetch_assoc($sql);
+        return Teile::neu($row['TNr'], $row['Bezeichnung'], $row['Preis'],$row['Typ'], $row['Verkaufstyp'], $row['Bild'],$row['Beschreibung']);
     }
     
     private function getAllTeile($bool) {
         
-        $sql = printf($this->query_getAllTeileSelected, $bool);
+        $sql = sprintf($this->query_getAllTeileSelected, $bool);
         
         return $this->createListeOfTeilWithAllCollumns($sql); 
     }
@@ -79,7 +79,7 @@ class TeileMapperImpl implements TeileMapper {
     }
 
     public function getListOfTeileByBestellungId($bestellnr) {
-        $sql = printf($this->query_getListOfTeileByBestellungId, $bestellnr);
+        $sql = sprintf($this->query_getListOfTeileByBestellungId, $bestellnr);
         
         return $this->createListeOfTeilWithAllCollumns($sql);
     }

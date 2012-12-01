@@ -12,15 +12,15 @@ class Topbar_MainPage  implements Topbar
     public function show()
     {
      echo('
-    <div id="topbar" >
         <div id="logo" style="float:left;width: 30%;height: 100%"> LOGO</div>
         <div id="buttonbar" style="float: left;margin-left: 20%;width: 50%;height: 100%">
             <div id="btn1" style="float:left;">'.$this->dataMap["btn1"].'</div>
             <div id="btn2" style="float:left;">'.$this->dataMap["btn2"].'</div>
             <div id="btn3" style="float:left;">'.$this->dataMap["btn3"].'</div>
+            <div id="btn_show_basket" onclick="location.href=\'basketoverview\'"> Warenkorb( '.count($_SESSION["basket"]).' ) </div>
         </div>
-    </div>
     ');
+
     }
 
     public static function create()

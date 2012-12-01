@@ -3,6 +3,7 @@ $__CONFIG = array();
 $__CONFIG["path"] = "webshop";
 $__CONFIG["default_controller"] = "welcome";
 $__CONFIG["IMG_PATH"] = "application/view/images/";
+$__CONFIG["CSS_PATH"] = "application/view/style/";
 /* class paths */
 $__CLASSPATHS = array();
 $__CLASSPATHS["controller_classes"]  = APP_PATH . "controller\classes\\";

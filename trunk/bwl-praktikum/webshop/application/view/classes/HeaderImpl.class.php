@@ -11,13 +11,15 @@ class HeaderImpl implements Header{
     private $headerElemsArray = array();
 
     public function __construct(){
-        array_push($this->headerElemsArray,'<meta http-equiv="content-type" content="text/html; charset=ISO-8859-1">');
+        array_push($this->headerElemsArray,
+            '<meta http-equiv="content-type" content="text/html; charset=ISO-8859-1">',
+            '<meta http-equiv="cache-control" content="no-cache">');
     }
     public function printHeader()
     {
         // TODO: Implement printHeader() method.
         foreach($this->headerElemsArray as $elem){
-            echo("$elem");
+            echo("$elem\n\t\t");
         }
     }
 

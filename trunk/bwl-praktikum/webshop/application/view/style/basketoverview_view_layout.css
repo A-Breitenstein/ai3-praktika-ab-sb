@@ -1,0 +1,55 @@
+/*
+                <div class="basket_product_id">%s</div>
+                <div class="basket_product_name">%s</div>
+                <div class="basket_product_price">%s</div>
+                <div class="basket_product_count">%s</div>
+                <div class="basket_product_wholeprice">%s</div>
+                <div class="basket_product_remove">%s</div>
+*/
+div#basketoverview{
+    padding-left: 5%;
+    padding-top: 5%;
+}
+div.basket_entry{
+    float: left;
+    width: 80%;
+    height: 10%;
+    border: 1px solid black;
+
+}
+div.basket_product_id{
+    float: left;
+    width: 15%;
+}
+div.basket_product_name{
+    float: left;
+    width: 15%;
+}
+div.basket_product_price{
+    float: left;
+    width: 15%;
+}
+div.basket_product_count{
+    float: left;
+    width: 15%;
+}
+div.basket_product_wholeprice{
+    float: left;
+    width: 15%;
+}
+div.basket_product_remove{
+    float: left;
+    width: 15%;
+    cursor: pointer;
+}
+div#remove_from_basket{
+}
+div#bestellen{
+    float: left;
+    cursor: pointer;
+    margin-left: 8%;
+}
+div#basket_whole_price{
+    float: left;
+    margin-left: 38%;
+}
