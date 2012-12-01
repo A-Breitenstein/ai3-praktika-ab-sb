@@ -100,7 +100,7 @@ VALUES ('Autositz', '699.25', 'Autozubehoer', true , 'application/view/images/au
 
 
 INSERT INTO `teile` (`Bezeichnung` , `Preis` , `Typ` , `Angeboten` , `Bild` , `Beschreibung` )
-VALUES ('Kopfstütze, '55.55', 'Autozubehoer', false , 'application/view/images/kopfstuetze.jpg', 'Haelt den Kopf' );
+VALUES ('Kopfstütze', '55.55', 'Autozubehoer', false , 'application/view/images/kopfstuetze.jpg', 'Haelt den Kopf' );
 
 
 INSERT INTO `teile` (`Bezeichnung` , `Preis` , `Typ` , `Angeboten` , `Bild` , `Beschreibung` )
@@ -112,7 +112,7 @@ VALUES ('Rueckenlehne', '90.99', 'Autozubehoer', false , 'application/view/image
 
 
 INSERT INTO `teile` (`Bezeichnung` , `Preis` , `Typ` , `Angeboten` , `Bild` , `Beschreibung` )
-VALUES ('U-Stahl, '70.50', 'Autozubehoer', false , 'application/view/images/ustahl.jpg', 'Ohne das Teil wirds schwer.' );
+VALUES ('U-Stahl', '70.50', 'Autozubehoer', false , 'application/view/images/ustahl.jpg', 'Ohne das Teil wirds schwer.' );
 
 
 INSERT INTO `teile` (`Bezeichnung` , `Preis` , `Typ` , `Angeboten` , `Bild` , `Beschreibung` )
