@@ -14,7 +14,11 @@ class AdminPanel_Controller implements Controller{
         $search_string = $request->get["search"];
         $basketItem = $request->get["itemID"];
 
-
+        ABC_Analyse::abc_analyse_test();
+        echo("-------------------------------------------<br>");
+        Stueckliste::stueckliste_test();
+        echo("-------------------------------------------<br>");
+        PrimaerbedarfsAnalyse::primaerbedarfstest();
         // fetch view and apply data to view
         $page->setContentView(AdminPanel_View::create());
         $page->getLayoutElem("contentview")->applyData(array());
