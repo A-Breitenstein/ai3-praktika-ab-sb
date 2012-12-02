@@ -14,8 +14,8 @@ import java.util.concurrent.TimeUnit;
 public class Mensa {
     private static List<Kasse> kassen;
     private static List<Student> students;
-    final private static int  numberOfKassen = 3,
-                              numberOfStudents = 10;
+    final private static int  numberOfKassen = 3;
+    public final static int numberOfStudents = 10;
     final private static long programmWarteZeit = RandomManager.longNumber(15000,127500);
     final private static TimeUnit timeUnit = TimeUnit.MILLISECONDS;
 
@@ -65,7 +65,7 @@ public class Mensa {
     }
 
     private static void __anstell_info(Student student, Kasse kasse) {
-        System.out.println(student + " stellt sich an " + kasse);
+        System.out.println(student + " stellt sich in die Warteschlange an " + kasse);
     }
 
     private static void __programm_info(long programmWarteZeit) {
@@ -86,6 +86,8 @@ public class Mensa {
                 if(kasse.getWarteSchlange() < k.getWarteSchlange())
                     k = kasse;
             }
+
+            k.schlangeSemaphore.acquire();
 
             k.anstellen();
 
