@@ -17,6 +17,7 @@ public class Kasse {
 
     private int warteSchlange;
     private Semaphore semaphore;
+    public Semaphore schlangeSemaphore = new Semaphore(Mensa.numberOfStudents,true);
 
     private Kasse(long id, int maxConncurrentRequests, int minVerkaufsZeit, int maxVerkaufsZeit) {
         this.id = id;
@@ -39,7 +40,7 @@ public class Kasse {
     public void bezahlen(Student student) throws InterruptedException {
 
         semaphore.acquire();
-
+        schlangeSemaphore.release(1);
         __bezahl_info(student);
 
         long verkaufsZeit = RandomManager.longNumber(maxVerkaufsZeit,minVerkaufsZeit);
