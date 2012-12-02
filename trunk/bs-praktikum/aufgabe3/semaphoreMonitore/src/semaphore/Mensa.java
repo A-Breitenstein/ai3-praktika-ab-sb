@@ -5,6 +5,7 @@ import services.RandomManager;
 import java.util.*;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
+import java.util.concurrent.Semaphore;
 import java.util.concurrent.TimeUnit;
 
 /**
@@ -15,8 +16,10 @@ public class Mensa {
     private static List<Student> students;
     final private static int  numberOfKassen = 3,
                               numberOfStudents = 10;
-    final private static long programmWarteZeit = RandomManager.longNumber(15000,12750);
+    final private static long programmWarteZeit = RandomManager.longNumber(15000,127500);
     final private static TimeUnit timeUnit = TimeUnit.MILLISECONDS;
+
+    public static Semaphore kasseSuchen = new Semaphore(1,true);
 
     public static void main(String[] args) {
 
@@ -38,7 +41,7 @@ public class Mensa {
 
         try {
             executorService.invokeAll((Collection)students,programmWarteZeit,timeUnit);
-        } catch (InterruptedException e) {
+        } catch (InterruptedException ignored) {
 
         }
 
@@ -48,7 +51,8 @@ public class Mensa {
 //                __thread_kill_loop();
                 Thread.sleep(40);
             } catch (InterruptedException e) {
-                e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
+                e.printStackTrace();
+                System.out.println("No interrupt possible!");
             }
         }
 
@@ -56,12 +60,12 @@ public class Mensa {
         __programm_end();
     }
 
-    private static void __thread_kill_loop(){
-        System.out.println("thread killing");
-    }
-
     private static void __programm_end() {
         System.out.println("Einkauf ist beendet");
+    }
+
+    private static void __anstell_info(Student student, Kasse kasse) {
+        System.out.println(student + " stellt sich an " + kasse);
     }
 
     private static void __programm_info(long programmWarteZeit) {
@@ -72,8 +76,26 @@ public class Mensa {
 
     //Methods - @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
     private static Kasse getKasse(){
-        Random random = new Random();
-        Kasse k = kassen.get(random.nextInt(kassen.size()));
+        Kasse k = kassen.get(0);
+
+        try {
+
+            kasseSuchen.acquire();
+
+            for (Kasse kasse : kassen) {
+                if(kasse.getWarteSchlange() < k.getWarteSchlange())
+                    k = kasse;
+            }
+
+            k.anstellen();
+
+            kasseSuchen.release();
+
+        } catch (InterruptedException e) {
+            Thread.currentThread().interrupt();
+        }
+
+
 
         return k;
     }
@@ -81,11 +103,17 @@ public class Mensa {
     public static void bezahlen(Student student){
 
         try {
-            getKasse().bezahlen(student);
+            Kasse k = getKasse();
+
+            __anstell_info(student, k);
+
+            k.bezahlen(student);
+            k.verlassen();
         } catch (InterruptedException e) {
             Thread.currentThread().interrupt();
-            String s = "suds";
         }
 
     }
+
+
 }

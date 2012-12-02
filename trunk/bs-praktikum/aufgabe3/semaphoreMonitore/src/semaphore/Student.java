@@ -26,10 +26,6 @@ public class Student implements Callable {
         this.minReturnTime = minReturnTime;
     }
 
-    public static Student create(long id, int maxEatTime, int minEatTime, int maxReturnTime, int minReturnTime) {
-        return new Student(id, maxEatTime, minEatTime, maxReturnTime, minReturnTime);
-    }
-
     public static Student create(long id) {
         return new Student(id, default_maxEatTime, default_minEatTime, default_maxReturnTime, default_minReturnTime);
     }
@@ -49,6 +45,7 @@ public class Student implements Callable {
             Thread.sleep(milliseconds);
         } catch (InterruptedException e) {
             Thread.currentThread().interrupt();
+
         }
     }
 
@@ -60,30 +57,29 @@ public class Student implements Callable {
         System.out.println(this + " wartet " + df.format(millisecondsToSeconds(warteZeit)) +" Sekunden auf seinen nächsten Einkauf");
     }
 
-    //Getter - @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-
-    public long getId() {
-        return id;
-    }
-
     //Overrides - @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 
     @Override
     public Object call() throws Exception {
         long essZeit, warteZeit;
-        while(!Thread.currentThread().isInterrupted()){
+        Thread curThread = Thread.currentThread();
+        while(!curThread.isInterrupted()){
             essZeit = RandomManager.longNumber(maxEatTime,minEatTime);
             warteZeit = RandomManager.longNumber(maxReturnTime,minReturnTime);
 
             Mensa.bezahlen(this);
 
             //Essen fassen
-            __ess_info(essZeit);
-            essen(essZeit);
+            if(!curThread.isInterrupted()) {
+                __ess_info(essZeit);
+                essen(essZeit);
+            }
 
             //warten darauf bis der Student wieder an die Kasse kann
-            __warte_info(warteZeit);
-            warten(warteZeit);
+            if(!curThread.isInterrupted()) {
+                __warte_info(warteZeit);
+                warten(warteZeit);
+            }
 
         }
 

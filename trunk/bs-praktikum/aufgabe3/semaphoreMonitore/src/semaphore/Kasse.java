@@ -15,6 +15,7 @@ public class Kasse {
     private long id;
     private int minVerkaufsZeit, maxVerkaufsZeit;
 
+    private int warteSchlange;
     private Semaphore semaphore;
 
     private Kasse(long id, int maxConncurrentRequests, int minVerkaufsZeit, int maxVerkaufsZeit) {
@@ -22,20 +23,8 @@ public class Kasse {
         this.semaphore = new Semaphore(maxConncurrentRequests,true);
         this.minVerkaufsZeit = minVerkaufsZeit;
         this.maxVerkaufsZeit = maxVerkaufsZeit;
+        this.warteSchlange = 0;
 
-    }
-
-    public static Kasse create(long id, int maxConncurrentRequests) {
-        return new Kasse(id, maxConncurrentRequests, default_minVerkaufsZeit, default_maxVerkaufsZeit);
-    }
-
-    public static Kasse create(long id, int maxConncurrentRequests, int minVerkaufsZeit, int maxVerkaufsZeit) {
-        return new Kasse(id, maxConncurrentRequests, minVerkaufsZeit, maxVerkaufsZeit);
-    }
-
-    public static Kasse create(long id, int minVerkaufsZeit, int maxVerkaufsZeit) {
-        //Wenn nur eine Verkäuferin an der Kasse ist
-        return new Kasse(id, default_maxConncurrentRequests, minVerkaufsZeit, maxVerkaufsZeit);
     }
 
     public static Kasse create(long id) {
@@ -56,9 +45,9 @@ public class Kasse {
         long verkaufsZeit = RandomManager.longNumber(maxVerkaufsZeit,minVerkaufsZeit);
         sleep(verkaufsZeit);
 
+        __verlaesst_info(student);
         semaphore.release();
 
-        __verlaesst_info(student);
     }
 
     private void sleep(long milliseconds){
@@ -76,6 +65,18 @@ public class Kasse {
 
     private void __verlaesst_info(Student student){
         System.out.println(student + " verlaesst " + this);
+    }
+
+    public void anstellen(){
+        this.warteSchlange++;
+    }
+
+    public void verlassen(){
+        this.warteSchlange--;
+    }
+
+    public int getWarteSchlange() {
+        return warteSchlange;
     }
 
     //Overrides - @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
