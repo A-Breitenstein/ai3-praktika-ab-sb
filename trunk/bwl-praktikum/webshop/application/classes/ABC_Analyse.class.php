@@ -70,10 +70,10 @@ class ABC_Analyse{
         );
 
         $result = ABC_Analyse::analyse($listOfProducts);
-
-        foreach($result as $abc_adt){
-            echo("Name: ".$abc_adt->productName() ." :: Kategorie: ".$abc_adt->categorie()." :: Preis: ".number_format($abc_adt->wholePrice(),2,',','.')."<br>");
-        }
+         return $result;
+//        foreach($result as $abc_adt){
+//            echo("Name: ".$abc_adt->productName() ." :: Kategorie: ".$abc_adt->categorie()." :: Preis: ".number_format($abc_adt->wholePrice(),2,',','.')."<br>");
+//        }
     }
 
 }
