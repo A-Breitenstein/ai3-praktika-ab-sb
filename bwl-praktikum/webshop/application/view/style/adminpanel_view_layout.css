@@ -1,0 +1,40 @@
+/*
+        <div id="adminpanel">
+              <div id="stueckliste"></div>
+              <div id="abc_analyse"></div>
+              <div id="bedarfs_analyse"></div>
+        </div>
+*/
+div#adminpanel{
+    float: left;
+    width: 100%;
+}
+div#stueckliste{
+
+    float: left;
+    margin-top: 4%;
+    margin-left: 15%;
+    margin-right: 15%;
+}
+div#abc_analyse{
+    float: left;
+    margin-top: 4%;
+    margin-left: 15%;
+    margin-right: 15%;
+}
+div#bedarfs_analyse{
+    float: left;
+    margin-top: 4%;
+    margin-left: 15%;
+    margin-right: 15%;
+}
+div.abc_col{
+    float: left;
+    width: 15%;
+    margin-left: 10%;
+}
+div.abc_row{
+    border: 1px solid black;
+    float: left;
+    width: 100%;
+}

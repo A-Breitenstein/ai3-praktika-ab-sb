@@ -1,5 +1,15 @@
 <?php
 class Stueckliste{
+    public static $listeVonTeilen;
+    public static $listeVonStrukturen;
+
+    public static function getProdukt($produktname){
+        foreach(self::$listeVonTeilen as $teil){
+            if($teil->name() == $produktname)
+                return $teil;
+        }
+    }
+
     public static function createStruktur($oberteil,$unterteil,$menge){
        return new Struktur_impl($oberteil,$unterteil,$menge);
     }
@@ -31,19 +41,19 @@ class Stueckliste{
 
     }
    public static function printTeil($teil){
-       self::_runDown($teil,0);
+       echo("<div style='width: 100%;'>");
+       echo("<div style='float:left;width:100%;border: 1px solid black;'><div style='float:left;width:15%;margin-left: 3%;'> Name </div><div style='float:right;margin-right:3%;'>Menge</div></div>\n");
+
+       self::_runDown($teil,0,1);
+       echo("</div>");
    }
-    private static function _runDown($unterteil,$depth){
-        echo(self::generateSpaces($depth).$unterteil->name()."<br>");
+    private static function _runDown($unterteil,$depth,$menge){
+        echo("<div onmouseout='javascript:unhighlight_row(this);' onmouseover='javascript:highlight_row(this);' style='float:left;width:100%;border: 1px solid black;'><div onclick=\"location.href='products?search=".$unterteil->name()."'\" style='float:left;cursor:pointer;margin-left:".(30*$depth)."px;'>".$unterteil->name()."</div><div style='float:right;margin-right:3%;'>".$menge."</div></div>\n");
 
         if($unterteil->getIstOberteilInStruktur() != null){
-//            foreach($unterteil->getIstOberteilInStruktur() as $struktur){
-//                if($struktur->oberteil()->id() == $unterteil->id())
-//
-//            }
             foreach($unterteil->getIstOberteilInStruktur() as $struktur){
                 if($struktur->oberteil()->id() == $unterteil->id())
-                    self::_runDown($struktur->unterteil(),$depth+1);
+                    self::_runDown($struktur->unterteil(),$depth+1,$struktur->menge());
             }
         }
     }
@@ -52,7 +62,7 @@ class Stueckliste{
     }
     private static function generateSpaces($count){
         $result = "";
-        for($i = 0;$i < $count; $i++){
+        for($i = 0;$i < $count*3; $i++){
             $result=$result."-";
         }
         return $result;
@@ -101,9 +111,11 @@ class Stueckliste{
         );
 
         Stueckliste::bestimmeOberUndUnterteile($listeVonTeilen,$listeVonStrukturen);
-        echo("<br>");
-         self::printTeil($p1);
-         self::printTeil($p2);
+        self::$listeVonStrukturen = $listeVonStrukturen;
+        self::$listeVonTeilen = $listeVonTeilen;
+//        echo("<br>");
+//         self::printTeil($p1);
+//         self::printTeil($p2);
 //        var_dump($p1->getIstOberteilInStruktur());
     }
 
