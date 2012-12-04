@@ -4,30 +4,29 @@ import services.RandomManager;
 
 import java.util.ArrayDeque;
 import java.util.Queue;
+import java.util.Random;
 import java.util.concurrent.Semaphore;
 
 /**
  *  BS-Praktikum
  */
 public class Kasse implements Runnable{
-    private static int default_maxVerkaufsZeit = 15000,
-                       default_minVerkaufsZeit = 5000,
+    private static int default_maxVerkaufsZeit = 150000,
+                       default_minVerkaufsZeit = 50000,
                        default_maxConncurrentRequests = 1;
 
     private long id;
     private int minVerkaufsZeit, maxVerkaufsZeit;
-    private Queue schlange = new ArrayDeque();
 
-    private int warteSchlange;
-    private Semaphore semaphore;
-    public Semaphore schlangeSemaphore = new Semaphore(Mensa.numberOfStudents,true);
+    private Queue<Student> studentQueue = new ArrayDeque<Student>();
+    public Semaphore S_ANSTELLEN = new Semaphore(0,true),
+                     S_BEZAHLEN = new Semaphore(1,true),
+                     S_VERLASSEN = new Semaphore(Mensa.numberOfStudents,true);
 
     private Kasse(long id, int maxConncurrentRequests, int minVerkaufsZeit, int maxVerkaufsZeit) {
         this.id = id;
-        this.semaphore = new Semaphore(maxConncurrentRequests,true);
         this.minVerkaufsZeit = minVerkaufsZeit;
         this.maxVerkaufsZeit = maxVerkaufsZeit;
-        this.warteSchlange = 0;
 
     }
 
@@ -39,20 +38,6 @@ public class Kasse implements Runnable{
 
 
     //Methods -@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-
-    public void bezahlen(Student student) throws InterruptedException {
-
-        semaphore.acquire();
-//        schlangeSemaphore.release(1);
-        __bezahl_info(student);
-
-        long verkaufsZeit = RandomManager.longNumber(maxVerkaufsZeit,minVerkaufsZeit);
-        sleep(verkaufsZeit);
-
-        __verlaesst_info(student);
-        semaphore.release();
-
-    }
 
     private void sleep(long milliseconds){
         try {
@@ -71,21 +56,34 @@ public class Kasse implements Runnable{
         System.out.println(student + " verlaesst " + this);
     }
 
+    private static void __anstell_info(Student student, Kasse kasse) {
+        System.out.println(student + " stellt sich in die Warteschlange an " + kasse);
+    }
+
     public void anstellen(Student student){
-        schlange.add(student);
-        this.warteSchlange++;
+        __anstell_info(student, this);
+        studentQueue.add(student);
+    }
+
+    public Student getStudentInLine(){
+        return studentQueue.peek();
     }
 
     public void verlassen(){
-        this.warteSchlange--;
+        studentQueue.remove();
     }
 
-    public int getWarteSchlange() {
-        return warteSchlange;
+    public int getLengthOfWarteSchlange(){
+        return studentQueue.size();
     }
+
+    private void bezahlen() {
+        long verkaufsZeit = RandomManager.longNumber(maxVerkaufsZeit, minVerkaufsZeit);
+        sleep(verkaufsZeit);
+    }
+
 
     //Overrides - @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-
 
     @Override
     public String toString() {
@@ -95,6 +93,32 @@ public class Kasse implements Runnable{
     @Override
     public void run() {
 
+        Thread kThread = Thread.currentThread();
+
+        while(!kThread.isInterrupted()){
+
+            try {
+                S_ANSTELLEN.acquire();
+
+                    S_BEZAHLEN.acquire();
+
+                    Student student = getStudentInLine();
+
+                    __bezahl_info(student);
+                    bezahlen();
+
+                    __verlaesst_info(student);
+                    verlassen();
+
+                S_BEZAHLEN.release();
+
+                S_VERLASSEN.release();
+
+            } catch (InterruptedException e) {
+                kThread.interrupt();
+            }
+
+        }
 
     }
 }
