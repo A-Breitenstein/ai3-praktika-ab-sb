@@ -2,18 +2,21 @@ package semaphore;
 
 import services.RandomManager;
 
+import java.util.ArrayDeque;
+import java.util.Queue;
 import java.util.concurrent.Semaphore;
 
 /**
  *  BS-Praktikum
  */
-public class Kasse {
+public class Kasse implements Runnable{
     private static int default_maxVerkaufsZeit = 15000,
                        default_minVerkaufsZeit = 5000,
                        default_maxConncurrentRequests = 1;
 
     private long id;
     private int minVerkaufsZeit, maxVerkaufsZeit;
+    private Queue schlange = new ArrayDeque();
 
     private int warteSchlange;
     private Semaphore semaphore;
@@ -40,7 +43,7 @@ public class Kasse {
     public void bezahlen(Student student) throws InterruptedException {
 
         semaphore.acquire();
-        schlangeSemaphore.release(1);
+//        schlangeSemaphore.release(1);
         __bezahl_info(student);
 
         long verkaufsZeit = RandomManager.longNumber(maxVerkaufsZeit,minVerkaufsZeit);
@@ -68,7 +71,8 @@ public class Kasse {
         System.out.println(student + " verlaesst " + this);
     }
 
-    public void anstellen(){
+    public void anstellen(Student student){
+        schlange.add(student);
         this.warteSchlange++;
     }
 
@@ -86,5 +90,11 @@ public class Kasse {
     @Override
     public String toString() {
         return "Kasse: " + id;
+    }
+
+    @Override
+    public void run() {
+
+
     }
 }
