@@ -8,7 +8,7 @@ import java.util.concurrent.Callable;
 /**
  * BS-Praktikum
  */
-public class Student implements Callable {
+public class Student implements Runnable {
     private static int default_maxEatTime = 25000,
                        default_minEatTime = 15000,
                        default_maxReturnTime = 15000,
@@ -60,7 +60,7 @@ public class Student implements Callable {
     //Overrides - @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 
     @Override
-    public Object call() throws Exception {
+    public void run(){
         long essZeit, warteZeit;
         Thread curThread = Thread.currentThread();
         while(!curThread.isInterrupted()){
@@ -83,7 +83,6 @@ public class Student implements Callable {
 
         }
 
-        return null;
     }
 
     @Override

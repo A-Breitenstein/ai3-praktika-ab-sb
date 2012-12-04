@@ -38,7 +38,6 @@ public class Mensa {
 
         ExecutorService executorService = Executors.newCachedThreadPool();
 
-
         try {
             executorService.invokeAll((Collection)students,programmWarteZeit,timeUnit);
         } catch (InterruptedException ignored) {
@@ -83,15 +82,18 @@ public class Mensa {
             kasseSuchen.acquire();
 
             for (Kasse kasse : kassen) {
+//                System.out.println(kasse + " warteschlangenlänge :" + kasse.getWarteSchlange());
                 if(kasse.getWarteSchlange() < k.getWarteSchlange())
                     k = kasse;
+
+
             }
 
-            k.schlangeSemaphore.acquire();
+//            k.schlangeSemaphore.acquire();
 
-            k.anstellen();
 
-            kasseSuchen.release();
+
+
 
         } catch (InterruptedException e) {
             Thread.currentThread().interrupt();
@@ -104,18 +106,47 @@ public class Mensa {
 
     public static void bezahlen(Student student){
 
-        try {
+//        try {
             Kasse k = getKasse();
-
+            k.anstellen(student);
+            kasseSuchen.release();
             __anstell_info(student, k);
 
-            k.bezahlen(student);
+//            k.bezahlen();
             k.verlassen();
-        } catch (InterruptedException e) {
+//        } catch (InterruptedException e) {
             Thread.currentThread().interrupt();
-        }
+//        }
 
     }
 
 
 }
+
+/*
+MENSA:
+
+Mensa.P(kasseSuchen)
+k = getKasse();
+
+k.add(student);
+
+k.V(bezahlen)
+
+Mensa.V(kasseSuchen)
+1,2
+<-------------------------------
+2,1
+k.P(bezahlenFertig)
+
+KASSE:
+
+k.P(bezahlen)
+
+s = k.getStudent
+k.bezahlen(s)
+
+k.V(bezahlenFertig)
+-------------------------------------------------------------------------------------------------------
+http://de.wikipedia.org/wiki/Erzeuger-Verbraucher-Problem
+ */
