@@ -13,24 +13,20 @@ import static monitore.Dinge.*;
 public class Agent implements Runnable {
     String name;
 
-    List<Dinge> dinges = new ArrayList<Dinge>(Arrays.asList(TOBACCO,MATCHES,PAPER));
+    List<Dinge> dinges = new ArrayList<Dinge>(Arrays.asList(TOBACCO, MATCHES, PAPER));
 
     public Agent(String name) {
         this.name = name;
     }
 
     //Methods - @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-    public void legeDingeAufTisch(List<Dinge> topf){
+    public void legeDingeAufTisch(List<Dinge> topf) throws InterruptedException {
         synchronized (topf){
             Collections.shuffle(dinges);
 
             topf.addAll(dinges.subList(0,2));
             System.out.println(name+ ": der Agent hat neue Zutaten "+topf+" auf dem Tisch plaziert");
-            try {
-               topf.wait();
-            } catch (InterruptedException e) {
-                e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
-            }
+            topf.wait();
 
         }
     }
@@ -38,7 +34,12 @@ public class Agent implements Runnable {
     @Override
     public void run() {
         while(true){
-            legeDingeAufTisch(Holztisch.topf);
+            try {
+                legeDingeAufTisch(Holztisch.topf);
+            } catch (InterruptedException e) {
+                Thread.currentThread().interrupt();
+                break;
+            }
         }
 
     }

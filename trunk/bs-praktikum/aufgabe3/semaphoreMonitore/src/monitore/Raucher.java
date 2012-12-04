@@ -37,7 +37,8 @@ public class Raucher implements Runnable {
                     try {
                         topf.wait();
                     } catch (InterruptedException e) {
-                        e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
+//                        e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
+                        Thread.currentThread().interrupt();
                     }
                 }
             }
@@ -57,7 +58,8 @@ public class Raucher implements Runnable {
             System.out.println(name +": is aus");
             Thread.sleep(1000);
         } catch (InterruptedException e) {
-            e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
+//            e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
+            Thread.currentThread().interrupt();
         }
     }
 
