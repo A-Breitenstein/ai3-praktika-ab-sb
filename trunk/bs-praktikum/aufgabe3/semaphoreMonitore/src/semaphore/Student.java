@@ -67,7 +67,8 @@ public class Student implements Runnable {
             essZeit = RandomManager.longNumber(maxEatTime,minEatTime);
             warteZeit = RandomManager.longNumber(maxReturnTime,minReturnTime);
 
-            Mensa.bezahlen(this);
+            Mensa.anKasseAnstellen(this);
+
 
             //Essen fassen
             if(!curThread.isInterrupted()) {

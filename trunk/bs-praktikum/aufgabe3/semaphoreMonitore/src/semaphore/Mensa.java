@@ -12,48 +12,56 @@ import java.util.concurrent.TimeUnit;
  * BS-Praktikum
  */
 public class Mensa {
-    private static List<Kasse> kassen;
-    private static List<Student> students;
+    private static List<Kasse> kassen = new ArrayList<Kasse>();
+    private static List<Student> students = new ArrayList<Student>();
+    private static List<Thread> threads = new ArrayList<Thread>();
     final private static int  numberOfKassen = 3;
-    public final static int numberOfStudents = 10;
+    public final static int numberOfStudents = 100;
     final private static long programmWarteZeit = RandomManager.longNumber(15000,127500);
     final private static TimeUnit timeUnit = TimeUnit.MILLISECONDS;
 
-    public static Semaphore kasseSuchen = new Semaphore(1,true);
+    public static Semaphore S_KASSESUCHEN = new Semaphore(1,true);
 
     public static void main(String[] args) {
 
         __programm_info(programmWarteZeit);
 
-        kassen = new ArrayList<Kasse>();
-        students = new ArrayList<Student>();
-
         for (int i = 0; i < numberOfKassen; i++) {
-            kassen.add(Kasse.create(i));
+            Kasse kasse = Kasse.create(i);
+            kassen.add(kasse);
+            threads.add(new Thread(kasse));
         }
 
         for (int i = 0; i < numberOfStudents; i++) {
-            students.add(Student.create(i));
+            Student student = Student.create(i);
+            students.add(student);
+            threads.add(new Thread(student));
         }
+
 
         ExecutorService executorService = Executors.newCachedThreadPool();
 
-        try {
-            executorService.invokeAll((Collection)students,programmWarteZeit,timeUnit);
-        } catch (InterruptedException ignored) {
+        for (Thread thread : threads) {
+            executorService.submit(thread);
+        }
 
+        try {
+            Thread.sleep(programmWarteZeit);
+        } catch (InterruptedException e) {
+            e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
         }
 
         executorService.shutdownNow();
-        while(!executorService.isTerminated()){
-            try {
-//                __thread_kill_loop();
-                Thread.sleep(40);
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-                System.out.println("No interrupt possible!");
-            }
-        }
+
+//        while(!executorService.isTerminated()){
+//            try {
+////                __thread_kill_loop();
+//                Thread.sleep(40);
+//            } catch (InterruptedException e) {
+//                e.printStackTrace();
+//                System.out.println("No interrupt possible!");
+//            }
+//        }
 
 
         __programm_end();
@@ -63,9 +71,7 @@ public class Mensa {
         System.out.println("Einkauf ist beendet");
     }
 
-    private static void __anstell_info(Student student, Kasse kasse) {
-        System.out.println(student + " stellt sich in die Warteschlange an " + kasse);
-    }
+
 
     private static void __programm_info(long programmWarteZeit) {
         long programmWarteZeitInSec = programmWarteZeit/1000,
@@ -77,49 +83,37 @@ public class Mensa {
     private static Kasse getKasse(){
         Kasse k = kassen.get(0);
 
-        try {
-
-            kasseSuchen.acquire();
-
             for (Kasse kasse : kassen) {
-//                System.out.println(kasse + " warteschlangenlänge :" + kasse.getWarteSchlange());
-                if(kasse.getWarteSchlange() < k.getWarteSchlange())
+//                System.out.println(kasse + " warteschlangenlänge :" + kasse.getWarteSchlangeCounter());
+                if(kasse.getLengthOfWarteSchlange() < k.getLengthOfWarteSchlange())
                     k = kasse;
-
 
             }
 
-//            k.schlangeSemaphore.acquire();
+        return k;
+    }
+
+    public static void anKasseAnstellen(Student student){
 
 
+        try {
+            S_KASSESUCHEN.acquire();
 
+            Kasse kasse = getKasse();
+
+            kasse.anstellen(student);
+
+            kasse.S_ANSTELLEN.release(1);
+
+            kasse.S_VERLASSEN.acquire();
+
+            S_KASSESUCHEN.release();
 
 
         } catch (InterruptedException e) {
             Thread.currentThread().interrupt();
         }
-
-
-
-        return k;
     }
-
-    public static void bezahlen(Student student){
-
-//        try {
-            Kasse k = getKasse();
-            k.anstellen(student);
-            kasseSuchen.release();
-            __anstell_info(student, k);
-
-//            k.bezahlen();
-            k.verlassen();
-//        } catch (InterruptedException e) {
-            Thread.currentThread().interrupt();
-//        }
-
-    }
-
 
 }
 
@@ -149,4 +143,33 @@ k.bezahlen(s)
 k.V(bezahlenFertig)
 -------------------------------------------------------------------------------------------------------
 http://de.wikipedia.org/wiki/Erzeuger-Verbraucher-Problem
+
+MENSA:
+Semaphore: S_KASSESUCHEN(1)
+
+P.S_KASSESUCHEN()
+
+Kasse kasse = getKasseWithSmallestQueue();
+
+kasse.anstellen(student); // und in die queu
+
+kasse.V(S_ANSTELLEN(1))
+
+V.S_KASSESUCHEN()
+
+KASSE:
+Semaphore: S_ANSTELLEN(N), S_BEZAHLEN(1)
+
+P.S_ANSTELLEN(1)
+
+P.S_BEZAHLEN()
+
+student = getStudentAusQueu();
+
+bezahlen(student);
+
+V.S_BEZAHLEN()
+
+
+
  */
