@@ -31,6 +31,7 @@ class BasketOverview_View implements View{
                     "Gesamt Preis",
                     0,"Menge",
                     ""));
+                if(isset($this->dataMap['products']))
                 foreach ($this->dataMap['products'] as $product){
                     $itemID = $product->getTeileNr();
                     $price = $product->getPreis();
