@@ -38,3 +38,13 @@ div.abc_row{
     float: left;
     width: 100%;
 }
+div#operationen{
+    float: left;
+    margin-top: 4%;
+    margin-left: 15%;
+    margin-right: 15%;
+}
+div#struktur{
+    float: left;
+    margin-top: 4%;
+}

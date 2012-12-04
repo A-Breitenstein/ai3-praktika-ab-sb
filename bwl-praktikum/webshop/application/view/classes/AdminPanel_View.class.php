@@ -41,13 +41,40 @@ class AdminPanel_View implements View{
 
                   <div>
                       <div> Verbrauch in den Letzten 3 Monaten sowie </div>
-                      <div>Monat n-3<input value="50"></div>
-                      <div>Monat n-2<input value="50"></div>
-                      <div>Monat n-1<input value="50"></div>
-                      <div>Monat n <input value="90"></div>
+                      <div>Monat n-3<input id="monat3" value="50"></div>
+                      <div>Monat n-2<input id="monat2" value="50"></div>
+                      <div>Monat n-1<input id="monat1" value="50"></div>
+                      <div>Monat n <input id="monat0" value="90"></div>
+                      <div>Monat n <input id="glaettungsfaktor" value="0.20"></div>
+                      <button onclick="javascript:berechnen()">Berechnen</button>
+                      <div>Ergebnis <input id="ergebnis"></div>
 
                   </div>
               </div>
+              <div id="operationen">
+                <div id ="einfuegen">
+                    <div id="teil">
+                        Teil erstellen
+                        <input type="text" id="teil_bezeichnung" value="Produkt1">
+                        <input type="text" id="teil_preis" value="Preis">
+                        <input type="text" id="teil_typ" value="Kategorie">
+                        <input type="text" id="teil_angeboten" value="wird es angeboten?">
+                        <input type="text" id="teil_bild" value="bildurl">
+                        <input type="text" id="teil_beschreibung" value="beschreibung" size="94">
+                        <button onclick="javascript:teil_hinzufuegen()">Eintragen</button>
+                    </div>
+                    <div id="struktur">
+                        Struktur erstellen
+                        <input type="text" id="struktur_otnr" value="OTNR">
+                        <input type="text" id="struktur_utnr" value="UTNR">
+                        <input type="text" id="struktur_menge" value="Menge">
+                        <button onclick="javascript:struktur_hinzufuegen()">Eintragen</button>
+                    </div>
+                    <div id="kunde">
+
+                    </div>
+                </div>
+               </div>
         </div>
 
     <?php

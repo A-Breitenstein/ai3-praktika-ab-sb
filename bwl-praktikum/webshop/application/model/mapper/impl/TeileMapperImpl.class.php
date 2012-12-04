@@ -21,8 +21,9 @@ class TeileMapperImpl implements TeileMapper {
     private $query_getListOfTeileByBestellungId = "SELECT b.bestellnr, t.tnr,t.bezeichnung,t.preis,t.typ,t.verkaufstyp,t.bild,t.beschreibung
                                                    FROM bestellung b, teile t, bestellung_teile bt 
                                                    WHERE b.bestellnr = bt.bestellnr and t.tnr = bt.tnr and b.bestellnr = '%s'";
+    private $query_teilErstellen = "INSERT INTO `teile` (`Bezeichnung` , `Preis` , `Typ` , `Angeboten` , `Bild` , `Beschreibung` )
+                                    VALUES ('%s', '%s', '%s', %s , '%s', '%s' )";
     private $dbm;
-
     public function __construct() {
         $this->dbm = DBManager::create();
         $this->dbm->connect();
@@ -36,7 +37,11 @@ class TeileMapperImpl implements TeileMapper {
         $name = __CLASS__;
         return new $name();
     }
-    
+    public function teilErstellen($bezeichnung,$preis,$typ,$angeboten,$bild,$beschreibung){
+        $sql = sprintf($this->query_teilErstellen,$bezeichnung,$preis,$typ,$angeboten,$bild,$beschreibung);
+        $this->dbm->query($sql);
+    }
+
     public function getListOfTeileByBezeichnung($bezeichnung) {
 
        $sql = sprintf($this->query_getListOfTeileByBezeichnung,"%".$bezeichnung."%");
@@ -45,12 +50,11 @@ class TeileMapperImpl implements TeileMapper {
 
     public function getListOfUnterteilOfTeileById($tNr) {
         $sql = sprintf($this->query_getListOfUnterteilOfTeileById, $tNr);
-
-        return $this->dbm->query($sql);
+        return $this->createListeOfTeilWithAllCollumns($sql);
     }
 
     public function getOberteilOfTeileById($tNr) {
-        $sql = ssprintf($this->query_getOberteilOfTeileById, $tNr);
+        $sql = sprintf($this->query_getOberteilOfTeileById, $tNr);
 
         return $this->dbm->fetch($sql);
     }

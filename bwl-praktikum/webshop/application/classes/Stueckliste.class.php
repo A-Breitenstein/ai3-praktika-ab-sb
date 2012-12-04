@@ -9,12 +9,14 @@ class Stueckliste{
                 return $teil;
         }
     }
-
     public static function createStruktur($oberteil,$unterteil,$menge){
-       return new Struktur_impl($oberteil,$unterteil,$menge);
+        return new Struktur_impl($oberteil,$unterteil,$menge);
     }
     public static function createTeil($id,$name,$preis){
         return new Teil_impl($id,$name,$preis);
+    }
+    public static function bestimmeAlleUnterteileVon($teil){
+
     }
 
     public static function ermittelBenoetigteTeileVonTeilX($teilX,$listeVonStrukturen){
@@ -117,6 +119,16 @@ class Stueckliste{
 //         self::printTeil($p1);
 //         self::printTeil($p2);
 //        var_dump($p1->getIstOberteilInStruktur());
+    }
+
+
+    public static function convertTeileInStuecklistenTeile($listeVonTeile){
+        if(!is_array($listeVonTeile)) die("Stueckliste::convertTeileInStueklistenTeile:: illegal argument exception");
+        $resultSet = array();
+        foreach($listeVonTeile as $teil){
+            array_push($resultSet,self::createTeil($teil->getTeileNr(),$teil->getBezeichnung(),$teil->getPreis()));
+        }
+        return $resultSet;
     }
 
 }
