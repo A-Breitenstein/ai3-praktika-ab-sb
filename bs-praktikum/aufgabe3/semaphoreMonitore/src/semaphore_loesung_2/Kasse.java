@@ -1,5 +1,7 @@
 package semaphore_loesung_2;
 
+import java.util.LinkedList;
+import java.util.Queue;
 import java.util.concurrent.Semaphore;
 
 /**
@@ -12,6 +14,7 @@ public class Kasse {
     private final String name;
     private Semaphore besetzt_mutex = new Semaphore(1,true);
     private int warteschlangenLaenge = 0;
+    private Queue<Student> queue = new LinkedList<Student>();
     public Kasse(String name) {
         this.name = name;
     }
@@ -19,13 +22,17 @@ public class Kasse {
     public int getWarteschlangenlaenge(){
         return warteschlangenLaenge;
     }
-    public void warteschlangenlaengeErhoehen(){
+    public void inWarteschlangeEinreihen(Student student){
+        queue.add(student);
         warteschlangenLaenge++;
+
     }
     public void warteschlangenlaengeErniedrigen(){
         warteschlangenLaenge--;
     }
-
+    public Student werIstDerNaechste(){
+            return queue.element();
+    }
     public void besetzten(){
         try {
             besetzt_mutex.acquire();
@@ -34,6 +41,7 @@ public class Kasse {
         }
     }
     public void freigeben(){
+        queue.poll();
         warteschlangenlaengeErniedrigen();
         besetzt_mutex.release();
     }
