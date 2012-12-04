@@ -19,7 +19,7 @@ public class Mensa {
    public static List<Kasse> kassen = new ArrayList<Kasse>();
    public static ExecutorService threadPool = Executors.newCachedThreadPool();
    public static int studentCount = 10;
-   public static Semaphore studentenDieSuchen = new Semaphore(studentCount-2,true);
+   public static Semaphore listenZugriffs_mutex = new Semaphore(1,true);
    public static void init(){
 
        for (int i = 0; i < 3; i++) {
@@ -32,9 +32,13 @@ public class Mensa {
        }
    }
     public static void studentSuchtEineKasse(Student student){
-//        studentenDieSuchen.release();
-
+        try {
+            listenZugriffs_mutex.acquire();
+        } catch (InterruptedException e) {
+            e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
+        }
         studentenDieEineKasseSuchen.add(student);
+        listenZugriffs_mutex.release();
     }
     public static Kasse kuerzesteWarteschlangeBestimmen(){
         Kasse result = kassen.get(0);
@@ -46,11 +50,6 @@ public class Mensa {
         return result;
     }
     public static Student getSuchendenStudenten(){
-//        try {
-//            studentenDieSuchen.acquire();
-//        } catch (InterruptedException e) {
-//            e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
-//        }
         Collections.shuffle(studentenDieEineKasseSuchen);
         Student result =   studentenDieEineKasseSuchen.get(0);
         studentenDieEineKasseSuchen = studentenDieEineKasseSuchen.subList(1,studentenDieEineKasseSuchen.size());
@@ -59,9 +58,17 @@ public class Mensa {
     public static void main(String[] args) {
         init();
 
-        while (!studentenDieEineKasseSuchen.isEmpty()){
-            threadPool.submit(getSuchendenStudenten().kasseZuweisen(kuerzesteWarteschlangeBestimmen()));
+        while (true){
+            try {
+                listenZugriffs_mutex.acquire();
+            } catch (InterruptedException e) {
+                e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
+            }
+            if(!studentenDieEineKasseSuchen.isEmpty())
+                threadPool.submit(getSuchendenStudenten().kasseZuweisen(kuerzesteWarteschlangeBestimmen()));
+            listenZugriffs_mutex.release();
+
         }
-        System.out.println("--ende--");
+//        System.out.println("--ende--");
     }
 }
