@@ -71,6 +71,21 @@ class AdminPanel_Controller implements Controller{
 
                }
 
+               function kunde_hinzufuegen(){
+//                                       <input type="text" id="kunde_Name" value="Name">
+//                        <input type="text" id="kunde_Vorname" value="Vorname">
+//                        <input type="text" id="kunde_eMail" value="eMail">
+                    var name,vorname,email;
+                    name = document.getElementById("kunde_Name").value;
+                    vorname = document.getElementById("kunde_Vorname").value;
+                    email = document.getElementById("kunde_eMail").value;
+
+                    window.location.href = "adminpanel?kunde_Name="+name+
+                                               "&kunde_Vorname="+vorname+
+                                               "&kunde_eMail="+email;
+
+               }
+
        </script>');
         // deciding which content to build
         // this $request->get doesnt mean get, its the PHP $_GET which is wraped in Request class
@@ -89,11 +104,19 @@ class AdminPanel_Controller implements Controller{
         $struktur_utnr = $request->get["struktur_utnr"];
         $struktur_menge = $request->get["struktur_menge"];
 
+        $kunde_name = $request->get["kunde_Name"];
+        $kunde_vorname = $request->get["kunde_Vorname"];
+        $kunde_email = $request->get["kunde_eMail"];
+
         if(isset($teil_bezeichnung) && isset($teil_preis) && isset($teil_typ) && isset($teil_angeboten) && isset($teil_beschreibung))
             TeileMapperImpl::make()->teilErstellen($teil_bezeichnung,$teil_preis,$teil_typ,$teil_angeboten,"application/view/images/".$teil_bild,$teil_beschreibung);
 
         if(isset($struktur_otnr) && isset($struktur_utnr) && isset($struktur_menge))
             StrukturMapperImpl::make()->strukturAnlegen($struktur_otnr,$struktur_utnr,$struktur_menge);
+
+        if(isset($kunde_name) && isset($kunde_vorname) && isset($kunde_email)){
+            KundeMapperImpl::make()->kundeHinzufuegen($kunde_name,$kunde_vorname,$kunde_email);
+        }
 
         //testdaten initialisieren
         if(isset($stuecklisteProdukt)){
@@ -107,8 +130,10 @@ class AdminPanel_Controller implements Controller{
 //        $abc_analyse_result = ABC_Analyse::abc_analyse_test();
         $abc_analyse_result = ABC_Analyse::analyse(ABC_Analyse::convertToABC_ADT(TeileMapperImpl::make()->getAlleProdukte()));
 
-//        ABC_Analyse::abc_analyse_test();
 //        PrimaerbedarfsAnalyse::primaerbedarfstest();
+
+        //var_dump(BestellungMapperImpl::make()->getBestellungenByKundenID(1));
+
         // fetch view and apply data to view
         $page->setContentView(AdminPanel_View::create());
         $page->getLayoutElem("contentview")->applyData(array(

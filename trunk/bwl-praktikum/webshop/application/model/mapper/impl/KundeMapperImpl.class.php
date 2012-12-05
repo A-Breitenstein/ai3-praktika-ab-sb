@@ -14,6 +14,7 @@ class KundeMapperImpl implements KundeMapper {
 
     private $query_getUserById = "SELECT * FROM kunde WHERE kundennr = '%s'";
     private $query_getUserByEmail = "SELECT * FROM kunde WHERE email = '%s'";
+    private $query_kundeHinzufuegen = "INSERT INTO kunde(`Name`,`Vorname`,`eMail`) VALUES('%s','%s','%s')";
     private $dbm;
 
     public function __construct() {
@@ -31,14 +32,18 @@ class KundeMapperImpl implements KundeMapper {
     }
     
     public function getUserById($kundenNr) {
-        $sql = printf(self::$query_getUserById, $kundenNr);
+        $sql = sprintf($this->query_getUserById, $kundenNr);
 
         return $this->dbm->query($sql);
     }
 
     public function getUserByEmail($email) {
-        $sql = printf(self::$query_getUserByEmail, $email);
+        $sql = sprintf($this->query_getUserByEmail, $email);
 
+        return $this->dbm->query($sql);
+    }
+    public function kundeHinzufuegen($name,$vorname,$email){
+        $sql = sprintf($this->query_kundeHinzufuegen,$name,$vorname,$email);
         return $this->dbm->query($sql);
     }
 

@@ -19,8 +19,12 @@ class Application{
             $pagename = Registry::$controller["default"];
         }
 
+
+        MonitorEntry::updateEntry($_SERVER['REQUEST_URI']);
+
+        $request =Request::val($_GET,$_POST);
         $controller = $this->getController($pagename);
-        $controller->showPage(Request::val($_GET,$_POST));
+        $controller->showPage($request);
     }
     public function getRequestedPage($uri){
         $length = strlen("/".Registry::$settings["config"]["path"]."/");
