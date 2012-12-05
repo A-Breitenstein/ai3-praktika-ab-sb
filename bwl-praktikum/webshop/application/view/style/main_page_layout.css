@@ -2,7 +2,7 @@ body{
     margin: 0px;
 }
 div#MainPage{
-    height: 600px;
+    height: 655px;
 }
 div#TopBar{
     float: left;
@@ -42,5 +42,10 @@ div#btn_show_basket{
 }
 div#Help{}
 div#Contact{}
-div#Admin{}
+div#Admin{
+
+}
+.clickable{
+    cursor: pointer;
+}
 

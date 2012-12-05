@@ -75,6 +75,14 @@ class ABC_Analyse{
 //            echo("Name: ".$abc_adt->productName() ." :: Kategorie: ".$abc_adt->categorie()." :: Preis: ".number_format($abc_adt->wholePrice(),2,',','.')."<br>");
 //        }
     }
+    public static function convertToABC_ADT($listeVonTeilen){
+        $listeVonABC_ADT = array();
+        foreach($listeVonTeilen as $teil){
+            $abc_adt = ABC_Analyse::createABC_ADT($teil->getTeileNr(),$teil->getBezeichnung(),$teil->getPreis(),1);
+            array_push($listeVonABC_ADT,$abc_adt);
+        }
+        return $listeVonABC_ADT;
+    }
 
 }
 
