@@ -15,7 +15,7 @@ create table bestellung(
 create table bestellung_teile(
 	BestellNr int references bestellung(BestellNr),
 	TNr int references teile(TNr),
-	
+	menge     INT,
 	primary key(BestellNr, TNr)
 	);
 	
@@ -58,6 +58,7 @@ CREATE TABLE bestellung_teile
   (
      bestellnr INT REFERENCES bestellung(bestellnr),
      tnr       INT REFERENCES teile(tnr),
+     menge     INT,
      PRIMARY KEY(bestellnr, tnr)
   );
 
