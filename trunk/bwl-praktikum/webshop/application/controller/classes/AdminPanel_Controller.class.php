@@ -104,7 +104,8 @@ class AdminPanel_Controller implements Controller{
 //          Stueckliste::stueckliste_test();
             $stuecklisteProdukt = Stueckliste::getProdukt($stuecklisteProdukt);
         }
-        $abc_analyse_result = ABC_Analyse::abc_analyse_test();
+//        $abc_analyse_result = ABC_Analyse::abc_analyse_test();
+        $abc_analyse_result = ABC_Analyse::analyse(ABC_Analyse::convertToABC_ADT(TeileMapperImpl::make()->getAlleProdukte()));
 
 //        ABC_Analyse::abc_analyse_test();
 //        PrimaerbedarfsAnalyse::primaerbedarfstest();

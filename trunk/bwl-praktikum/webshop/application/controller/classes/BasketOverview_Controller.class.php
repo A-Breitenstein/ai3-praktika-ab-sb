@@ -46,8 +46,10 @@ class BasketOverview_Controller implements Controller{
         }
 
         $products = array();
-        foreach ($_SESSION["basket"] as $productID => $count){
-            array_push($products,TeileMapperImpl::make()->getTeileById($productID));
+        if(isset($_SESSION["basket"])){
+            foreach ($_SESSION["basket"] as $productID => $count){
+                array_push($products,TeileMapperImpl::make()->getTeileById($productID));
+            }
         }
 
         // fetch view and apply data to view

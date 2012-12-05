@@ -45,7 +45,7 @@ class AdminPanel_View implements View{
                       <div>Monat n-2<input id="monat2" value="50"></div>
                       <div>Monat n-1<input id="monat1" value="50"></div>
                       <div>Monat n <input id="monat0" value="90"></div>
-                      <div>Monat n <input id="glaettungsfaktor" value="0.20"></div>
+                      <div>Glaettungfaktor <input id="glaettungsfaktor" value="0.20"></div>
                       <button onclick="javascript:berechnen()">Berechnen</button>
                       <div>Ergebnis <input id="ergebnis"></div>
 

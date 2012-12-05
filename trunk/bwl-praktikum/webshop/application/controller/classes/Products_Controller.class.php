@@ -77,7 +77,7 @@ class Products_Controller implements Controller
         }
         if(!empty($search_string)){
             // fetch sql data
-            var_dump(mysql_real_escape_string($search_string));
+//            var_dump(mysql_real_escape_string($search_string));
             $resultSet = TeileMapperImpl::make()->getListOfTeileByBezeichnung(mysql_real_escape_string($search_string));
             $prev_search = "search=".$search_string."&";
         }else{

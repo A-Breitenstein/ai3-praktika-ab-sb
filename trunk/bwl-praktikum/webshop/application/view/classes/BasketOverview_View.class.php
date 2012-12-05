@@ -31,27 +31,23 @@ class BasketOverview_View implements View{
                     "Gesamt Preis",
                     0,"Menge",
                     ""));
-                if(isset($this->dataMap['products']))
-                foreach ($this->dataMap['products'] as $product){
-                    $itemID = $product->getTeileNr();
-                    $price = $product->getPreis();
-                    $count = $this->dataMap['basket'][$itemID];
-                    $productName = $product->getBezeichnung();
-                    $whole_price = ($price*$count)+$whole_price;
-                    echo(sprintf($basket_entry,
-                            $itemID,
-                            "<a href=\"products?search=$productName\">$productName</a>",
-                            number_format($price,2,',',''),
-                            $itemID,$count,
-                        number_format(($price*$count), 2, ',', ''),
-                            $itemID,$count,
-                            "Entfernen"));
-                /*
-                 *  <div id="product_name">Bezeichnung: '.$product->getBezeichnung().'</div>
-                      <div id="product_typ">Typ: '.$product->getTyp().'</div>
-                      <div id="product_id">Teile-Nr.'.$product->getTeileNr().'</div>
-                      <div id="product_price">Preis: '.$product->getPreis().*/
-            }
+                if(count($this->dataMap['products'])>0){
+                    foreach ($this->dataMap['products'] as $product){
+                        $itemID = $product->getTeileNr();
+                        $price = $product->getPreis();
+                        $count = $this->dataMap['basket'][$itemID];
+                        $productName = $product->getBezeichnung();
+                        $whole_price = ($price*$count)+$whole_price;
+                        echo(sprintf($basket_entry,
+                                $itemID,
+                                "<a href=\"products?search=$productName\">$productName</a>",
+                                number_format($price,2,',',''),
+                                $itemID,$count,
+                            number_format(($price*$count), 2, ',', ''),
+                                $itemID,$count,
+                                "Entfernen"));
+                    }
+                }
             ?>
             <div id="basket_whole_price">Gesamtpreis: <?php echo(number_format($whole_price, 2, ',', '')) ?></div>
             <div id="bestellen"> zur Kasse</div>

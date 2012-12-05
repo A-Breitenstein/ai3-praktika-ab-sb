@@ -50,7 +50,7 @@ class Stueckliste{
        echo("</div>");
    }
     private static function _runDown($unterteil,$depth,$menge){
-        echo("<div onmouseout='javascript:unhighlight_row(this);' onmouseover='javascript:highlight_row(this);' style='float:left;width:100%;border: 1px solid black;'><div onclick=\"location.href='products?search=".$unterteil->name()."'\" style='float:left;cursor:pointer;margin-left:".(30*$depth)."px;'>".$unterteil->name()."</div><div style='float:right;margin-right:3%;'>".$menge."</div></div>\n");
+        echo("<div onmouseout='javascript:unhighlight_row(this);' onmouseover='javascript:highlight_row(this);' style='float:left;width:100%;border: 1px solid black;'><div onclick=\"location.href='products?search=".$unterteil->name()."'\" style='float:left;cursor:pointer;margin-left:".(30*$depth)."px;'>".$unterteil->name()."( id:".$unterteil->id().")</div><div style='float:right;margin-right:3%;'>".$menge."</div></div>\n");
 
         if($unterteil->getIstOberteilInStruktur() != null){
             foreach($unterteil->getIstOberteilInStruktur() as $struktur){
