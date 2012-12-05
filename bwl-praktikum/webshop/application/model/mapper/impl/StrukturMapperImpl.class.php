@@ -27,11 +27,12 @@ class StrukturMapperImpl{
         $result = $this->dbm->query($sql);
         $ListOfStrukturen = array();
         $ListOfTeile = array();
+        $teileMapper = TeileMapperImpl::make();
         //mysql_fetch_array($result,MYSQL_ASSOC)
         while($row = mysql_fetch_assoc($result)){
 
-            $oberteil= TeileMapperImpl::make()->getTeileById($row['OTNr']);
-            $unterteil = TeileMapperImpl::make()->getTeileById($row['UTNr']);
+            $oberteil= $teileMapper->getTeileById($row['OTNr']);
+            $unterteil = $teileMapper->getTeileById($row['UTNr']);
             $oberteil = Stueckliste::createTeil($oberteil->getTeileNr(),$oberteil->getBezeichnung(),$oberteil->getPreis());
             $unterteil = Stueckliste::createTeil($unterteil->getTeileNr(),$unterteil->getBezeichnung(),$unterteil->getPreis());
             array_push($ListOfTeile,$oberteil,$unterteil);

@@ -16,12 +16,19 @@ class Kunde {
     private $vorname;
     private $email;
     private $erstellDatum;
-    
-    private static function create($kundenNr, $name, $vorname, $email, $erstellDatum){
-        
+
+   public function __construct($kundenNr, $name, $vorname, $email, $erstellDatum){
+       $this->kundenNr = $kundenNr;
+       $this->name = $name;
+       $this->vorname = $vorname;
+       $this->email = $email;
+       $this->erstellDatum = $erstellDatum;
+   }
+    public static function create($kundenNr, $name, $vorname, $email, $erstellDatum){
+        return new Kunde($kundenNr, $name, $vorname, $email, $erstellDatum);
     }
-    
-    
+
+
     // Getter & Setter
     public function getKundenNr() {
         return $this->kundenNr;
@@ -64,7 +71,7 @@ class Kunde {
     }
 
 
-    
+
 
 }
 

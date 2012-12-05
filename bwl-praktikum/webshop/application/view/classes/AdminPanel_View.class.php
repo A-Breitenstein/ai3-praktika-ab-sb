@@ -71,8 +71,31 @@ class AdminPanel_View implements View{
                         <button onclick="javascript:struktur_hinzufuegen()">Eintragen</button>
                     </div>
                     <div id="kunde">
+                        Kunde erstellen
+                        <input type="text" id="kunde_Name" value="Name">
+                        <input type="text" id="kunde_Vorname" value="Vorname">
+                        <input type="text" id="kunde_eMail" value="eMail">
+                        <button onclick="javascript:kunde_hinzufuegen()">Eintragen</button>
+                    </div>
+                    <div id="bestellung">
+                        Bestellung erstellen
+                        <input type="text" id="bestellung_KundenNr" value="KundenNr">
+                        <button onclick="javascript:bestllung_hinzufuegen()">Eintragen</button>
+                        Artikel der Bestellung hinzufuegen
+                        <input type="text" id="bestellung_BestellungsNr" value="BestellungsNr">
+                        <input type="text" id="bestellung_TNr" value="TeileNr">
+
+                        <button onclick="javascript:artikel_bestellung_hinzufuegen()">Eintragen</button>
+                    </div>
+                    <div id="pagehits">
+                        Seiten Statistik
+                         <?php MonitorEntry::showPageHits()?>
+                    </div>
+
+                    <div id="artikelhits">
 
                     </div>
+
                 </div>
                </div>
         </div>

@@ -79,6 +79,11 @@ class Products_Controller implements Controller
             // fetch sql data
 //            var_dump(mysql_real_escape_string($search_string));
             $resultSet = TeileMapperImpl::make()->getListOfTeileByBezeichnung(mysql_real_escape_string($search_string));
+            if(count($resultSet)==1){
+                MonitorEntry::updateEntry($resultSet[0]->getBezeichnung);
+            }
+
+
             $prev_search = "search=".$search_string."&";
         }else{
             // fetch sql data
