@@ -17,6 +17,7 @@ public class Student implements Runnable {
     private long id;
     private int maxEatTime, minEatTime, maxReturnTime, minReturnTime;
     private static DecimalFormat df = new DecimalFormat("#.##");
+    public boolean bezahlt = false;
 
     private Student(long id, int maxEatTime, int minEatTime, int maxReturnTime, int minReturnTime) {
         this.id = id;
@@ -67,19 +68,25 @@ public class Student implements Runnable {
             essZeit = RandomManager.longNumber(maxEatTime,minEatTime);
             warteZeit = RandomManager.longNumber(maxReturnTime,minReturnTime);
 
-            Mensa.anKasseAnstellen(this);
+            if(!bezahlt){
 
+                Mensa.anKasseAnstellen(this);
+                break;
+            }else{
 
-            //Essen fassen
-            if(!curThread.isInterrupted()) {
-                __ess_info(essZeit);
-                essen(essZeit);
-            }
+                //Essen fassen
+                if(!curThread.isInterrupted()) {
+                    __ess_info(essZeit);
+                    essen(essZeit);
+                }
 
-            //warten darauf bis der Student wieder an die Kasse kann
-            if(!curThread.isInterrupted()) {
-                __warte_info(warteZeit);
-                warten(warteZeit);
+                //warten darauf bis der Student wieder an die Kasse kann
+                if(!curThread.isInterrupted()) {
+                    __warte_info(warteZeit);
+                    warten(warteZeit);
+                }
+
+                bezahlt = !bezahlt;
             }
 
         }
