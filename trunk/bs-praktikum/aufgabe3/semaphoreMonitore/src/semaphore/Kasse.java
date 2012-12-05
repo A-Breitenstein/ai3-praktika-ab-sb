@@ -18,15 +18,15 @@ public class Kasse implements Runnable{
     private long id;
     private int minVerkaufsZeit, maxVerkaufsZeit;
 
-    private Queue<Student> studentQueue = new ArrayDeque<Student>();
+    private Queue<Student> studentQueue;
     public Semaphore S_ANSTELLEN = new Semaphore(0,true),
-                     S_BEZAHLEN = new Semaphore(1,true),
-                     S_VERLASSEN = new Semaphore(Mensa.numberOfStudents,true);
+                     S_BEZAHLEN = new Semaphore(1,true);
 
     private Kasse(long id, int maxConncurrentRequests, int minVerkaufsZeit, int maxVerkaufsZeit) {
         this.id = id;
         this.minVerkaufsZeit = minVerkaufsZeit;
         this.maxVerkaufsZeit = maxVerkaufsZeit;
+        this.studentQueue = new ArrayDeque<Student>();
 
     }
 

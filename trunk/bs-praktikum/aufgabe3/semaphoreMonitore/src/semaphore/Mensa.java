@@ -12,9 +12,9 @@ import java.util.concurrent.TimeUnit;
  * BS-Praktikum
  */
 public class Mensa {
-    private static List<Kasse> kassen = new ArrayList<Kasse>();
-    private static List<Student> students = new ArrayList<Student>();
-    private static List<Thread> threads = new ArrayList<Thread>();
+    private static List<Kasse> kassen;
+    private static List<Student> students;
+    private static List<Thread> threads;
     final private static int  numberOfKassen = 3;
     public final static int numberOfStudents = 10;
     final private static long programmWarteZeit = RandomManager.longNumber(15000,127500);
@@ -22,6 +22,10 @@ public class Mensa {
     public static Semaphore S_KASSESUCHEN = new Semaphore(1,true);
 
     public static void main(String[] args) {
+
+        kassen = new ArrayList<Kasse>();
+        students = new ArrayList<Student>();
+        threads = new ArrayList<Thread>();
 
         __programm_info(programmWarteZeit);
 

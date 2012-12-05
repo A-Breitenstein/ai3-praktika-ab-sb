@@ -16,10 +16,11 @@ import static conditions.Dinge.*;
 public class Agent implements Runnable {
     String name;
 
-    List<Dinge> dinges = new ArrayList<Dinge>(Arrays.asList(TOBACCO, MATCHES, PAPER));
+    List<Dinge> dinges;
 
     public Agent(String name) {
         this.name = name;
+        this.dinges = new ArrayList<Dinge>(Arrays.asList(TOBACCO, MATCHES, PAPER));
     }
 
     //Methods - @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
