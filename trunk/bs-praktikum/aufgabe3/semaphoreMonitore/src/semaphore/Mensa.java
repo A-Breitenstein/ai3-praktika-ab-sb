@@ -16,9 +16,8 @@ public class Mensa {
     private static List<Student> students = new ArrayList<Student>();
     private static List<Thread> threads = new ArrayList<Thread>();
     final private static int  numberOfKassen = 3;
-    public final static int numberOfStudents = 100;
+    public final static int numberOfStudents = 10;
     final private static long programmWarteZeit = RandomManager.longNumber(15000,127500);
-    final private static TimeUnit timeUnit = TimeUnit.MILLISECONDS;
 
     public static Semaphore S_KASSESUCHEN = new Semaphore(1,true);
 
@@ -105,7 +104,7 @@ public class Mensa {
 
             kasse.S_ANSTELLEN.release(1);
 
-            kasse.S_VERLASSEN.acquire();
+//            kasse.S_VERLASSEN.acquire();
 
             S_KASSESUCHEN.release();
 

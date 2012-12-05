@@ -25,7 +25,7 @@ public class Raucher implements Runnable {
     @Override
     public void run() {
         List<Dinge> topf = Holztisch.topf;
-        while (true){
+        while (!Thread.currentThread().isInterrupted()){
             synchronized (topf){
 
                 if(alleGutenDingeSindDrei(topf)){
@@ -37,7 +37,6 @@ public class Raucher implements Runnable {
                     try {
                         topf.wait();
                     } catch (InterruptedException e) {
-//                        e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
                         Thread.currentThread().interrupt();
                     }
                 }
@@ -58,7 +57,6 @@ public class Raucher implements Runnable {
             System.out.println(name +": is aus");
             Thread.sleep(1000);
         } catch (InterruptedException e) {
-//            e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
             Thread.currentThread().interrupt();
         }
     }

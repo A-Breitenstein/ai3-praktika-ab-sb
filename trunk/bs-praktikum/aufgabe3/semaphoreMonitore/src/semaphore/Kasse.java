@@ -11,8 +11,8 @@ import java.util.concurrent.Semaphore;
  *  BS-Praktikum
  */
 public class Kasse implements Runnable{
-    private static int default_maxVerkaufsZeit = 150000,
-                       default_minVerkaufsZeit = 50000,
+    private static int default_maxVerkaufsZeit = 15000,
+                       default_minVerkaufsZeit = 5000,
                        default_maxConncurrentRequests = 1;
 
     private long id;
@@ -39,12 +39,8 @@ public class Kasse implements Runnable{
 
     //Methods -@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 
-    private void sleep(long milliseconds){
-        try {
-            Thread.sleep(milliseconds);
-        } catch (InterruptedException e) {
-            Thread.currentThread().interrupt();
-        }
+    private void sleep(long milliseconds) throws InterruptedException {
+        Thread.sleep(milliseconds);
     }
 
     //Methods with double underline -> System.out.print*
@@ -77,7 +73,7 @@ public class Kasse implements Runnable{
         return studentQueue.size();
     }
 
-    private void bezahlen() {
+    private void bezahlen() throws InterruptedException {
         long verkaufsZeit = RandomManager.longNumber(maxVerkaufsZeit, minVerkaufsZeit);
         sleep(verkaufsZeit);
     }
@@ -111,11 +107,12 @@ public class Kasse implements Runnable{
                     verlassen();
 
                 S_BEZAHLEN.release();
-
-                S_VERLASSEN.release();
+                student.S_BEZAHLUNGFERTIG.release();
+//                S_VERLASSEN.release();
 
             } catch (InterruptedException e) {
                 kThread.interrupt();
+                break;
             }
 
         }
