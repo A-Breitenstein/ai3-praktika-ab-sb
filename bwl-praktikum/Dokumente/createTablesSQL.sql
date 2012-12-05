@@ -82,6 +82,15 @@ CREATE TABLE struktur
   );  
   
   
+  CREATE TABLE monitorentry
+  (
+     id    INT PRIMARY KEY auto_increment,
+     hits     INT,
+     daily   BOOLEAN,
+     page    varchar(255),
+     timestamp BIGINT
+  );
+  
 INSERT INTO `teile` (`Bezeichnung` , `Preis` , `Typ` , `Angeboten` , `Bild` , `Beschreibung` )
 VALUES ('Zylinder A4', '90.80', 'Kleinteil', NULL , 'application/view/images/170px-Cylinder.svg.png', 'Maße 55mm 106mm 22mm' ) 
 
