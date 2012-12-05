@@ -4,6 +4,7 @@ import services.RandomManager;
 
 import java.text.DecimalFormat;
 import java.util.concurrent.Callable;
+import java.util.concurrent.Semaphore;
 
 /**
  * BS-Praktikum
@@ -17,7 +18,7 @@ public class Student implements Runnable {
     private long id;
     private int maxEatTime, minEatTime, maxReturnTime, minReturnTime;
     private static DecimalFormat df = new DecimalFormat("#.##");
-    public boolean bezahlt = false;
+    public Semaphore S_BEZAHLUNGFERTIG = new Semaphore(0, true);
 
     private Student(long id, int maxEatTime, int minEatTime, int maxReturnTime, int minReturnTime) {
         this.id = id;
@@ -47,6 +48,7 @@ public class Student implements Runnable {
         } catch (InterruptedException e) {
             Thread.currentThread().interrupt();
 
+
         }
     }
 
@@ -68,26 +70,33 @@ public class Student implements Runnable {
             essZeit = RandomManager.longNumber(maxEatTime,minEatTime);
             warteZeit = RandomManager.longNumber(maxReturnTime,minReturnTime);
 
-            if(!bezahlt){
+
 
                 Mensa.anKasseAnstellen(this);
-                break;
-            }else{
 
-                //Essen fassen
+            try {
+                S_BEZAHLUNGFERTIG.acquire();
+            } catch (InterruptedException e) {
+                Thread.currentThread().interrupt();
+                break;
+            }
+
+            //Essen fassen
                 if(!curThread.isInterrupted()) {
                     __ess_info(essZeit);
                     essen(essZeit);
-                }
+                }else
+                    break;
 
                 //warten darauf bis der Student wieder an die Kasse kann
                 if(!curThread.isInterrupted()) {
                     __warte_info(warteZeit);
                     warten(warteZeit);
-                }
+                }else
+                    break;
 
-                bezahlt = !bezahlt;
-            }
+
+
 
         }
 

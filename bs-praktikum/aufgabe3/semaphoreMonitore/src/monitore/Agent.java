@@ -33,7 +33,7 @@ public class Agent implements Runnable {
 
     @Override
     public void run() {
-        while(true){
+        while(!Thread.currentThread().isInterrupted()){
             try {
                 legeDingeAufTisch(Holztisch.topf);
             } catch (InterruptedException e) {

@@ -19,7 +19,7 @@ public class Mensa {
    public static List<Kasse> kassen = new ArrayList<Kasse>();
    public static ExecutorService threadPool = Executors.newCachedThreadPool();
    public static int studentCount = 10;
-   public static int kassenCount = 2;
+   public static int kassenCount = 3;
    public static Semaphore listenZugriffs_mutex = new Semaphore(1,true);
    public static Semaphore studentenAufDerSuche = new Semaphore(studentCount,true);
    public static void init(){
