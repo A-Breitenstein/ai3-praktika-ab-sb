@@ -21,16 +21,23 @@ public class Holztisch {
 
     final private static long programmWarteZeit = RandomManager.longNumber(7500, 3750);
 
-    static Agent agent = new Agent("Agent");
-    static Raucher raucher = Raucher.create(TOBACCO, "Raucher 1");
-    static Raucher raucher1 = Raucher.create(MATCHES, "Raucher 2");
-    static Raucher raucher2 = Raucher.create(PAPER, "Raucher 3");
-    static List<Dinge> topf = new ArrayList<Dinge>();
+    static Agent agent;
+    static Raucher raucher;
+    static Raucher raucher1;
+    static Raucher raucher2;
+    static List<Dinge> topf;
     final static Lock lock_TopfZugriff = new ReentrantLock(true);
     static Condition cond_IsFull = lock_TopfZugriff.newCondition(),
             cond_fuelleTopf = lock_TopfZugriff.newCondition();
 
     public static void main(String[] args) {
+
+        agent = new Agent("Agent");
+        raucher = Raucher.create(TOBACCO, "Raucher 1");
+        raucher1 = Raucher.create(MATCHES, "Raucher 2");
+        raucher2 = Raucher.create(PAPER, "Raucher 3");
+        topf = new ArrayList<Dinge>();
+
         List<Raucher> rauchers = new ArrayList<Raucher>(Arrays.asList(raucher, raucher1, raucher2));
         List<Thread> threads = new ArrayList<Thread>();
         threads.add(new Thread(agent));
