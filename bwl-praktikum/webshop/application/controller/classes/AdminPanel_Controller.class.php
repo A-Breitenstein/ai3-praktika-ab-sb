@@ -126,6 +126,7 @@ class AdminPanel_Controller implements Controller{
             Stueckliste::bestimmeOberUndUnterteile(Stueckliste::$listeVonTeilen,Stueckliste::$listeVonStrukturen);
 //          Stueckliste::stueckliste_test();
             $stuecklisteProdukt = Stueckliste::getProdukt($stuecklisteProdukt);
+            AuftragsVerfolgung::teilHinzufuegen($stuecklisteProdukt,200,AuftragsVerfolgung::getTimestamp(5,12,2012));
         }
 //        $abc_analyse_result = ABC_Analyse::abc_analyse_test();
         $abc_analyse_result = ABC_Analyse::analyse(ABC_Analyse::convertToABC_ADT(TeileMapperImpl::make()->getAlleProdukte()));

@@ -131,11 +131,21 @@ class Stueckliste{
         return $resultSet;
     }
 
+    public static function mengenErmitteln(Teil $teil,$menge){
+        if(count($teil->getIstOberteilInStruktur())> 0){
+            foreach($teil->getIstOberteilInStruktur() as $struktur){
+                $struktur->setMenge($struktur->menge()*$menge);
+                self::mengenErmitteln($struktur->unterteil(),$struktur->menge());
+            }
+        }
+    }
+
 }
 interface Struktur{
     function oberteil();
     function unterteil();
     function menge();
+    function setMenge($menge);
 }
 
 interface Teil{
@@ -170,6 +180,11 @@ class Struktur_impl implements Struktur{
        $this->oberteil = $oberteil;
        $this->unterteil = $unterteil;
        $this->menge = $menge;
+    }
+
+    function setMenge($menge)
+    {
+        $this->menge = $menge;
     }
 }
 
