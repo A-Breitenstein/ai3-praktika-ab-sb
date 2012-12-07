@@ -20,6 +20,12 @@ class AuftragsVerfolgung{
     private static $query_getBedarfsableitungByOTUT = "SELECT * FROM `Bedarfsableitung` WHERE `OTNr` = '%s' and `UTNr` = '%s' and `AuftragsDatum` = '%s' and `BedarfsDatum` = '%s'";
     private static $query_updateBedarfsableitung = "UPDATE `Bedarfsableitung` SET `MengeUT` = '%s' WHERE `ID` = '%s'";
 
+    private static $query_alleBedarfeAnzeigen = "SELECT b.`ID`,t.`Bezeichnung` ,b.`Datum`,b.`Menge` FROM `Bedarf` b,`Teile` t WHERE  b.`TeilNr` = t.`TNr`";
+    private static $query_alleBedarfeByBezeichnung = "SELECT b.`ID`,t.`Bezeichnung` ,b.`Datum`,b.`Menge` FROM `Bedarf` b,`Teile` t WHERE  b.`TeilNr` = t.`TNr` AND b.`TeilNr` = '%s'";
+    private static $query_alleBedarfeByDatum = "SELECT b.`ID`,t.`Bezeichnung` ,b.`Datum`,b.`Menge` FROM `Bedarf` b,`Teile` t WHERE  b.`TeilNr` = t.`TNr` AND b.`Datum` = '%s'";
+
+    private static $query_alleBedarfsableitungenAnzeigen = "SELECT t.``";
+
     private static function day_in_sec(){
         return 24*60*60;
     }
@@ -258,6 +264,71 @@ class AuftragsVerfolgung{
             }
         }
     }
+
+
+    public static function getAlleBedarfe(){
+       $result = self::getDbh()->query(self::$query_alleBedarfeAnzeigen);
+       return self::fetchRowsToArray($result);
+    }
+    private static function fetchRowsToArray($result){
+        $result_array = array();
+        if(mysql_num_rows($result)>0){
+            while($row = mysql_fetch_assoc($result)){
+                array_push($result_array,$row);
+            }
+        }
+        return $result_array;
+    }
+    public static function printBedarfTabelle($listeVonBedarf){
+?>
+        <table border="1px solid black">
+            <tr>
+                <th>ID</th>
+                <th>Teil</th>
+                <th>Datum</th>
+                <th>Menge</th>
+            </tr>
+
+            <?php
+                foreach($listeVonBedarf as $row){
+                   echo("<tr onmouseout='javascript:unhighlight_row(this);' onmouseover='javascript:highlight_row(this);'>
+                        <td>".$row["ID"]."</td>
+                        <td class=\"clickable\" onclick=\"location.href='products?search=".$row["Bezeichnung"]."'\">".$row["Bezeichnung"]."</td>
+                        <td>".self::getDateString($row["Datum"])."</td>
+                        <td>".$row["Menge"]."</td>
+                   </tr>");
+                }
+            ?>
+        </table>
+<?php
+    }
+
+
+    public static function printBedarfAbleitungsTabelle($listeVonBedarfableitungen){
+        ?>
+        <table border="1px solid black">
+            <tr>
+                <th>ID</th>
+                <th>Teil</th>
+                <th>Datum</th>
+                <th>Menge</th>
+            </tr>
+
+            <?php
+            foreach($listeVonBedarfableitungen as $row){
+                echo("<tr onmouseout='javascript:unhighlight_row(this);' onmouseover='javascript:highlight_row(this);'>
+                        <td>".$row["ID"]."</td>
+                        <td class=\"clickable\" onclick=\"location.href='products?search=".$row["Bezeichnung"]."'\">".$row["Bezeichnung"]."</td>
+                        <td>".self::getDateString($row["Datum"])."</td>
+                        <td>".$row["Menge"]."</td>
+                   </tr>");
+            }
+            ?>
+        </table>
+    <?php
+    }
+
+
 
 }
 
