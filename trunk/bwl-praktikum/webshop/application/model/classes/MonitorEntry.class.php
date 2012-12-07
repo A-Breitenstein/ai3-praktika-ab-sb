@@ -36,11 +36,14 @@ class MonitorEntry{
         }
     }
     public static function updateDailyEntry($identifier){
-        $currentTime = time() - (24*60*60); // tag in sec
-        $result = self::getDBH()->query("SELECT * FROM `monitorentry` WHERE `page`='$identifier' and `daily` = '1' and `timestamp` > '$currentTime'");
+        $time = new DateTime();
+        $time->setTime(0,0,0);
+        $currentTime = $time->getTimestamp();
+        echo("daily::".$currentTime);
+        $result = self::getDBH()->query("SELECT * FROM `monitorentry` WHERE `page`='$identifier' and `daily` = '1' and `timestamp` = '$currentTime'");
         if(mysql_num_rows($result) == 0){
             self::getDBH()->query("INSERT INTO monitorentry(`hits`,`daily`,`page`,`timestamp`) VALUES(".
-            "'1','1','$identifier','".time()."')");
+            "'1','1','$identifier','".$currentTime."')");
         }elseif(mysql_num_rows($result)==1){
             $row = mysql_fetch_assoc($result);
             self::getDBH()->query("UPDATE `monitorentry` SET `hits` = '".($row["hits"]+1)."' WHERE `id`='".$row["id"]."'");
@@ -49,18 +52,22 @@ class MonitorEntry{
 
 
     public static function updateHourlyEntry($identifier){
-        $currentTime = time() - (60*60); // tag in sec
-        $result = self::getDBH()->query("SELECT * FROM `monitorentry` WHERE `page`='$identifier' and `daily` = '0' and `timestamp` > '$currentTime'");
+        $time = new DateTime();
+        $hour = $time->format("H");
+        $time->setTime($hour,0,0);
+        $currentTime = $time->getTimestamp();
+        echo("hour::".$currentTime);
+        $result = self::getDBH()->query("SELECT * FROM `monitorentry` WHERE `page`='$identifier' and `daily` = '0' and `timestamp` = '$currentTime'");
         if(mysql_num_rows($result) == 0){
             self::getDBH()->query("INSERT INTO monitorentry(`hits`,`daily`,`page`,`timestamp`) VALUES(".
-                "'1','0','$identifier','".time()."')");
+                "'1','0','$identifier','".$currentTime."')");
         }elseif(mysql_num_rows($result)==1){
             $row = mysql_fetch_assoc($result);
             self::getDBH()->query("UPDATE `monitorentry` SET `hits` = '".($row["hits"]+1)."' WHERE `id`='".$row["id"]."'");
         }
     }
     public static function showPageHits(){
-        echo("<table style='border: 1px solid black;'>");
+        echo("<table border=\"1px solid black\">");
         echo("<tr><td>Seite</td><td>Hits</td><td>Datum</td><td>IstTaeglich</td></tr>");
         $result = self::getDBH()->query("SELECT * FROM `monitorentry` ORDER BY `timestamp` desc");
            while($row = mysql_fetch_assoc($result)){

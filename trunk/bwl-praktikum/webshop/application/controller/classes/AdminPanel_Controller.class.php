@@ -135,11 +135,16 @@ class AdminPanel_Controller implements Controller{
 
         //var_dump(BestellungMapperImpl::make()->getBestellungenByKundenID(1));
 
+
+        $bedarfs_daten = AuftragsVerfolgung::getAlleBedarfe();
+
+
         // fetch view and apply data to view
         $page->setContentView(AdminPanel_View::create());
         $page->getLayoutElem("contentview")->applyData(array(
                         "stueckliste_produkt" => $stuecklisteProdukt,
-                        "abc_analyse_array" => $abc_analyse_result)
+                        "abc_analyse_array" => $abc_analyse_result,
+                        "bedarfs_daten" => $bedarfs_daten)
         );
 
 

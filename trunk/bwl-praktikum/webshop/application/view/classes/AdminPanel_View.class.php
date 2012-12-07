@@ -96,6 +96,10 @@ class AdminPanel_View implements View{
 
                     </div>
 
+                    <div id="bedarfs_daten">
+                        <?php AuftragsVerfolgung::printBedarfTabelle($this->dataMap["bedarfs_daten"])?>
+                    </div>
+
                 </div>
                </div>
         </div>
