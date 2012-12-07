@@ -27,6 +27,7 @@ public class Agent implements Runnable {
 
             topf.addAll(dinges.subList(0,2));
             System.out.println(name+ ": der Agent hat neue Zutaten "+topf+" auf dem Tisch plaziert");
+            topf.notifyAll();
             topf.wait();
 
         }
