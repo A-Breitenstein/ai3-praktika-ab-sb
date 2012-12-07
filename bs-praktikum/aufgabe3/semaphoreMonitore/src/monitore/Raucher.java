@@ -9,36 +9,36 @@ import java.util.List;
  * Time: 11:24
  */
 public class Raucher implements Runnable {
-   private String name;
+    private String name;
     private Dinge ding;
 
-    private Raucher(Dinge ding,String name) {
+    private Raucher(Dinge ding, String name) {
         this.ding = ding;
         this.name = name;
     }
 
-    public static Raucher create(Dinge ding,String name) {
-        return new Raucher(ding,name);
+    public static Raucher create(Dinge ding, String name) {
+        return new Raucher(ding, name);
     }
 
 
     @Override
     public void run() {
         List<Dinge> topf = Holztisch.topf;
-        while (!Thread.currentThread().isInterrupted()){
-            synchronized (topf){
+        while (!Thread.currentThread().isInterrupted()) {
+            synchronized (topf) {
 
-                if(alleGutenDingeSindDrei(topf)){
+                if (alleGutenDingeSindDrei(topf)) {
                     rollen(topf);
                     rauchen();
                     topf.notifyAll();
-                }else if(!topf.isEmpty()){
-                    System.out.println(name+": #FAIL# aus diesen Zutaten "+topf+" und meiner Zutat "+ding+" kann ich mir keine Zigarette drehen");
-                    try {
-                        topf.wait();
-                    } catch (InterruptedException e) {
-                        Thread.currentThread().interrupt();
-                    }
+                } else if (!topf.isEmpty()) {
+                    System.out.println(name + ": #FAIL# aus diesen Zutaten " + topf + " und meiner Zutat " + ding + " kann ich mir keine Zigarette drehen");
+                }
+                try {
+                    topf.wait();
+                } catch (InterruptedException e) {
+                    Thread.currentThread().interrupt();
                 }
             }
         }
@@ -46,15 +46,15 @@ public class Raucher implements Runnable {
 
     private void rauchen() {
         try {
-            System.out.println(name +": zündet sich seine Zigarette an ....");
+            System.out.println(name + ": zündet sich seine Zigarette an ....");
             Thread.sleep(2700);
-            System.out.println(name +": wirft die Zigarette auf den Boden");
+            System.out.println(name + ": wirft die Zigarette auf den Boden");
             Thread.sleep(500);
-            System.out.println(name +": ...stampf...");
+            System.out.println(name + ": ...stampf...");
             Thread.sleep(500);
-            System.out.println(name +": ...stampf...");
+            System.out.println(name + ": ...stampf...");
             Thread.sleep(500);
-            System.out.println(name +": is aus");
+            System.out.println(name + ": is aus");
             Thread.sleep(1000);
         } catch (InterruptedException e) {
             Thread.currentThread().interrupt();
@@ -62,12 +62,12 @@ public class Raucher implements Runnable {
     }
 
     private void rollen(List<Dinge> zutaten) {
-        System.out.println(name +": Rollt sich seine Zigarette mit den Zutaten: "+zutaten+" und seinem "+ding);
+        System.out.println(name + ": Rollt sich seine Zigarette mit den Zutaten: " + zutaten + " und seinem " + ding);
         zutaten.clear();
 
     }
 
     private boolean alleGutenDingeSindDrei(List<Dinge> topf) {
-        return !topf.contains(ding)&& !topf.isEmpty();
+        return !topf.contains(ding) && !topf.isEmpty();
     }
 }
