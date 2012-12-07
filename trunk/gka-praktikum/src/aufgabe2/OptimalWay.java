@@ -38,11 +38,9 @@ public class OptimalWay {
         customVertexMap.get(sourceVertex).setDistance(0).setPredecessor(sourceVertex).setOK();
         dijkstraCounter++;
         for (String adjacentVertex : customVertexMap.get(sourceVertex).adjacentStringVertexes) {
-            dijkstraCounter++;
             distance = graph.getEdgeWeight(graph.getEdge(sourceVertex, adjacentVertex));
-            dijkstraCounter++;
             customVertexMap.get(adjacentVertex).setDistance(distance).setPredecessor(sourceVertex);
-            dijkstraCounter++;
+            dijkstraCounter+=3;
         }
         // solange suchen wie der TargetVertex nicht ok ist geht nicht, da es sein kann das man den TargetVertex
         // garnicht erreichen kann. Dann wird er niee ok hier muss noch ein workaround rein
