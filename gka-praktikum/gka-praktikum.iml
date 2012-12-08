@@ -17,8 +17,6 @@
         <SOURCES />
       </library>
     </orderEntry>
-    <orderEntry type="library" name="net.sf.jgrapht:jgrapht:0.8.3" level="project" />
-    <orderEntry type="library" name="jgraph:jgraph:5.13.0.0" level="project" />
     <orderEntry type="library" name="jgrapht-jdk1.6" level="project" />
     <orderEntry type="library" name="jgraph" level="project" />
   </component>

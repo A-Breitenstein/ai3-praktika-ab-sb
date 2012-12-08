@@ -1,8 +1,6 @@
 package aufgabe3;
 
 import aufgabe1.CustomVertex;
-import org.jgraph.graph.DefaultEdge;
-import org.jgraph.graph.Edge;
 import org.jgrapht.Graph;
 import org.jgrapht.graph.DefaultWeightedEdge;
 import org.jgrapht.graph.WeightedPseudograph;
@@ -25,18 +23,24 @@ public class Prim {
         List edges = (List)graph.edgeSet();
 
         Object smallestEdge = edges.get(0);
+        double smallestEdgeWeight = 0d,
+               currentEdgeWeight;
 
         Graph graphT = new WeightedPseudograph(DefaultWeightedEdge.class);
 
         Collection<Object> graphTvertexes = graphT.vertexSet();
 
-//        Map<String,String> sourceTo
+        Map<Object,Double> graphTEdges = new HashMap<Object,Double>();
 
         while (graphTvertexes.size() < graph.vertexSet().size()) {
             for(Object e : edges){
-                if((graph.getEdgeWeight(e) <= graph.getEdgeWeight(smallestEdge)) &&)
+                smallestEdgeWeight = graph.getEdgeWeight(e);
+                currentEdgeWeight = graph.getEdgeWeight(smallestEdge);
+                if((smallestEdgeWeight <= currentEdgeWeight) && !graphTEdges.containsKey(smallestEdge))
                     smallestEdge = e;
             }
+
+            graphTEdges.put(smallestEdge,smallestEdgeWeight);
 
             Object source = graph.getEdgeSource(smallestEdge),
                    target = graph.getEdgeTarget(smallestEdge);
@@ -47,20 +51,6 @@ public class Prim {
                 graphT.addEdge(source,target);
             }
 
-
         }
     }
-
-
-
-    class PriorityQueueComparator implements Comparator<CustomVertex>{
-
-        @Override
-        public int compare(CustomVertex o1, CustomVertex o2) {
-
-            return Double.compare(o1.getShortesConnectionVertex(), o2.getShortesConnectionVertex());
-
-        }
-    }
-
 }
