@@ -53,3 +53,9 @@ div#basket_whole_price{
     float: left;
     margin-left: 38%;
 }
+div#lieferdatum{
+    float:left;
+}
+div#gesamtpreis{
+    float: right;
+}

@@ -87,7 +87,8 @@ class Products_Controller implements Controller
             $prev_search = "search=".$search_string."&";
         }else{
             // fetch sql data
-            $resultSet = TeileMapperImpl::make()->getAlleProdukte();
+//            $resultSet = TeileMapperImpl::make()->getAlleProdukte();
+            $resultSet = TeileMapperImpl::make()->getProdukte();
 
         }
 

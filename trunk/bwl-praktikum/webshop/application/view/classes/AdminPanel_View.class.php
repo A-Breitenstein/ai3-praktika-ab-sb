@@ -24,7 +24,7 @@ class AdminPanel_View implements View{
               <div id="abc_analyse">
                   ABC Analyse
                   <?php
-                      echo("<div class='abc_row'><div class='abc_col'> ProduktID </div> <div class='abc_col'> ProduktName </div><div class='abc_col'> Preis </div><div class='abc_col'> Kategorie</div></div>");
+                      echo("<div class='abc_row'><div class='abc_col'> TeilID </div> <div class='abc_col'> TeilBezeichnung </div><div class='abc_col'> Preis </div><div class='abc_col'> Kategorie</div></div>");
                   foreach($this->dataMap["abc_analyse_array"] as $abc_adt){
                       echo("<div class='abc_row' onmouseout='javascript:unhighlight_row(this);' onmouseover='javascript:highlight_row(this);'>
                                 <div class='abc_col'>".$abc_adt->productID() ."</div>"
@@ -40,14 +40,13 @@ class AdminPanel_View implements View{
               <div id="bedarfs_analyse">
 
                   <div>
-                      <div> Verbrauch in den Letzten 3 Monaten sowie </div>
-                      <div>Monat n-3<input id="monat3" value="50"></div>
-                      <div>Monat n-2<input id="monat2" value="50"></div>
-                      <div>Monat n-1<input id="monat1" value="50"></div>
-                      <div>Monat n <input id="monat0" value="90"></div>
-                      <div>Glaettungfaktor <input id="glaettungsfaktor" value="0.20"></div>
+                      <div> Primaerbedarfs Analyse </div>
+                      <div>TeilName<input id="teilname" value="<?php echo($this->dataMap["bedarfsanalyse_teilname"]);?>"></div>
+                      <div>Letzter Monat<input id="monat" value="<?php echo($this->dataMap["bedarfsanalyse_monat"]);?>"></div>
+                      <div>Jahr<input id="jahr" value="<?php echo($this->dataMap["bedarfsanalyse_jahr"]);?>"></div>
+                      <div>Glaettungfaktor <input id="glaettungsfaktor" value="<?php echo($this->dataMap["bedarfsanalyse_faktor"]);?>"></div>
                       <button onclick="javascript:berechnen()">Berechnen</button>
-                      <div>Ergebnis <input id="ergebnis"></div>
+                      <div>Ergebnis <input id="ergebnis" value="<?php echo($this->dataMap["bedarfsanalyse_ergebnis"]);?>"></div>
 
                   </div>
               </div>
@@ -97,7 +96,12 @@ class AdminPanel_View implements View{
                     </div>
 
                     <div id="bedarfs_daten">
+                        Bedarfs Daten
                         <?php AuftragsVerfolgung::printBedarfTabelle($this->dataMap["bedarfs_daten"])?>
+                    </div>
+                    <div id="bedarfsableitungs_daten">
+                        Bedarfsableitungen
+                        <?php AuftragsVerfolgung::printBedarfAbleitungsTabelle($this->dataMap["bedarfsableitungs_daten"])?>
                     </div>
 
                 </div>

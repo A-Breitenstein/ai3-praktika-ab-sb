@@ -21,10 +21,12 @@ class AuftragsVerfolgung{
     private static $query_updateBedarfsableitung = "UPDATE `Bedarfsableitung` SET `MengeUT` = '%s' WHERE `ID` = '%s'";
 
     private static $query_alleBedarfeAnzeigen = "SELECT b.`ID`,t.`Bezeichnung` ,b.`Datum`,b.`Menge` FROM `Bedarf` b,`Teile` t WHERE  b.`TeilNr` = t.`TNr`";
-    private static $query_alleBedarfeByBezeichnung = "SELECT b.`ID`,t.`Bezeichnung` ,b.`Datum`,b.`Menge` FROM `Bedarf` b,`Teile` t WHERE  b.`TeilNr` = t.`TNr` AND b.`TeilNr` = '%s'";
+    private static $query_alleBedarfeByBezeichnung = "SELECT b.`ID`,t.`Bezeichnung` ,b.`Datum`,b.`Menge` FROM `Bedarf` b,`Teile` t WHERE  b.`TeilNr` = t.`TNr` AND t.`Bezeichnung` = '%s'";
     private static $query_alleBedarfeByDatum = "SELECT b.`ID`,t.`Bezeichnung` ,b.`Datum`,b.`Menge` FROM `Bedarf` b,`Teile` t WHERE  b.`TeilNr` = t.`TNr` AND b.`Datum` = '%s'";
+    private static $query_alleBedarfeBetweenDatumAndBezeichnung = "SELECT b.`ID`,t.`Bezeichnung` ,b.`Datum`,b.`Menge` FROM `Bedarf` b,`Teile` t WHERE  b.`TeilNr` = t.`TNr` AND t.`Bezeichnung` = '%s' AND b.`Datum` >= '%s' AND b.`Datum` <= '%s' ";
 
-    private static $query_alleBedarfsableitungenAnzeigen = "SELECT t.``";
+    private static $query_alleBedarfsableitungenAnzeigenOT = "SELECT * FROM `Bedarfsableitung` ba,`Teile` t WHERE ba.`OTNr` = t.`TNr` ORDER BY ba.`BedarfsDatum` desc ";
+    private static $query_alleBedarfsableitungenAnzeigenUT = "SELECT * FROM `Bedarfsableitung` ba,`Teile` t WHERE ba.`UTNr` = t.`TNr` ORDER BY ba.`BedarfsDatum` desc";
 
     private static function day_in_sec(){
         return 24*60*60;
@@ -157,7 +159,7 @@ class AuftragsVerfolgung{
                   $bedarfsableitung->getUTNr(),$bedarfsableitung->getAuftragsDatum(),
                   $bedarfsableitung->getBedarfsDatum());
         if(!empty($result)){
-            $sql = sprintf(self::$query_updateBedarfsableitung,$result->getMengeUT+$bedarfsableitung->getMengeUT(),$result->getID());
+            $sql = sprintf(self::$query_updateBedarfsableitung,$result->getMengeUT()+$bedarfsableitung->getMengeUT(),$result->getID());
             self::getDbh()->query($sql);
         }else{
             $sql = sprintf(self::$query_bedarfsableitungHinzufuegen,$bedarfsableitung->getOTNr(),$bedarfsableitung->getUTNr(),
@@ -303,24 +305,42 @@ class AuftragsVerfolgung{
 <?php
     }
 
-
+    public static function getAlleBedarfsAbleitungen(){
+      $resultOT = self::getDbh()->query(self::$query_alleBedarfsableitungenAnzeigenOT);
+      $resultUT = self::getDbh()->query(self::$query_alleBedarfsableitungenAnzeigenUT);
+      return self::fetchBedarfsAbleitungsRows($resultOT,$resultUT);
+    }
+    private static function fetchBedarfsAbleitungsRows($resultOT,$resultUT){
+        $result_array = array();
+        if (mysql_num_rows($resultOT) > 0) {
+            while ($rowOT = mysql_fetch_assoc($resultOT)) {
+                $rowUT = mysql_fetch_assoc($resultUT);
+                $rowOT["BezeichnungOT"] = $rowOT["Bezeichnung"];
+                $rowOT["BezeichnungUT"] = $rowUT["Bezeichnung"];
+                array_push($result_array,$rowOT);
+            }
+        }
+        return $result_array;
+    }
     public static function printBedarfAbleitungsTabelle($listeVonBedarfableitungen){
         ?>
         <table border="1px solid black">
             <tr>
-                <th>ID</th>
-                <th>Teil</th>
-                <th>Datum</th>
-                <th>Menge</th>
+                <th>Oberteil</th>
+                <th>Unterteil</th>
+                <th>BedarfsDatum</th>
+                <th>AuftragsDatum</th>
+                <th>MengeUT</th>
             </tr>
 
             <?php
             foreach($listeVonBedarfableitungen as $row){
                 echo("<tr onmouseout='javascript:unhighlight_row(this);' onmouseover='javascript:highlight_row(this);'>
-                        <td>".$row["ID"]."</td>
-                        <td class=\"clickable\" onclick=\"location.href='products?search=".$row["Bezeichnung"]."'\">".$row["Bezeichnung"]."</td>
-                        <td>".self::getDateString($row["Datum"])."</td>
-                        <td>".$row["Menge"]."</td>
+                        <td class=\"clickable\" onclick=\"location.href='products?search=".$row["BezeichnungOT"]."'\">".$row["BezeichnungOT"]."</td>
+                        <td class=\"clickable\" onclick=\"location.href='products?search=".$row["BezeichnungUT"]."'\">".$row["BezeichnungUT"]."</td>
+                        <td>".self::getDateString($row["BedarfsDatum"])."</td>
+                        <td>".self::getDateString($row["AuftragsDatum"])."</td>
+                        <td>".$row["MengeUT"]."</td>
                    </tr>");
             }
             ?>
@@ -329,6 +349,36 @@ class AuftragsVerfolgung{
     }
 
 
+    public static function getBedarfeVonTeil($bezeichnung){
+        $sql = sprintf(self::$query_alleBedarfeByBezeichnung,$bezeichnung);
+        $rows = self::fetchRowsToArray(self::getDbh()->query($sql));
+        $verbrauch = 0;
+        if(!empty($rows)){
+            foreach($rows as $bedarfs_row){
+                $verbrauch+=$bedarfs_row["Menge"];
+            }
+        }
+        return $verbrauch;
+    }
+
+    public static function getBedarfeVonTeilInMonatJahr($bezeichnung,$timestamp){
+        $date = new DateTime();
+        $date->setTimestamp($timestamp);
+        $date->setTime(0,0,0);
+        $month = intval($date->format("m"));
+        $year = intval($date->format("Y"));
+        $lowerbound = self::getTimestamp(0,$month,$year);
+        $upperbound = self::getTimestamp(30,$month,$year);
+        $sql = sprintf(self::$query_alleBedarfeBetweenDatumAndBezeichnung,$bezeichnung,$lowerbound,$upperbound);
+        $rows = self::fetchRowsToArray(self::getDbh()->query($sql));
+        $verbrauch = 0;
+        if(!empty($rows)){
+            foreach($rows as $bedarfs_row){
+                $verbrauch+=$bedarfs_row["Menge"];
+            }
+        }
+        return $verbrauch;
+    }
 
 }
 
