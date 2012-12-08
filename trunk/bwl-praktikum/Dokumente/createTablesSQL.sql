@@ -91,6 +91,39 @@ CREATE TABLE struktur
      timestamp BIGINT
   );
   
+  CREATE TABLE IF NOT EXISTS `auftrag` (
+  `ID` int(11) NOT NULL AUTO_INCREMENT,
+  `TeilNr` int(11) NOT NULL,
+  `Datum` int(11) NOT NULL,
+  `Menge` int(11) NOT NULL,
+  PRIMARY KEY (`ID`)
+  );
+  CREATE TABLE IF NOT EXISTS `bedarf` (
+  `ID` int(11) NOT NULL AUTO_INCREMENT,
+  `TeilNr` int(11) NOT NULL,
+  `Datum` int(11) NOT NULL,
+  `Menge` int(11) NOT NULL,
+  PRIMARY KEY (`ID`)
+  );
+  CREATE TABLE IF NOT EXISTS `bedarfsableitung` (
+  `ID` int(11) NOT NULL AUTO_INCREMENT,
+  `OTNr` int(11) NOT NULL,
+  `UTNr` int(11) NOT NULL,
+  `AuftragsDatum` int(11) NOT NULL,
+  `BedarfsDatum` int(11) NOT NULL,
+  `MengeUT` int(11) NOT NULL,
+  PRIMARY KEY (`ID`)
+  );
+  CREATE TABLE IF NOT EXISTS `bedarfsdeckung` (
+  `ID` int(11) NOT NULL AUTO_INCREMENT,
+  `TeilNr` int(11) NOT NULL,
+  `BedarfsDatum` int(11) NOT NULL,
+  `AuftragsDatum` int(11) NOT NULL,
+  `Menge` int(11) NOT NULL,
+  PRIMARY KEY (`ID`)
+  );
+  
+  
 INSERT INTO `teile` (`Bezeichnung` , `Preis` , `Typ` , `Angeboten` , `Bild` , `Beschreibung` )
 VALUES ('Zylinder A4', '90.80', 'Kleinteil', NULL , 'application/view/images/170px-Cylinder.svg.png', 'Maße 55mm 106mm 22mm' ) 
 
