@@ -24,6 +24,17 @@ class BasketOverview_Controller implements Controller{
                     count_field.value=oldCount;
                 }
             }
+
+            function bestellen(){
+                var day = document.getElementById("day").value;
+                var month = document.getElementById("month").value;
+                var year = document.getElementById("year").value;
+                var gesamtpreis = document.getElementById("gesamtpreis").innerHTML;
+                if(confirm("Sie sind dabei ihre Bestellung im Wert von "+gesamtpreis+" abzuschicken, bestätigen Sie dies bitte!")){
+                   window.location.href = "basketoverview?bestellen=1&day="+day+"&month="+month+"&year="+year;
+                }
+            }
+
         </script>');
         // deciding which content to build
         // this $request->get doesnt mean get, its the PHP $_GET which is wraped in Request class
@@ -52,6 +63,26 @@ class BasketOverview_Controller implements Controller{
             }
         }
 
+        $month = $request->get["month"];
+        $day = $request->get["day"];
+        $year = $request->get["year"];
+        if(isset($request->get["bestellen"]) and isset($month)and isset($day) and isset($year)){
+
+
+            StrukturMapperImpl::make()->getAlleStrukturen();
+            //listeVonTeilen und ListeVonStrukturen wird in getAlleStrukuren erzeugt
+            Stueckliste::bestimmeOberUndUnterteile(Stueckliste::$listeVonTeilen,Stueckliste::$listeVonStrukturen);
+//          Stueckliste::stueckliste_test();
+
+            $lieferdatum = AuftragsVerfolgung::getTimestamp($day,$month,$year);
+
+            foreach ($products as $product){
+                $teil = Stueckliste::getProdukt($product->getBezeichnung());
+                AuftragsVerfolgung::teilHinzufuegen($teil,$_SESSION["basket"][$teil->id()],$lieferdatum);
+            }
+            $_SESSION["basket"] = array();
+            $products = array();
+        }
         // fetch view and apply data to view
         $page->setContentView(BasketOverview_View::create());
         $page->getLayoutElem("contentview")->applyData(array("basket" => $_SESSION['basket'],"products" => $products));

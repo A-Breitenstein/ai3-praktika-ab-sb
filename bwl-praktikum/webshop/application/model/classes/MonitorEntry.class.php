@@ -39,7 +39,6 @@ class MonitorEntry{
         $time = new DateTime();
         $time->setTime(0,0,0);
         $currentTime = $time->getTimestamp();
-        echo("daily::".$currentTime);
         $result = self::getDBH()->query("SELECT * FROM `monitorentry` WHERE `page`='$identifier' and `daily` = '1' and `timestamp` = '$currentTime'");
         if(mysql_num_rows($result) == 0){
             self::getDBH()->query("INSERT INTO monitorentry(`hits`,`daily`,`page`,`timestamp`) VALUES(".
@@ -56,7 +55,6 @@ class MonitorEntry{
         $hour = $time->format("H");
         $time->setTime($hour,0,0);
         $currentTime = $time->getTimestamp();
-        echo("hour::".$currentTime);
         $result = self::getDBH()->query("SELECT * FROM `monitorentry` WHERE `page`='$identifier' and `daily` = '0' and `timestamp` = '$currentTime'");
         if(mysql_num_rows($result) == 0){
             self::getDBH()->query("INSERT INTO monitorentry(`hits`,`daily`,`page`,`timestamp`) VALUES(".

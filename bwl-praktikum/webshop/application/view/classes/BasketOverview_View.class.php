@@ -49,8 +49,9 @@ class BasketOverview_View implements View{
                     }
                 }
             ?>
-            <div id="basket_whole_price">Gesamtpreis: <?php echo(number_format($whole_price, 2, ',', '')) ?></div>
-            <div id="bestellen"> zur Kasse</div>
+            <div id="basket_whole_price">Gesamtpreis:<div id="gesamtpreis"><?php echo(number_format($whole_price, 2, ',', '')) ?></div></div>
+            <div id="bestellen" onclick="javascript:bestellen();"> zur Kasse</div>
+            <div id="lieferdatum">Lieferdatum:<input id="day" value="tag"><input id="month" value="monat"><input id="year" value="jahr"></div>
 
             </div>
         </div>

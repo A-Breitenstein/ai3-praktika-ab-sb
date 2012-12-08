@@ -78,7 +78,7 @@ class ABC_Analyse{
     public static function convertToABC_ADT($listeVonTeilen){
         $listeVonABC_ADT = array();
         foreach($listeVonTeilen as $teil){
-            $abc_adt = ABC_Analyse::createABC_ADT($teil->getTeileNr(),$teil->getBezeichnung(),$teil->getPreis(),1);
+            $abc_adt = ABC_Analyse::createABC_ADT($teil->getTeileNr(),$teil->getBezeichnung(),$teil->getPreis(),AuftragsVerfolgung::getBedarfeVonTeil($teil->getBezeichnung()));
             array_push($listeVonABC_ADT,$abc_adt);
         }
         return $listeVonABC_ADT;

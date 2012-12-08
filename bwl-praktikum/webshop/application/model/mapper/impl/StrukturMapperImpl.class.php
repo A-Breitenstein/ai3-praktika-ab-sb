@@ -22,7 +22,8 @@ class StrukturMapperImpl{
         $sql = sprintf($this->query_strukturAnlegen,$OTNr,$UTNr,$menge);
         $this->dbm->query($sql);
     }
-    public function getAlleStrukturen(){
+    public function
+    getAlleStrukturen(){
         $sql = $this->query_getAlleStrukturen;
         $result = $this->dbm->query($sql);
         $ListOfStrukturen = array();

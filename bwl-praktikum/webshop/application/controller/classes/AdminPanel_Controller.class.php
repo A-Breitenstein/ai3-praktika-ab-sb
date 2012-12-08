@@ -57,17 +57,16 @@ class AdminPanel_Controller implements Controller{
                }
 
                function berechnen(){
-                    var summe = 0.0;
-                    for(var i = 0; i<4;i++){
-                        summe = summe + parseFloat(document.getElementById("monat"+i).value);
-                    }
-                    var durchschnitt = summe/4.0;
 
                     var glaettungsfaktor = parseFloat(document.getElementById("glaettungsfaktor").value);
-                    var letzterMonat = parseFloat(document.getElementById("monat0").value);
-//                    $vorletzteBedarfsmenge + ($glaettungsfaktor*($letzteBedarfsmenge-$vorletzteBedarfsmenge));
-                    var ergebnis = durchschnitt + (glaettungsfaktor* ( letzterMonat - durchschnitt ));
-                    document.getElementById("ergebnis").value = ergebnis;
+                    var monat = document.getElementById("monat").value;
+                    var jahr = document.getElementById("jahr").value;
+                    var teilName = document.getElementById("teilname").value;
+
+                     window.location.href = "adminpanel?monat="+monat+
+                                             "&jahr="+jahr+
+                                             "&teilname="+teilName+
+                                             "&faktor="+glaettungsfaktor;
 
                }
 
@@ -126,25 +125,49 @@ class AdminPanel_Controller implements Controller{
             Stueckliste::bestimmeOberUndUnterteile(Stueckliste::$listeVonTeilen,Stueckliste::$listeVonStrukturen);
 //          Stueckliste::stueckliste_test();
             $stuecklisteProdukt = Stueckliste::getProdukt($stuecklisteProdukt);
-            AuftragsVerfolgung::teilHinzufuegen($stuecklisteProdukt,200,AuftragsVerfolgung::getTimestamp(5,12,2012));
+            //AuftragsVerfolgung::teilHinzufuegen($stuecklisteProdukt,200,AuftragsVerfolgung::getTimestamp(5,12,2012));
         }
 //        $abc_analyse_result = ABC_Analyse::abc_analyse_test();
-        $abc_analyse_result = ABC_Analyse::analyse(ABC_Analyse::convertToABC_ADT(TeileMapperImpl::make()->getAlleProdukte()));
+        $abc_analyse_result = ABC_Analyse::analyse(ABC_Analyse::convertToABC_ADT(TeileMapperImpl::make()->getAlleTeile()));
 
-//        PrimaerbedarfsAnalyse::primaerbedarfstest();
 
         //var_dump(BestellungMapperImpl::make()->getBestellungenByKundenID(1));
 
 
         $bedarfs_daten = AuftragsVerfolgung::getAlleBedarfe();
+        $bedarfsableitungs_daten = AuftragsVerfolgung::getAlleBedarfsAbleitungen();
 
+        $faktor = $request->get["faktor"];
+        $monat = $request->get["monat"];
+        $jahr = $request->get["jahr"];
+        $teilname = $request->get["teilname"];
+        if (isset($teilname) and isset($jahr) and isset($monat) and isset($faktor)) {
+            $bedarfsanalyse_ergebnis = PrimaerbedarfsAnalyse::calcZukuenftigenBedarf($teilname,$monat,$jahr,$faktor);
+        }else{
+            $bedarfsanalyse_ergebnis = " ";
+            $teilname = "Aircar";
+            $monat = "12";
+            $jahr = "2012";
+            $faktor = "0.20";
+        }
+
+
+
+
+//        PrimaerbedarfsAnalyse::primaerbedarfstest();
 
         // fetch view and apply data to view
         $page->setContentView(AdminPanel_View::create());
         $page->getLayoutElem("contentview")->applyData(array(
                         "stueckliste_produkt" => $stuecklisteProdukt,
                         "abc_analyse_array" => $abc_analyse_result,
-                        "bedarfs_daten" => $bedarfs_daten)
+                        "bedarfs_daten" => $bedarfs_daten,
+                        "bedarfsableitungs_daten" => $bedarfsableitungs_daten,
+                        "bedarfsanalyse_ergebnis" => $bedarfsanalyse_ergebnis,
+                        "bedarfsanalyse_teilname" => $teilname,
+                        "bedarfsanalyse_monat" => $monat,
+                        "bedarfsanalyse_jahr" => $jahr,
+                        "bedarfsanalyse_faktor" => $faktor)
         );
 
 

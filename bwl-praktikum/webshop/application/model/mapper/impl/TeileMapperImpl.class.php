@@ -16,9 +16,9 @@ class TeileMapperImpl implements TeileMapper {
     private $query_getListOfUnterteilOfTeileById = "SELECT * FROM teile t, struktur s WHERE t.'%s' = s.otnr";
     private $query_getOberteilOfTeileById = "SELECT * FROM teile t, struktur s WHERE t.'%s' = s.utnr";
     private $query_getTeileById = "SELECT * FROM teile WHERE tnr = '%s'";
-    private $query_getAllTeileSelected = "SELECT * FROM teile WHERE verkaufstyp = '%s'";
+    private $query_getAllTeileSelected = "SELECT * FROM teile WHERE angeboten = '%s'";
     private $query_getAllTeile = "SELECT * FROM teile";
-    private $query_getListOfTeileByBestellungId = "SELECT b.bestellnr, t.tnr,t.bezeichnung,t.preis,t.typ,t.verkaufstyp,t.bild,t.beschreibung
+    private $query_getListOfTeileByBestellungId = "SELECT b.bestellnr, t.tnr,t.bezeichnung,t.preis,t.typ,t.angeboten,t.bild,t.beschreibung
                                                    FROM bestellung b, teile t, bestellung_teile bt 
                                                    WHERE b.bestellnr = bt.bestellnr and t.tnr = bt.tnr and b.bestellnr = '%s'";
     private $query_teilErstellen = "INSERT INTO `teile` (`Bezeichnung` , `Preis` , `Typ` , `Angeboten` , `Bild` , `Beschreibung` )
@@ -73,9 +73,11 @@ class TeileMapperImpl implements TeileMapper {
     }
     
     public function getProdukte() {
-        return $this->getAllTeile(true); 
+        return $this->getAllTeile(true);
     }
-    
+    public function getAlleTeile(){
+        return $this->getAllTeile(false);
+    }
     public function getAlleProdukte() {
         $sql = $this->query_getAllTeile;
         
