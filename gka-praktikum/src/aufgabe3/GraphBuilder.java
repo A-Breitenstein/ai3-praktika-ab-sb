@@ -6,9 +6,7 @@ import org.jgrapht.graph.DefaultWeightedEdge;
 import org.jgrapht.graph.WeightedPseudograph;
 import services.RandomManager;
 
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.List;
+import java.util.*;
 
 /**
  * Created with IntelliJ IDEA.
@@ -62,6 +60,8 @@ public class GraphBuilder {
 
         double edgeWeight;
 
+        List<String> addedVerticesList = new ArrayList<String>();
+
         sout_generateVertices(numberOfVertices);
 
         for (int i = 0; i < numberOfVertices; i++) {
@@ -73,16 +73,39 @@ public class GraphBuilder {
         //Add all Vertices to Graph
         addAllVertices(generatedGraph,generatedVerticesNames);
 
-        for (int i = 0; i < numberOfEdges; i++) {
-            int
-            sourceVertexIndex = RandomManager.intNumber(numberOfVertices,ZERO),
-            targetVertexIndex = RandomManager.intNumber(numberOfVertices,ZERO);
+        addedVerticesList.add(generatedVerticesNames.get(0));
 
-            sourceVertex = generatedVerticesNames.get(sourceVertexIndex);
-            targetVertex = generatedVerticesNames.get(targetVertexIndex);
+        String vertex;
+        int randomPos;
+
+        while (addedVerticesList.size() < generatedGraph.vertexSet().size()) {
+            for (String targetV : generatedVerticesNames) {
+                if (!addedVerticesList.contains(targetV)) {
+                    randomPos = RandomManager.intNumber(addedVerticesList.size(),ZERO);
+                    vertex = addedVerticesList.get(randomPos);
+                    edgeWeight = RandomManager.doubleNumber(upperBound, lowerBound);
+
+                    Graphs.addEdge(generatedGraph,vertex,targetV,edgeWeight);
+
+                    addedVerticesList.add(targetV);
+
+
+                }
+            }
+        }
+
+        for (int i = addedVerticesList.size(); i <= numberOfEdges; i++) {
+            do{
+                int
+                sourceVertexIndex = RandomManager.intNumber(numberOfVertices,ZERO),
+                targetVertexIndex = RandomManager.intNumber(numberOfVertices,ZERO);
+
+                sourceVertex = generatedVerticesNames.get(sourceVertexIndex);
+                targetVertex = generatedVerticesNames.get(targetVertexIndex);
+
+            }while(sourceVertex.equals(targetVertex));
 
             edgeWeight = RandomManager.doubleNumber(upperBound, lowerBound);
-
             Graphs.addEdgeWithVertices(generatedGraph,sourceVertex,targetVertex,edgeWeight);
         }
 

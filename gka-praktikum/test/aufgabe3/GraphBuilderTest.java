@@ -5,11 +5,9 @@ import org.junit.Test;
 import static org.junit.Assert.*;
 
 /**
- * Created with IntelliJ IDEA.
  * User: Qiqi
  * Date: 09.12.12
  * Time: 02:02
- * To change this template use File | Settings | File Templates.
  */
 public class GraphBuilderTest {
 
@@ -19,7 +17,7 @@ public class GraphBuilderTest {
         GraphBuilder gBuilder = GraphBuilder.create();
 
         int numberOfVertices = 200,
-            numberOfEdges = 800;
+            numberOfEdges = 8000;
 
         double maxEdgeWeight = 45.3,
                minEdgeWeight = 9.23;
@@ -27,7 +25,7 @@ public class GraphBuilderTest {
         generatedGraph = gBuilder.setGraphStructure(numberOfVertices,numberOfEdges).setEdgeWeightRange(maxEdgeWeight,minEdgeWeight).generate();
 
         boolean equalVertices = (generatedGraph.vertexSet().size() == numberOfVertices),
-                equalEdges = (generatedGraph.edgeSet().size() == numberOfEdges);
+                equalEdges = (generatedGraph.edgeSet().size() >= numberOfEdges);
 
         assertTrue(equalVertices);
         assertTrue(equalEdges);
