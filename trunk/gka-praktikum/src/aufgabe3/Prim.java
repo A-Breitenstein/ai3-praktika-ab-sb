@@ -2,6 +2,7 @@ package aufgabe3;
 
 import aufgabe1.CustomVertex;
 import org.jgrapht.Graph;
+import org.jgrapht.Graphs;
 import org.jgrapht.graph.DefaultWeightedEdge;
 import org.jgrapht.graph.WeightedPseudograph;
 
@@ -18,39 +19,85 @@ public class Prim {
     Queue<CustomVertex> vertexQueue = new PriorityQueue<CustomVertex>();
 
 
-    public void PrimAlgorithm(Graph graph){
+    public static Graph primAlgorithm(Graph graph){
+        boolean firstVertexSet = false;
+        Set edgeSet = graph.edgeSet();
+        List edges = new ArrayList();
 
-        List edges = (List)graph.edgeSet();
+        edges.addAll(edgeSet);
 
-        Object smallestEdge = edges.get(0);
-        double smallestEdgeWeight = 0d,
-               currentEdgeWeight;
+
+
 
         Graph graphT = new WeightedPseudograph(DefaultWeightedEdge.class);
 
-        Collection<Object> graphTvertexes = graphT.vertexSet();
+        Collection<Object> graphTvertices = graphT.vertexSet();
 
-        Map<Object,Double> graphTEdges = new HashMap<Object,Double>();
+        Map<String,String> graphTEdges = new HashMap<String,String>();
 
-        while (graphTvertexes.size() < graph.vertexSet().size()) {
-            for(Object e : edges){
-                smallestEdgeWeight = graph.getEdgeWeight(e);
-                currentEdgeWeight = graph.getEdgeWeight(smallestEdge);
-                if((smallestEdgeWeight <= currentEdgeWeight) && !graphTEdges.containsKey(smallestEdge))
-                    smallestEdge = e;
-            }
+        Object smallestEdge, source, target;
+        double smallestEdgeWeight = 0d;
 
-            graphTEdges.put(smallestEdge,smallestEdgeWeight);
+        List yetNotConnectedEdges = new ArrayList();
 
-            Object source = graph.getEdgeSource(smallestEdge),
-                   target = graph.getEdgeTarget(smallestEdge);
+        int edgeMapper = 0;
 
-            if (graphTvertexes.contains(source) || graphTvertexes.contains(target)) {
-                graphT.addVertex(source);
-                graphT.addVertex(target);
-                graphT.addEdge(source,target);
+        while (graphT.vertexSet().size() < graph.vertexSet().size()) {
+            if(!edges.isEmpty()){
+                smallestEdge = edges.get(0);
+
+
+                for (Object edge : edges) {
+                    if(!yetNotConnectedEdges.contains(edge)){
+                        if(graph.getEdgeWeight(edge) < graph.getEdgeWeight(smallestEdge)){
+                            smallestEdge = edge;
+                        }
+                    }
+                }
+
+                smallestEdgeWeight = graph.getEdgeWeight(smallestEdge);
+                source = graph.getEdgeSource(smallestEdge);
+                target = graph.getEdgeTarget(smallestEdge);
+
+
+
+
+                if(!firstVertexSet){
+                    graphT.addVertex(source);
+                    firstVertexSet = !firstVertexSet;
+                }
+
+                if ((graphT.vertexSet().contains(source) && !graphT.vertexSet().contains(target))||(!graphT.vertexSet().contains(source) && graphT.vertexSet().contains(target))) {
+                    String nTarget = graphTEdges.get((String)source + target),
+                           nTargetR = graphTEdges.get((String)target + source);
+                    if(nTarget == null && nTargetR == null){
+                    graphT.addVertex(source);
+                    graphT.addVertex(target);
+                    Graphs.addEdge(graphT,source,target,smallestEdgeWeight);
+
+                    System.out.print("Edge-" + edgeMapper + " :");
+                    sout_addEdgeToMap(smallestEdge, smallestEdgeWeight);
+                    edgeMapper++;
+
+                    graphTEdges.put((String)source + target,"");
+                    }
+
+                }else{
+                    yetNotConnectedEdges.add(smallestEdge);
+                }
+                edges.remove(smallestEdge);
+            }else{
+                edges.addAll(yetNotConnectedEdges);
+                yetNotConnectedEdges.clear();
             }
 
         }
+        System.out.println("Anzahl der hinzugefügten Kanten: " + edgeMapper + " Anzahl der Elemente in AddedEdgeMap: " + graphTEdges.keySet().size());
+
+        return graphT;
+    }
+
+    private static void sout_addEdgeToMap(Object smallestEdge, double smallestEdgeWeight) {
+        System.out.println("Edge added to Map: " + smallestEdge + ", EdgeWeight: " + smallestEdgeWeight);
     }
 }
