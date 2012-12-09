@@ -2,6 +2,7 @@
 <project version="4">
   <component name="VcsDirectoryMappings">
     <mapping directory="" vcs="svn" />
+    <mapping directory="$PROJECT_DIR$/../../../BS/bs-praktikum/aufgabe3/semaphoreMonitore/Services" vcs="svn" />
   </component>
 </project>
 

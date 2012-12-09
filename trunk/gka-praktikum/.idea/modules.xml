@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/Services/Services.iml" filepath="$PROJECT_DIR$/Services/Services.iml" />
       <module fileurl="file://$PROJECT_DIR$/gka-praktikum.iml" filepath="$PROJECT_DIR$/gka-praktikum.iml" />
     </modules>
   </component>
