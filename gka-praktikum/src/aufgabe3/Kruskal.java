@@ -45,8 +45,8 @@ public class Kruskal {
 
             sourceVertex = graph.getEdgeSource(edge);
             targetVertex = graph.getEdgeTarget(edge);
-            hasSource = graphTVertexSet.contains(sourceVertex);
-            hasTarget = graphTVertexSet.contains(targetVertex);
+            hasSource = graphT.vertexSet().contains(sourceVertex);
+            hasTarget = graphT.vertexSet().contains(targetVertex);
 
             if(hasSource && !hasTarget || !hasSource && hasTarget || !hasSource && !hasTarget){
                 boolean nTarget = graphTEdgeSet.contains((String)sourceVertex + targetVertex),
@@ -58,6 +58,14 @@ public class Kruskal {
                     graphTEdgeSet.add((String)sourceVertex + targetVertex);
                     graphTEdgeSet.add((String)targetVertex + sourceVertex);
                     Graphs.addEdge(graphT,sourceVertex,targetVertex,edgeWeight);
+                    System.out.println("added " + edge);
+                }
+            }else{
+                boolean nTarget = graphTEdgeSet.contains((String)sourceVertex + targetVertex),
+                        nTargetR = graphTEdgeSet.contains((String)targetVertex + sourceVertex);
+                if(!nTarget && !nTargetR){
+                    System.out.println(edge);
+                    System.out.println(graph.getEdgeWeight(edge));
                 }
             }
 
