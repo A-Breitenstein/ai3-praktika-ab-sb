@@ -21,17 +21,9 @@ public class Prim {
 
     public static Graph primAlgorithm(Graph graph){
         boolean firstVertexSet = false;
-        Set edgeSet = graph.edgeSet();
-        List edges = new ArrayList();
-
-        edges.addAll(edgeSet);
-
-
-
+        List edges = new ArrayList(graph.edgeSet());
 
         Graph graphT = new WeightedPseudograph(DefaultWeightedEdge.class);
-
-        Collection<Object> graphTvertices = graphT.vertexSet();
 
         Map<String,String> graphTEdges = new HashMap<String,String>();
 
