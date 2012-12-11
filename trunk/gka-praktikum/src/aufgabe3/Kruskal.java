@@ -1,5 +1,7 @@
 package aufgabe3;
 
+import aufgabe1.TraverseGraphAlgorithms;
+import aufgabe2.OptimalWay;
 import org.jgrapht.Graph;
 import org.jgrapht.Graphs;
 import org.jgrapht.graph.DefaultWeightedEdge;
@@ -7,6 +9,7 @@ import org.jgrapht.graph.WeightedPseudograph;
 
 import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 /**
@@ -23,7 +26,7 @@ public class Kruskal {
         Graph graphT = new WeightedPseudograph(DefaultWeightedEdge.class);
 
         Set graphTEdgeSet = new HashSet<String>(),
-            graphTVertexSet = new HashSet(),
+            unusedEdgeSet = new HashSet(),
             graphEdgeSet = new HashSet(graph.edgeSet());
 
         int numberOfVertices = graph.vertexSet().size();
@@ -61,15 +64,53 @@ public class Kruskal {
                     System.out.println("added " + edge);
                 }
             }else{
-                boolean nTarget = graphTEdgeSet.contains((String)sourceVertex + targetVertex),
-                        nTargetR = graphTEdgeSet.contains((String)targetVertex + sourceVertex);
-                if(!nTarget && !nTargetR){
-                    System.out.println(edge);
-                    System.out.println(graph.getEdgeWeight(edge));
+//                unusedEdgeSet.add(edge);
+                System.out.println("Transitivitätsüberprüfung für Kante: " + edge);
+                if (!checkTransitivity(graphT,sourceVertex,targetVertex)) {
+                    Graphs.addEdge(graphT,sourceVertex,targetVertex,edgeWeight);
+                    System.out.println("added " + edge);
+                }
+            }
+            graphEdgeSet.remove(edge);
+        }
+
+//        --------------------------------------------------------------------------------------------------------------
+
+
+        unusedEdgeSet.addAll(graphEdgeSet);
+
+
+        while(graphT.edgeSet().size() != graphT.vertexSet().size() - 1) {
+
+            edge = (new ArrayList(unusedEdgeSet)).get(ZERO);
+
+            for (Object o : unusedEdgeSet) {
+                if (graph.getEdgeWeight(o) < graph.getEdgeWeight(edge)) {
+                    edge = o;
                 }
             }
 
-            graphEdgeSet.remove(edge);
+            edgeWeight = graph.getEdgeWeight(edge);
+            sourceVertex = graph.getEdgeSource(edge);
+            targetVertex = graph.getEdgeTarget(edge);
+            System.out.println( edge +" source nachbarn" + Graphs.neighborListOf(graphT,sourceVertex));
+            System.out.println( edge +" target nachbarn" + Graphs.neighborListOf(graphT,targetVertex));
+
+            boolean nTarget = graphTEdgeSet.contains((String)sourceVertex + targetVertex),
+                    nTargetR = graphTEdgeSet.contains((String)targetVertex + sourceVertex);
+            if (!nTarget && !nTargetR) {
+                System.out.println(edge + " ist in graphT nicht vorhanden!");
+            } else {
+                System.out.println(edge + " ist in graphT schon vorhanden!");
+            }
+
+            if (!checkTransitivity(graphT,sourceVertex,targetVertex)) {
+                Graphs.addEdge(graphT,sourceVertex,targetVertex,edgeWeight);
+                System.out.println("added " + edge);
+            }
+
+            unusedEdgeSet.remove(edge);
+
         }
 
         sout_graphInfo(graphT);
@@ -80,4 +121,10 @@ public class Kruskal {
     private static void sout_graphInfo(Graph graphT) {
         System.out.println("GraphT, Vertices: " + graphT.vertexSet().size() + ", Edges: " + graphT.edgeSet().size());
     }
+
+    private static boolean checkTransitivity(Graph graph, Object sourceVertex, Object targetVertex) {
+
+        return (OptimalWay.dijkstra(graph, (String) sourceVertex, (String) targetVertex) != null);
+    }
+
 }

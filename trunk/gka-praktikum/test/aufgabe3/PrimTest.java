@@ -1,5 +1,6 @@
 package aufgabe3;
 
+import aufgabe1.GKAFileManager;
 import org.jgrapht.Graph;
 import org.junit.Test;
 import static org.junit.Assert.*;
@@ -31,5 +32,16 @@ public class PrimTest {
         System.out.println(minimalGraph);
 
         assertTrue(minimalGraph.edgeSet().size() == numberOfVertices - 1);
+    }
+
+    @Test
+    public void primAlgorithm_graph4_a3_test() {
+        Graph graph = GKAFileManager.importGraph("graph4_a3.gka");
+
+        Graph minimalGraph = Prim.primAlgorithm(graph);
+
+        System.out.println(minimalGraph);
+
+        assertTrue(minimalGraph.edgeSet().size() == minimalGraph.vertexSet().size() - 1);
     }
 }

@@ -1,5 +1,6 @@
 package aufgabe3;
 
+import aufgabe1.GKAFileManager;
 import org.jgrapht.Graph;
 import org.junit.Test;
 
@@ -18,8 +19,8 @@ public class KruskalTest {
                 minimalGraph;
         GraphBuilder gBuilder = GraphBuilder.create();
 
-        int numberOfVertices = 5,
-                numberOfEdges = 10;
+        int numberOfVertices = 200,
+                numberOfEdges = 8000;
 
         double maxEdgeWeight = 20000d,
                 minEdgeWeight = 1d;
@@ -32,5 +33,16 @@ public class KruskalTest {
         System.out.println(minimalGraph);
 
         assertTrue(minimalGraph.edgeSet().size() == numberOfVertices - 1);
+    }
+
+    @Test
+    public void kruskalAlgorithm_graph4_a3_test() {
+        Graph graph = GKAFileManager.importGraph("graph4_a3.gka");
+
+        Graph minimalGraph = Kruskal.kruskalAlgorithm(graph);
+
+        System.out.println(minimalGraph);
+
+        assertTrue(minimalGraph.edgeSet().size() == minimalGraph.vertexSet().size() - 1);
     }
 }
