@@ -98,7 +98,7 @@ public class OptimalWay {
         }
 
         if(smallestDistanceVertex.isEmpty())//{System.out.println("keinen kleinsten Vertex gefunden!"); System.exit(1);}
-            System.out.println("......");
+            System.out.print(" -> ");
 
         if (map.containsKey(smallestDistanceVertex)) {
 
