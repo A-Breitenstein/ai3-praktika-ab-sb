@@ -64,53 +64,15 @@ public class Kruskal {
                     System.out.println("added " + edge);
                 }
             }else{
-//                unusedEdgeSet.add(edge);
-                System.out.println("Transitivitätsüberprüfung für Kante: " + edge);
-                if (!checkTransitivity(graphT,sourceVertex,targetVertex)) {
-                    Graphs.addEdge(graphT,sourceVertex,targetVertex,edgeWeight);
-                    System.out.println("added " + edge);
+                System.out.print("Transitivitätsüberprüfung für Kante: " + edge);
+                if (!checkTransitivity(graphT, sourceVertex, targetVertex)) {
+                    Graphs.addEdge(graphT, sourceVertex, targetVertex, edgeWeight);
+                    System.out.println("added: " + edge);
+                } else {
+                    System.out.println("FAIL");
                 }
             }
             graphEdgeSet.remove(edge);
-        }
-
-//        --------------------------------------------------------------------------------------------------------------
-
-
-        unusedEdgeSet.addAll(graphEdgeSet);
-
-
-        while(graphT.edgeSet().size() != graphT.vertexSet().size() - 1) {
-
-            edge = (new ArrayList(unusedEdgeSet)).get(ZERO);
-
-            for (Object o : unusedEdgeSet) {
-                if (graph.getEdgeWeight(o) < graph.getEdgeWeight(edge)) {
-                    edge = o;
-                }
-            }
-
-            edgeWeight = graph.getEdgeWeight(edge);
-            sourceVertex = graph.getEdgeSource(edge);
-            targetVertex = graph.getEdgeTarget(edge);
-            System.out.println( edge +" source nachbarn" + Graphs.neighborListOf(graphT,sourceVertex));
-            System.out.println( edge +" target nachbarn" + Graphs.neighborListOf(graphT,targetVertex));
-
-            boolean nTarget = graphTEdgeSet.contains((String)sourceVertex + targetVertex),
-                    nTargetR = graphTEdgeSet.contains((String)targetVertex + sourceVertex);
-            if (!nTarget && !nTargetR) {
-                System.out.println(edge + " ist in graphT nicht vorhanden!");
-            } else {
-                System.out.println(edge + " ist in graphT schon vorhanden!");
-            }
-
-            if (!checkTransitivity(graphT,sourceVertex,targetVertex)) {
-                Graphs.addEdge(graphT,sourceVertex,targetVertex,edgeWeight);
-                System.out.println("added " + edge);
-            }
-
-            unusedEdgeSet.remove(edge);
-
         }
 
         sout_graphInfo(graphT);
