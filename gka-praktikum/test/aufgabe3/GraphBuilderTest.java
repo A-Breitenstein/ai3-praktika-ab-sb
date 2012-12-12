@@ -1,7 +1,9 @@
 package aufgabe3;
 
+import aufgabe1.GKAFileManager;
 import org.jgrapht.Graph;
 import org.junit.Test;
+
 import static org.junit.Assert.*;
 
 /**
@@ -17,15 +19,17 @@ public class GraphBuilderTest {
         GraphBuilder gBuilder = GraphBuilder.create();
 
         int numberOfVertices = 200,
-            numberOfEdges = 8000;
+                numberOfEdges = 8000;
 
         double maxEdgeWeight = 45.3,
-               minEdgeWeight = 9.23;
+                minEdgeWeight = 9.23;
 
-        generatedGraph = gBuilder.setGraphStructure(numberOfVertices,numberOfEdges).setEdgeWeightRange(maxEdgeWeight,minEdgeWeight).generate();
+        generatedGraph = gBuilder.setGraphStructure(numberOfVertices, numberOfEdges).setEdgeWeightRange(maxEdgeWeight, minEdgeWeight).generate();
 
         boolean equalVertices = (generatedGraph.vertexSet().size() == numberOfVertices),
                 equalEdges = (generatedGraph.edgeSet().size() >= numberOfEdges);
+
+        GKAFileManager.exportGraph(generatedGraph, "BIG_MAMMAS_GRAPH.gka");
 
         assertTrue(equalVertices);
         assertTrue(equalEdges);
