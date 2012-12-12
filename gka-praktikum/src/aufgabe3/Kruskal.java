@@ -26,7 +26,6 @@ public class Kruskal {
         Graph graphT = new WeightedPseudograph(DefaultWeightedEdge.class);
 
         Set graphTEdgeSet = new HashSet<String>(),
-            unusedEdgeSet = new HashSet(),
             graphEdgeSet = new HashSet(graph.edgeSet());
 
         int numberOfVertices = graph.vertexSet().size();
