@@ -56,7 +56,6 @@ public class GraphBuilder {
 
         Graph generatedGraph = new WeightedPseudograph(DefaultWeightedEdge.class);
         List<String> generatedVerticesNames = new ArrayList<String>();
-//        List<DefaultWeightedEdge> generatedEdges = new ArrayList<DefaultWeightedEdge>();
 
         double edgeWeight;
 
@@ -70,31 +69,18 @@ public class GraphBuilder {
 
         sout_addVertices(numberOfVertices);
 
-        //Add all Vertices to Graph
-        addAllVertices(generatedGraph,generatedVerticesNames);
+        while (generatedGraph.vertexSet().size() < generatedVerticesNames.size()) {
 
-        addedVerticesList.add(generatedVerticesNames.get(0));
+            for (int i = 1; i < generatedVerticesNames.size(); i++) {
+                sourceVertex = generatedVerticesNames.get(i-1);
+                targetVertex = generatedVerticesNames.get(i);
+                edgeWeight = RandomManager.doubleNumber(upperBound, lowerBound);
 
-        String vertex;
-        int randomPos;
-
-        while (addedVerticesList.size() < generatedGraph.vertexSet().size()) {
-            for (String targetV : generatedVerticesNames) {
-                if (!addedVerticesList.contains(targetV)) {
-                    randomPos = RandomManager.intNumber(addedVerticesList.size(),ZERO);
-                    vertex = addedVerticesList.get(randomPos);
-                    edgeWeight = RandomManager.doubleNumber(upperBound, lowerBound);
-
-                    Graphs.addEdge(generatedGraph,vertex,targetV,edgeWeight);
-
-                    addedVerticesList.add(targetV);
-
-
-                }
+                Graphs.addEdgeWithVertices(generatedGraph, sourceVertex, targetVertex, edgeWeight);
             }
         }
 
-        for (int i = addedVerticesList.size(); i <= numberOfEdges; i++) {
+        for (int i = generatedGraph.edgeSet().size(); i <= numberOfEdges; i++) {
             do{
                 int
                 sourceVertexIndex = RandomManager.intNumber(numberOfVertices,ZERO),
