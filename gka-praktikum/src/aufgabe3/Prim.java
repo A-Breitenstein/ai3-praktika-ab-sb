@@ -16,7 +16,7 @@ import java.util.*;
  */
 public class Prim {
 
-    Queue<CustomVertex> vertexQueue = new PriorityQueue<CustomVertex>();
+//    Queue<CustomVertex> vertexQueue = new PriorityQueue<CustomVertex>();
 
 
     public static Graph primAlgorithm(Graph graph){
@@ -28,7 +28,7 @@ public class Prim {
         Map<String,String> graphTEdges = new HashMap<String,String>();
 
         Object smallestEdge, source, target;
-        double smallestEdgeWeight = 0d;
+        double smallestEdgeWeight;
 
         List yetNotConnectedEdges = new ArrayList();
 
@@ -72,15 +72,17 @@ public class Prim {
                     edgeMapper++;
 
                     graphTEdges.put((String)source + target,"");
+                    edges.addAll(yetNotConnectedEdges);
+                    yetNotConnectedEdges.clear();
                     }
-
+//
                 }else{
                     yetNotConnectedEdges.add(smallestEdge);
                 }
                 edges.remove(smallestEdge);
-            }else{
-                edges.addAll(yetNotConnectedEdges);
-                yetNotConnectedEdges.clear();
+//            }else{
+//                edges.addAll(yetNotConnectedEdges);
+//                yetNotConnectedEdges.clear();
             }
 
         }

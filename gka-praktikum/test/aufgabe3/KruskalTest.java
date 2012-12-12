@@ -25,7 +25,7 @@ public class KruskalTest {
         double maxEdgeWeight = 20000d,
                 minEdgeWeight = 1d;
 
-        generatedGraph = gBuilder.setGraphStructure(numberOfVertices,numberOfEdges).setEdgeWeightRange(maxEdgeWeight,minEdgeWeight).generate();
+        generatedGraph = gBuilder.setGraphStructure(numberOfVertices, numberOfEdges).setEdgeWeightRange(maxEdgeWeight, minEdgeWeight).generate();
 
         minimalGraph = Kruskal.kruskalAlgorithm(generatedGraph);
 
@@ -38,6 +38,17 @@ public class KruskalTest {
     @Test
     public void kruskalAlgorithm_graph4_a3_test() {
         Graph graph = GKAFileManager.importGraph("graph4_a3.gka");
+
+        Graph minimalGraph = Kruskal.kruskalAlgorithm(graph);
+
+        System.out.println(minimalGraph);
+
+        assertTrue(minimalGraph.edgeSet().size() == minimalGraph.vertexSet().size() - 1);
+    }
+
+    @Test
+    public void kruskalAlgorithm_graph5_a3_test() {
+        Graph graph = GKAFileManager.importGraph("graph5_a3.gka");
 
         Graph minimalGraph = Kruskal.kruskalAlgorithm(graph);
 

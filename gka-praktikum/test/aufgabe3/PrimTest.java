@@ -44,4 +44,15 @@ public class PrimTest {
 
         assertTrue(minimalGraph.edgeSet().size() == minimalGraph.vertexSet().size() - 1);
     }
+
+    @Test
+    public void primAlgorithm_graph5_a3_test() {
+        Graph graph = GKAFileManager.importGraph("graph5_a3.gka");
+
+        Graph minimalGraph = Prim.primAlgorithm(graph);
+
+        System.out.println(minimalGraph);
+
+        assertTrue(minimalGraph.edgeSet().size() == minimalGraph.vertexSet().size() - 1);
+    }
 }
