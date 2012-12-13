@@ -28,7 +28,8 @@ public class Kruskal {
         Set graphTEdgeSet = new HashSet<String>(),
             graphEdgeSet = new HashSet(graph.edgeSet());
 
-        int numberOfVertices = graph.vertexSet().size();
+        int numberOfVertices = graph.vertexSet().size(),
+        graphZugriffe = 0;
         double edgeWeight = 0d;
         Object edge,
                sourceVertex,
@@ -38,13 +39,18 @@ public class Kruskal {
 
         while (graphT.vertexSet().size() < numberOfVertices){ //&& graphEdgeSet.size() != ZERO) {
             edge = (new ArrayList(graphEdgeSet)).get(ZERO);
-
+            graphZugriffe++;
             for (Object o : graphEdgeSet) {
+                graphZugriffe++;
                 if (graph.getEdgeWeight(o) < graph.getEdgeWeight(edge)) {
                     edge = o;
                 }
             }
 
+            graphZugriffe++;
+            graphZugriffe++;
+            graphZugriffe++;
+            graphZugriffe++;
             sourceVertex = graph.getEdgeSource(edge);
             targetVertex = graph.getEdgeTarget(edge);
             hasSource = graphT.vertexSet().contains(sourceVertex);
@@ -64,6 +70,7 @@ public class Kruskal {
                 }
             }else{
                 System.out.print("Transitivitätsüberprüfung für Kante: " + edge);
+                graphZugriffe++;
                 if (!checkTransitivity(graphT, sourceVertex, targetVertex)) {
                     Graphs.addEdge(graphT, sourceVertex, targetVertex, edgeWeight);
                     System.out.println("added: " + edge + ", EdgeWeigh: " + edgeWeight);
@@ -73,11 +80,18 @@ public class Kruskal {
             }
             graphEdgeSet.remove(edge);
 
-            if(graphT.edgeSet().size() >= graphT.vertexSet().size() || graphT.edgeSet().size() > 199)
-                break;
+//            if(graphT.edgeSet().size() >= graphT.vertexSet().size() || graphT.edgeSet().size() > 199)
+//                break;
         }
         if(graphT.edgeSet().size() >= graphT.vertexSet().size() || graphT.edgeSet().size() > 199)
             System.out.println("Fehler !!!!!");
+
+        double weightSum = 0;
+        for (Object o : graphT.edgeSet()) {
+            weightSum += graphT.getEdgeWeight(o);
+        }
+        System.out.println("Kantengewichtssumme: " + weightSum + ", Zugriffe auf den graphen: " + graphZugriffe);
+
         sout_graphInfo(graphT);
 
         return graphT;

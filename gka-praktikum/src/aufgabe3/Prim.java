@@ -20,9 +20,13 @@ public class Prim {
 
     public static Graph primAlgorithm(Graph graph) {
 
+        int edgeMapper = 0,
+            graphZugriffe = 0;
+
         Queue<CustomEdge> edges;
 
         edges = createPriorityQueue(graph);
+        graphZugriffe+=graph.edgeSet().size();
 
         boolean firstVertexSet = false;
 
@@ -37,12 +41,12 @@ public class Prim {
 
         List<CustomEdge> yetNotConnectedEdges = new ArrayList<CustomEdge>();
 
-        int edgeMapper = 0;
 
         while (graphT.vertexSet().size() < graph.vertexSet().size()) {
             if (!edges.isEmpty()) {
 //                smallestEdge = edges.get(0);
                 CustomEdge customEdge = edges.poll();
+                graphZugriffe++;
                 smallestEdge = customEdge.edge;
 
 
@@ -98,7 +102,7 @@ public class Prim {
             weightSum += graphT.getEdgeWeight(o);
         }
 
-        System.out.println("Kantengewichtssumme: " + weightSum);
+        System.out.println("Kantengewichtssumme: " + weightSum + ", Zugriffe auf den graphen: " + graphZugriffe);
 
         return graphT;
     }
