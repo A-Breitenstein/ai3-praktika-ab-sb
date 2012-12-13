@@ -15,24 +15,17 @@ public class KruskalTest {
 
     @Test
     public void testKruskalAlgorithm() throws Exception {
-        Graph generatedGraph,
-                minimalGraph;
-        GraphBuilder gBuilder = GraphBuilder.create();
+        Graph graph = GKAFileManager.importGraph("BIG_MAMMAS_GRAPH.gka");
 
-        int numberOfVertices = 200,
-                numberOfEdges = 8000;
+        final Long nanosecond = System.nanoTime();
+        Graph minimalGraph = Kruskal.kruskalAlgorithm(graph);
+        final Long usedNanosecond = System.nanoTime() - nanosecond;
+        System.out.println("Nanosekunden: " + usedNanosecond + " Millisekunden: " + usedNanosecond / 1000000);
 
-        double maxEdgeWeight = 20000d,
-                minEdgeWeight = 1d;
-
-        generatedGraph = gBuilder.setGraphStructure(numberOfVertices, numberOfEdges).setEdgeWeightRange(maxEdgeWeight, minEdgeWeight).generate();
-
-        minimalGraph = Kruskal.kruskalAlgorithm(generatedGraph);
-
-        System.out.println(generatedGraph);
+        System.out.println(graph);
         System.out.println(minimalGraph);
 
-        assertTrue(minimalGraph.edgeSet().size() == numberOfVertices - 1);
+        assertTrue(minimalGraph.edgeSet().size() == minimalGraph.vertexSet().size() - 1);
     }
 
     @Test
