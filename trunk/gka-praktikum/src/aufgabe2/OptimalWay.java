@@ -52,7 +52,8 @@ public class OptimalWay {
                     _dijkstra(graph, customVertexMap, vertexName, openList);
             }
             smallestVertex = getSmallestDistanceNeighbor(customVertexMap);
-            if(smallestVertex == null) return null;
+            if(smallestVertex == null)
+                return null;
             openList.remove(smallestVertex);
             _dijkstra(graph, customVertexMap, smallestVertex, openList);
         }
@@ -98,7 +99,7 @@ public class OptimalWay {
         }
 
         if(smallestDistanceVertex.isEmpty())//{System.out.println("keinen kleinsten Vertex gefunden!"); System.exit(1);}
-            System.out.print(" -> ");
+            System.out.print("");
 
         if (map.containsKey(smallestDistanceVertex)) {
 
@@ -223,7 +224,7 @@ public class OptimalWay {
         }
         for (int i = 0; i < strings.size(); i++) {
             System.out.print(strings.get(i));
-            if(i < strings.size()-1)
+            if(i < strings.size()-1);
                 System.out.print(" -> ");
         }
         System.out.println(": distance = " + map.get(ziel).getDistance());
