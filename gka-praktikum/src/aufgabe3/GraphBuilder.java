@@ -27,6 +27,8 @@ public class GraphBuilder {
 
     private int numberOfVertices = 0, numberOfEdges = 0;
 
+    private boolean multiEdges = false;
+
     private GraphBuilder() {
     }
 
@@ -48,6 +50,12 @@ public class GraphBuilder {
         return this;
     }
 
+    public GraphBuilder allowMultiEdges() {
+        this.multiEdges = true;
+
+        return this;
+    }
+
     public Graph generate() {
 
         if(this.numberOfVertices == 0)
@@ -59,7 +67,7 @@ public class GraphBuilder {
 
         double edgeWeight;
 
-        List<String> addedVerticesList = new ArrayList<String>();
+        Set<String> addedEdgeSet = new HashSet<String>();
 
         sout_generateVertices(numberOfVertices);
 
@@ -77,10 +85,15 @@ public class GraphBuilder {
                 edgeWeight = RandomManager.doubleNumber(upperBound, lowerBound);
 
                 Graphs.addEdgeWithVertices(generatedGraph, sourceVertex, targetVertex, edgeWeight);
+
+                addedEdgeSet.add(sourceVertex+targetVertex);
+                addedEdgeSet.add(targetVertex+sourceVertex);
             }
         }
 
-        for (int i = generatedGraph.edgeSet().size(); i <= numberOfEdges; i++) {
+        boolean edgeCheck, equalVertices;
+
+        for (int i = generatedGraph.edgeSet().size(); i < numberOfEdges; i++) {
             do{
                 int
                 sourceVertexIndex = RandomManager.intNumber(numberOfVertices,ZERO),
@@ -89,7 +102,16 @@ public class GraphBuilder {
                 sourceVertex = generatedVerticesNames.get(sourceVertexIndex);
                 targetVertex = generatedVerticesNames.get(targetVertexIndex);
 
-            }while(sourceVertex.equals(targetVertex));
+
+                equalVertices = sourceVertex.equals(targetVertex);
+                if (multiEdges) {
+                    edgeCheck = equalVertices;
+                } else {
+                    edgeCheck = equalVertices && (addedEdgeSet.contains(sourceVertex+targetVertex) || addedEdgeSet.contains(targetVertex+sourceVertex));
+                }
+            }while(edgeCheck);
+
+
 
             edgeWeight = RandomManager.doubleNumber(upperBound, lowerBound);
             Graphs.addEdgeWithVertices(generatedGraph,sourceVertex,targetVertex,edgeWeight);

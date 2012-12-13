@@ -1,6 +1,7 @@
 package aufgabe1;
 
 import aufgabe2.AttributedGraphImpl;
+import org.jgraph.graph.Edge;
 import org.jgrapht.Graph;
 import org.jgrapht.Graphs;
 import org.jgrapht.graph.*;
@@ -224,6 +225,12 @@ public class GKAFileManager {
             } else if (graph instanceof WeightedPseudograph) {
                 fw.write(UNGERICHTET + "\n");
                 fw.write(GEWICHTET + "\n");
+
+                for (Object edge : graph.edgeSet()) {
+                    fw.write(graph.getEdgeSource(edge) + "," + graph.getEdgeTarget(edge) + "," + graph.getEdgeWeight(edge) + "\n");
+                }
+
+/*
                 for (Object sourceVertex : graph.vertexSet()) {
                     for (Object targetVertex : graph.vertexSet()) {
                         Object obj = graph.getEdge(sourceVertex, targetVertex);
@@ -232,6 +239,7 @@ public class GKAFileManager {
                         }
                     }
                 }
+*/
             } else if (graph instanceof ListenableDirectedWeightedGraph) {
                 fw.write(GERICHTET + "\n");
                 fw.write(GEWICHTET + "\n");

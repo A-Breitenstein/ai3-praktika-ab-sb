@@ -15,58 +15,32 @@ public class PrimTest {
 
     @Test
     public void primAlgorithm_test() {
-        Graph generatedGraph,
-                minimalGraph;
-        GraphBuilder gBuilder = GraphBuilder.create();
-
-        int numberOfVertices = 200,
-                numberOfEdges = 8000;
-
-        double maxEdgeWeight = 20000d,
-                minEdgeWeight = 1d;
-
-        generatedGraph = gBuilder.setGraphStructure(numberOfVertices, numberOfEdges).setEdgeWeightRange(maxEdgeWeight, minEdgeWeight).generate();
+        Graph graph = GKAFileManager.importGraph("BIG_MAMMAS_GRAPH.gka");
 
         final Long nanosecond = System.nanoTime();
-        minimalGraph = Prim.primAlgorithm(generatedGraph);
+        Graph minimalGraph = Prim.primAlgorithm(graph);
         final Long usedNanosecond = System.nanoTime() - nanosecond;
-        System.out.println("NOFI -> Nanosekunden: " + usedNanosecond + " Millisekunden: " + usedNanosecond / 1000000);
+        System.out.println("Nanosekunden: " + usedNanosecond + " Millisekunden: " + usedNanosecond / 1000000);
 
-
-        final Long nanosecondF = System.nanoTime();
-        minimalGraph = Prim.primAlgorithmFiboHeap(generatedGraph);
-        final Long usedNanosecondF = System.nanoTime() - nanosecondF;
-        System.out.println("FIBO -> Nanosekunden: " + usedNanosecondF + " Millisekunden: " + usedNanosecondF / 1000000);
-
-        System.out.println(generatedGraph);
+        System.out.println(graph);
         System.out.println(minimalGraph);
 
-        assertTrue(minimalGraph.edgeSet().size() == numberOfVertices - 1);
+        assertTrue(minimalGraph.edgeSet().size() == minimalGraph.vertexSet().size() - 1);
     }
 
     @Test
     public void primAlgorithmFiboHeap_test() {
-        Graph generatedGraph,
-                minimalGraph;
-        GraphBuilder gBuilder = GraphBuilder.create();
-
-        int numberOfVertices = 200,
-                numberOfEdges = 8000;
-
-        double maxEdgeWeight = 20000d,
-                minEdgeWeight = 1d;
-
-        generatedGraph = gBuilder.setGraphStructure(numberOfVertices, numberOfEdges).setEdgeWeightRange(maxEdgeWeight, minEdgeWeight).generate();
+        Graph graph = GKAFileManager.importGraph("BIG_MAMMAS_GRAPH.gka");
 
         final Long nanosecond = System.nanoTime();
-        minimalGraph = Prim.primAlgorithmFiboHeap(generatedGraph);
+        Graph minimalGraph = Prim.primAlgorithmFiboHeap(graph);
         final Long usedNanosecond = System.nanoTime() - nanosecond;
         System.out.println("Nanosekunden: " + usedNanosecond + " Millisekunden: " + usedNanosecond / 1000000);
 
-        System.out.println(generatedGraph);
+        System.out.println(graph);
         System.out.println(minimalGraph);
 
-        assertTrue(minimalGraph.edgeSet().size() == numberOfVertices - 1);
+        assertTrue(minimalGraph.edgeSet().size() == minimalGraph.vertexSet().size() - 1);
     }
 
     @Test
