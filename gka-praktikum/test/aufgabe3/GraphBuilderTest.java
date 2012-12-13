@@ -29,7 +29,7 @@ public class GraphBuilderTest {
         boolean equalVertices = (generatedGraph.vertexSet().size() == numberOfVertices),
                 equalEdges = (generatedGraph.edgeSet().size() >= numberOfEdges);
 
-        GKAFileManager.exportGraph(generatedGraph, "BIG_MAMMAS_GRAPH.gka");
+        GKAFileManager.exportGraph(generatedGraph, "BIG.gka");
 
         assertTrue(equalVertices);
         assertTrue(equalEdges);

@@ -76,7 +76,7 @@ public class Prim {
                         graphT.addVertex(target);
                         Graphs.addEdge(graphT, source, target, smallestEdgeWeight);
 
-                        System.out.print("Edge-" + edgeMapper + " :");
+                        //System.out.print("Edge-" + edgeMapper + " :");
                         sout_addEdgeToMap(smallestEdge, smallestEdgeWeight);
                         edgeMapper++;
 
@@ -95,14 +95,14 @@ public class Prim {
             }
 
         }
-        System.out.println("Anzahl der hinzugefügten Kanten: " + edgeMapper + " Anzahl der Elemente in AddedEdgeMap: " + graphTEdges.keySet().size());
+        //System.out.println("Anzahl der hinzugefügten Kanten: " + edgeMapper + " Anzahl der Elemente in AddedEdgeMap: " + graphTEdges.keySet().size());
 
         double weightSum = 0;
         for (Object o : graphT.edgeSet()) {
             weightSum += graphT.getEdgeWeight(o);
         }
 
-        System.out.println("Kantengewichtssumme: " + weightSum + ", Zugriffe auf den graphen: " + graphZugriffe);
+        System.out.println("Kantengewichtssumme: " + weightSum );//+ ", Zugriffe auf den graphen: " + graphZugriffe);
 
         return graphT;
     }
@@ -162,7 +162,7 @@ public class Prim {
                         graphT.addVertex(target);
                         Graphs.addEdge(graphT, source, target, smallestEdgeWeight);
 
-                        System.out.print("Edge-" + edgeMapper + " :");
+                        //System.out.print("Edge-" + edgeMapper + " :");
                         sout_addEdgeToMap(smallestEdge, smallestEdgeWeight);
                         edgeMapper++;
 
@@ -184,7 +184,7 @@ public class Prim {
             }
 
         }
-        System.out.println("Anzahl der hinzugefügten Kanten: " + edgeMapper + " Anzahl der Elemente in AddedEdgeMap: " + graphTEdges.keySet().size());
+        //System.out.println("Anzahl der hinzugefügten Kanten: " + edgeMapper + " Anzahl der Elemente in AddedEdgeMap: " + graphTEdges.keySet().size());
 
         double weightSum = 0;
         for (Object o : graphT.edgeSet()) {
@@ -224,7 +224,7 @@ public class Prim {
     }
 
     private static void sout_addEdgeToMap(Object smallestEdge, double smallestEdgeWeight) {
-        System.out.println("Edge added to Map: " + smallestEdge + ", EdgeWeight: " + smallestEdgeWeight);
+        //System.out.println("Edge added to Map: " + smallestEdge + ", EdgeWeight: " + smallestEdgeWeight);
     }
 
 }

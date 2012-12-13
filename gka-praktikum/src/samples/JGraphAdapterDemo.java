@@ -57,8 +57,8 @@ public class JGraphAdapterDemo extends JApplet {
         // create a visualization using JGraph, via an adapter
 
 
-//        Graph g = GKAFileManager.importGraph("Z:\\AI3\\GKA\\gka-praktikum\\graph4_a3.gka");
-        Graph g = GKAFileManager.importGraph("Z:\\AI3\\GKA\\gka-praktikum\\graph5_a3.gka");
+//        Graph g = GKAFileManager.importGraph("C:\\Users\\Sven\\IdeaProjects\\gka-praktikum\\graph4_a3.gka");
+        Graph g = GKAFileManager.importGraph("C:\\Users\\Sven\\IdeaProjects\\gka-praktikum\\graph5_a3.gka");
         Graph minimalGeruest = Prim.primAlgorithm(g);
 //        Graph minimalGeruest = Kruskal.kruskalAlgorithm(g);
 
