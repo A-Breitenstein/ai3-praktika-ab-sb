@@ -56,26 +56,32 @@ public class Kruskal {
             hasSource = graphT.vertexSet().contains(sourceVertex);
             hasTarget = graphT.vertexSet().contains(targetVertex);
 
-            if(!hasSource || !hasTarget){
-                boolean nTarget = graphTEdgeSet.contains((String)sourceVertex + targetVertex),
-                        nTargetR = graphTEdgeSet.contains((String)targetVertex + sourceVertex);
-                if(!nTarget && !nTargetR){
-                    edgeWeight = graph.getEdgeWeight(edge);
-                    graphT.addVertex(sourceVertex);
-                    graphT.addVertex(targetVertex);
-                    graphTEdgeSet.add((String)sourceVertex + targetVertex);
-                    graphTEdgeSet.add((String)targetVertex + sourceVertex);
-                    Graphs.addEdge(graphT,sourceVertex,targetVertex,edgeWeight);
-                    System.out.println("added " + edge + ", EdgeWeigh: " + edgeWeight);
-                }
-            }else{
-                System.out.print("Transitivitätsüberprüfung für Kante: " + edge);
-                graphZugriffe++;
-                if (!checkTransitivity(graphT, sourceVertex, targetVertex)) {
-                    Graphs.addEdge(graphT, sourceVertex, targetVertex, edgeWeight);
-                    System.out.println("added: " + edge + ", EdgeWeigh: " + edgeWeight);
-                } else {
-                    System.out.println("FAIL");
+            boolean nSource,nTarget;
+            nSource = graphTEdgeSet.contains((String)sourceVertex + targetVertex);
+            nTarget = graphTEdgeSet.contains((String)targetVertex + sourceVertex);
+            if(!nSource && !nTarget){
+                if(!hasSource || !hasTarget){
+
+                        edgeWeight = graph.getEdgeWeight(edge);
+                        graphTEdgeSet.add((String)sourceVertex + targetVertex);
+                        graphTEdgeSet.add((String)targetVertex + sourceVertex);
+                        Graphs.addEdgeWithVertices(graphT,sourceVertex,targetVertex,edgeWeight);
+                        System.out.println("added " + edge + ", EdgeWeigh: " + edgeWeight);
+
+                }else{
+//                    System.out.print("Transitivitätsüberprüfung für Kante: " + edge);
+                    graphZugriffe++;
+                    if (!checkTransitivity(graphT, sourceVertex, targetVertex)) {
+
+                            edgeWeight = graph.getEdgeWeight(edge);
+                            graphTEdgeSet.add((String)sourceVertex + targetVertex);
+                            graphTEdgeSet.add((String)targetVertex + sourceVertex);
+                            Graphs.addEdgeWithVertices(graphT, sourceVertex, targetVertex, edgeWeight);
+                            System.out.println("added " + edge + ", EdgeWeigh: " + edgeWeight);
+
+                    } else {
+//                        System.out.println("FAIL");
+                    }
                 }
             }
             graphEdgeSet.remove(edge);
@@ -83,8 +89,6 @@ public class Kruskal {
 //            if(graphT.edgeSet().size() >= graphT.vertexSet().size() || graphT.edgeSet().size() > 199)
 //                break;
         }
-        if(graphT.edgeSet().size() >= graphT.vertexSet().size() || graphT.edgeSet().size() > 199)
-            System.out.println("Fehler !!!!!");
 
         double weightSum = 0;
         for (Object o : graphT.edgeSet()) {

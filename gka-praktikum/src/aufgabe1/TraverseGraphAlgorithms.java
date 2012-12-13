@@ -74,7 +74,8 @@ public class TraverseGraphAlgorithms {
 
         List<CustomVertex>list =  new ArrayList<CustomVertex>();
         for(Object name : g.vertexSet()){
-            list.add(map.get(name));
+            if(map.get(name) != null)
+                list.add(map.get(name));
         }
         return  list;
     }
@@ -125,6 +126,9 @@ public class TraverseGraphAlgorithms {
      */
     public static List<String> findAllPaths(List<CustomVertex> vertexList, CustomVertex target) {
         List<String> validPaths = new ArrayList<String>();
+        if(target == null)
+            return validPaths;
+
         _findAllPaths(vertexList, target,new ArrayList<CustomVertex>(Arrays.asList(target)),validPaths);
        return  validPaths;
     }

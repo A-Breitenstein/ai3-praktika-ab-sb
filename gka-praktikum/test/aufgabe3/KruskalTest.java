@@ -32,7 +32,10 @@ public class KruskalTest {
     public void kruskalAlgorithm_graph4_a3_test() {
         Graph graph = GKAFileManager.importGraph("graph4_a3.gka");
 
+        final Long nanosecond = System.nanoTime();
         Graph minimalGraph = Kruskal.kruskalAlgorithm(graph);
+        final Long usedNanosecond = System.nanoTime() - nanosecond;
+        System.out.println("Nanosekunden: " + usedNanosecond + " Millisekunden: " + usedNanosecond / 1000000);
 
         System.out.println(minimalGraph);
 
@@ -43,7 +46,10 @@ public class KruskalTest {
     public void kruskalAlgorithm_graph5_a3_test() {
         Graph graph = GKAFileManager.importGraph("graph5_a3.gka");
 
+        final Long nanosecond = System.nanoTime();
         Graph minimalGraph = Kruskal.kruskalAlgorithm(graph);
+        final Long usedNanosecond = System.nanoTime() - nanosecond;
+        System.out.println("Nanosekunden: " + usedNanosecond + " Millisekunden: " + usedNanosecond / 1000000);
 
         System.out.println(minimalGraph);
 
