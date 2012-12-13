@@ -66,10 +66,10 @@ public class Kruskal {
                         graphTEdgeSet.add((String)sourceVertex + targetVertex);
                         graphTEdgeSet.add((String)targetVertex + sourceVertex);
                         Graphs.addEdgeWithVertices(graphT,sourceVertex,targetVertex,edgeWeight);
-                        System.out.println("added " + edge + ", EdgeWeigh: " + edgeWeight);
+                        //System.out.println("added " + edge + ", EdgeWeigh: " + edgeWeight);
 
                 }else{
-//                    System.out.print("Transitivitätsüberprüfung für Kante: " + edge);
+//                    //System.out.print("Transitivitätsüberprüfung für Kante: " + edge);
                     graphZugriffe++;
                     if (!checkTransitivity(graphT, sourceVertex, targetVertex)) {
 
@@ -77,10 +77,10 @@ public class Kruskal {
                             graphTEdgeSet.add((String)sourceVertex + targetVertex);
                             graphTEdgeSet.add((String)targetVertex + sourceVertex);
                             Graphs.addEdgeWithVertices(graphT, sourceVertex, targetVertex, edgeWeight);
-                            System.out.println("added " + edge + ", EdgeWeigh: " + edgeWeight);
+                            //System.out.println("added " + edge + ", EdgeWeigh: " + edgeWeight);
 
                     } else {
-//                        System.out.println("FAIL");
+//                        //System.out.println("FAIL");
                     }
                 }
             }
@@ -94,7 +94,7 @@ public class Kruskal {
         for (Object o : graphT.edgeSet()) {
             weightSum += graphT.getEdgeWeight(o);
         }
-        System.out.println("Kantengewichtssumme: " + weightSum + ", Zugriffe auf den graphen: " + graphZugriffe);
+        //System.out.println("Kantengewichtssumme: " + weightSum + ", Zugriffe auf den graphen: " + graphZugriffe);
 
         sout_graphInfo(graphT);
 
@@ -102,7 +102,7 @@ public class Kruskal {
     }
 
     private static void sout_graphInfo(Graph graphT) {
-        System.out.println("GraphT, Vertices: " + graphT.vertexSet().size() + ", Edges: " + graphT.edgeSet().size());
+        //System.out.println("GraphT, Vertices: " + graphT.vertexSet().size() + ", Edges: " + graphT.edgeSet().size());
     }
 
     private static boolean checkTransitivity(Graph graph, Object sourceVertex, Object targetVertex) {

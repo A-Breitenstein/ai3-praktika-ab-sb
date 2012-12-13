@@ -17,11 +17,9 @@
         <SOURCES />
       </library>
     </orderEntry>
-    <orderEntry type="library" name="jgrapht-jdk1.6" level="project" />
-    <orderEntry type="library" name="jgraph" level="project" />
     <orderEntry type="module" module-name="Services" />
-    <orderEntry type="library" name="jgraph-5.13.0.0" level="project" />
     <orderEntry type="library" name="jgrapht-0.8.3" level="project" />
+    <orderEntry type="library" name="jgraph-5.13.0.0" level="project" />
   </component>
 </module>
 
