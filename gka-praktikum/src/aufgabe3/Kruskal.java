@@ -94,7 +94,7 @@ public class Kruskal {
         for (Object o : graphT.edgeSet()) {
             weightSum += graphT.getEdgeWeight(o);
         }
-        //System.out.println("Kantengewichtssumme: " + weightSum + ", Zugriffe auf den graphen: " + graphZugriffe);
+        System.out.println("Kantengewichtssumme: " + weightSum + ", Zugriffe auf den graphen: " + graphZugriffe);
 
         sout_graphInfo(graphT);
 
@@ -106,8 +106,8 @@ public class Kruskal {
     }
 
     private static boolean checkTransitivity(Graph graph, Object sourceVertex, Object targetVertex) {
-
-        return (OptimalWay.dijkstra(graph, (String) sourceVertex, (String) targetVertex) != null);
+        return TraverseGraphAlgorithms.depthFirstSearch(graph, (String) sourceVertex,(String) targetVertex,null);
+//        return (OptimalWay.dijkstra(graph, (String) sourceVertex, (String) targetVertex) != null);
     }
 
 }
