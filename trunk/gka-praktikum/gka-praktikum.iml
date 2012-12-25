@@ -20,6 +20,8 @@
     <orderEntry type="module" module-name="Services" />
     <orderEntry type="library" name="jgrapht-0.8.3" level="project" />
     <orderEntry type="library" name="jgraph-5.13.0.0" level="project" />
+    <orderEntry type="library" name="jgraph:jgraph:5.13.0.0" level="project" />
+    <orderEntry type="library" name="net.sf.jgrapht:jgrapht:0.8.3" level="project" />
   </component>
 </module>
 

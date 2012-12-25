@@ -58,8 +58,9 @@ public class TraverseGraphAlgorithmsTest {
     @Test
     public void testDepthFirst() throws Exception {
         initializeAccessCounter();
-
+        long start = System.nanoTime();
         List<CustomVertex> listGraph1 = depthFirst(g1, "a", "f");
+        System.out.println("ElapsedTime g1:" +(System.nanoTime() - start));
         System.out.println("Zugriffe auf Graph1.gka mit depthFirst: " + getAccessCounter(""));
 
         List<CustomVertex> listGraph2 = depthFirst(g2, "a", "f");
@@ -79,6 +80,22 @@ public class TraverseGraphAlgorithmsTest {
         assertEquals(getPathLength(pathsGraph1), 4);
         assertEquals(getPathLength(pathsGraph2), 2);
         assertEquals(getPathLength(pathsGraph3), 1);
+
+        List<String> list = new ArrayList<String>();
+        System.out.println(TraverseGraphAlgorithms.depthFirstSearch(g3,"a","d",list));
+        System.out.println(list);
+        list.clear();
+        System.out.println(TraverseGraphAlgorithms.depthFirstSearch(g2,"a","f",list));
+        System.out.println(list);
+        list.clear();
+        System.out.println(TraverseGraphAlgorithms.depthFirstSearch(g1, "a", "f", list));
+        System.out.println(list);
+        list.clear();
+        start = System.nanoTime();
+        TraverseGraphAlgorithms.depthFirstSearch(g1,"a","f",list);
+        System.out.println("ElapsedTime g1:" +(System.nanoTime() - start));
+        System.out.println(list);
+        list.clear();
 
     }
 

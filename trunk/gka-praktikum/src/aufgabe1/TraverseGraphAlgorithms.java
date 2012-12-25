@@ -201,4 +201,44 @@ public class TraverseGraphAlgorithms {
         return paths.get(0).length()-1;
     }
 
+    /**
+     * Bestimmt einen Weg per Tiefensuchen zu einem gegeben Start und Ziel Vertex.
+     * Die Tiefensuche ist nicht vollständig und liefert damit <b> nicht </b> kürzesten Weg.
+     *
+     * @param g - Der Graph aus dem JGraph Paket in dem gesucht werden soll
+     * @param sourceVertex - von diesem Vertex aus wird die suche gestartet
+     * @param targetVertex - wird dieser Vertex erreicht wird die suche beendet
+     * @param path_output_goes_here - output parameter - in der mitgegebenen liste wird der Pfad als eine liste von Strings
+     *                              eingefügt, wenn als parameter null übergeben wird, wird keine ausgabe pfad berechnet.
+     * @return  true falls es einen weg gibt, false analog dazu
+     */
+    public static boolean depthFirstSearch(Graph g,String sourceVertex,String targetVertex,List<String> path_output_goes_here) {
+        if(sourceVertex == targetVertex) return true;
+        if(path_output_goes_here!=null &&!path_output_goes_here.isEmpty()) throw new IllegalArgumentException("path_output needs to be empty!");
+
+        HashMap<String, CustomVertex> checkedMap = new HashMap<String, CustomVertex>();
+        checkedMap.put(sourceVertex,new CustomVertex(sourceVertex,0,getAdjacentVertexes(g,sourceVertex)));
+        boolean  result = _depthFirstSearch(g,sourceVertex,targetVertex,checkedMap,0);
+
+        if(path_output_goes_here != null){
+            List<CustomVertex> list = new ArrayList<CustomVertex>();
+            list.addAll(checkedMap.values());
+            path_output_goes_here.addAll(findAllPaths(list,checkedMap.get(targetVertex)));
+        }
+        return result;
+    }
+    private static boolean _depthFirstSearch(Graph g,String currentVertex,String targetVertex,Map<String,CustomVertex> checkedMap,int steps){
+        if(currentVertex == targetVertex) return true;
+        for (String benachbarterVertex : checkedMap.get(currentVertex).adjacentStringVertexes) {
+
+                if (!checkedMap.containsKey(benachbarterVertex)) {
+                    checkedMap.put(benachbarterVertex, new CustomVertex(benachbarterVertex, steps + 1, getAdjacentVertexes(g, benachbarterVertex)));
+                    _depthFirstSearch(g, benachbarterVertex, targetVertex, checkedMap, steps + 1);
+                }
+
+                if(checkedMap.containsKey(targetVertex))return true;
+        }
+        return false;
+    }
+
 }

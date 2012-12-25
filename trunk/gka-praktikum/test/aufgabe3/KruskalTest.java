@@ -26,8 +26,8 @@ public class KruskalTest {
 //        System.out.println(graph);
 //        System.out.println(minimalGraph);
 
-//        assertTrue(minimalGraph.edgeSet().size() == minimalGraph.vertexSet().size() - 1);
-        assertTrue(true);
+        assertTrue(minimalGraph.edgeSet().size() == minimalGraph.vertexSet().size() - 1);
+//        assertTrue(true);
     }
 
     @Test
