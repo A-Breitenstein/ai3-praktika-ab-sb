@@ -37,7 +37,7 @@ public class EulerCircles {
         //waehle irgendeinen knoten aus
         String currentVertex = (String) workingCopy.vertexSet().iterator().next();
         path.add(currentVertex);
-
+        // solange es noch kanten im graphen gibt füge sie zur eulertour hinzu
         while (workingCopy.edgeSet().size() != 0) {
             //waehle unter den unmarkierten inzedenten Kanten zum currentVertex eine aus,
             // dabei sind zuerst die Kanten zuwählen die keine Schnittkanten sind.
@@ -115,8 +115,6 @@ public class EulerCircles {
 
     /**
      *  Ermittelt eine Eulertour in linearer Zeitkomplexität ( O( AnzahlKanten ).
-     *  Aufgrund der zufällig gewählten Kanten beim erstellen eines Kreises erzeugt der
-     *  Hierholzer immer unterschiedliche Ergebnisse.(Man könnte allerdings auch immer die erst kante nehmen)
      * @param g <b>PRECONDITION</b> - Der gegebene Graph ist ungerichtet und zusammenhängend und alle Knoten
      *          besitzen einen geraden Grad
      * @return - Liste von Strings, Reihenfolge in der die Knoten sich in der Liste befinden beschreibt die Tour.
@@ -133,6 +131,7 @@ public class EulerCircles {
 
         List<String> path = new ArrayList();
         List<String> circlePath = new ArrayList();
+        int randomChoosedEdges = workingCopy.vertexSet().size()/2;
         int currentVertexPosition = 0;
         //waehle irgendeinen knoten aus
         path.add((String) workingCopy.vertexSet().iterator().next());
@@ -148,7 +147,8 @@ public class EulerCircles {
             path.remove(currentVertexPosition);
 
             // erstelle einen neuen kreis
-            circlePath = createCircle(workingCopy, currentVertex, Math.min(3, Math.max(workingCopy.edgeSet().size() - 1, 1)));
+//            circlePath = createCircle_RANDOM(workingCopy, currentVertex, Math.min(randomChoosedEdges, Math.max(workingCopy.edgeSet().size() - 1, 1)));
+            circlePath = createCircle_firstEdge(workingCopy, currentVertex);
             // substituiere den kreis in den hauptkreis, an der position des aktuellenvertexes
             path.addAll(currentVertexPosition, circlePath);
 
@@ -171,7 +171,8 @@ public class EulerCircles {
      * @param countOfRandomChoosedEdges die Anzahl an zufällig zuwählenden Kanten
      * @return den Kreis als Liste von Strings, [a, b, c, a]
      */
-    private static List<String> createCircle(Graph g, String currentVertex, int countOfRandomChoosedEdges) {
+    @Deprecated
+    private static List<String> createCircle_RANDOM(Graph g, String currentVertex, int countOfRandomChoosedEdges) {
         String circleStartVertex = currentVertex, sourceVertex = null;
         List<String> circlePath = new ArrayList<String>();
         List<DefaultEdge> listOfRemovedEdges = new ArrayList<DefaultEdge>();
@@ -223,6 +224,39 @@ public class EulerCircles {
 
         return circlePath;
 
+    }
+
+    /**
+     * <b>Hilfsfunktion:</b> zu EulerCircles.hierholzer(...)
+     * <br> Erstellt einen Kreis auf dem gegebenen Graphen von einem Ausgangsvertex aus, in dem immer die erste Kante des
+     * aktuellen Knoten gewählt wird.
+     * @param g  der Graph, der nur eine kopie vom echten Graph ist die in EulerCircles.hierholzer(...) erstellt wird
+     * @param currentVertex der Ausgangsvertex von dem aus der Kreis gestartet wird
+     * @return den Kreis als Liste von Strings, [a, b, c, a]
+     */
+    private static List<String> createCircle_firstEdge(Graph g,String currentVertex){
+        String circleStartVertex = currentVertex, sourceVertex = null;
+        List<String> circlePath = new ArrayList<String>();
+
+        DefaultEdge edge = null;
+
+        circlePath.add(currentVertex);
+
+        // lösche solange Kanten bis man wieder am Startknoten des Kreises angekommen ist
+        do{
+            // erste Kante des knoten wählen
+            edge = (DefaultEdge)g.edgesOf(currentVertex).iterator().next();
+
+            // neuen aktuellen knoten wählen
+            currentVertex = getTargetVertex(g, edge, currentVertex);
+            // kante aus dem graphen entfernen
+            g.removeEdge(edge);
+
+            // knoten in den circlePath aufnehmen
+            circlePath.add(currentVertex);
+        }while(!circleStartVertex.equals(currentVertex));
+
+        return circlePath;
     }
 
     /**

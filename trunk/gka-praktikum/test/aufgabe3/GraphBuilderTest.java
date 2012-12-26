@@ -34,4 +34,24 @@ public class GraphBuilderTest {
         assertTrue(equalVertices);
         assertTrue(equalEdges);
     }
+
+
+    @Test
+    public void testCreateEULERBIG() throws Exception {
+        Graph generatedGraph;
+        GraphBuilder gBuilder = GraphBuilder.create();
+
+        int numberOfVertices = 200,
+                numberOfEdges = 10000;
+
+        generatedGraph = gBuilder.setGraphStructure(numberOfVertices, numberOfEdges).generateConnectedUndirectedGraphWithEvenVertexGrade();
+
+        boolean equalVertices = (generatedGraph.vertexSet().size() >= numberOfVertices),
+                equalEdges = (generatedGraph.edgeSet().size() >= numberOfEdges);
+
+        GKAFileManager.exportGraph(generatedGraph, "EULER_BIG.gka");
+        System.out.println(generatedGraph.edgeSet().size());
+        assertTrue(equalVertices);
+        assertTrue(equalEdges);
+    }
 }
