@@ -104,14 +104,13 @@ public class TraverseGraphAlgorithms {
 
     //UTIL FUNCTIONS-@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 
-    private static String reversePath(List<CustomVertex> path) {
-        StringBuilder sb = new StringBuilder();
+    private static List<String> reversePath(List<CustomVertex> path) {
+        List<String> resultPath = new ArrayList<String>();
         ListIterator<CustomVertex> iter = path.listIterator(path.size());
         while (iter.hasPrevious()) {
-
-            sb.append(iter.previous().label);
+            resultPath.add(iter.previous().label);
         }
-        return sb.toString();
+        return resultPath;
     }
 
     /**
@@ -124,15 +123,15 @@ public class TraverseGraphAlgorithms {
      * @param target    Ziel Vertex
      * @return   Liste von Strings mit den kürzesten möglichen Pfaden
      */
-    public static List<String> findAllPaths(List<CustomVertex> vertexList, CustomVertex target) {
-        List<String> validPaths = new ArrayList<String>();
+    public static List<List<String>> findAllPaths(List<CustomVertex> vertexList, CustomVertex target) {
+        List<List<String>> validPaths = new ArrayList<List<String>>();
         if(target == null)
             return validPaths;
 
         _findAllPaths(vertexList, target,new ArrayList<CustomVertex>(Arrays.asList(target)),validPaths);
        return  validPaths;
     }
-    private static void _findAllPaths(List<CustomVertex> vertexList, CustomVertex target, List<CustomVertex> path,List<String> validPaths) {
+    private static void _findAllPaths(List<CustomVertex> vertexList, CustomVertex target, List<CustomVertex> path,List<List<String>> validPaths) {
         if (target.step == 0)
             validPaths.add(reversePath(path));
         else {
@@ -175,7 +174,7 @@ public class TraverseGraphAlgorithms {
      * @param target
      * @return  liefert den kürzesten Weg zurück
      */
-    public static String getShortestPath(List<CustomVertex> vertexList,CustomVertex target){
+    public static List<String> getShortestPath(List<CustomVertex> vertexList,CustomVertex target){
         List<CustomVertex> path = new ArrayList<CustomVertex>(Arrays.asList(target));
         path = _getShortestPath(vertexList,target,path);
         return reversePath(path);
@@ -220,10 +219,10 @@ public class TraverseGraphAlgorithms {
         checkedMap.put(sourceVertex,new CustomVertex(sourceVertex,0,getAdjacentVertexes(g,sourceVertex)));
         boolean  result = _depthFirstSearch(g,sourceVertex,targetVertex,checkedMap,0);
 
-        if(path_output_goes_here != null){
+        if(path_output_goes_here != null && result){
             List<CustomVertex> list = new ArrayList<CustomVertex>();
             list.addAll(checkedMap.values());
-            path_output_goes_here.addAll(findAllPaths(list,checkedMap.get(targetVertex)));
+            path_output_goes_here.addAll(findAllPaths(list,checkedMap.get(targetVertex)).get(0));
         }
         return result;
     }
