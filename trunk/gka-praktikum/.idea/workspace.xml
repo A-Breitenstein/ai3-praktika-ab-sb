@@ -3,23 +3,25 @@
   <component name="ChangeListManager">
     <list default="true" readonly="true" id="0d3a19f6-53c9-48a0-a91a-3a8aa280cbbf" name="Default" comment="gka-praktikum:&#10;aaaaaStern implementiert und gegen dijkstra getestet, kommen überall die selben wege raus.">
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/aufgabe4" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test/aufgabe4" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/aufgabe4/EulerCircles.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test/aufgabe4/EulerCirclesTest.java" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/aufgabe4/MatrixFeatures.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/aufgabe3/Kruskal.java" afterPath="$PROJECT_DIR$/src/aufgabe3/Kruskal.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/aufgabe3/KruskalTest.java" afterPath="$PROJECT_DIR$/test/aufgabe3/KruskalTest.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/eulertour.gka" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/aufgabe1/TraverseGraphAlgorithms.java" afterPath="$PROJECT_DIR$/src/aufgabe1/TraverseGraphAlgorithms.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/aufgabe1/TraverseGraphAlgorithmsTest.java" afterPath="$PROJECT_DIR$/test/aufgabe1/TraverseGraphAlgorithmsTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gka-praktikum.iml" afterPath="$PROJECT_DIR$/gka-praktikum.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/vcs.xml" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="gka-praktikum.iws" />
     <ignored path=".idea/workspace.xml" />
     <file path="/MatrixFeatures.java" changelist="0d3a19f6-53c9-48a0-a91a-3a8aa280cbbf" time="1356285008468" ignored="false" />
-    <file path="/TraverseGraphAlgorithms.java" changelist="0d3a19f6-53c9-48a0-a91a-3a8aa280cbbf" time="1356452327375" ignored="false" />
-    <file path="/TraverseGraphAlgorithmsTest.java" changelist="0d3a19f6-53c9-48a0-a91a-3a8aa280cbbf" time="1356452014125" ignored="false" />
+    <file path="/TraverseGraphAlgorithms.java" changelist="0d3a19f6-53c9-48a0-a91a-3a8aa280cbbf" time="1356468035359" ignored="false" />
+    <file path="/TraverseGraphAlgorithmsTest.java" changelist="0d3a19f6-53c9-48a0-a91a-3a8aa280cbbf" time="1356468902296" ignored="false" />
     <file path="/Kruskal.java" changelist="0d3a19f6-53c9-48a0-a91a-3a8aa280cbbf" time="1356452250015" ignored="false" />
-    <file path="/Dummy.txt" changelist="0d3a19f6-53c9-48a0-a91a-3a8aa280cbbf" time="1356452982718" ignored="false" />
+    <file path="/Dummy.txt" changelist="0d3a19f6-53c9-48a0-a91a-3a8aa280cbbf" time="1356453108281" ignored="false" />
+    <file path="/EulerCircles.java" changelist="0d3a19f6-53c9-48a0-a91a-3a8aa280cbbf" time="1356480260578" ignored="false" />
+    <file path="/fragment.java" changelist="0d3a19f6-53c9-48a0-a91a-3a8aa280cbbf" time="1356469315312" ignored="false" />
+    <file path="/EulerCirclesTest.java" changelist="0d3a19f6-53c9-48a0-a91a-3a8aa280cbbf" time="1356477105312" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -27,6 +29,11 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="ChangesViewManager" flattened_view="true" show_ignored="false" />
+  <component name="CoverageDataManager">
+    <SUITE FILE_PATH="coverage/gka-praktikum$EulerCirclesTest_testHierholzer.coverage" NAME="EulerCirclesTest.testHierholzer Coverage Results" MODIFIED="1356474892968" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>aufgabe4.*</FILTER>
+    </SUITE>
+  </component>
   <component name="CreatePatchCommitExecutor">
     <option name="PATCH_PATH" value="" />
   </component>
@@ -95,11 +102,40 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="JGraphAdapterDemo.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/samples/JGraphAdapterDemo.java">
+      <file leaf-file-name="GKAFileManager.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/aufgabe1/GKAFileManager.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="31" column="35" selection-start="687" selection-end="687" vertical-scroll-proportion="0.0">
+            <state line="107" column="24" selection-start="3509" selection-end="3544" vertical-scroll-proportion="0.0">
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="TraverseGraphAlgorithmsTest.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/test/aufgabe1/TraverseGraphAlgorithmsTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="58" column="26" selection-start="2069" selection-end="2069" vertical-scroll-proportion="0.0">
+              <folding>
+                <element signature="e#3487#3495#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="EulerCircles.java" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/aufgabe4/EulerCircles.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="188" column="53" selection-start="8980" selection-end="8980" vertical-scroll-proportion="0.2311828">
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#1272#1280#0" expanded="true" />
+                <element signature="e#3410#3423#0" expanded="true" />
+                <element signature="e#8388#8396#0" expanded="true" />
+                <element signature="e#8460#8473#0" expanded="true" />
+                <element signature="e#8528#8541#0" expanded="true" />
+                <element signature="e#8844#8857#0" expanded="true" />
+                <element signature="e#9875#9883#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -107,7 +143,7 @@
       <file leaf-file-name="MatrixFeatures.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/aufgabe4/MatrixFeatures.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="59" column="29" selection-start="1692" selection-end="1692" vertical-scroll-proportion="0.0">
+            <state line="14" column="13" selection-start="238" selection-end="238" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -116,28 +152,40 @@
       <file leaf-file-name="TraverseGraphAlgorithms.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/aufgabe1/TraverseGraphAlgorithms.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="216" column="31" selection-start="8930" selection-end="8930" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="GKAFileManager.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/aufgabe1/GKAFileManager.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="116" column="41" selection-start="3924" selection-end="3924" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="TraverseGraphAlgorithmsTest.java" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/test/aufgabe1/TraverseGraphAlgorithmsTest.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="67" column="26" selection-start="2505" selection-end="2505" vertical-scroll-proportion="0.05840708">
+            <state line="221" column="50" selection-start="9426" selection-end="9426" vertical-scroll-proportion="0.0">
               <folding>
-                <element signature="e#3359#3367#0" expanded="true" />
+                <element signature="e#4401#4409#0" expanded="true" />
+                <element signature="e#5193#5207#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="EulerCirclesTest.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/test/aufgabe4/EulerCirclesTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="27" column="5" selection-start="730" selection-end="730" vertical-scroll-proportion="0.0">
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="eulertour.gka" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/eulertour.gka">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="10" column="3" selection-start="52" selection-end="52" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="graph2.gka" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/graph2.gka">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="10" column="3" selection-start="49" selection-end="52" vertical-scroll-proportion="0.0">
+              <folding />
             </state>
           </provider>
         </entry>
@@ -145,34 +193,7 @@
       <file leaf-file-name="Kruskal.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/aufgabe3/Kruskal.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="98" column="44" selection-start="3696" selection-end="3696" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="KruskalTest.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/test/aufgabe3/KruskalTest.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="29" column="16" selection-start="896" selection-end="896" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Main.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/aufgabe1/Main.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="59" column="56" selection-start="2349" selection-end="2349" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="CustomVertex.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/aufgabe1/CustomVertex.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="109" column="30" selection-start="3026" selection-end="3026" vertical-scroll-proportion="0.0">
+            <state line="98" column="31" selection-start="3696" selection-end="3696" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -188,9 +209,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/src/aufgabe1/WestCoastCustomVertex.java" />
-        <option value="$PROJECT_DIR$/src/aufgabe1/test/TraverseGraphAlgorithmsTest.java" />
-        <option value="$PROJECT_DIR$/test/test/TraverseGraphAlgorithmsTest.java" />
         <option value="$USER_HOME$/jgrapht-0.8.3/src/org/jgrapht/Graph.java" />
         <option value="$PROJECT_DIR$/src/aufgabe1/GKAFileManager.java" />
         <option value="$PROJECT_DIR$/src/aufgabe1/Main.java" />
@@ -199,10 +217,14 @@
         <option value="$PROJECT_DIR$/src/aufgabe2/OptimalWay.java" />
         <option value="$PROJECT_DIR$/src/samples/JGraphAdapterDemo.java" />
         <option value="$PROJECT_DIR$/src/aufgabe4/MatrixFeatures.java" />
-        <option value="$PROJECT_DIR$/test/aufgabe1/TraverseGraphAlgorithmsTest.java" />
-        <option value="$PROJECT_DIR$/src/aufgabe1/TraverseGraphAlgorithms.java" />
         <option value="$PROJECT_DIR$/test/aufgabe3/KruskalTest.java" />
         <option value="$PROJECT_DIR$/src/aufgabe3/Kruskal.java" />
+        <option value="$PROJECT_DIR$/src/aufgabe4/FleuryAlgorithm.java" />
+        <option value="$PROJECT_DIR$/eulertour.gka" />
+        <option value="$PROJECT_DIR$/src/aufgabe1/TraverseGraphAlgorithms.java" />
+        <option value="$PROJECT_DIR$/test/aufgabe1/TraverseGraphAlgorithmsTest.java" />
+        <option value="$PROJECT_DIR$/test/aufgabe4/EulerCirclesTest.java" />
+        <option value="$PROJECT_DIR$/src/aufgabe4/EulerCircles.java" />
       </list>
     </option>
   </component>
@@ -304,6 +326,24 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="test" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="gka-praktikum" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="gka-praktikum" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="test" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="aufgabe4" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -480,7 +520,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="last_directory_selection" value="$PROJECT_DIR$/test/aufgabe2" />
+    <property name="last_directory_selection" value="$PROJECT_DIR$/test" />
     <property name="GoToFile.includeJavaFiles" value="false" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit4" />
@@ -506,7 +546,11 @@
     <property name="dynamic.classpath" value="false" />
   </component>
   <component name="RecentsManager">
+    <key name="CreateTestDialog.Recents.Supers">
+      <recent name="" />
+    </key>
     <key name="CreateTestDialog.RecentsKey">
+      <recent name="aufgabe4" />
       <recent name="aufgabe2" />
       <recent name="aufgabe1.test" />
     </key>
@@ -514,84 +558,7 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.TraverseGraphAlgorithmsTest.testDepthFirst">
-    <configuration default="false" name="OptimalWayTest.testaaaaaStern" type="JUnit" factoryName="JUnit" temporary="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
-        <pattern>
-          <option name="PATTERN" value="aufgabe2.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <module name="gka-praktikum" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="aufgabe2" />
-      <option name="MAIN_CLASS_NAME" value="aufgabe2.OptimalWayTest" />
-      <option name="METHOD_NAME" value="testaaaaaStern" />
-      <option name="TEST_OBJECT" value="method" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="moduleWithDependencies" />
-      </option>
-      <envs />
-      <patterns />
-      <RunnerSettings RunnerId="Debug">
-        <option name="DEBUG_PORT" value="" />
-        <option name="TRANSPORT" value="0" />
-        <option name="LOCAL" value="true" />
-      </RunnerSettings>
-      <RunnerSettings RunnerId="Run" />
-      <ConfigurationWrapper RunnerId="Debug" />
-      <ConfigurationWrapper RunnerId="Run" />
-      <method />
-    </configuration>
-    <configuration default="false" name="JGraphAdapterDemo" type="Applet" factoryName="Applet" temporary="true">
-      <module name="gka-praktikum" />
-      <option name="MAIN_CLASS_NAME" value="samples.JGraphAdapterDemo" />
-      <option name="HTML_FILE_NAME" />
-      <option name="HTML_USED" value="false" />
-      <option name="WIDTH" value="400" />
-      <option name="HEIGHT" value="300" />
-      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
-      <option name="VM_PARAMETERS" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <RunnerSettings RunnerId="Run" />
-      <ConfigurationWrapper RunnerId="Run" />
-      <method />
-    </configuration>
-    <configuration default="false" name="TraverseGraphAlgorithmsTest.testGraphK5DepthFirst" type="JUnit" factoryName="JUnit" temporary="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
-        <pattern>
-          <option name="PATTERN" value="aufgabe1.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <module name="gka-praktikum" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="aufgabe1" />
-      <option name="MAIN_CLASS_NAME" value="aufgabe1.TraverseGraphAlgorithmsTest" />
-      <option name="METHOD_NAME" value="testGraphK5DepthFirst" />
-      <option name="TEST_OBJECT" value="method" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="moduleWithDependencies" />
-      </option>
-      <envs />
-      <patterns />
-      <RunnerSettings RunnerId="Run" />
-      <ConfigurationWrapper RunnerId="Run" />
-      <method />
-    </configuration>
+  <component name="RunManager" selected="JUnit.EulerCirclesTest">
     <configuration default="false" name="TraverseGraphAlgorithmsTest.testDepthFirst" type="JUnit" factoryName="JUnit" temporary="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
@@ -626,19 +593,19 @@
       <ConfigurationWrapper RunnerId="Run" />
       <method />
     </configuration>
-    <configuration default="false" name="KruskalTest.testKruskalAlgorithm" type="JUnit" factoryName="JUnit" temporary="true">
+    <configuration default="false" name="EulerCirclesTest.testFleury" type="JUnit" factoryName="JUnit" temporary="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
-          <option name="PATTERN" value="aufgabe3.*" />
+          <option name="PATTERN" value="aufgabe4.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
       <module name="gka-praktikum" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="aufgabe3" />
-      <option name="MAIN_CLASS_NAME" value="aufgabe3.KruskalTest" />
-      <option name="METHOD_NAME" value="testKruskalAlgorithm" />
+      <option name="PACKAGE_NAME" value="aufgabe4" />
+      <option name="MAIN_CLASS_NAME" value="aufgabe4.EulerCirclesTest" />
+      <option name="METHOD_NAME" value="testFleury" />
       <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
@@ -650,7 +617,111 @@
       </option>
       <envs />
       <patterns />
+      <RunnerSettings RunnerId="Debug">
+        <option name="DEBUG_PORT" value="" />
+        <option name="TRANSPORT" value="0" />
+        <option name="LOCAL" value="true" />
+      </RunnerSettings>
       <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Debug" />
+      <ConfigurationWrapper RunnerId="Run" />
+      <method />
+    </configuration>
+    <configuration default="false" name="EulerCirclesTest" type="JUnit" factoryName="JUnit" temporary="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="aufgabe4.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <module name="gka-praktikum" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="aufgabe4" />
+      <option name="MAIN_CLASS_NAME" value="aufgabe4.EulerCirclesTest" />
+      <option name="METHOD_NAME" />
+      <option name="TEST_OBJECT" value="class" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="moduleWithDependencies" />
+      </option>
+      <envs />
+      <patterns />
+      <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Run" />
+      <method />
+    </configuration>
+    <configuration default="false" name="EulerCirclesTest.testCreateCircle" type="JUnit" factoryName="JUnit" temporary="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="aufgabe4.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <module name="gka-praktikum" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="aufgabe4" />
+      <option name="MAIN_CLASS_NAME" value="aufgabe4.EulerCirclesTest" />
+      <option name="METHOD_NAME" value="testCreateCircle" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="moduleWithDependencies" />
+      </option>
+      <envs />
+      <patterns />
+      <RunnerSettings RunnerId="Debug">
+        <option name="DEBUG_PORT" value="" />
+        <option name="TRANSPORT" value="0" />
+        <option name="LOCAL" value="true" />
+      </RunnerSettings>
+      <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Debug" />
+      <ConfigurationWrapper RunnerId="Run" />
+      <method />
+    </configuration>
+    <configuration default="false" name="EulerCirclesTest.testHierholzer" type="JUnit" factoryName="JUnit" temporary="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="aufgabe4.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <module name="gka-praktikum" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="aufgabe4" />
+      <option name="MAIN_CLASS_NAME" value="aufgabe4.EulerCirclesTest" />
+      <option name="METHOD_NAME" value="testHierholzer" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="moduleWithDependencies" />
+      </option>
+      <envs />
+      <patterns />
+      <RunnerSettings RunnerId="Cover" />
+      <RunnerSettings RunnerId="Debug">
+        <option name="DEBUG_PORT" value="" />
+        <option name="TRANSPORT" value="0" />
+        <option name="LOCAL" value="true" />
+      </RunnerSettings>
+      <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Cover" />
+      <ConfigurationWrapper RunnerId="Debug" />
       <ConfigurationWrapper RunnerId="Run" />
       <method />
     </configuration>
@@ -746,17 +817,19 @@
       <method />
     </configuration>
     <list size="5">
-      <item index="0" class="java.lang.String" itemvalue="JUnit.OptimalWayTest.testaaaaaStern" />
-      <item index="1" class="java.lang.String" itemvalue="Applet.JGraphAdapterDemo" />
-      <item index="2" class="java.lang.String" itemvalue="JUnit.TraverseGraphAlgorithmsTest.testGraphK5DepthFirst" />
-      <item index="3" class="java.lang.String" itemvalue="JUnit.TraverseGraphAlgorithmsTest.testDepthFirst" />
-      <item index="4" class="java.lang.String" itemvalue="JUnit.KruskalTest.testKruskalAlgorithm" />
+      <item index="0" class="java.lang.String" itemvalue="JUnit.TraverseGraphAlgorithmsTest.testDepthFirst" />
+      <item index="1" class="java.lang.String" itemvalue="JUnit.EulerCirclesTest.testFleury" />
+      <item index="2" class="java.lang.String" itemvalue="JUnit.EulerCirclesTest" />
+      <item index="3" class="java.lang.String" itemvalue="JUnit.EulerCirclesTest.testCreateCircle" />
+      <item index="4" class="java.lang.String" itemvalue="JUnit.EulerCirclesTest.testHierholzer" />
     </list>
     <recent_temporary>
-      <list size="3">
-        <item index="0" class="java.lang.String" itemvalue="JUnit.TraverseGraphAlgorithmsTest.testDepthFirst" />
-        <item index="1" class="java.lang.String" itemvalue="JUnit.KruskalTest.testKruskalAlgorithm" />
-        <item index="2" class="java.lang.String" itemvalue="JUnit.TraverseGraphAlgorithmsTest.testGraphK5DepthFirst" />
+      <list size="5">
+        <item index="0" class="java.lang.String" itemvalue="JUnit.EulerCirclesTest" />
+        <item index="1" class="java.lang.String" itemvalue="JUnit.EulerCirclesTest.testHierholzer" />
+        <item index="2" class="java.lang.String" itemvalue="JUnit.EulerCirclesTest.testCreateCircle" />
+        <item index="3" class="java.lang.String" itemvalue="JUnit.TraverseGraphAlgorithmsTest.testDepthFirst" />
+        <item index="4" class="java.lang.String" itemvalue="JUnit.EulerCirclesTest.testFleury" />
       </list>
     </recent_temporary>
     <configuration name="&lt;template&gt;" type="WebApp" default="true" selected="false">
@@ -837,7 +910,11 @@
       <created>1353458219093</created>
       <updated>1353458219093</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="gka-praktikum:&#10;neue tiefensuche, wird fürAlgo von Fleury benötigt (Eulertouren)">
+      <created>1356453148109</created>
+      <updated>1356453148109</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -862,24 +939,26 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-4" y="-4" width="1928" height="1060" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32968238" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32858709" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.41001064" sideWeight="0.49675325" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.34078807" sideWeight="0.49675325" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="IDEtalk Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.29073483" sideWeight="0.29700854" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="IDEtalk" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32481363" sideWeight="0.4935065" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3296875" sideWeight="0.7465389" order="-1" side_tool="true" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32968238" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32852563" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.16822916" sideWeight="0.6432375" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3567625" sideWeight="0.6992521" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.16822916" sideWeight="0.6357827" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.36421725" sideWeight="0.6992521" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Documentation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="FLOATING" visible="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" x="783" y="100" width="483" height="538" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24981017" sideWeight="0.62794614" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
@@ -888,7 +967,6 @@
       <window_info id="Data Sources" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32858709" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Dependency Viewer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.41264558" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
@@ -931,7 +1009,7 @@
     <option name="MAXIMUM_HISTORY_ROWS" value="1000" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" value="gka-praktikum:&#10;aaaaaStern implementiert und gegen dijkstra getestet, kommen überall die selben wege raus." />
+    <option name="LAST_COMMIT_MESSAGE" value="gka-praktikum:&#10;neue tiefensuche, wird fürAlgo von Fleury benötigt (Eulertouren)" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="false" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
@@ -953,6 +1031,7 @@
     <MESSAGE value="gka-praktikum:&#10;fixed" />
     <MESSAGE value="gka-praktikum:&#10;fail, wireless keyboard isnt working anymore... cant finish the tests" />
     <MESSAGE value="gka-praktikum:&#10;aaaaaStern implementiert und gegen dijkstra getestet, kommen überall die selben wege raus." />
+    <MESSAGE value="gka-praktikum:&#10;neue tiefensuche, wird fürAlgo von Fleury benötigt (Eulertouren)" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -962,125 +1041,130 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="uml://JAVA/aufgabe1.GKAFileManager">
-      <provider selected="true" editor-type-id="UmlEditorProvider">
-        <state>
-          <ID>JAVA</ID>
-          <OriginalElement>aufgabe1.GKAFileManager</OriginalElement>
-          <nodes>
-            <node x="" y="">aufgabe1.GKAFileManager</node>
-            <node x="" y="">aufgabe1.Hund</node>
-          </nodes>
-          <notes />
-          <edges />
-          <settings layout="Hierarchic Group" zoom="1.0" x="63.0" y="134.0" />
-          <SelectedNodes />
-          <Categories>
-            <Category>Fields</Category>
-            <Category>Methods</Category>
-          </Categories>
-          <SCOPE>All</SCOPE>
-          <VISIBILITY>private</VISIBILITY>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/graph3_a2.gka">
+    <entry file="file://$PROJECT_DIR$/src/aufgabe3/Kruskal.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="34" column="52" selection-start="938" selection-end="938" vertical-scroll-proportion="2.0662982" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test/aufgabe2/OptimalWayTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="41" column="51" selection-start="1900" selection-end="1900" vertical-scroll-proportion="0.0">
+        <state line="98" column="31" selection-start="3696" selection-end="3696" vertical-scroll-proportion="0.0">
           <folding />
         </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/aufgabe2/OptimalWay.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="146" column="40" selection-start="5774" selection-end="5774" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/aufgabe1/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="59" column="56" selection-start="2349" selection-end="2349" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/aufgabe1/CustomVertex.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="109" column="30" selection-start="3026" selection-end="3026" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/samples/JGraphAdapterDemo.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="31" column="35" selection-start="687" selection-end="687" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Users/Sven/IdeaProjects/gka-praktikum/lib/jgrapht-0.8.3-sources.jar!/org/jgrapht/graph/ListenableDirectedGraph.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="47" column="81" selection-start="1687" selection-end="1687" vertical-scroll-proportion="0.18497758" />
-      </provider>
-    </entry>
-    <entry file="jar://C:/Users/Sven/IdeaProjects/gka-praktikum/lib/jgrapht-0.8.3-sources.jar!/org/jgrapht/graph/ListenableDirectedWeightedGraph.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="53" column="29" selection-start="1850" selection-end="1850" vertical-scroll-proportion="0.43373495" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/aufgabe1/GKAFileManager.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="116" column="41" selection-start="3924" selection-end="3924" vertical-scroll-proportion="0.0">
+        <state line="107" column="24" selection-start="3509" selection-end="3544" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/aufgabe4/MatrixFeatures.java">
+    <entry file="file://$PROJECT_DIR$/graph1.gka">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="59" column="29" selection-start="1692" selection-end="1692" vertical-scroll-proportion="0.0">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/aufgabe1/TraverseGraphAlgorithms.java">
+    <entry file="jar://$APPLICATION_HOME_DIR$/lib/junit-4.10.jar!/org/junit/runners/BlockJUnit4ClassRunner.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="216" column="31" selection-start="8930" selection-end="8930" vertical-scroll-proportion="0.0">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/aufgabe3/Prim.java">
+    <entry file="file://$PROJECT_DIR$/graph2.gka">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="13" selection-start="355" selection-end="355" vertical-scroll-proportion="-12.254279">
+        <state line="10" column="3" selection-start="49" selection-end="52" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test/aufgabe3/KruskalTest.java">
+    <entry file="jar://C:/Programme/Java/jdk1.7.0/src.zip!/java/util/Stack.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="29" column="16" selection-start="896" selection-end="896" vertical-scroll-proportion="0.0">
+        <state line="52" column="11" selection-start="1236" selection-end="1236" vertical-scroll-proportion="0.33212996">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/aufgabe3/Kruskal.java">
+    <entry file="jar://C:/Programme/Java/jdk1.7.0/src.zip!/java/lang/String.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="98" column="44" selection-start="3696" selection-end="3696" vertical-scroll-proportion="0.0">
+        <state line="107" column="19" selection-start="3652" selection-end="3652" vertical-scroll-proportion="0.22184874">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/eulertour.gka">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="10" column="3" selection-start="52" selection-end="52" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Users/Sven/IdeaProjects/gka-praktikum/lib/jgrapht-0.8.3-sources.jar!/org/jgrapht/Graph.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="278" column="31" selection-start="11898" selection-end="11898" vertical-scroll-proportion="0.16295026">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/test/aufgabe1/TraverseGraphAlgorithmsTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="67" column="26" selection-start="2505" selection-end="2505" vertical-scroll-proportion="0.05840708">
+        <state line="58" column="26" selection-start="2069" selection-end="2069" vertical-scroll-proportion="0.0">
           <folding>
-            <element signature="e#3359#3367#0" expanded="true" />
+            <element signature="e#3487#3495#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$APPLICATION_HOME_DIR$/lib/junit-4.10.jar!/org/junit/runners/ParentRunner.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="44" column="25" selection-start="2400" selection-end="2400" vertical-scroll-proportion="0.416">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/aufgabe1/TraverseGraphAlgorithms.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="221" column="50" selection-start="9426" selection-end="9426" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="e#4401#4409#0" expanded="true" />
+            <element signature="e#5193#5207#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$APPLICATION_HOME_DIR$/lib/junit-4.10.jar!/org/junit/internal/runners/model/ReflectiveCallable.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="11" column="40" selection-start="388" selection-end="388" vertical-scroll-proportion="-10.04">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/aufgabe4/EulerCirclesTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="27" column="5" selection-start="730" selection-end="730" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/aufgabe4/MatrixFeatures.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="14" column="13" selection-start="238" selection-end="238" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/aufgabe4/EulerCircles.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="188" column="53" selection-start="8980" selection-end="8980" vertical-scroll-proportion="0.2311828">
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1272#1280#0" expanded="true" />
+            <element signature="e#3410#3423#0" expanded="true" />
+            <element signature="e#8388#8396#0" expanded="true" />
+            <element signature="e#8460#8473#0" expanded="true" />
+            <element signature="e#8528#8541#0" expanded="true" />
+            <element signature="e#8844#8857#0" expanded="true" />
+            <element signature="e#9875#9883#0" expanded="true" />
           </folding>
         </state>
       </provider>

@@ -41,17 +41,17 @@ public class TraverseGraphAlgorithmsTest {
         List<CustomVertex> listGraph3 = breadthFirst(g3, "a", "d");
         System.out.println("Zugriffe auf vollstaendigen Graphen K5 mit breadthFirst: " + getAccessCounter(""));
 
-        List<String> pathsGraph1 = findAllPaths(listGraph1, CustomVertex.getVertex(listGraph1, "f"));
-        List<String> pathsGraph2 = findAllPaths(listGraph2, CustomVertex.getVertex(listGraph2, "f"));
-        List<String> pathsGraph3 = findAllPaths(listGraph3, CustomVertex.getVertex(listGraph3, "d"));
+        List<List<String>> pathsGraph1 = findAllPaths(listGraph1, CustomVertex.getVertex(listGraph1, "f"));
+        List<List<String>> pathsGraph2 = findAllPaths(listGraph2, CustomVertex.getVertex(listGraph2, "f"));
+        List<List<String>> pathsGraph3 = findAllPaths(listGraph3, CustomVertex.getVertex(listGraph3, "d"));
 
-        assertEquals(pathsGraph1.toString(), "[acdef, akdef, akgef]");
-        assertEquals(pathsGraph2.toString(), "[acf]");
-        assertEquals(pathsGraph3.toString(), "[ad]");
+        assertEquals(pathsGraph1.toString(), "[[a,c,d,e,f], [a,k,d,e,f], [a,k,g,e,f]]");
+        assertEquals(pathsGraph2.toString(), "[[a,c,f]]");
+        assertEquals(pathsGraph3.toString(), "[[a,d]]");
 
-        assertEquals(getPathLength(pathsGraph1), 4);
-        assertEquals(getPathLength(pathsGraph2), 2);
-        assertEquals(getPathLength(pathsGraph3), 1);
+        assertEquals(getPathLength(pathsGraph1.get(0)), 4);
+        assertEquals(getPathLength(pathsGraph2.get(0)), 2);
+        assertEquals(getPathLength(pathsGraph3.get(0)), 1);
 
     }
 
@@ -69,17 +69,17 @@ public class TraverseGraphAlgorithmsTest {
         List<CustomVertex> listGraph3 = depthFirst(g3, "a", "d");
         System.out.println("Zugriffe auf Graph_K5.gka mit depthFirst: " + getAccessCounter(""));
 
-        List<String> pathsGraph1 = findAllPaths(listGraph1, CustomVertex.getVertex(listGraph1, "f"));
-        List<String> pathsGraph2 = findAllPaths(listGraph2, CustomVertex.getVertex(listGraph2, "f"));
-        List<String> pathsGraph3 = findAllPaths(listGraph3, CustomVertex.getVertex(listGraph3, "d"));
+        List<List<String>> pathsGraph1 = findAllPaths(listGraph1, CustomVertex.getVertex(listGraph1, "f"));
+        List<List<String>> pathsGraph2 = findAllPaths(listGraph2, CustomVertex.getVertex(listGraph2, "f"));
+        List<List<String>> pathsGraph3 = findAllPaths(listGraph3, CustomVertex.getVertex(listGraph3, "d"));
 
-        assertEquals(pathsGraph1.toString(), "[acdef, akdef, akgef]");
-        assertEquals(pathsGraph2.toString(), "[acf]");
-        assertEquals(pathsGraph3.toString(), "[ad]");
+        assertEquals(pathsGraph1.toString(), "[[a,c,d,e,f], [a,k,d,e,f], [a,k,g,e,f]]");
+        assertEquals(pathsGraph2.toString(), "[[a,c,f]]");
+        assertEquals(pathsGraph3.toString(), "[[a,d]]");
 
-        assertEquals(getPathLength(pathsGraph1), 4);
-        assertEquals(getPathLength(pathsGraph2), 2);
-        assertEquals(getPathLength(pathsGraph3), 1);
+        assertEquals(getPathLength(pathsGraph1.get(0)), 4);
+        assertEquals(getPathLength(pathsGraph2.get(0)), 2);
+        assertEquals(getPathLength(pathsGraph3.get(0)), 1);
 
         List<String> list = new ArrayList<String>();
         System.out.println(TraverseGraphAlgorithms.depthFirstSearch(g3,"a","d",list));
@@ -109,7 +109,7 @@ public class TraverseGraphAlgorithmsTest {
         vertexNames.remove("a");
         int lengthFromVertexAtoTargetVertex;
         for (String targetVertex : vertexNames) {
-            lengthFromVertexAtoTargetVertex = getPathLength(findAllPaths(listGraphK5, CustomVertex.getVertex(listGraphK5, targetVertex)));
+            lengthFromVertexAtoTargetVertex = getPathLength(findAllPaths(listGraphK5, CustomVertex.getVertex(listGraphK5, targetVertex)).get(0));
             assertEquals(lengthFromVertexAtoTargetVertex, 1);
         }
     }
@@ -124,7 +124,7 @@ public class TraverseGraphAlgorithmsTest {
         vertexNames.remove("a");
         int lengthFromVertexAtoTargetVertex;
         for (String targetVertex : vertexNames) {
-            lengthFromVertexAtoTargetVertex = getPathLength(findAllPaths(listGraphK5, CustomVertex.getVertex(listGraphK5, targetVertex)));
+            lengthFromVertexAtoTargetVertex = getPathLength(findAllPaths(listGraphK5, CustomVertex.getVertex(listGraphK5, targetVertex)).get(0));
             assertEquals(lengthFromVertexAtoTargetVertex, 1);
         }
     }
@@ -145,12 +145,12 @@ public class TraverseGraphAlgorithmsTest {
         List<CustomVertex> listGraph2 = depthFirst(reImportedGraph2, "a", "f");
         List<CustomVertex> listGraph3 = depthFirst(reImportedGraph3, "a", "d");
 
-        List<String> pathsGraph1 = findAllPaths(listGraph1, CustomVertex.getVertex(listGraph1, "f"));
-        List<String> pathsGraph2 = findAllPaths(listGraph2, CustomVertex.getVertex(listGraph2, "f"));
-        List<String> pathsGraph3 = findAllPaths(listGraph3, CustomVertex.getVertex(listGraph3, "d"));
+        List<List<String>> pathsGraph1 = findAllPaths(listGraph1, CustomVertex.getVertex(listGraph1, "f"));
+        List<List<String>> pathsGraph2 = findAllPaths(listGraph2, CustomVertex.getVertex(listGraph2, "f"));
+        List<List<String>> pathsGraph3 = findAllPaths(listGraph3, CustomVertex.getVertex(listGraph3, "d"));
 
-        assertEquals(pathsGraph1.toString(), "[acdef, akdef, akgef]");
-        assertEquals(pathsGraph2.toString(), "[acf]");
-        assertEquals(pathsGraph3.toString(), "[ad]");
+        assertEquals(pathsGraph1.toString(), "[[a,c,d,e,f], [a,k,d,e,f], [a,k,g,e,f]]");
+        assertEquals(pathsGraph2.toString(), "[[a,c,f]]");
+        assertEquals(pathsGraph3.toString(), "[[a,d]]");
     }
 }
