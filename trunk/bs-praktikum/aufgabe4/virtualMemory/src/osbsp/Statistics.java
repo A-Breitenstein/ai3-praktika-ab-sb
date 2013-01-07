@@ -3,7 +3,8 @@ package osbsp;
  * Sammlung und Auswertung statistischer Daten eines Simulationslaufs
  */
 public class Statistics {
-
+    public int max_ram_pages_per_process = 0;
+    public int default_locality_factor = 0;
 	private int pageFaults;			// Anzahl Seitenfehler
 	private int writeAccesses;		// Anzahl Schreibzugriffe
 	private int readAccesses;		// Anzahl Lesezugriffe
@@ -19,7 +20,7 @@ public class Statistics {
 	}
 
 	/**
-	 * Alle Statistik-Zähler zurücksetzen
+	 * Alle Statistik-Zï¿½hler zurï¿½cksetzen
 	 */
 	public void resetCounter() {
 		pageFaults = 0;
@@ -65,21 +66,21 @@ public class Statistics {
 	}
 
 	/**
-	 * Seitenfehler zählen
+	 * Seitenfehler zï¿½hlen
 	 */
 	public void incrementPageFaults() {
 		pageFaults++;
 	}
 
 	/**
-	 * Lesezugriff zählen
+	 * Lesezugriff zï¿½hlen
 	 */
 	public void incrementReadAccesses() {
 		readAccesses++;
 	}
 
 	/**
-	 * Schreibzugriff zählen
+	 * Schreibzugriff zï¿½hlen
 	 */
 	public void incrementWriteAccesses() {
 		writeAccesses++;
@@ -94,6 +95,8 @@ public class Statistics {
 		System.out.println("*** Anzahl Seitenfehler: "+getPageFaults());
 		System.out.println("*** Anzahl Zugriffe:     "+getTotalAccesses());
 		System.out.println("*** Seitenfehlerrate:    "+getPageFaultRate());
+		System.out.println("*** Seiten im RAM:       "+max_ram_pages_per_process);
+		System.out.println("*** Lokalitaetsfaktor:   "+default_locality_factor);
 		System.out.println("****************************************************");
 	}
 }
