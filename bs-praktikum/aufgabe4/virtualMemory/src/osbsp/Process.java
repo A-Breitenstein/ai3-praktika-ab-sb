@@ -3,33 +3,33 @@ package osbsp;
 /*
  * Process
  *
- * Repräsentation eines unabhängigen Prozess-Objekts
+ * Reprï¿½sentation eines unabhï¿½ngigen Prozess-Objekts
  */
 
 /**
  * Programm-Simulation:
  * 
  * Daten eines Prozesses verwalten (PCB) sowie Laufzeitverhalten simulieren, d.h.
- * read-Operationen im eigenen virtuellen Speicher ausführen
+ * read-Operationen im eigenen virtuellen Speicher ausfï¿½hren
  * (Pseudo-Zufallszahlengeneratorgesteuert) mit mehreren Operationen im selben
- * Seitenbereich (gemäß "Lokalitätsfaktor")
+ * Seitenbereich (gemï¿½ï¿½ "Lokalitï¿½tsfaktor")
  */
 public class Process extends Thread {
 
 	/**
-	 * Speicherbedarf für das gesamte Programm (in Byte)
+	 * Speicherbedarf fï¿½r das gesamte Programm (in Byte)
 	 */
 	private int processSize;
 
 	/**
-	 * Dieser Faktor bestimmt das "Lokalitätsverhalten" eines Programms (=
-	 * Anzahl Operationen innerhalb eines Seitenbereichs) Setzen über
+	 * Dieser Faktor bestimmt das "Lokalitï¿½tsverhalten" eines Programms (=
+	 * Anzahl Operationen innerhalb eines Seitenbereichs) Setzen ï¿½ber
 	 * os.getDEFAULT_LOCALITY_FACTOR()
 	 */
 	private int localityFactor;
 
 	/**
-	 * Dieser Faktor bestimmt das "Lokalitätsverhalten" eines Programms = max.
+	 * Dieser Faktor bestimmt das "Lokalitï¿½tsverhalten" eines Programms = max.
 	 * Streuung (+/-) bei lokalen Operationen in Anzahl Seiten
 	 */
 	private static final int BIAS_FACTOR = 2;
@@ -46,7 +46,7 @@ public class Process extends Thread {
 	public PageTable pageTable;
 
 	// ---------- Prozess-Variablen ------------------------------
-	private OperatingSystem os; // Handle für System Calls
+	private OperatingSystem os; // Handle fï¿½r System Calls
 
 	/**
 	 * Konstruktor
@@ -64,20 +64,20 @@ public class Process extends Thread {
 	 * 
 	 */
 	public void run() {
-		int median; // Mittelwert für virtuelle Adressen
+		int median; // Mittelwert fï¿½r virtuelle Adressen
 		int bias; // Streuung um den Mittelwert
 		int virtAdr; // Virtuelle Adresse
-		int i; // Zähler
+		int i; // Zï¿½hler
 
 		// Zugriff auf Speicherseiten (read)
-		// Lokalitätsverhalten wird berechnet!!
+		// Lokalitï¿½tsverhalten wird berechnet!!
 		bias = BIAS_FACTOR * os.getPAGE_SIZE();
 		while (!isInterrupted()) {
 			// median als virtuelle Adresse bestimmen (muss im bereits
 			// geschriebenen Bereich liegen!)
 			median = (int) (processSize * Math.random());
 			for (i = 0; i < localityFactor; i++) {
-				// Virtuelle Adresse in der "Nähe" des medians bestimmen
+				// Virtuelle Adresse in der "Naehe" des medians bestimmen
 				virtAdr = ((int) (2 * bias * Math.random() - bias)) + median;
 				// Grenzen setzen: 0 <= virtAdr <= PROGRAM_SIZE -
 				// os.getWORD_SIZE() !!

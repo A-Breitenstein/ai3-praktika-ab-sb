@@ -153,7 +153,17 @@ public class PageTable {
   * RANDOM-Algorithmus: Zufällige Auswahl 
   */
   private PageTableEntry randomAlgorithm(PageTableEntry newPte) {
-    /* ToDo */
+    /* TODO:RANDOM Algorithmus */
+
+      PageTableEntry pte; // Auswahl
+
+      final int randomIndex = new Random().nextInt(pteRAMlist.size());
+      pte = (PageTableEntry) pteRAMlist.get(randomIndex);
+      os.testOut("Prozess " + pid + ": Random-Algorithmus hat pte ausgewählt: "
+              + pte.virtPageNum);
+      pteRAMlist.remove(randomIndex);
+      pteRAMlist.add(newPte);
+      return pte;
   }
   
   // ----------------------- Hilfsmethode --------------------------------
