@@ -95,7 +95,7 @@ public class MatrixFeatures {
 
             adjazenzMatrix = multiplyMatrices(adjazenzMatrix,adjazenzMatrix);
             if(adjazenzMatrix[sourceVertexIndex][targetVertexIndex]>0){
-                System.out.println("n = "+n);
+//                System.out.println("n = "+n);
                 return true;
             }
         }

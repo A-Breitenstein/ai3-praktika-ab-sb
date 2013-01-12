@@ -291,4 +291,125 @@ public class EulerCircles {
             this.targetVertex = targetVertex;
         }
     }
+
+    private static class UndirectedJGraphWithAdjazenzMatrix{
+        Graph jgraph;
+        int[][] adjazenzMatrix;
+        Map<String,Integer> indeceMap = new HashMap<String,Integer>();
+
+        private UndirectedJGraphWithAdjazenzMatrix(Graph graph) {
+            if(!(graph instanceof UndirectedGraph))
+                throw new IllegalArgumentException("übergebener Graph ist nicht ungerichtet");
+            this.jgraph = graph;
+            adjazenzMatrix = MatrixFeatures.createAdjazenzMatrix(graph,indeceMap);
+        }
+
+        public void removeEdge(String source,String target) {
+            jgraph.removeEdge(source, target);
+            MatrixFeatures.removeUndirectedEdge(adjazenzMatrix,indeceMap.get(source),indeceMap.get(target));
+        }
+        public void removeEdge(DefaultEdge edge) {
+             removeEdge((String) jgraph.getEdgeSource(edge),(String) jgraph.getEdgeTarget(edge));
+        }
+        public void addEdge(String source,String target,DefaultEdge edge) {
+            jgraph.addEdge(source, target, edge);
+            MatrixFeatures.addUndirectedEdge(adjazenzMatrix, indeceMap.get(source), indeceMap.get(target));
+        }
+
+        public boolean isThereAWay(String source, String target) {
+            return  MatrixFeatures.isThereAWay(adjazenzMatrix,indeceMap.get(source),indeceMap.get(target));
+        }
+        public Collection<DefaultEdge> edgeSet() {
+            return (Collection<DefaultEdge>) jgraph.edgeSet();
+        }
+        public Collection<String> vertexSet() {
+            return (Collection<String>) jgraph.vertexSet();
+        }
+        public Graph getGraph(){
+            return jgraph;
+        }
+    }
+
+    /**
+     * Erstellt eine Eulertour auf dem gegebenen Graphen in quadratischer Zeitkomplexität ( O(AnzahlKanten²) ).
+     *
+     * @param g <b>PRECONDITION </b> - Der übergebene Graph muss zusammenhängend und ungerichtet sein und alle Knoten müsssen einen
+     *          geraden Knotengrad aufweisen!
+     * @return - Liste von Strings, Reihenfolge in der die Knoten sich in der Liste befinden beschreibt die Tour.
+     */
+    public static List<String> fleury_adjazenMatrix(Graph g) {
+        Graph graphCopy;
+        UndirectedJGraphWithAdjazenzMatrix workingCopy;
+        if (g instanceof UndirectedGraph) {
+            graphCopy = new Pseudograph(DefaultEdge.class);
+            if (!Graphs.addGraph(graphCopy, g))
+                throw new IllegalArgumentException("Can´t copy source jgraph to destination jgraph");
+            workingCopy = new UndirectedJGraphWithAdjazenzMatrix(graphCopy);
+        } else {
+            throw new IllegalArgumentException("Erstmal nur Ungerichtet Garphen");
+        }
+
+        List<String> path = new ArrayList<String>();
+        //waehle irgendeinen knoten aus
+        String currentVertex = (String) workingCopy.vertexSet().iterator().next();
+        path.add(currentVertex);
+        // solange es noch kanten im graphen gibt füge sie zur eulertour hinzu
+        while (workingCopy.edgeSet().size() != 0) {
+            //waehle unter den unmarkierten inzedenten Kanten zum currentVertex eine aus,
+            // dabei sind zuerst die Kanten zuwählen die keine Schnittkanten sind.
+            DefaultEdge preferredEdge = choosePreferredEdge_adjazenzMatrix(workingCopy, currentVertex);
+            // setze den Zielknoten der Kante als neuen currentVertex;
+            currentVertex = getTargetVertex(workingCopy.jgraph, preferredEdge, currentVertex);
+            // makiere die Kante
+            workingCopy.removeEdge(preferredEdge);
+            path.add(currentVertex);
+        }
+        return path;
+    }
+
+    /**
+     * <b>Hilfsfunktion</b> zu EulerCircles.fleury(...)
+     * <br>
+     * Versucht zuerst die Kanten zu wählen die Keine Schnittkanten sind,
+     * gibt es keine von diesen Kanten mehr, dann werden die Schnittkanten zurückgegeben
+     *
+     * Schnittkante ist eine Kante, die beim entfernen dazuführt, dass der Graph nicht mehr Zusammenhängend ist.
+     * die Schnittkanten Bestimmung erfolgt durch den currentVertex und die Matrixpotenzierung.
+     *
+     * Bsp:  Ungerichteter Graph G =( {a,b,c} , { {a,b},{a,c},{b,c} } )
+     * currentVertex = a
+     * Kanten von a => { {a,b} , {a,c} }
+     * Erste Kante von a wird entfernt, nun wird mit Tiefensuche getestet ob vertex b noch erreichbar ist,
+     * wenn er nun noch erreichbar ist, dann ist diese entfernte Kante keine Schnittkante. Andernfalls ist es
+     * eine Schnittkante. In diesem Beispiel ist vertex b noch über c zu erreichen (weil ungerichtet)
+     *
+     * @param g              der Graph
+     * @param currentVertex  der Ausgangsvertex
+     * @return  die Kante
+     */
+    private static DefaultEdge choosePreferredEdge_adjazenzMatrix(UndirectedJGraphWithAdjazenzMatrix g, String currentVertex) {
+        boolean isCuttingEdge = false;
+        List<DefaultEdge> touchedEdgesOfCurrentVertex = new ArrayList<DefaultEdge>();
+        touchedEdgesOfCurrentVertex.addAll(g.jgraph.edgesOf(currentVertex));
+
+        for (DefaultEdge edge : touchedEdgesOfCurrentVertex) {
+
+            if (g.jgraph.getEdgeSource(edge).equals(currentVertex)) {
+                String targetVertex = (String) g.jgraph.getEdgeTarget(edge);
+                g.removeEdge(currentVertex, targetVertex);
+                // wenn es ohne diese Kante immer noch einen Weg zum targetVertex gibt, dann ist
+                // der Graph noch zusammenhängend und es ist somit keine Schnittkante.
+                isCuttingEdge = g.isThereAWay(currentVertex, targetVertex);
+                g.addEdge(currentVertex, targetVertex, edge);
+                if (!isCuttingEdge) {
+                    return edge;
+                }
+            }
+        }
+        for (DefaultEdge cuttingEdge : touchedEdgesOfCurrentVertex) {
+            return cuttingEdge;
+        }
+        throw new IllegalArgumentException("Konnte keine Edge in diesem Vertex finden :: " + currentVertex);
+    }
+
 }
