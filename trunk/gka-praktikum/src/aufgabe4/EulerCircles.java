@@ -76,19 +76,27 @@ public class EulerCircles {
         boolean isCuttingEdge = false;
         List<DefaultEdge> touchedEdgesOfCurrentVertex = new ArrayList<DefaultEdge>();
         touchedEdgesOfCurrentVertex.addAll(g.edgesOf(currentVertex));
-
+        String targetVertex;
         for (DefaultEdge edge : touchedEdgesOfCurrentVertex) {
 
             if (g.getEdgeSource(edge).equals(currentVertex)) {
-                String targetVertex = (String) g.getEdgeTarget(edge);
+                targetVertex  = (String) g.getEdgeTarget(edge);
                 g.removeEdge(currentVertex, targetVertex);
                 // wenn es ohne diese Kante immer noch einen Weg zum targetVertex gibt, dann ist
                 // der Graph noch zusammenhängend und es ist somit keine Schnittkante.
                 isCuttingEdge = TraverseGraphAlgorithms.depthFirstSearch(g, currentVertex, targetVertex, null);
                 g.addEdge(currentVertex, targetVertex, edge);
-                if (!isCuttingEdge) {
-                    return edge;
-                }
+            }else{
+                targetVertex  = (String) g.getEdgeSource(edge);
+                g.removeEdge(targetVertex, currentVertex);
+                // wenn es ohne diese Kante immer noch einen Weg zum targetVertex gibt, dann ist
+                // der Graph noch zusammenhängend und es ist somit keine Schnittkante.
+                isCuttingEdge = TraverseGraphAlgorithms.depthFirstSearch(g, currentVertex, targetVertex, null);
+                g.addEdge(targetVertex,currentVertex, edge);
+            }
+
+            if (!isCuttingEdge) {
+                return edge;
             }
         }
         for (DefaultEdge cuttingEdge : touchedEdgesOfCurrentVertex) {
@@ -391,19 +399,27 @@ public class EulerCircles {
         boolean isCuttingEdge = false;
         List<DefaultEdge> touchedEdgesOfCurrentVertex = new ArrayList<DefaultEdge>();
         touchedEdgesOfCurrentVertex.addAll(g.jgraph.edgesOf(currentVertex));
-
+        String targetVertex;
         for (DefaultEdge edge : touchedEdgesOfCurrentVertex) {
 
             if (g.jgraph.getEdgeSource(edge).equals(currentVertex)) {
-                String targetVertex = (String) g.jgraph.getEdgeTarget(edge);
+                 targetVertex = (String) g.jgraph.getEdgeTarget(edge);
                 g.removeEdge(currentVertex, targetVertex);
                 // wenn es ohne diese Kante immer noch einen Weg zum targetVertex gibt, dann ist
                 // der Graph noch zusammenhängend und es ist somit keine Schnittkante.
                 isCuttingEdge = g.isThereAWay(currentVertex, targetVertex);
                 g.addEdge(currentVertex, targetVertex, edge);
-                if (!isCuttingEdge) {
-                    return edge;
-                }
+
+            }else{
+                targetVertex  = (String) g.jgraph.getEdgeSource(edge);
+                g.removeEdge(targetVertex, currentVertex);
+                // wenn es ohne diese Kante immer noch einen Weg zum targetVertex gibt, dann ist
+                // der Graph noch zusammenhängend und es ist somit keine Schnittkante.
+                isCuttingEdge = g.isThereAWay(currentVertex, targetVertex);
+                g.addEdge(targetVertex,currentVertex, edge);
+            }
+            if (!isCuttingEdge) {
+                return edge;
             }
         }
         for (DefaultEdge cuttingEdge : touchedEdgesOfCurrentVertex) {
