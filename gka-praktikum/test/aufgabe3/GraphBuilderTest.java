@@ -49,8 +49,46 @@ public class GraphBuilderTest {
         boolean equalVertices = (generatedGraph.vertexSet().size() >= numberOfVertices),
                 equalEdges = (generatedGraph.edgeSet().size() >= numberOfEdges);
 
-        GKAFileManager.exportGraph(generatedGraph, "EULER_BIG.gka");
+        GKAFileManager.exportGraph(generatedGraph, "EULER_BIG_v2.gka");
         System.out.println(generatedGraph.edgeSet().size());
+        assertTrue(equalVertices);
+        assertTrue(equalEdges);
+    }
+    @Test
+    public void testCreateEULER_MIDSIZE() {
+        Graph generatedGraph;
+        GraphBuilder gBuilder = GraphBuilder.create();
+
+        int numberOfVertices = 50,
+                numberOfEdges = 625;
+
+        generatedGraph = gBuilder.setGraphStructure(numberOfVertices, numberOfEdges).generateConnectedUndirectedGraphWithEvenVertexGrade();
+
+        boolean equalVertices = (generatedGraph.vertexSet().size() >= numberOfVertices),
+                equalEdges = (generatedGraph.edgeSet().size() >= numberOfEdges);
+
+        GKAFileManager.exportGraph(generatedGraph, "EULER_MIDSIZE.gka");
+        System.out.println(generatedGraph.edgeSet().size());
+        assertTrue(equalVertices);
+        assertTrue(equalEdges);
+    }
+
+    @Test
+    public void testCreateEULER_mid2_and_reimport() {
+        Graph generatedGraph;
+        GraphBuilder gBuilder = GraphBuilder.create();
+
+        int numberOfVertices = 30,
+                numberOfEdges = 250;
+
+        generatedGraph = gBuilder.setGraphStructure(numberOfVertices, numberOfEdges).generateConnectedUndirectedGraphWithEvenVertexGrade();
+
+
+        GKAFileManager.exportGraph(generatedGraph, "EULER_mid2.gka");
+        System.out.println(generatedGraph.edgeSet().size());
+        Graph reimport = GKAFileManager.importGraph("EULER_mid2.gka");
+        boolean equalVertices = (generatedGraph.vertexSet().size() == reimport.vertexSet().size()),
+                equalEdges = (generatedGraph.edgeSet().size() == reimport.edgeSet().size());
         assertTrue(equalVertices);
         assertTrue(equalEdges);
     }

@@ -1,7 +1,6 @@
 package aufgabe1;
 
 import aufgabe2.AttributedGraphImpl;
-import org.jgraph.graph.Edge;
 import org.jgrapht.Graph;
 import org.jgrapht.Graphs;
 import org.jgrapht.graph.*;
@@ -212,16 +211,27 @@ public class GKAFileManager {
         try {
             File file = new File(path);
             FileWriter fw = new FileWriter(file);
+            Set<String> alreadyWritten = new HashSet<String>();
             if (graph instanceof Pseudograph && !(graph instanceof WeightedPseudograph)) {
                 fw.write(UNGERICHTET + "\n");
-
-                for (Object sourceVertex : graph.vertexSet()) {
-                    for (Object targetVertex : graph.vertexSet()) {
-                        if (graph.getEdge(sourceVertex, targetVertex) != null) {
-                            fw.write(sourceVertex + "," + targetVertex + "\n");
+                for (String vertex : (Collection<String>) graph.vertexSet()) {
+                    Collection<org.jgraph.graph.DefaultEdge> edgesOfVertex = graph.edgesOf(vertex);
+                    for (org.jgraph.graph.DefaultEdge edge : edgesOfVertex) {
+                        if(graph.getEdgeSource(edge).equals(vertex)){
+                            fw.write(vertex + "," + (String)graph.getEdgeTarget(edge) + "\n");
                         }
                     }
                 }
+
+
+//                for (Object sourceVertex : graph.vertexSet()) {
+//                    for (Object targetVertex : graph.vertexSet()) {
+//                        if ((graph.getEdge(sourceVertex, targetVertex) != null)) {
+//                            alreadyWritten.add((String)sourceVertex+(String)targetVertex);
+//                            fw.write(sourceVertex + "," + targetVertex + "\n");
+//                        }
+//                    }
+//                }
             } else if (graph instanceof WeightedPseudograph) {
                 fw.write(UNGERICHTET + "\n");
                 fw.write(GEWICHTET + "\n");
