@@ -44,7 +44,7 @@ public class GraphBuilderTest {
         int numberOfVertices = 200,
                 numberOfEdges = 10000;
 
-        generatedGraph = gBuilder.setGraphStructure(numberOfVertices, numberOfEdges).generateConnectedUndirectedGraphWithEvenVertexGrade();
+        generatedGraph = gBuilder.setGraphStructure(numberOfVertices, numberOfEdges).generateConnectedUndirectedGraphWithEvenVertexDegree();
 
         boolean equalVertices = (generatedGraph.vertexSet().size() >= numberOfVertices),
                 equalEdges = (generatedGraph.edgeSet().size() >= numberOfEdges);
@@ -62,7 +62,7 @@ public class GraphBuilderTest {
         int numberOfVertices = 50,
                 numberOfEdges = 625;
 
-        generatedGraph = gBuilder.setGraphStructure(numberOfVertices, numberOfEdges).generateConnectedUndirectedGraphWithEvenVertexGrade();
+        generatedGraph = gBuilder.setGraphStructure(numberOfVertices, numberOfEdges).generateConnectedUndirectedGraphWithEvenVertexDegree();
 
         boolean equalVertices = (generatedGraph.vertexSet().size() >= numberOfVertices),
                 equalEdges = (generatedGraph.edgeSet().size() >= numberOfEdges);
@@ -81,7 +81,7 @@ public class GraphBuilderTest {
         int numberOfVertices = 30,
                 numberOfEdges = 250;
 
-        generatedGraph = gBuilder.setGraphStructure(numberOfVertices, numberOfEdges).generateConnectedUndirectedGraphWithEvenVertexGrade();
+        generatedGraph = gBuilder.setGraphStructure(numberOfVertices, numberOfEdges).generateConnectedUndirectedGraphWithEvenVertexDegree();
 
 
         GKAFileManager.exportGraph(generatedGraph, "EULER_mid2.gka");

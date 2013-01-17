@@ -162,7 +162,7 @@ public class GraphBuilder {
      *
      * @return   zusammenhängenden ungerichteten Graphen mit geradem Knoten Grad
      */
-    public Graph generateConnectedUndirectedGraphWithEvenVertexGrade() {
+    public Graph generateConnectedUndirectedGraphWithEvenVertexDegree() {
         Graph generatedGraph = new Pseudograph(DefaultEdge.class);
 
         List<String> generatedVerticesNames = new ArrayList<String>();
@@ -302,7 +302,7 @@ public class GraphBuilder {
     }
 
     /**
-     * <b>Hilfsfunktion</b> zu generateConnectedUndirectedGraphWithEvenVertexGrade(...) <br>
+     * <b>Hilfsfunktion</b> zu generateConnectedUndirectedGraphWithEvenVertexDegree(...) <br>
      *  Bestimmt die Knoten mit den ungeraden Knotengrad in einem übergebenen Graphen
      * @param g
      * @return liste von Strings mit den Knoten Namen

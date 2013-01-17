@@ -24,6 +24,7 @@ public class EulerCirclesTest {
     // neuen knoten verbunden wurden
     @Test
     public void testFleury() throws Exception {
+        System.out.println("\n################### Fleury  DFS 6 knoten 10kanten #######################");
         Graph eulertour = GKAFileManager.importGraph("eulertour.gka");
         long start = System.nanoTime();
         List<String> path = EulerCircles.fleury(eulertour);
@@ -34,6 +35,7 @@ public class EulerCirclesTest {
     }
     @Test
     public void testFleury_adjazenzmatrix() throws Exception {
+        System.out.println("\n################## Fleury matrix 6 knoten 10kanten #######################");
         Graph eulertour = GKAFileManager.importGraph("eulertour.gka");
         long start = System.nanoTime();
         List<String> path = EulerCircles.fleury_adjazenMatrix(eulertour);
@@ -44,12 +46,14 @@ public class EulerCirclesTest {
     }
     @Test
     public void testHierholzer() throws Exception {
+        System.out.println("\n################## Hierholzer 6 knoten 10kanten #########################");
         Graph eulertour = GKAFileManager.importGraph("eulertour.gka");
         long start = System.nanoTime();
         List<String> path = EulerCircles.hierholzer(eulertour);
         System.out.println("ElapsedTime Hierholzer: "+String.format("%f",((System.nanoTime()-start)/1000000d))+" ms");
         System.out.println(path);
         Assert.assertTrue(EulerCircles.hierholzer(eulertour).size() == 11);
+        Thread.sleep(1000);
     }
 
     // Warnung! Dieser Test dauert ewig ... liegt an 10000 Kanten ² und Tiefensuche  ...
@@ -81,6 +85,7 @@ public class EulerCirclesTest {
 
     @Test
     public void testHierholzer_EULERBIG() throws Exception {
+        System.out.println("\n################# Hierholzer Eulerbig ############################");
         Graph eulertour = GKAFileManager.importGraph("EULER_BIG_v2.gka");
         long start = System.nanoTime();
         List<String> path = EulerCircles.hierholzer(eulertour);
@@ -90,6 +95,7 @@ public class EulerCirclesTest {
     }
     @Test
     public void testHierholzer_EULER_MIDSIZE() throws Exception {
+        System.out.println("\n################# Hierholzer 51 knoten 640 kanten #################");
         Graph eulertour = GKAFileManager.importGraph("EULER_MIDSIZE.gka");
         long start = System.nanoTime();
         List<String> path = EulerCircles.hierholzer(eulertour);
@@ -99,6 +105,7 @@ public class EulerCirclesTest {
     }
     @Test
     public void testFleury_EULER_MIDSIZE() throws Exception {
+        System.out.println("\n################ Fleury DFS 51 knoten 640 kanten ##############");
         Graph eulertour = GKAFileManager.importGraph("EULER_MIDSIZE.gka");
         long start = System.nanoTime();
         List<String> path = EulerCircles.fleury(eulertour);
@@ -109,6 +116,7 @@ public class EulerCirclesTest {
     }
     @Test
     public void testFleury_adjazenzmatrix_EULER_MIDSIZE() throws Exception {
+        System.out.println("\n############### Fleury Matrix 51 knoten 640 kanten ##################");
         Graph eulertour = GKAFileManager.importGraph("EULER_MIDSIZE.gka");
         long start = System.nanoTime();
         List<String> path = EulerCircles.fleury_adjazenMatrix(eulertour);
@@ -120,7 +128,7 @@ public class EulerCirclesTest {
     @Test
     public void testFleury_vs_test_EULER_MIDSIZE() throws Exception {
         Graph eulertour = GKAFileManager.importGraph("EULER_MIDSIZE.gka");
-        System.out.println("############## PATH EQUALS TEST ###############");
+        System.out.println("\n############## PATH EQUALS TEST ###############");
         System.out.println("######### fleury DFS vs fleury matrix #########");
         System.out.println("######### vertecies:"+eulertour.vertexSet().size()+" edges: "+eulertour.edgeSet().size()+" #############");
         long start = System.nanoTime();

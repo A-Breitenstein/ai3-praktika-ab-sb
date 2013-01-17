@@ -148,7 +148,7 @@ public class EulerCircles {
         // solange wie der Graph noch Kanten enthält erzeuge neue kreise
         while (workingCopy.edgeSet().size() != 0) {
             // bestimme den aktuellen knoten
-            currentVertexPosition = findNextSuitableVertex(workingCopy, path);
+            currentVertexPosition = findNextSuitableVertex(workingCopy, path,currentVertexPosition);
             currentVertex = path.get(currentVertexPosition);
             // entferne den aktuellen vertex aus dem weg, damit er später durch den von dort
             // erstellten kreis substituiert werden kann.
@@ -275,9 +275,10 @@ public class EulerCircles {
      * @param circle der Kreis als Liste von Strings
      * @return  die Position in dem Kreis
      */
-    private static int findNextSuitableVertex(Graph g, List<String> circle) {
-        int index = 0;
-        for (String circleMemberVertex : circle) {
+    private static int findNextSuitableVertex(Graph g, List<String> circle,int old_pos) {
+        int index = old_pos;
+
+        for (String circleMemberVertex : circle.subList(old_pos,circle.size())) {
             if (g.edgesOf(circleMemberVertex).size() > 0) return index;
             index++;
         }

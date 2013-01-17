@@ -50,13 +50,6 @@ public class Prim {
                 smallestEdge = customEdge.edge;
 
 
-//                for (Object edge : edges) {
-//                    if(!yetNotConnectedEdges.contains(edge)){
-//                        if(graph.getEdgeWeight(edge) < graph.getEdgeWeight(smallestEdge)){
-//                            smallestEdge = edge;
-//                        }
-//                    }
-//                }
 
                 smallestEdgeWeight = customEdge.weight;
                 source = customEdge.source;
@@ -88,10 +81,6 @@ public class Prim {
                 } else {
                     yetNotConnectedEdges.add(customEdge);
                 }
-//                edges.remove(smallestEdge);
-//            }else{
-//                edges.addAll(yetNotConnectedEdges);
-//                yetNotConnectedEdges.clear();
             }
 
         }
@@ -136,13 +125,6 @@ public class Prim {
                 smallestEdge = customEdge.edge;
 
 
-//                for (Object edge : edges) {
-//                    if(!yetNotConnectedEdges.contains(edge)){
-//                        if(graph.getEdgeWeight(edge) < graph.getEdgeWeight(smallestEdge)){
-//                            smallestEdge = edge;
-//                        }
-//                    }
-//                }
 
                 smallestEdgeWeight = customEdge.weight;
                 source = customEdge.source;
@@ -177,10 +159,6 @@ public class Prim {
                 } else {
                     yetNotConnectedEdges.add(customEdge);
                 }
-//                edges.remove(smallestEdge);
-//            }else{
-//                edges.addAll(yetNotConnectedEdges);
-//                yetNotConnectedEdges.clear();
             }
 
         }
