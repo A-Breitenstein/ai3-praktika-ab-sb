@@ -1,5 +1,6 @@
 package aufgabe1.messreihe;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -10,29 +11,46 @@ import java.util.List;
  */
 public class MessreiheImpl implements Messreihe {
 
-    private float summedMesswerte;
+    private double summedMesswerte;
 
-    private List<Float> listeVonMesswerte;
+    private List<Double> listeVonMesswerte;
 
+    private MessreiheImpl() {
+        this.listeVonMesswerte = new ArrayList<Double>();
+    }
 
-
-    @Override
-    public void addMesswert(float messwert) {
-        //To change body of implemented methods use File | Settings | File Templates.
+    public static MessreiheImpl create() {
+        return new MessreiheImpl();
     }
 
     @Override
-    public void addAllMesswert(float[] messwerte) {
-        //To change body of implemented methods use File | Settings | File Templates.
+    public void addMesswert(double messwert) {
+        listeVonMesswerte.add(messwert);
+        summedMesswerte += messwert;
     }
 
     @Override
-    public float calculateMittelwert() {
-        return 0;  //To change body of implemented methods use File | Settings | File Templates.
+    public void addAllMesswert(double[] messwerte) {
+        for (double messwert : messwerte) {
+            listeVonMesswerte.add(messwert);
+            summedMesswerte += messwert;
+        }
     }
 
     @Override
-    public float calculateVarianz() {
-        return 0;  //To change body of implemented methods use File | Settings | File Templates.
+    public double calculateMittelwert() {
+        return summedMesswerte / listeVonMesswerte.size();
     }
+
+    @Override
+    public double calculateVarianz() {
+        double varianzAccu = 0.0,
+                mittelwert = calculateMittelwert();
+        for (Double aDouble : listeVonMesswerte) {
+            varianzAccu += Math.pow(aDouble - mittelwert, 2.d);
+        }
+
+        return (varianzAccu / (listeVonMesswerte.size() - 1));
+    }
+
 }
