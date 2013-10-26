@@ -1,0 +1,23 @@
+1.1
+
+1.
+Siehe package 'messreihe' für die Funktionen.
+Es wurden nur 4 Methoden implementiert(Construktor und Factorymethode nicht mitgezählt),
+diese lassen das hinzufügen von einem oder mehreren Mittelwert/en zu.
+Für die Berechung der Varianz und des Mittelwertes gibt es jeweils eine Methode.
+
+2.
+-/-
+
+3.
+Beim Hinzufügen der Messwerte wird sofort eine Summe aller Messwerte gebildet.
+Die neuen Werte werden auf den alten Wert summiert um nicht komplett neu zu
+summieren.
+
+4.
+Alle berechneten Werte für den Mittelwert und der Varianz werden nur einmal
+berechnet, unter der vorraussetzung, dass kein neuer Messwert zwischen n-maliger
+Abfrage des Mittelwertes oder der Varianz.
+Sämtliche Messwerte werden für die Berechung der Varianz in einer Liste gehalten.
+
+

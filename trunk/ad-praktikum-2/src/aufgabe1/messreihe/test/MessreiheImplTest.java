@@ -45,6 +45,22 @@ public class MessreiheImplTest {
     }
 
     @Test
+    public void testCalculateMittelwert2() throws Exception {
+        Messreihe messreihe = MessreiheImpl.create();
+
+        double[] messwerte = new double[]{2.0,4.0,7.0,8.0,23.0};
+        messreihe.addAllMesswert(messwerte);
+        messreihe.addMesswert(6.0);
+
+        assertEquals(messreihe.calculateMittelwert(),8.333, 0.001);
+
+
+        messreihe.addMesswert(4.0);
+
+        assertEquals(messreihe.calculateMittelwert(),7.714, 0.001);
+    }
+
+    @Test
     public void testCalculateVarianz() throws Exception {
         Messreihe messreihe = MessreiheImpl.create();
 
@@ -53,5 +69,30 @@ public class MessreiheImplTest {
         messreihe.addMesswert(6.0);
 
         assertEquals(messreihe.calculateVarianz(),6.566, 0.001);
+    }
+
+    @Test
+    public void testCalculateVarianz2() throws Exception {
+        Messreihe messreihe = MessreiheImpl.create();
+
+        double[] messwerte = new double[]{3.0,9.0};
+        messreihe.addAllMesswert(messwerte);
+
+        assertEquals(messreihe.calculateVarianz(),18, 0.001);
+
+        messreihe.addMesswert(7.0);
+
+        assertEquals(messreihe.calculateVarianz(),9.333, 0.001);
+
+    }
+
+    @Test
+    public void testCalculateVarianzFail() throws Exception {
+        Messreihe messreihe = MessreiheImpl.create();
+
+        double[] messwerte = new double[]{3.0,9.0};
+        messreihe.addAllMesswert(messwerte);
+
+        assertFalse(messreihe.calculateVarianz() == 18.5);
     }
 }

@@ -13,10 +13,19 @@ public class MessreiheImpl implements Messreihe {
 
     private double summedMesswerte;
 
+    private double calculatedMittelwert;
+
+    private double calculatedVarianz;
+
     private List<Double> listeVonMesswerte;
+
+    private boolean newMittelwert;
+    private boolean newVarianz;
 
     private MessreiheImpl() {
         this.listeVonMesswerte = new ArrayList<Double>();
+        newMittelwert = true;
+        newVarianz = true;
     }
 
     public static MessreiheImpl create() {
@@ -27,6 +36,8 @@ public class MessreiheImpl implements Messreihe {
     public void addMesswert(double messwert) {
         listeVonMesswerte.add(messwert);
         summedMesswerte += messwert;
+        newMittelwert = true;
+        newVarianz = true;
     }
 
     @Override
@@ -35,22 +46,36 @@ public class MessreiheImpl implements Messreihe {
             listeVonMesswerte.add(messwert);
             summedMesswerte += messwert;
         }
+        newMittelwert = true;
+        newVarianz = true;
     }
 
     @Override
     public double calculateMittelwert() {
-        return summedMesswerte / listeVonMesswerte.size();
+        if (newMittelwert)
+            calculatedMittelwert = summedMesswerte / listeVonMesswerte.size();
+        newMittelwert = false;
+
+
+        return calculatedMittelwert;
     }
 
     @Override
     public double calculateVarianz() {
-        double varianzAccu = 0.0,
-                mittelwert = calculateMittelwert();
-        for (Double aDouble : listeVonMesswerte) {
-            varianzAccu += Math.pow(aDouble - mittelwert, 2.d);
+        if (newVarianz) {
+
+            double varianzAccu = 0.0,
+                    mittelwert = calculateMittelwert();
+            for (Double aDouble : listeVonMesswerte) {
+                varianzAccu += Math.pow(aDouble - mittelwert, 2.d);
+            }
+
+            calculatedVarianz = (varianzAccu / (listeVonMesswerte.size() - 1));
         }
 
-        return (varianzAccu / (listeVonMesswerte.size() - 1));
+        newVarianz = false;
+
+        return calculatedVarianz;
     }
 
 }
