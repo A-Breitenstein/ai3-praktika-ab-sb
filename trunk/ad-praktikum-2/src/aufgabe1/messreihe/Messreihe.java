@@ -8,11 +8,11 @@ package aufgabe1.messreihe;
  */
 public interface Messreihe {
 
-    public void addMesswert(float messwert);
+    public void addMesswert(double messwert);
 
-    public void addAllMesswert(float[] messwerte);
+    public void addAllMesswert(double[] messwerte);
 
-    public float calculateMittelwert();
+    public double calculateMittelwert();
 
-    public float calculateVarianz();
+    public double calculateVarianz();
 }
