@@ -1,4 +1,4 @@
-1.1
+1.1 Messreihe
 
 1.
 Siehe package 'messreihe' für die Funktionen.
@@ -17,7 +17,101 @@ summieren.
 4.
 Alle berechneten Werte für den Mittelwert und der Varianz werden nur einmal
 berechnet, unter der vorraussetzung, dass kein neuer Messwert zwischen n-maliger
-Abfrage des Mittelwertes oder der Varianz.
-Sämtliche Messwerte werden für die Berechung der Varianz in einer Liste gehalten.
+Abfrage des Mittelwertes oder der Varianz, angeben wird.
+Sämtliche Messwerte werden nicht gespeichert, mithilfe des online_varianz Alogrithmus
+müssen die Messwerte nicht in einer extra Liste erhalten bleiben.
+Der Algorithmus wurde auf Wikipedia von Python-Code in Java-Code convertiert,
+Quelle: 'http://en.wikipedia.org/wiki/Algorithms_for_calculating_variance#Online_algorithm'
 
 
+1.2 Listen
+Alle Messwerte sind in Millisekunden, umstellbar im Code
+
+1.6
+Durchläufe : 10, Elemente : 1000
+
+Ergebnis:
+Durchgang: 1, MittelWert: 8.751819999999992E-4
+Durchgang: 1, Varianz: 2.787582469318075E-4
+Durchgang: 2, MittelWert: 3.220850000000031E-4
+Durchgang: 2, Varianz: 1.7944352127127127E-8
+Durchgang: 3, MittelWert: 3.3226400000000334E-4
+Durchgang: 3, Varianz: 1.3114927231231225E-8
+Durchgang: 4, MittelWert: 3.4483600000000315E-4
+Durchgang: 4, Varianz: 1.3955995099099089E-8
+Durchgang: 5, MittelWert: 3.5810300000000306E-4
+Durchgang: 5, Varianz: 1.4453872263263273E-8
+Durchgang: 6, MittelWert: 3.4451400000000334E-4
+Durchgang: 6, Varianz: 2.747799179579576E-8
+Durchgang: 7, MittelWert: 3.4756100000000334E-4
+Durchgang: 7, Varianz: 3.009515743643646E-8
+Durchgang: 8, MittelWert: 3.4688900000000327E-4
+Durchgang: 8, Varianz: 2.8261580259259246E-8
+Durchgang: 9, MittelWert: 3.536810000000035E-4
+Durchgang: 9, Varianz: 2.37238590980981E-8
+Durchgang: 10, MittelWert: 3.7405700000000305E-4
+Durchgang: 10, Varianz: 2.790293270780781E-7
+Mittelwert für 10 durchläufe beträgt: 3.9991720000000285E-4
+Varianz für 10 durchläufe beträgt: 2.808033502662179E-8
+
+1.7
+Durchläufe : 10, Elemente : 1000
+
+Ergebnis:
+Durchgang: 1, MittelWert: 0.006903093000000018
+Durchgang: 1, Varianz: 8.330369886930432E-4
+Durchgang: 2, MittelWert: 0.0013668310000000026
+Durchgang: 2, Varianz: 8.964072410849853E-6
+Durchgang: 3, MittelWert: 0.0012750610000000018
+Durchgang: 3, Varianz: 9.666922154944949E-7
+Durchgang: 4, MittelWert: 0.001244519000000002
+Durchgang: 4, Varianz: 8.681520897287292E-7
+Durchgang: 5, MittelWert: 0.0012536870000000025
+Durchgang: 5, Varianz: 8.224493643953957E-7
+Durchgang: 6, MittelWert: 0.0012394150000000015
+Durchgang: 6, Varianz: 8.393559707457453E-7
+Durchgang: 7, MittelWert: 0.001244843000000001
+Durchgang: 7, Varianz: 9.029934057567568E-7
+Durchgang: 8, MittelWert: 0.001181001000000002
+Durchgang: 8, Varianz: 1.206216997996997E-6
+Durchgang: 9, MittelWert: 0.001122538000000002
+Durchgang: 9, Varianz: 6.645600946506506E-7
+Durchgang: 10, MittelWert: 0.0012081900000000022
+Durchgang: 10, Varianz: 1.1075080339339343E-6
+
+Mittelwert für 10 durchläufe beträgt: 0.0018039178000000037
+Varianz für 10 durchläufe beträgt: 3.214047387012419E-6
+
+1.8
+Durchläufe : 10, Elemente : 1000
+
+Ergebnis:
+Durchgang: 1, MittelWert: 0.006291880000000006
+Durchgang: 1, Varianz: 3.18052890005605E-4
+Durchgang: 2, MittelWert: 0.0014493930000000056
+Durchgang: 2, Varianz: 1.5070559224734746E-6
+Durchgang: 3, MittelWert: 0.0014065610000000037
+Durchgang: 3, Varianz: 1.369541613892892E-6
+Durchgang: 4, MittelWert: 0.0014147210000000046
+Durchgang: 4, Varianz: 1.320577284443444E-6
+Durchgang: 5, MittelWert: 0.001402826000000003
+Durchgang: 5, Varianz: 1.7822772950190199E-6
+Durchgang: 6, MittelWert: 0.0013538950000000027
+Durchgang: 6, Varianz: 1.2544964684434439E-6
+Durchgang: 7, MittelWert: 0.0013535630000000036
+Durchgang: 7, Varianz: 1.316729021052051E-6
+Durchgang: 8, MittelWert: 9.78497E-4
+Durchgang: 8, Varianz: 4.970427347257254E-7
+Durchgang: 9, MittelWert: 0.001263226000000003
+Durchgang: 9, Varianz: 1.246140501425427E-6
+Durchgang: 10, MittelWert: 0.0012781160000000038
+Durchgang: 10, Varianz: 1.3115630435875875E-6
+Mittelwert für 10 durchläufe beträgt: 0.0018192678000000036
+Varianz für 10 durchläufe beträgt: 2.4878724604504025E-6
+
+Fazit:
+Vergleicht man die Mittelwerte der Messungen 1.6, 1.7 und 1.8 für 10 durchläufe,
+zeigen diese, dass das Einfügen mit cons(), also das Einfügen an der erster Stelle, am schnellsten ist.
+Der Unterschied zwischen 1.7 und 1.8 ist gering, er beträgt im Mittelwert ca. '00001' Millisekunden.
+Auffällig ist es, dass die ersten Werte der durchläufe, eher der erste Durchlauf, eine Abweichung von bis zu
+0.005 Millisekunden haben. Der Grund dafür wird warscheinlich Java sein und der Art der Handhabung von JIT-Compilierung.

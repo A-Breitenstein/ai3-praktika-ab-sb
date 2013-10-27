@@ -2,30 +2,45 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" readonly="true" id="3e291040-e0e6-4fc4-ab45-02c97ac374dc" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/aufgabe1/Aufgabe1-Antworten" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/aufgabe1/liste/Liste.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/aufgabe1/liste/ListeElem.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/aufgabe1/liste/ListeImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/aufgabe1/messreihe/Messreihe.java" afterPath="$PROJECT_DIR$/src/aufgabe1/messreihe/Messreihe.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/aufgabe1/liste/test" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/aufgabe1/liste/test/ListeImplTest.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/aufgabe1/liste/TimeType.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/aufgabe1/Aufgabe1-Antworten" afterPath="$PROJECT_DIR$/src/aufgabe1/Aufgabe1-Antworten" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/aufgabe1/liste/Liste.java" afterPath="$PROJECT_DIR$/src/aufgabe1/liste/Liste.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/aufgabe1/liste/ListeElem.java" afterPath="$PROJECT_DIR$/src/aufgabe1/liste/ListeElem.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/aufgabe1/liste/ListeImpl.java" afterPath="$PROJECT_DIR$/src/aufgabe1/liste/ListeImpl.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/aufgabe1/messreihe/MessreiheImpl.java" afterPath="$PROJECT_DIR$/src/aufgabe1/messreihe/MessreiheImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/aufgabe1/messreihe/test/MessreiheImplTest.java" afterPath="$PROJECT_DIR$/src/aufgabe1/messreihe/test/MessreiheImplTest.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MOVED" beforePath="D:\Alex\HAW\AI-3\AD\ad-praktikum-2\src\aufgabe1\listen" afterPath="$PROJECT_DIR$/src/aufgabe1/liste" />
     </list>
     <ignored path="ad-uebungsaufgaben-koehler.iws" />
     <ignored path=".idea/workspace.xml" />
     <file path="/a.java" changelist="3e291040-e0e6-4fc4-ab45-02c97ac374dc" time="1382363941895" ignored="false" />
     <file path="/sample.java" changelist="3e291040-e0e6-4fc4-ab45-02c97ac374dc" time="1382363946266" ignored="false" />
     <file path="/Messreihe.java" changelist="3e291040-e0e6-4fc4-ab45-02c97ac374dc" time="1382787087739" ignored="false" />
-    <file path="/MessreiheImpl.java" changelist="3e291040-e0e6-4fc4-ab45-02c97ac374dc" time="1382785458997" ignored="false" />
-    <file path="/a.dummy" changelist="3e291040-e0e6-4fc4-ab45-02c97ac374dc" time="1382754620536" ignored="false" />
-    <file path="/fragment.java" changelist="3e291040-e0e6-4fc4-ab45-02c97ac374dc" time="1382753590666" ignored="false" />
+    <file path="/MessreiheImpl.java" changelist="3e291040-e0e6-4fc4-ab45-02c97ac374dc" time="1382648855498" ignored="false" />
+    <file path="/a.dummy" changelist="3e291040-e0e6-4fc4-ab45-02c97ac374dc" time="1382649881561" ignored="false" />
+    <file path="/fragment.java" changelist="3e291040-e0e6-4fc4-ab45-02c97ac374dc" time="1382886743187" ignored="false" />
     <file path="$PROJECT_DIR$/src/aufgabe1/messreihe/test/MessreiheImplTest.groovy" changelist="3e291040-e0e6-4fc4-ab45-02c97ac374dc" time="1382753577591" ignored="false" />
     <file path="/MessreiheImplTest.java" changelist="3e291040-e0e6-4fc4-ab45-02c97ac374dc" time="1382786591638" ignored="false" />
     <file path="/Dummy.txt" changelist="3e291040-e0e6-4fc4-ab45-02c97ac374dc" time="1382825584123" ignored="false" />
-    <file path="/Aufgabe1-Antworten" changelist="3e291040-e0e6-4fc4-ab45-02c97ac374dc" time="1382787507147" ignored="false" />
-    <file path="/Liste.java" changelist="3e291040-e0e6-4fc4-ab45-02c97ac374dc" time="1382825125806" ignored="false" />
-    <file path="/ListeElem.java" changelist="3e291040-e0e6-4fc4-ab45-02c97ac374dc" time="1382824470239" ignored="false" />
+    <file path="/Aufgabe1-Antworten" changelist="3e291040-e0e6-4fc4-ab45-02c97ac374dc" time="1382890714485" ignored="false" />
+    <file path="/Liste.java" changelist="3e291040-e0e6-4fc4-ab45-02c97ac374dc" time="1382887700915" ignored="false" />
+    <file path="/ListeElem.java" changelist="3e291040-e0e6-4fc4-ab45-02c97ac374dc" time="1382649718698" ignored="false" />
+    <file path="/ListeImpl.java" changelist="3e291040-e0e6-4fc4-ab45-02c97ac374dc" time="1382888645273" ignored="false" />
+    <file path="/ListeImplTest.java" changelist="3e291040-e0e6-4fc4-ab45-02c97ac374dc" time="1382890224391" ignored="false" />
+    <file path="$PROJECT_DIR$/../../../AI5/VS/src/aufgabe1/messageServer.erl" changelist="3e291040-e0e6-4fc4-ab45-02c97ac374dc" time="1382885402295" ignored="false" />
+    <file path="$PROJECT_DIR$/../../../AI5/VS/src/aufgabe1/messageClient.erl" changelist="3e291040-e0e6-4fc4-ab45-02c97ac374dc" time="1382885402295" ignored="false" />
+    <file path="$PROJECT_DIR$/../../../AI5/VS/src/aufgabe1/democode/Readme.txt" changelist="3e291040-e0e6-4fc4-ab45-02c97ac374dc" time="1382884942161" ignored="false" />
+    <file path="$PROJECT_DIR$/../../../AI5/VS/src/klauck/werkzeug.erl" changelist="3e291040-e0e6-4fc4-ab45-02c97ac374dc" time="1382885402295" ignored="false" />
+    <file path="$PROJECT_DIR$/../../../AI5/VS/src/aufgabe2/node.erl" changelist="3e291040-e0e6-4fc4-ab45-02c97ac374dc" time="1382885401825" ignored="false" />
+    <file path="$PROJECT_DIR$/../../../AI5/VS/src/aufgabe2/edgeManager.erl" changelist="3e291040-e0e6-4fc4-ab45-02c97ac374dc" time="1382885401826" ignored="false" />
+    <file path="$PROJECT_DIR$/../../../AI5/VS/src/aufgabe2/messages.erl" changelist="3e291040-e0e6-4fc4-ab45-02c97ac374dc" time="1382885401826" ignored="false" />
+    <file path="$PROJECT_DIR$/../../../AI5/VS/src/aufgabe2/nodeManager.erl" changelist="3e291040-e0e6-4fc4-ab45-02c97ac374dc" time="1382885401826" ignored="false" />
+    <file path="$PROJECT_DIR$/../../../AI5/VS/src/aufgabe2_klauck/coordinator.erl" changelist="3e291040-e0e6-4fc4-ab45-02c97ac374dc" time="1382885402295" ignored="false" />
+    <file path="$PROJECT_DIR$/../../../AI5/VS/src/aufgabe1/queueManager.erl" changelist="3e291040-e0e6-4fc4-ab45-02c97ac374dc" time="1382885402295" ignored="false" />
+    <file path="$PROJECT_DIR$/../../../AI5/VS/node0@Sven-PC.log" changelist="3e291040-e0e6-4fc4-ab45-02c97ac374dc" time="1382885543355" ignored="false" />
+    <file path="/TimeType.java" changelist="3e291040-e0e6-4fc4-ab45-02c97ac374dc" time="1382886765968" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,7 +57,67 @@
   <component name="DebuggerManager">
     <ui_properties default_suspend_policy="SuspendAll" default_condition_enabled="true" />
     <line_breakpoints default_suspend_policy="SuspendAll" default_condition_enabled="true">
-      <breakpoint url="file://$PROJECT_DIR$/src/aufgabe1/messreihe/test/MessreiheImplTest.java" line="70" class="aufgabe1.messreihe.test.MessreiheImplTest" package="aufgabe1.messreihe.test">
+      <breakpoint url="file://$PROJECT_DIR$/src/aufgabe1/messreihe/test/MessreiheImplTest.java" line="66" class="aufgabe1.messreihe.test.MessreiheImplTest" package="aufgabe1.messreihe.test">
+        <option name="ENABLED" value="true" />
+        <option name="LOG_ENABLED" value="false" />
+        <option name="LOG_EXPRESSION_ENABLED" value="false" />
+        <option name="REMOVE_AFTER_HIT" value="false" />
+        <option name="SUSPEND_POLICY" value="SuspendAll" />
+        <option name="SUSPEND" value="true" />
+        <option name="COUNT_FILTER_ENABLED" value="false" />
+        <option name="COUNT_FILTER" value="0" />
+        <option name="CONDITION_ENABLED" value="true" />
+        <option name="CLASS_FILTERS_ENABLED" value="false" />
+        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
+        <option name="CONDITION" value="" />
+        <option name="LOG_MESSAGE" value="" />
+      </breakpoint>
+      <breakpoint url="file://$PROJECT_DIR$/src/aufgabe1/liste/test/ListeImplTest.java" line="44" class="aufgabe1.liste.test.ListeImplTest" package="aufgabe1.liste.test">
+        <option name="ENABLED" value="true" />
+        <option name="LOG_ENABLED" value="false" />
+        <option name="LOG_EXPRESSION_ENABLED" value="false" />
+        <option name="REMOVE_AFTER_HIT" value="false" />
+        <option name="SUSPEND_POLICY" value="SuspendAll" />
+        <option name="SUSPEND" value="true" />
+        <option name="COUNT_FILTER_ENABLED" value="false" />
+        <option name="COUNT_FILTER" value="0" />
+        <option name="CONDITION_ENABLED" value="true" />
+        <option name="CLASS_FILTERS_ENABLED" value="false" />
+        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
+        <option name="CONDITION" value="" />
+        <option name="LOG_MESSAGE" value="" />
+      </breakpoint>
+      <breakpoint url="file://$PROJECT_DIR$/src/aufgabe1/liste/test/ListeImplTest.java" line="88" class="aufgabe1.liste.test.ListeImplTest" package="aufgabe1.liste.test">
+        <option name="ENABLED" value="true" />
+        <option name="LOG_ENABLED" value="false" />
+        <option name="LOG_EXPRESSION_ENABLED" value="false" />
+        <option name="REMOVE_AFTER_HIT" value="false" />
+        <option name="SUSPEND_POLICY" value="SuspendAll" />
+        <option name="SUSPEND" value="true" />
+        <option name="COUNT_FILTER_ENABLED" value="false" />
+        <option name="COUNT_FILTER" value="0" />
+        <option name="CONDITION_ENABLED" value="true" />
+        <option name="CLASS_FILTERS_ENABLED" value="false" />
+        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
+        <option name="CONDITION" value="" />
+        <option name="LOG_MESSAGE" value="" />
+      </breakpoint>
+      <breakpoint url="file://$PROJECT_DIR$/src/aufgabe1/liste/test/ListeImplTest.java" line="80" class="aufgabe1.liste.test.ListeImplTest" package="aufgabe1.liste.test">
+        <option name="ENABLED" value="true" />
+        <option name="LOG_ENABLED" value="false" />
+        <option name="LOG_EXPRESSION_ENABLED" value="false" />
+        <option name="REMOVE_AFTER_HIT" value="false" />
+        <option name="SUSPEND_POLICY" value="SuspendAll" />
+        <option name="SUSPEND" value="true" />
+        <option name="COUNT_FILTER_ENABLED" value="false" />
+        <option name="COUNT_FILTER" value="0" />
+        <option name="CONDITION_ENABLED" value="true" />
+        <option name="CLASS_FILTERS_ENABLED" value="false" />
+        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
+        <option name="CONDITION" value="" />
+        <option name="LOG_MESSAGE" value="" />
+      </breakpoint>
+      <breakpoint url="file://$PROJECT_DIR$/src/aufgabe1/liste/test/ListeImplTest.java" line="86" class="aufgabe1.liste.test.ListeImplTest" package="aufgabe1.liste.test">
         <option name="ENABLED" value="true" />
         <option name="LOG_ENABLED" value="false" />
         <option name="LOG_EXPRESSION_ENABLED" value="false" />
@@ -103,48 +178,19 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="Messreihe.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/aufgabe1/messreihe/Messreihe.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="11" column="41" selection-start="212" selection-end="212" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="MessreiheImpl.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/aufgabe1/messreihe/MessreiheImpl.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="50" column="5" selection-start="1177" selection-end="1177" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="MessreiheImplTest.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/aufgabe1/messreihe/test/MessreiheImplTest.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="15" column="16" selection-start="285" selection-end="285" vertical-scroll-proportion="0.0">
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Aufgabe1-Antworten" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/aufgabe1/Aufgabe1-Antworten">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="23" column="0" selection-start="760" selection-end="760" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Liste.java" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="Liste.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/aufgabe1/liste/Liste.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="17" column="62" selection-start="344" selection-end="344" vertical-scroll-proportion="0.6340326">
+            <state line="47" column="43" selection-start="1248" selection-end="1248" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="TimeType.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/aufgabe1/liste/TimeType.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="10" column="4" selection-start="207" selection-end="234" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -153,7 +199,7 @@
       <file leaf-file-name="ListeElem.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/aufgabe1/liste/ListeElem.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="11" column="31" selection-start="175" selection-end="175" vertical-scroll-proportion="0.0">
+            <state line="38" column="18" selection-start="711" selection-end="711" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -162,7 +208,38 @@
       <file leaf-file-name="ListeImpl.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/aufgabe1/liste/ListeImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="7" column="22" selection-start="102" selection-end="102" vertical-scroll-proportion="0.0">
+            <state line="98" column="34" selection-start="2711" selection-end="2711" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ListeImplTest.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/aufgabe1/liste/test/ListeImplTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="106" column="45" selection-start="2393" selection-end="2393" vertical-scroll-proportion="0.0">
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#520#528#0" expanded="true" />
+                <element signature="e#826#834#0" expanded="true" />
+                <element signature="e#1207#1215#0" expanded="true" />
+                <element signature="e#1453#1461#0" expanded="true" />
+                <element signature="e#1677#1685#0" expanded="true" />
+                <element signature="e#2315#2323#0" expanded="true" />
+                <element signature="e#3494#3502#0" expanded="true" />
+                <element signature="e#4721#4729#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Aufgabe1-Antworten" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/aufgabe1/Aufgabe1-Antworten">
+          <provider editor-type-id="com.intellij.persistence.database.editor.CsvTableFileEditorProvider">
+            <state />
+          </provider>
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="114" column="99" selection-start="4633" selection-end="4633" vertical-scroll-proportion="0.8603491">
               <folding />
             </state>
           </provider>
@@ -179,19 +256,23 @@
     <option name="changedFiles">
       <list>
         <option value="$PROJECT_DIR$/src/aufgabe1/messreihe/test/MessreiheImplTest.groovy" />
-        <option value="$PROJECT_DIR$/src/aufgabe1/messreihe/MessreiheImpl.java" />
         <option value="$PROJECT_DIR$/src/aufgabe1/messreihe/test/MessreiheImplTest.java" />
         <option value="$PROJECT_DIR$/src/aufgabe1/messreihe/Messreihe.java" />
-        <option value="$PROJECT_DIR$/src/aufgabe1/Aufgabe1-Antworten" />
+        <option value="$PROJECT_DIR$/src/aufgabe1/messreihe/MessreiheImpl.java" />
         <option value="$PROJECT_DIR$/src/aufgabe1/liste/ListeElem.java" />
+        <option value="$PROJECT_DIR$/src/aufgabe1/liste/TimeType.java" />
         <option value="$PROJECT_DIR$/src/aufgabe1/liste/Liste.java" />
+        <option value="$PROJECT_DIR$/src/aufgabe1/liste/ListeImpl.java" />
+        <option value="$PROJECT_DIR$/src/aufgabe1/liste/test/ListeImplTest.java" />
+        <option value="$PROJECT_DIR$/src/aufgabe1/Aufgabe1-Antworten" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="905" />
-    <option name="width" value="461" />
-    <option name="height" value="738" />
+    <option name="x" value="-8" />
+    <option name="y" value="-8" />
+    <option name="width" value="1296" />
+    <option name="height" value="1010" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -328,6 +409,7 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
       <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
@@ -435,9 +517,34 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ad-uebungsaufgaben-koehler" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ad-praktikum-2" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="aufgabe1" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="liste" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="test" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -450,40 +557,44 @@
     <property name="recentsLimit" value="5" />
     <property name="MemberChooser.sorted" value="false" />
     <property name="options.lastSelected" value="fileTemplates" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../AI5" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../AI5/VS" />
     <property name="project.structure.side.proportion" value="0.0" />
     <property name="MemberChooser.copyJavadoc" value="false" />
     <property name="GoToClass.toSaveIncludeLibraries" value="false" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.includeInheritedMembers" value="false" />
-    <property name="FullScreen" value="false" />
     <property name="MemberChooser.showClasses" value="true" />
+    <property name="FullScreen" value="false" />
     <property name="GoToClass.includeLibraries" value="false" />
-    <property name="options.searchVisible" value="true" />
-    <property name="options.splitter.details.proportions" value="0.2" />
     <property name="dynamic.classpath" value="false" />
+    <property name="options.splitter.details.proportions" value="0.2" />
+    <property name="options.searchVisible" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="CreateTestDialog.Recents.Supers">
       <recent name="" />
     </key>
     <key name="CreateTestDialog.RecentsKey">
+      <recent name="aufgabe1.liste.test" />
       <recent name="aufgabe1.messreihe.test" />
     </key>
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="aufgabe1.liste" />
+    </key>
   </component>
-  <component name="RunManager" selected="JUnit.MessreiheImplTest">
-    <configuration default="false" name="MessreiheImplTest" type="JUnit" factoryName="JUnit" temporary="true">
+  <component name="RunManager" selected="JUnit.ListeImplTest.testAufgabe1_2Abschnitt6">
+    <configuration default="false" name="ListeImplTest" type="JUnit" factoryName="JUnit" temporary="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
-          <option name="PATTERN" value="aufgabe1.messreihe.test.*" />
+          <option name="PATTERN" value="aufgabe1.liste.test.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
       <module name="ad-uebungsaufgaben-koehler" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="aufgabe1.messreihe.test" />
-      <option name="MAIN_CLASS_NAME" value="aufgabe1.messreihe.test.MessreiheImplTest" />
+      <option name="PACKAGE_NAME" value="aufgabe1.liste.test" />
+      <option name="MAIN_CLASS_NAME" value="aufgabe1.liste.test.ListeImplTest" />
       <option name="METHOD_NAME" />
       <option name="TEST_OBJECT" value="class" />
       <option name="VM_PARAMETERS" value="-ea" />
@@ -500,19 +611,51 @@
       <ConfigurationWrapper RunnerId="Run" />
       <method />
     </configuration>
-    <configuration default="false" name="MessreiheImplTest.testCalculateVarianz" type="JUnit" factoryName="JUnit" temporary="true">
+    <configuration default="false" name="ListeImplTest.testInsert" type="JUnit" factoryName="JUnit" temporary="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
-          <option name="PATTERN" value="aufgabe1.messreihe.test.*" />
+          <option name="PATTERN" value="aufgabe1.liste.test.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
       <module name="ad-uebungsaufgaben-koehler" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="aufgabe1.messreihe.test" />
-      <option name="MAIN_CLASS_NAME" value="aufgabe1.messreihe.test.MessreiheImplTest" />
-      <option name="METHOD_NAME" value="testCalculateVarianz" />
+      <option name="PACKAGE_NAME" value="aufgabe1.liste.test" />
+      <option name="MAIN_CLASS_NAME" value="aufgabe1.liste.test.ListeImplTest" />
+      <option name="METHOD_NAME" value="testInsert" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="moduleWithDependencies" />
+      </option>
+      <envs />
+      <patterns />
+      <RunnerSettings RunnerId="Debug">
+        <option name="DEBUG_PORT" value="" />
+        <option name="TRANSPORT" value="0" />
+        <option name="LOCAL" value="true" />
+      </RunnerSettings>
+      <ConfigurationWrapper RunnerId="Debug" />
+      <method />
+    </configuration>
+    <configuration default="false" name="ListeImplTest.testAufgabe1_2Abschnitt6" type="JUnit" factoryName="JUnit" temporary="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="aufgabe1.liste.test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <module name="ad-uebungsaufgaben-koehler" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="aufgabe1.liste.test" />
+      <option name="MAIN_CLASS_NAME" value="aufgabe1.liste.test.ListeImplTest" />
+      <option name="METHOD_NAME" value="testAufgabe1_2Abschnitt6" />
       <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
@@ -534,19 +677,19 @@
       <ConfigurationWrapper RunnerId="Run" />
       <method />
     </configuration>
-    <configuration default="false" name="MessreiheImplTest.testCalculateVarianz2" type="JUnit" factoryName="JUnit" temporary="true">
+    <configuration default="false" name="ListeImplTest.testAufgabe1_2Abschnitt7" type="JUnit" factoryName="JUnit" temporary="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
-          <option name="PATTERN" value="aufgabe1.messreihe.test.*" />
+          <option name="PATTERN" value="aufgabe1.liste.test.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
       <module name="ad-uebungsaufgaben-koehler" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="aufgabe1.messreihe.test" />
-      <option name="MAIN_CLASS_NAME" value="aufgabe1.messreihe.test.MessreiheImplTest" />
-      <option name="METHOD_NAME" value="testCalculateVarianz2" />
+      <option name="PACKAGE_NAME" value="aufgabe1.liste.test" />
+      <option name="MAIN_CLASS_NAME" value="aufgabe1.liste.test.ListeImplTest" />
+      <option name="METHOD_NAME" value="testAufgabe1_2Abschnitt7" />
       <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
@@ -558,23 +701,29 @@
       </option>
       <envs />
       <patterns />
+      <RunnerSettings RunnerId="Debug">
+        <option name="DEBUG_PORT" value="" />
+        <option name="TRANSPORT" value="0" />
+        <option name="LOCAL" value="true" />
+      </RunnerSettings>
       <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Debug" />
       <ConfigurationWrapper RunnerId="Run" />
       <method />
     </configuration>
-    <configuration default="false" name="MessreiheImplTest.testCalculateVarianzFail" type="JUnit" factoryName="JUnit" temporary="true">
+    <configuration default="false" name="ListeImplTest.testAufgabe1_2Abschnitt8" type="JUnit" factoryName="JUnit" temporary="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
-          <option name="PATTERN" value="aufgabe1.messreihe.test.*" />
+          <option name="PATTERN" value="aufgabe1.liste.test.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
       <module name="ad-uebungsaufgaben-koehler" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="aufgabe1.messreihe.test" />
-      <option name="MAIN_CLASS_NAME" value="aufgabe1.messreihe.test.MessreiheImplTest" />
-      <option name="METHOD_NAME" value="testCalculateVarianzFail" />
+      <option name="PACKAGE_NAME" value="aufgabe1.liste.test" />
+      <option name="MAIN_CLASS_NAME" value="aufgabe1.liste.test.ListeImplTest" />
+      <option name="METHOD_NAME" value="testAufgabe1_2Abschnitt8" />
       <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
@@ -586,35 +735,13 @@
       </option>
       <envs />
       <patterns />
+      <RunnerSettings RunnerId="Debug">
+        <option name="DEBUG_PORT" value="" />
+        <option name="TRANSPORT" value="0" />
+        <option name="LOCAL" value="true" />
+      </RunnerSettings>
       <RunnerSettings RunnerId="Run" />
-      <ConfigurationWrapper RunnerId="Run" />
-      <method />
-    </configuration>
-    <configuration default="false" name="MessreiheImplTest.testCalculateMittelwert2" type="JUnit" factoryName="JUnit" temporary="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
-        <pattern>
-          <option name="PATTERN" value="aufgabe1.messreihe.test.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <module name="ad-uebungsaufgaben-koehler" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="aufgabe1.messreihe.test" />
-      <option name="MAIN_CLASS_NAME" value="aufgabe1.messreihe.test.MessreiheImplTest" />
-      <option name="METHOD_NAME" value="testCalculateMittelwert2" />
-      <option name="TEST_OBJECT" value="method" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="moduleWithDependencies" />
-      </option>
-      <envs />
-      <patterns />
-      <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Debug" />
       <ConfigurationWrapper RunnerId="Run" />
       <method />
     </configuration>
@@ -630,19 +757,6 @@
       <option name="SHMEM_ADDRESS" value="javadebug" />
       <option name="HOST" value="localhost" />
       <option name="PORT" value="5005" />
-      <method />
-    </configuration>
-    <configuration default="true" type="Applet" factoryName="Applet">
-      <module name="" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="HTML_FILE_NAME" />
-      <option name="HTML_USED" value="false" />
-      <option name="WIDTH" value="400" />
-      <option name="HEIGHT" value="300" />
-      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
-      <option name="VM_PARAMETERS" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
       <method />
     </configuration>
     <configuration default="true" type="TestNG" factoryName="TestNG">
@@ -671,6 +785,19 @@
       <envs />
       <properties />
       <listeners />
+      <method />
+    </configuration>
+    <configuration default="true" type="Applet" factoryName="Applet">
+      <module name="" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="HTML_FILE_NAME" />
+      <option name="HTML_USED" value="false" />
+      <option name="WIDTH" value="400" />
+      <option name="HEIGHT" value="300" />
+      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
+      <option name="VM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
       <method />
     </configuration>
     <configuration default="true" type="Application" factoryName="Application">
@@ -710,19 +837,19 @@
       <method />
     </configuration>
     <list size="5">
-      <item index="0" class="java.lang.String" itemvalue="JUnit.MessreiheImplTest" />
-      <item index="1" class="java.lang.String" itemvalue="JUnit.MessreiheImplTest.testCalculateVarianz" />
-      <item index="2" class="java.lang.String" itemvalue="JUnit.MessreiheImplTest.testCalculateVarianz2" />
-      <item index="3" class="java.lang.String" itemvalue="JUnit.MessreiheImplTest.testCalculateVarianzFail" />
-      <item index="4" class="java.lang.String" itemvalue="JUnit.MessreiheImplTest.testCalculateMittelwert2" />
+      <item index="0" class="java.lang.String" itemvalue="JUnit.ListeImplTest" />
+      <item index="1" class="java.lang.String" itemvalue="JUnit.ListeImplTest.testInsert" />
+      <item index="2" class="java.lang.String" itemvalue="JUnit.ListeImplTest.testAufgabe1_2Abschnitt6" />
+      <item index="3" class="java.lang.String" itemvalue="JUnit.ListeImplTest.testAufgabe1_2Abschnitt7" />
+      <item index="4" class="java.lang.String" itemvalue="JUnit.ListeImplTest.testAufgabe1_2Abschnitt8" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="JUnit.MessreiheImplTest" />
-        <item index="1" class="java.lang.String" itemvalue="JUnit.MessreiheImplTest.testCalculateMittelwert2" />
-        <item index="2" class="java.lang.String" itemvalue="JUnit.MessreiheImplTest.testCalculateVarianz2" />
-        <item index="3" class="java.lang.String" itemvalue="JUnit.MessreiheImplTest.testCalculateVarianzFail" />
-        <item index="4" class="java.lang.String" itemvalue="JUnit.MessreiheImplTest.testCalculateVarianz" />
+        <item index="0" class="java.lang.String" itemvalue="JUnit.ListeImplTest.testAufgabe1_2Abschnitt6" />
+        <item index="1" class="java.lang.String" itemvalue="JUnit.ListeImplTest.testAufgabe1_2Abschnitt7" />
+        <item index="2" class="java.lang.String" itemvalue="JUnit.ListeImplTest.testAufgabe1_2Abschnitt8" />
+        <item index="3" class="java.lang.String" itemvalue="JUnit.ListeImplTest" />
+        <item index="4" class="java.lang.String" itemvalue="JUnit.ListeImplTest.testInsert" />
       </list>
     </recent_temporary>
     <configuration name="&lt;template&gt;" type="WebApp" default="true" selected="false">
@@ -754,20 +881,20 @@
     <option name="myMappingRoots">
       <list>
         <SvnCopyRootSimple>
-          <option name="myVcsRoot" value="D:\Alex\HAW\AI-3\AD\ad-praktikum-2" />
-          <option name="myCopyRoot" value="D:\Alex\HAW\AI-3\AD\ad-praktikum-2" />
+          <option name="myVcsRoot" value="C:\Projekte\IntelliJ\AI3\AD\ad-praktikum-2" />
+          <option name="myCopyRoot" value="C:\Projekte\IntelliJ\AI3\AD\ad-praktikum-2" />
         </SvnCopyRootSimple>
         <SvnCopyRootSimple>
-          <option name="myVcsRoot" value="D:\Alex\HAW\AI-3\AD\ad-praktikum-2\.idea" />
-          <option name="myCopyRoot" value="D:\Alex\HAW\AI-3\AD\ad-praktikum-2\.idea" />
+          <option name="myVcsRoot" value="C:\Projekte\IntelliJ\AI3\AD\ad-praktikum-2\.idea" />
+          <option name="myCopyRoot" value="C:\Projekte\IntelliJ\AI3\AD\ad-praktikum-2\.idea" />
         </SvnCopyRootSimple>
       </list>
     </option>
     <option name="myMoreRealMappingRoots">
       <list>
         <SvnCopyRootSimple>
-          <option name="myVcsRoot" value="D:\Alex\HAW\AI-3\AD\ad-praktikum-2" />
-          <option name="myCopyRoot" value="D:\Alex\HAW\AI-3\AD\ad-praktikum-2" />
+          <option name="myVcsRoot" value="C:\Projekte\IntelliJ\AI3\AD\ad-praktikum-2" />
+          <option name="myCopyRoot" value="C:\Projekte\IntelliJ\AI3\AD\ad-praktikum-2" />
         </SvnCopyRootSimple>
       </list>
     </option>
@@ -786,32 +913,32 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="905" y="0" width="461" height="738" extended-state="0" />
+    <frame x="-8" y="-8" width="1296" height="1010" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Dilbert" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.5647482" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="IDEtalk Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.40445486" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="IDEtalk" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32942554" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="CDI" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.22807017" sideWeight="0.59552497" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.40447503" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.16855754" sideWeight="0.39390388" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.60609615" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="IDEtalk Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="IDEtalk" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Dilbert" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -889,29 +1016,6 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/aufgabe1/messreihe/MessreiheImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="52" column="16" selection-start="1262" selection-end="1262" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/aufgabe1/messreihe/test/MessreiheImplTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="46" column="24" selection-start="1169" selection-end="1169" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/aufgabe1/messreihe/Messreihe.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/aufgabe1/messreihe/MessreiheImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
         <state line="12" column="34" selection-start="242" selection-end="242" vertical-scroll-proportion="0.0">
           <folding />
         </state>
@@ -941,57 +1045,87 @@
     <entry file="file://$PROJECT_DIR$/src/aufgabe1/messreihe/MessreiheImpl.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="12" column="34" selection-start="242" selection-end="242" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/aufgabe1/messreihe/test/MessreiheImplTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="16" selection-start="285" selection-end="285" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/aufgabe1/messreihe/MessreiheImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="50" column="5" selection-start="1177" selection-end="1177" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/aufgabe1/messreihe/Messreihe.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="41" selection-start="212" selection-end="212" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/aufgabe1/Aufgabe1-Antworten">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="23" column="0" selection-start="760" selection-end="760" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/aufgabe1/liste/ListeImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="22" selection-start="102" selection-end="102" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/aufgabe1/liste/ListeElem.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="31" selection-start="175" selection-end="175" vertical-scroll-proportion="0.0">
+        <state line="38" column="18" selection-start="711" selection-end="711" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/aufgabe1/messreihe/Messreihe.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="11" column="41" selection-start="212" selection-end="212" vertical-scroll-proportion="0.21281742">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/aufgabe1/messreihe/MessreiheImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="33" column="24" selection-start="724" selection-end="724" vertical-scroll-proportion="0.019347038">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/aufgabe1/messreihe/test/MessreiheImplTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="5" column="27" selection-start="135" selection-end="169" vertical-scroll-proportion="0.019347038">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/aufgabe1/liste/TimeType.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="10" column="4" selection-start="207" selection-end="234" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/aufgabe1/liste/Liste.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="62" selection-start="344" selection-end="344" vertical-scroll-proportion="0.6340326">
+        <state line="47" column="43" selection-start="1248" selection-end="1248" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$APPLICATION_HOME_DIR$/lib/junit-4.10.jar!/org/junit/internal/runners/model/ReflectiveCallable.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="11" column="40" selection-start="388" selection-end="388" vertical-scroll-proportion="-6.4" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/aufgabe1/liste/ListeImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="98" column="34" selection-start="2711" selection-end="2711" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/aufgabe1/liste/test/ListeImplTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="106" column="45" selection-start="2393" selection-end="2393" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#520#528#0" expanded="true" />
+            <element signature="e#826#834#0" expanded="true" />
+            <element signature="e#1207#1215#0" expanded="true" />
+            <element signature="e#1453#1461#0" expanded="true" />
+            <element signature="e#1677#1685#0" expanded="true" />
+            <element signature="e#2315#2323#0" expanded="true" />
+            <element signature="e#3494#3502#0" expanded="true" />
+            <element signature="e#4721#4729#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/aufgabe1/Aufgabe1-Antworten">
+      <provider editor-type-id="com.intellij.persistence.database.editor.CsvTableFileEditorProvider">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="114" column="99" selection-start="4633" selection-end="4633" vertical-scroll-proportion="0.8603491">
           <folding />
         </state>
       </provider>
