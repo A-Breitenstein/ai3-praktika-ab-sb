@@ -7,13 +7,45 @@ package aufgabe1.liste;
  */
 public interface Liste<ElemType> {
 
-    public void cons(ElemType elem, Liste liste);
+    /**
+     * Fügt Element an die erste Stelle der Liste ein
+     * @param elem vom Typ der Liste
+     */
+    public void cons(ElemType elem);
 
-    public void head(Liste liste);
+    /**
+     * Köpft die Liste, entfernt das erste Element der Liste
+     */
+    public void head();
 
-    public int lenght(Liste liste);
+    /**
+     * Giebt die Länge der Liste zurück
+     * @return int [0-n]
+     */
+    public int lenght();
 
-    public boolean isEmpty(Liste liste);
+    /**
+     * überprüft anhand der Länge ob diese Leer ist: length == 0
+     * @return true | false
+     */
+    public boolean isEmpty();
 
-    public void insert(ElemType elem, int index, Liste liste);
+    /**
+     * Fügt ein Element an angegebenen Index hinzu
+     * @param elem Element welches hinzugefügt wird
+     * @param index welcher angiebt an welche Stelle das Element kommt
+     */
+    public void insert(ElemType elem, int index);
+
+    /**
+     * Giebt die Zeit einer Operation wieder, sollte nach jeder Operation aufgerufen werden, da sonst die Werte
+     * überschrieben werden, gemessen werden folgende Operationen:
+     * -cons()/1
+     * -head()/0
+     * -insert()/2
+     *
+     * @param timeType Benötigt um Zeit in bestimmter größe zurückzugeben, TimeType: {NANO, MILLI, SECOND}
+     * @return double Wert je nach TimeType
+     */
+    public double getTime(TimeType timeType);
 }
