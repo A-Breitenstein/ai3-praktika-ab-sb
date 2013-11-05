@@ -47,12 +47,9 @@ public class ArrayMatrix implements Matrix{
 
     @Override
     public void pow(double power) {
-        for (int i = 0; i < matrix.length; i++) {
-            for (int j = 0; j < matrix.length; j++) {
+
                // WRONG!!!!!! ->> use multiplikation in a loop for i = 0 to power
-               // matrix[i][j] = Math.pow(matrix[i][j],power);
-            }
-        }
+
     }
 
     @Override
