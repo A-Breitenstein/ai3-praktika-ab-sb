@@ -2,14 +2,23 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" readonly="true" id="3e291040-e0e6-4fc4-ab45-02c97ac374dc" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ad-2.pdf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/aufgabe2" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/aufgabe2/ArrayListMatrix.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/aufgabe2/ArrayMatrix.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/aufgabe2/ListMatrix.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/aufgabe2/Matrix.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Test.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/aufgabe2/dokumente/Excel-Datei-Aufgabe2.xlsx" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/aufgabe2/dokumente/Graphische-aufbereitung-Aufgabe2.pdf" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ad-3.pdf" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/aufgabe1/dokumente" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/aufgabe2/dokumente" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/aufgabe2/test" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/aufgabe2/dokumente/Aufgabe2-Test7-8" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/aufgabe2/MatrixElemSpalte.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/aufgabe2/MatrixElemZeileSpalte.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/aufgabe2/MatrixUtils.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/aufgabe2/test/MatrixUtilsTest.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/aufgabe2/ArrayListMatrix.java" afterPath="$PROJECT_DIR$/src/aufgabe2/ArrayListMatrix.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/aufgabe2/ArrayMatrix.java" afterPath="$PROJECT_DIR$/src/aufgabe2/ArrayMatrix.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/aufgabe2/ListMatrix.java" afterPath="$PROJECT_DIR$/src/aufgabe2/ListMatrix.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/aufgabe2/Matrix.java" afterPath="$PROJECT_DIR$/src/aufgabe2/Matrix.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MOVED" beforePath="C:\Projekte\IntelliJ\AI3\AD\ad-praktikum-2\src\aufgabe1\Aufgabe1-Antworten" afterPath="$PROJECT_DIR$/src/aufgabe1/dokumente/Aufgabe1-Antworten" />
     </list>
     <ignored path="ad-uebungsaufgaben-koehler.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -17,11 +26,11 @@
     <file path="/sample.java" changelist="3e291040-e0e6-4fc4-ab45-02c97ac374dc" time="1382363946266" ignored="false" />
     <file path="/Messreihe.java" changelist="3e291040-e0e6-4fc4-ab45-02c97ac374dc" time="1382787087739" ignored="false" />
     <file path="/MessreiheImpl.java" changelist="3e291040-e0e6-4fc4-ab45-02c97ac374dc" time="1382648855498" ignored="false" />
-    <file path="/a.dummy" changelist="3e291040-e0e6-4fc4-ab45-02c97ac374dc" time="1383215554925" ignored="false" />
-    <file path="/fragment.java" changelist="3e291040-e0e6-4fc4-ab45-02c97ac374dc" time="1382886743187" ignored="false" />
+    <file path="/a.dummy" changelist="3e291040-e0e6-4fc4-ab45-02c97ac374dc" time="1383977196086" ignored="false" />
+    <file path="/fragment.java" changelist="3e291040-e0e6-4fc4-ab45-02c97ac374dc" time="1383991141882" ignored="false" />
     <file path="$PROJECT_DIR$/src/aufgabe1/messreihe/test/MessreiheImplTest.groovy" changelist="3e291040-e0e6-4fc4-ab45-02c97ac374dc" time="1382753577591" ignored="false" />
     <file path="/MessreiheImplTest.java" changelist="3e291040-e0e6-4fc4-ab45-02c97ac374dc" time="1382786591638" ignored="false" />
-    <file path="/Dummy.txt" changelist="3e291040-e0e6-4fc4-ab45-02c97ac374dc" time="1383235610819" ignored="false" />
+    <file path="/Dummy.txt" changelist="3e291040-e0e6-4fc4-ab45-02c97ac374dc" time="1384098529181" ignored="false" />
     <file path="/Aufgabe1-Antworten" changelist="3e291040-e0e6-4fc4-ab45-02c97ac374dc" time="1382890714485" ignored="false" />
     <file path="/Liste.java" changelist="3e291040-e0e6-4fc4-ab45-02c97ac374dc" time="1382887700915" ignored="false" />
     <file path="/ListeElem.java" changelist="3e291040-e0e6-4fc4-ab45-02c97ac374dc" time="1382649718698" ignored="false" />
@@ -39,9 +48,26 @@
     <file path="$PROJECT_DIR$/../../../AI5/VS/src/aufgabe1/queueManager.erl" changelist="3e291040-e0e6-4fc4-ab45-02c97ac374dc" time="1382885402295" ignored="false" />
     <file path="$PROJECT_DIR$/../../../AI5/VS/node0@Sven-PC.log" changelist="3e291040-e0e6-4fc4-ab45-02c97ac374dc" time="1382885543355" ignored="false" />
     <file path="/TimeType.java" changelist="3e291040-e0e6-4fc4-ab45-02c97ac374dc" time="1382886765968" ignored="false" />
-    <file path="/Matrix.java" changelist="3e291040-e0e6-4fc4-ab45-02c97ac374dc" time="1383215517618" ignored="false" />
+    <file path="/Matrix.java" changelist="3e291040-e0e6-4fc4-ab45-02c97ac374dc" time="1383891008844" ignored="false" />
     <file path="/Test.java" changelist="3e291040-e0e6-4fc4-ab45-02c97ac374dc" time="1383207779078" ignored="false" />
-    <file path="/ArrayMatrix.java" changelist="3e291040-e0e6-4fc4-ab45-02c97ac374dc" time="1383218699557" ignored="false" />
+    <file path="/ArrayMatrix.java" changelist="3e291040-e0e6-4fc4-ab45-02c97ac374dc" time="1383897871034" ignored="false" />
+    <file path="$PROJECT_DIR$/../../../AI5/AI/ai-praktikum/src/hawmps/komponenten/kunden/data_access/Kunde.java" changelist="3e291040-e0e6-4fc4-ab45-02c97ac374dc" time="1383669608967" ignored="false" />
+    <file path="/Kunde.java" changelist="3e291040-e0e6-4fc4-ab45-02c97ac374dc" time="1383256047695" ignored="false" />
+    <file path="$PROJECT_DIR$/../../../AI5/AI/ai-praktikum/resources/META-INF/persistence.xml" changelist="3e291040-e0e6-4fc4-ab45-02c97ac374dc" time="1383671037043" ignored="false" />
+    <file path="/persistence.xml" changelist="3e291040-e0e6-4fc4-ab45-02c97ac374dc" time="1383671022626" ignored="false" />
+    <file path="$PROJECT_DIR$/../../../AI5/AI/ai-praktikum/src/hawmps/adts/fachliche/Name.java" changelist="3e291040-e0e6-4fc4-ab45-02c97ac374dc" time="1383669604741" ignored="false" />
+    <file path="$PROJECT_DIR$/../../../AI5/AI/ai-praktikum/src/hawmps/adts/fachliche/Nummer.java" changelist="3e291040-e0e6-4fc4-ab45-02c97ac374dc" time="1383669604741" ignored="false" />
+    <file path="$PROJECT_DIR$/../../../AI5/AI/ai-praktikum/src/hawmps/adts/fachliche/Adresse.java" changelist="3e291040-e0e6-4fc4-ab45-02c97ac374dc" time="1383669604742" ignored="false" />
+    <file path="$PROJECT_DIR$/../../../AI5/AI/ai-praktikum/src/aufgabe1/persistence/PersistenceUtilsA1.java" changelist="3e291040-e0e6-4fc4-ab45-02c97ac374dc" time="1383669604742" ignored="false" />
+    <file path="$PROJECT_DIR$/../../../AI5/AI/ai-praktikum/src/hawmps/adts/ADTFactory.java" changelist="3e291040-e0e6-4fc4-ab45-02c97ac374dc" time="1383669604742" ignored="false" />
+    <file path="/MatrixContentGenerator.java" changelist="3e291040-e0e6-4fc4-ab45-02c97ac374dc" time="1383964201712" ignored="false" />
+    <file path="/ArrayListMatrix.java" changelist="3e291040-e0e6-4fc4-ab45-02c97ac374dc" time="1383897560613" ignored="false" />
+    <file path="/MatrixElem.java" changelist="3e291040-e0e6-4fc4-ab45-02c97ac374dc" time="1383897331836" ignored="false" />
+    <file path="/ListMatrix.java" changelist="3e291040-e0e6-4fc4-ab45-02c97ac374dc" time="1383986010657" ignored="false" />
+    <file path="/MatrixElemZeileSpalte.java" changelist="3e291040-e0e6-4fc4-ab45-02c97ac374dc" time="1383897399634" ignored="false" />
+    <file path="/MatrixUtils.java" changelist="3e291040-e0e6-4fc4-ab45-02c97ac374dc" time="1383990941454" ignored="false" />
+    <file path="/MatrixUtilsTest.java" changelist="3e291040-e0e6-4fc4-ab45-02c97ac374dc" time="1383999892587" ignored="false" />
+    <file path="/Aufgabe2-Test7-8" changelist="3e291040-e0e6-4fc4-ab45-02c97ac374dc" time="1383998958549" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -56,6 +82,7 @@
     <disable_hints />
   </component>
   <component name="DebuggerManager">
+    <ui_properties default_suspend_policy="SuspendAll" default_condition_enabled="true" />
     <breakpoint_any default_suspend_policy="SuspendAll" default_condition_enabled="true">
       <breakpoint>
         <option name="NOTIFY_CAUGHT" value="true" />
@@ -168,8 +195,37 @@
         <option name="CONDITION" value="" />
         <option name="LOG_MESSAGE" value="" />
       </breakpoint>
+      <breakpoint url="file://$PROJECT_DIR$/src/aufgabe2/test/MatrixUtilsTest.java" line="38" class="aufgabe2.test.MatrixUtilsTest" package="aufgabe2.test">
+        <option name="ENABLED" value="true" />
+        <option name="LOG_ENABLED" value="false" />
+        <option name="LOG_EXPRESSION_ENABLED" value="false" />
+        <option name="REMOVE_AFTER_HIT" value="false" />
+        <option name="SUSPEND_POLICY" value="SuspendAll" />
+        <option name="SUSPEND" value="true" />
+        <option name="COUNT_FILTER_ENABLED" value="false" />
+        <option name="COUNT_FILTER" value="0" />
+        <option name="CONDITION_ENABLED" value="true" />
+        <option name="CLASS_FILTERS_ENABLED" value="false" />
+        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
+        <option name="CONDITION" value="" />
+        <option name="LOG_MESSAGE" value="" />
+      </breakpoint>
+      <breakpoint url="file://$PROJECT_DIR$/src/aufgabe2/test/MatrixUtilsTest.java" line="95" class="aufgabe2.test.MatrixUtilsTest" package="aufgabe2.test">
+        <option name="ENABLED" value="true" />
+        <option name="LOG_ENABLED" value="false" />
+        <option name="LOG_EXPRESSION_ENABLED" value="false" />
+        <option name="REMOVE_AFTER_HIT" value="false" />
+        <option name="SUSPEND_POLICY" value="SuspendAll" />
+        <option name="SUSPEND" value="true" />
+        <option name="COUNT_FILTER_ENABLED" value="false" />
+        <option name="COUNT_FILTER" value="0" />
+        <option name="CONDITION_ENABLED" value="true" />
+        <option name="CLASS_FILTERS_ENABLED" value="false" />
+        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
+        <option name="CONDITION" value="" />
+        <option name="LOG_MESSAGE" value="" />
+      </breakpoint>
     </line_breakpoints>
-    <ui_properties default_suspend_policy="SuspendAll" default_condition_enabled="true" />
     <breakpoint_rules />
     <ui_properties />
   </component>
@@ -182,16 +238,34 @@
       <file leaf-file-name="ArrayListMatrix.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/aufgabe2/ArrayListMatrix.java">
           <provider selected="true" editor-type-id="text-editor">
+            <state line="81" column="26" selection-start="2130" selection-end="2130" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MatrixElemSpalte.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/aufgabe2/MatrixElemSpalte.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="12" column="22" selection-start="163" selection-end="205" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MatrixElemZeileSpalte.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/aufgabe2/MatrixElemZeileSpalte.java">
+          <provider selected="true" editor-type-id="text-editor">
             <state line="8" column="13" selection-start="136" selection-end="136" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ArrayMatrix.java" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="ArrayMatrix.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/aufgabe2/ArrayMatrix.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="41" column="121" selection-start="966" selection-end="966" vertical-scroll-proportion="0.41748768">
+            <state line="58" column="23" selection-start="1258" selection-end="1265" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -200,16 +274,43 @@
       <file leaf-file-name="ListMatrix.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/aufgabe2/ListMatrix.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="8" column="13" selection-start="136" selection-end="136" vertical-scroll-proportion="0.0">
+            <state line="67" column="29" selection-start="1590" selection-end="1590" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Matrix.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/aufgabe2/Matrix.java">
+      <file leaf-file-name="MatrixUtils.java" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/aufgabe2/MatrixUtils.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="65" column="27" selection-start="1531" selection-end="1531" vertical-scroll-proportion="0.0">
+            <state line="138" column="6" selection-start="4027" selection-end="4027" vertical-scroll-proportion="0.46207866">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MatrixUtilsTest.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/aufgabe2/test/MatrixUtilsTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="253" column="16" selection-start="9453" selection-end="9453" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Liste.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/aufgabe1/liste/Liste.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="49" column="18" selection-start="1275" selection-end="1275" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ListeImpl.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/aufgabe1/liste/ListeImpl.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="102" column="18" selection-start="2764" selection-end="2764" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -225,27 +326,29 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/src/aufgabe1/messreihe/test/MessreiheImplTest.groovy" />
-        <option value="$PROJECT_DIR$/src/aufgabe1/messreihe/test/MessreiheImplTest.java" />
-        <option value="$PROJECT_DIR$/src/aufgabe1/messreihe/Messreihe.java" />
-        <option value="$PROJECT_DIR$/src/aufgabe1/messreihe/MessreiheImpl.java" />
-        <option value="$PROJECT_DIR$/src/aufgabe1/liste/TimeType.java" />
-        <option value="$PROJECT_DIR$/src/aufgabe1/liste/Liste.java" />
-        <option value="$PROJECT_DIR$/src/aufgabe1/liste/ListeImpl.java" />
         <option value="$PROJECT_DIR$/src/aufgabe1/liste/test/ListeImplTest.java" />
         <option value="$PROJECT_DIR$/src/aufgabe1/Aufgabe1-Antworten" />
         <option value="$PROJECT_DIR$/src/aufgabe1/liste/ListeElem.java" />
         <option value="$PROJECT_DIR$/src/Test.java" />
+        <option value="$PROJECT_DIR$/src/aufgabe2/MatrixElem.java" />
+        <option value="$PROJECT_DIR$/src/aufgabe2/MatrixElemSpalte.java" />
         <option value="$PROJECT_DIR$/src/aufgabe2/Matrix.java" />
+        <option value="$PROJECT_DIR$/src/aufgabe2/ArrayListMatrix.java" />
         <option value="$PROJECT_DIR$/src/aufgabe2/ArrayMatrix.java" />
+        <option value="$PROJECT_DIR$/src/aufgabe2/MatrixContentGenerator.java" />
+        <option value="$PROJECT_DIR$/src/aufgabe2/MatrixElemZeileSpalte.java" />
+        <option value="$PROJECT_DIR$/src/aufgabe2/ListMatrix.java" />
+        <option value="$PROJECT_DIR$/src/aufgabe2/MatrixUtils.java" />
+        <option value="$PROJECT_DIR$/src/aufgabe2/test/UPPERRANGE.java" />
+        <option value="$PROJECT_DIR$/src/aufgabe2/Aufgabe2-Test7-8" />
+        <option value="$PROJECT_DIR$/src/aufgabe2/test/MatrixUtilsTest.java" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="161" />
-    <option name="y" value="1" />
-    <option name="width" value="1119" />
-    <option name="height" value="993" />
+    <option name="x" value="65" />
+    <option name="width" value="904" />
+    <option name="height" value="973" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -383,7 +486,6 @@
     </navigator>
     <panes>
       <pane id="Scope" />
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -434,8 +536,27 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ad-uebungsaufgaben-koehler" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ad-praktikum-2" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="aufgabe1" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -454,15 +575,16 @@
     <property name="GoToClass.toSaveIncludeLibraries" value="false" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.includeInheritedMembers" value="false" />
-    <property name="MemberChooser.showClasses" value="true" />
     <property name="FullScreen" value="false" />
+    <property name="MemberChooser.showClasses" value="true" />
     <property name="GoToClass.includeLibraries" value="false" />
-    <property name="dynamic.classpath" value="false" />
-    <property name="options.splitter.details.proportions" value="0.2" />
     <property name="options.searchVisible" value="true" />
+    <property name="options.splitter.details.proportions" value="0.2" />
+    <property name="dynamic.classpath" value="false" />
   </component>
   <component name="RecentsManager">
     <key name="CreateTestDialog.RecentsKey">
+      <recent name="aufgabe2.test" />
       <recent name="aufgabe1.liste.test" />
       <recent name="aufgabe1.messreihe.test" />
     </key>
@@ -473,22 +595,130 @@
       <recent name="C:\Projekte\IntelliJ\AI3\AD\ad-praktikum-2" />
     </key>
     <key name="CreateClassDialog.RecentsKey">
+      <recent name="aufgabe2.test" />
+      <recent name="aufgabe2" />
       <recent name="aufgabe1.liste" />
     </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Projekte\IntelliJ\AI3\AD\ad-praktikum-2\src\aufgabe1\dokumente" />
+      <recent name="C:\Projekte\IntelliJ\AI3\AD\ad-praktikum-2\src\aufgabe2\dokumente" />
+    </key>
   </component>
-  <component name="RunManager" selected="Application.Test">
-    <configuration default="false" name="ListeImplTest" type="JUnit" factoryName="JUnit" temporary="true">
+  <component name="RunManager" selected="JUnit.MatrixUtilsTest.testFuerAufgabe7Und8">
+    <configuration default="false" name="MatrixUtilsTest.testPow" type="JUnit" factoryName="JUnit" temporary="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
-          <option name="PATTERN" value="aufgabe1.liste.test.*" />
+          <option name="PATTERN" value="aufgabe2.test.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
       <module name="ad-uebungsaufgaben-koehler" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="aufgabe1.liste.test" />
-      <option name="MAIN_CLASS_NAME" value="aufgabe1.liste.test.ListeImplTest" />
+      <option name="PACKAGE_NAME" value="aufgabe2.test" />
+      <option name="MAIN_CLASS_NAME" value="aufgabe2.test.MatrixUtilsTest" />
+      <option name="METHOD_NAME" value="testPow" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="moduleWithDependencies" />
+      </option>
+      <envs />
+      <patterns />
+      <RunnerSettings RunnerId="Debug">
+        <option name="DEBUG_PORT" value="" />
+        <option name="TRANSPORT" value="0" />
+        <option name="LOCAL" value="true" />
+      </RunnerSettings>
+      <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Debug" />
+      <ConfigurationWrapper RunnerId="Run" />
+      <method />
+    </configuration>
+    <configuration default="false" name="MatrixUtilsTest.testMatrixMultiplication" type="JUnit" factoryName="JUnit" temporary="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="aufgabe2.test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <module name="ad-uebungsaufgaben-koehler" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="aufgabe2.test" />
+      <option name="MAIN_CLASS_NAME" value="aufgabe2.test.MatrixUtilsTest" />
+      <option name="METHOD_NAME" value="testMatrixMultiplication" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="moduleWithDependencies" />
+      </option>
+      <envs />
+      <patterns />
+      <RunnerSettings RunnerId="Debug">
+        <option name="DEBUG_PORT" value="" />
+        <option name="TRANSPORT" value="0" />
+        <option name="LOCAL" value="true" />
+      </RunnerSettings>
+      <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Debug" />
+      <ConfigurationWrapper RunnerId="Run" />
+      <method />
+    </configuration>
+    <configuration default="false" name="MatrixUtilsTest.testAdd" type="JUnit" factoryName="JUnit" temporary="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="aufgabe2.test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <module name="ad-uebungsaufgaben-koehler" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="aufgabe2.test" />
+      <option name="MAIN_CLASS_NAME" value="aufgabe2.test.MatrixUtilsTest" />
+      <option name="METHOD_NAME" value="testAdd" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="moduleWithDependencies" />
+      </option>
+      <envs />
+      <patterns />
+      <RunnerSettings RunnerId="Debug">
+        <option name="DEBUG_PORT" value="" />
+        <option name="TRANSPORT" value="0" />
+        <option name="LOCAL" value="true" />
+      </RunnerSettings>
+      <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Debug" />
+      <ConfigurationWrapper RunnerId="Run" />
+      <method />
+    </configuration>
+    <configuration default="false" name="MatrixUtilsTest" type="JUnit" factoryName="JUnit" temporary="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="aufgabe2.test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <module name="ad-uebungsaufgaben-koehler" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="aufgabe2.test" />
+      <option name="MAIN_CLASS_NAME" value="aufgabe2.test.MatrixUtilsTest" />
       <option name="METHOD_NAME" />
       <option name="TEST_OBJECT" value="class" />
       <option name="VM_PARAMETERS" value="-ea" />
@@ -505,19 +735,19 @@
       <ConfigurationWrapper RunnerId="Run" />
       <method />
     </configuration>
-    <configuration default="false" name="ListeImplTest.testAufgabe1_2Abschnitt6" type="JUnit" factoryName="JUnit" temporary="true">
+    <configuration default="false" name="MatrixUtilsTest.testFuerAufgabe7Und8" type="JUnit" factoryName="JUnit" temporary="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
-          <option name="PATTERN" value="aufgabe1.liste.test.*" />
+          <option name="PATTERN" value="aufgabe2.test.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
       <module name="ad-uebungsaufgaben-koehler" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="aufgabe1.liste.test" />
-      <option name="MAIN_CLASS_NAME" value="aufgabe1.liste.test.ListeImplTest" />
-      <option name="METHOD_NAME" value="testAufgabe1_2Abschnitt6" />
+      <option name="PACKAGE_NAME" value="aufgabe2.test" />
+      <option name="MAIN_CLASS_NAME" value="aufgabe2.test.MatrixUtilsTest" />
+      <option name="METHOD_NAME" value="testFuerAufgabe7Und8" />
       <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
@@ -529,97 +759,6 @@
       </option>
       <envs />
       <patterns />
-      <RunnerSettings RunnerId="Debug">
-        <option name="DEBUG_PORT" value="" />
-        <option name="TRANSPORT" value="0" />
-        <option name="LOCAL" value="true" />
-      </RunnerSettings>
-      <RunnerSettings RunnerId="Run" />
-      <ConfigurationWrapper RunnerId="Debug" />
-      <ConfigurationWrapper RunnerId="Run" />
-      <method />
-    </configuration>
-    <configuration default="false" name="ListeImplTest.testAufgabe1_2Abschnitt7" type="JUnit" factoryName="JUnit" temporary="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
-        <pattern>
-          <option name="PATTERN" value="aufgabe1.liste.test.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <module name="ad-uebungsaufgaben-koehler" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="aufgabe1.liste.test" />
-      <option name="MAIN_CLASS_NAME" value="aufgabe1.liste.test.ListeImplTest" />
-      <option name="METHOD_NAME" value="testAufgabe1_2Abschnitt7" />
-      <option name="TEST_OBJECT" value="method" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="moduleWithDependencies" />
-      </option>
-      <envs />
-      <patterns />
-      <RunnerSettings RunnerId="Debug">
-        <option name="DEBUG_PORT" value="" />
-        <option name="TRANSPORT" value="0" />
-        <option name="LOCAL" value="true" />
-      </RunnerSettings>
-      <RunnerSettings RunnerId="Run" />
-      <ConfigurationWrapper RunnerId="Debug" />
-      <ConfigurationWrapper RunnerId="Run" />
-      <method />
-    </configuration>
-    <configuration default="false" name="ListeImplTest.testAufgabe1_2Abschnitt8" type="JUnit" factoryName="JUnit" temporary="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
-        <pattern>
-          <option name="PATTERN" value="aufgabe1.liste.test.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <module name="ad-uebungsaufgaben-koehler" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="aufgabe1.liste.test" />
-      <option name="MAIN_CLASS_NAME" value="aufgabe1.liste.test.ListeImplTest" />
-      <option name="METHOD_NAME" value="testAufgabe1_2Abschnitt8" />
-      <option name="TEST_OBJECT" value="method" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="moduleWithDependencies" />
-      </option>
-      <envs />
-      <patterns />
-      <RunnerSettings RunnerId="Debug">
-        <option name="DEBUG_PORT" value="" />
-        <option name="TRANSPORT" value="0" />
-        <option name="LOCAL" value="true" />
-      </RunnerSettings>
-      <RunnerSettings RunnerId="Run" />
-      <ConfigurationWrapper RunnerId="Debug" />
-      <ConfigurationWrapper RunnerId="Run" />
-      <method />
-    </configuration>
-    <configuration default="false" name="Test" type="Application" factoryName="Application" temporary="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-      <option name="MAIN_CLASS_NAME" value="Test" />
-      <option name="VM_PARAMETERS" />
-      <option name="PROGRAM_PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="ENABLE_SWING_INSPECTOR" value="false" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <module name="ad-uebungsaufgaben-koehler" />
-      <envs />
       <RunnerSettings RunnerId="Run" />
       <ConfigurationWrapper RunnerId="Run" />
       <method />
@@ -636,6 +775,19 @@
       <option name="SHMEM_ADDRESS" value="javadebug" />
       <option name="HOST" value="localhost" />
       <option name="PORT" value="5005" />
+      <method />
+    </configuration>
+    <configuration default="true" type="Applet" factoryName="Applet">
+      <module name="" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="HTML_FILE_NAME" />
+      <option name="HTML_USED" value="false" />
+      <option name="WIDTH" value="400" />
+      <option name="HEIGHT" value="300" />
+      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
+      <option name="VM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
       <method />
     </configuration>
     <configuration default="true" type="TestNG" factoryName="TestNG">
@@ -664,19 +816,6 @@
       <envs />
       <properties />
       <listeners />
-      <method />
-    </configuration>
-    <configuration default="true" type="Applet" factoryName="Applet">
-      <module name="" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="HTML_FILE_NAME" />
-      <option name="HTML_USED" value="false" />
-      <option name="WIDTH" value="400" />
-      <option name="HEIGHT" value="300" />
-      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
-      <option name="VM_PARAMETERS" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
       <method />
     </configuration>
     <configuration default="true" type="Application" factoryName="Application">
@@ -716,19 +855,19 @@
       <method />
     </configuration>
     <list size="5">
-      <item index="0" class="java.lang.String" itemvalue="JUnit.ListeImplTest" />
-      <item index="1" class="java.lang.String" itemvalue="JUnit.ListeImplTest.testAufgabe1_2Abschnitt6" />
-      <item index="2" class="java.lang.String" itemvalue="JUnit.ListeImplTest.testAufgabe1_2Abschnitt7" />
-      <item index="3" class="java.lang.String" itemvalue="JUnit.ListeImplTest.testAufgabe1_2Abschnitt8" />
-      <item index="4" class="java.lang.String" itemvalue="Application.Test" />
+      <item index="0" class="java.lang.String" itemvalue="JUnit.MatrixUtilsTest.testPow" />
+      <item index="1" class="java.lang.String" itemvalue="JUnit.MatrixUtilsTest.testMatrixMultiplication" />
+      <item index="2" class="java.lang.String" itemvalue="JUnit.MatrixUtilsTest.testAdd" />
+      <item index="3" class="java.lang.String" itemvalue="JUnit.MatrixUtilsTest" />
+      <item index="4" class="java.lang.String" itemvalue="JUnit.MatrixUtilsTest.testFuerAufgabe7Und8" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Application.Test" />
-        <item index="1" class="java.lang.String" itemvalue="JUnit.ListeImplTest.testAufgabe1_2Abschnitt6" />
-        <item index="2" class="java.lang.String" itemvalue="JUnit.ListeImplTest.testAufgabe1_2Abschnitt7" />
-        <item index="3" class="java.lang.String" itemvalue="JUnit.ListeImplTest.testAufgabe1_2Abschnitt8" />
-        <item index="4" class="java.lang.String" itemvalue="JUnit.ListeImplTest" />
+        <item index="0" class="java.lang.String" itemvalue="JUnit.MatrixUtilsTest.testFuerAufgabe7Und8" />
+        <item index="1" class="java.lang.String" itemvalue="JUnit.MatrixUtilsTest.testMatrixMultiplication" />
+        <item index="2" class="java.lang.String" itemvalue="JUnit.MatrixUtilsTest" />
+        <item index="3" class="java.lang.String" itemvalue="JUnit.MatrixUtilsTest.testAdd" />
+        <item index="4" class="java.lang.String" itemvalue="JUnit.MatrixUtilsTest.testPow" />
       </list>
     </recent_temporary>
     <configuration name="&lt;template&gt;" type="WebApp" default="true" selected="false">
@@ -792,18 +931,26 @@
       <created>1382890764141</created>
       <updated>1382890764141</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="aufgabe2 matrizen">
+      <created>1383235629117</created>
+      <updated>1383235629117</updated>
+    </task>
+    <task id="LOCAL-00004" summary="aufgabe2 matrizen">
+      <created>1383613610120</created>
+      <updated>1383613610120</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="161" y="1" width="1119" height="993" extended-state="0" />
-    <editor active="true" />
+    <frame x="65" y="0" width="904" height="973" extended-state="0" />
+    <editor active="false" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.40445486" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.47831184" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.9214537" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="CDI" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -811,20 +958,21 @@
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.27300614" sideWeight="0.5541872" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.44581282" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.41092637" sideWeight="0.67321867" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.6695332" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="IDEtalk Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="IDEtalk" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Dilbert" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32942554" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32678133" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Duplicates" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32246378" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39901477" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="VcsContentAnnotationSettings">
@@ -891,53 +1039,6 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/aufgabe1/messreihe/MessreiheImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="34" selection-start="242" selection-end="242" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/aufgabe1/messreihe/Messreihe.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="41" selection-start="212" selection-end="212" vertical-scroll-proportion="0.21281742" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/aufgabe1/messreihe/MessreiheImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="33" column="24" selection-start="724" selection-end="724" vertical-scroll-proportion="0.019347038" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/aufgabe1/messreihe/test/MessreiheImplTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="5" column="27" selection-start="135" selection-end="169" vertical-scroll-proportion="0.019347038">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/aufgabe1/liste/Liste.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="47" column="43" selection-start="1248" selection-end="1248" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="jar://$APPLICATION_HOME_DIR$/lib/junit-4.10.jar!/org/junit/internal/runners/model/ReflectiveCallable.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="40" selection-start="388" selection-end="388" vertical-scroll-proportion="-6.4" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/aufgabe1/liste/ListeImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="98" column="34" selection-start="2711" selection-end="2711" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/aufgabe1/Aufgabe1-Antworten">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="114" column="99" selection-start="4633" selection-end="4633" vertical-scroll-proportion="0.8603491" />
-      </provider>
-      <provider editor-type-id="com.intellij.persistence.database.editor.CsvTableFileEditorProvider">
-        <state />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/aufgabe1/liste/TimeType.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="10" column="4" selection-start="207" selection-end="234" vertical-scroll-proportion="0.0" />
@@ -945,16 +1046,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/aufgabe1/liste/ListeElem.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="43" column="5" selection-start="856" selection-end="856" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/aufgabe1/liste/test/ListeImplTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="155" column="44" selection-start="4513" selection-end="4513" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
+        <state line="43" column="5" selection-start="856" selection-end="856" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Test.java">
@@ -962,30 +1054,89 @@
         <state line="10" column="0" selection-start="176" selection-end="176" vertical-scroll-proportion="0.41775456" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/aufgabe2/ListMatrix.java">
+    <entry file="jar://C:/Program Files/Java/jdk1.7.0_40/src.zip!/java/lang/Object.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="13" selection-start="136" selection-end="136" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
+        <state line="148" column="19" selection-start="5841" selection-end="5841" vertical-scroll-proportion="0.3325062" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/aufgabe2/Matrix.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="65" column="27" selection-start="1531" selection-end="1531" vertical-scroll-proportion="0.0">
+        <state line="41" column="3" selection-start="894" selection-end="894" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/aufgabe2/MatrixElemSpalte.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="12" column="22" selection-start="163" selection-end="205" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/aufgabe2/MatrixElemZeileSpalte.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="8" column="13" selection-start="136" selection-end="136" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/aufgabe2/ArrayListMatrix.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="13" selection-start="136" selection-end="136" vertical-scroll-proportion="0.0">
+        <state line="81" column="26" selection-start="2130" selection-end="2130" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/aufgabe2/ArrayMatrix.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="41" column="121" selection-start="966" selection-end="966" vertical-scroll-proportion="0.41748768">
+        <state line="58" column="23" selection-start="1258" selection-end="1265" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/aufgabe1/liste/Liste.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="49" column="18" selection-start="1275" selection-end="1275" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/aufgabe1/liste/ListeImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="102" column="18" selection-start="2764" selection-end="2764" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/aufgabe1/liste/test/ListeImplTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="169" column="57" selection-start="5054" selection-end="5054" vertical-scroll-proportion="0.58312654">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/aufgabe2/ListMatrix.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="67" column="29" selection-start="1590" selection-end="1590" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/aufgabe2/dokumente/Aufgabe2-Test7-8">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="99" column="25" selection-start="3223" selection-end="3228" vertical-scroll-proportion="0.13241379" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/aufgabe2/test/MatrixUtilsTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="253" column="16" selection-start="9453" selection-end="9453" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/aufgabe2/MatrixUtils.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="138" column="6" selection-start="4027" selection-end="4027" vertical-scroll-proportion="0.46207866">
           <folding />
         </state>
       </provider>
