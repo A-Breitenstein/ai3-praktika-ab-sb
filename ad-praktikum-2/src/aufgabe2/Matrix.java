@@ -16,42 +16,6 @@ public interface Matrix {
     public void initialize(int dimension);
 
     /**
-     * Addiert die Matrix und die im Parameter übergebene Matrix miteinander
-     * Funktion verändert Objekt
-     * @param matrix
-     */
-    public void add(Matrix matrix);
-
-    /**
-     * Multipliziert die Matrix mit dem angegeben Skalar
-     * Funktion verändert Objekt
-     * @param scalar
-     */
-    public void scalarMultiplication(double scalar);
-
-    /**
-     * Multipliziert die Matrix mit der angegebenen Matrix
-     * Funktion verändert Objekt
-     * @param matrix
-     */
-    public void matrixMultiplication(Matrix matrix);
-
-    /**
-     * Potenziert die Matrix mit dem angegebenen Wert
-     * Funktion verändert Objekt
-     * @param power
-     */
-    public void pow(double power);
-
-    /**
-     * Überschreibt Object:equals(Object object)
-     *
-     * @param object
-     * @return
-     */
-    public boolean equals(Object object);
-
-    /**
      * Holt das Element a[i,j] i = zeile, j = spalte, aus der Matrix
      *
      * @param zeile
@@ -67,4 +31,19 @@ public interface Matrix {
      * @param eleme
      */
     public void setElement(int zeile, int spalte, double eleme);
+
+    /**
+     * Returns it own Dimension,
+     * example : 5(5x5)
+     *
+     * @return
+     */
+    public int getDimension();
+
+    /**
+     * Returns how much Data is stored in the Matrix
+     *
+     * @return
+     */
+    public int quantityOfSavedElements();
 }

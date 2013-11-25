@@ -1,5 +1,7 @@
 package aufgabe2;
 
+import java.util.Arrays;
+
 /**
  * Created with IntelliJ IDEA.
  * User: Alexander Breitenstein
@@ -9,47 +11,28 @@ package aufgabe2;
 public class ArrayMatrix implements Matrix{
 
     private double[][] matrix;
+    private int dimension;
 
     private ArrayMatrix() {
+    }
+
+    private ArrayMatrix(int dimension) {
+        this.dimension = dimension;
+        this.initialize(dimension);
     }
 
     public static ArrayMatrix create() {
         return new ArrayMatrix();
     }
 
+    public static ArrayMatrix create(int dimension) {
+        return new ArrayMatrix(dimension);
+    }
+
     @Override
     public void initialize(int dimension) {
+        this.dimension = dimension;
         this.matrix = new double[dimension][dimension];
-    }
-
-    @Override
-    public void add(Matrix matrix) {
-        for (int i = 0; i < this.matrix.length; i++) {
-            for (int j = 0; j < this.matrix.length; j++) {
-                this.matrix[i][j] = this.matrix[i][j]+matrix.getElement(i,j);
-            }
-        }
-    }
-
-    @Override
-    public void scalarMultiplication(double scalar) {
-        for (int i = 0; i < matrix.length; i++) {
-            for (int j = 0; j < matrix.length; j++) {
-                matrix[i][j] = matrix[i][j]*scalar;
-            }
-        }
-    }
-
-    @Override
-    public void matrixMultiplication(Matrix matrix) {
-        //To change body of implemented methods use File | Settings | File Templates.
-    }
-
-    @Override
-    public void pow(double power) {
-
-               // WRONG!!!!!! ->> use multiplikation in a loop for i = 0 to power
-
     }
 
     @Override
@@ -58,7 +41,38 @@ public class ArrayMatrix implements Matrix{
     }
 
     @Override
-    public void setElement(int zeile, int spalte, double eleme) {
-        matrix[zeile][spalte] = eleme;
+    public void setElement(int zeile, int spalte, double elem) {
+        matrix[zeile][spalte] = elem;
+    }
+
+    @Override
+    public int getDimension() {
+        return this.dimension;
+    }
+
+    @Override
+    public int quantityOfSavedElements() {
+        int counter = 0;
+
+        for (double[] doubles : matrix) {
+            for (double aDouble : doubles) {
+                counter++;
+            }
+        }
+        return counter;
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder stringBuilder = new StringBuilder();
+        for (double[] doubles : matrix) {
+            stringBuilder.append(Arrays.toString(doubles));
+            stringBuilder.append("\n");
+        }
+
+        return "ArrayMatrix{" +
+                "\nmatrix=\n" + stringBuilder +
+                ",\ndimension=" + dimension +
+                '}';
     }
 }

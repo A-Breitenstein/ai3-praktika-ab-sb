@@ -1,0 +1,151 @@
+START LOOPS, Durchläufe : 20 Dimension: 222
+
+Neues P : 1 mit upperRange : 99
+Speicher-Durchlauf : 1 für P = 1
+Speicher-Durchlauf : 2 für P = 1
+Speicher-Durchlauf : 3 für P = 1
+Speicher-Durchlauf : 4 für P = 1
+Speicher-Durchlauf : 5 für P = 1
+Speicher-Durchlauf : 6 für P = 1
+Speicher-Durchlauf : 7 für P = 1
+Speicher-Durchlauf : 8 für P = 1
+Speicher-Durchlauf : 9 für P = 1
+Speicher-Durchlauf : 10 für P = 1
+Speicher-Durchlauf : 11 für P = 1
+Speicher-Durchlauf : 12 für P = 1
+Speicher-Durchlauf : 13 für P = 1
+Speicher-Durchlauf : 14 für P = 1
+Speicher-Durchlauf : 15 für P = 1
+Speicher-Durchlauf : 16 für P = 1
+Speicher-Durchlauf : 17 für P = 1
+Speicher-Durchlauf : 18 für P = 1
+Speicher-Durchlauf : 19 für P = 1
+Speicher-Durchlauf : 20 für P = 1
+Speicherwerte:{MatrixTyp,Durchschnitt,Varianz}
+ArrayListMatrix: 49259.55, 11904.681578947391
+ListMatrix: 49259.55, 11904.681578947391
+ArrayMatrix: 49284.0, 0.0
+Zeit-Durchlauf : 1 für P = 1
+Zeit-Durchlauf : 2 für P = 1
+Zeit-Durchlauf : 3 für P = 1
+Zeit-Durchlauf : 4 für P = 1
+Zeit-Durchlauf : 5 für P = 1
+Zeit-Durchlauf : 6 für P = 1
+Zeit-Durchlauf : 7 für P = 1
+Zeit-Durchlauf : 8 für P = 1
+Zeit-Durchlauf : 9 für P = 1
+Zeit-Durchlauf : 10 für P = 1
+Zeit-Durchlauf : 11 für P = 1
+Zeit-Durchlauf : 12 für P = 1
+Zeit-Durchlauf : 13 für P = 1
+Zeit-Durchlauf : 14 für P = 1
+Zeit-Durchlauf : 15 für P = 1
+Zeit-Durchlauf : 16 für P = 1
+Zeit-Durchlauf : 17 für P = 1
+Zeit-Durchlauf : 18 für P = 1
+Zeit-Durchlauf : 19 für P = 1
+Zeit-Durchlauf : 20 für P = 1
+Zeitwerte:{MatrixTyp,Durchschnitt,Varianz}
+ArrayListMatrix: 59.25, 16.407894736842103
+ListMatrix: 1248.75, 437.98684210526557
+ArrayMatrix: 2.2, 0.16842105263157894
+
+Neues P : 5 mit upperRange : 19
+Speicher-Durchlauf : 1 für P = 5
+Speicher-Durchlauf : 2 für P = 5
+Speicher-Durchlauf : 3 für P = 5
+Speicher-Durchlauf : 4 für P = 5
+Speicher-Durchlauf : 5 für P = 5
+Speicher-Durchlauf : 6 für P = 5
+Speicher-Durchlauf : 7 für P = 5
+Speicher-Durchlauf : 8 für P = 5
+Speicher-Durchlauf : 9 für P = 5
+Speicher-Durchlauf : 10 für P = 5
+Speicher-Durchlauf : 11 für P = 5
+Speicher-Durchlauf : 12 für P = 5
+Speicher-Durchlauf : 13 für P = 5
+Speicher-Durchlauf : 14 für P = 5
+Speicher-Durchlauf : 15 für P = 5
+Speicher-Durchlauf : 16 für P = 5
+Speicher-Durchlauf : 17 für P = 5
+Speicher-Durchlauf : 18 für P = 5
+Speicher-Durchlauf : 19 für P = 5
+Speicher-Durchlauf : 20 für P = 5
+Speicherwerte:{MatrixTyp,Durchschnitt,Varianz}
+ArrayListMatrix: 49271.775, 5952.999358974349
+ListMatrix: 49271.775, 5952.999358974349
+ArrayMatrix: 49284.0, 0.0
+Zeit-Durchlauf : 1 für P = 5
+Zeit-Durchlauf : 2 für P = 5
+Zeit-Durchlauf : 3 für P = 5
+Zeit-Durchlauf : 4 für P = 5
+Zeit-Durchlauf : 5 für P = 5
+Zeit-Durchlauf : 6 für P = 5
+Zeit-Durchlauf : 7 für P = 5
+Zeit-Durchlauf : 8 für P = 5
+Zeit-Durchlauf : 9 für P = 5
+Zeit-Durchlauf : 10 für P = 5
+Zeit-Durchlauf : 11 für P = 5
+Zeit-Durchlauf : 12 für P = 5
+Zeit-Durchlauf : 13 für P = 5
+Zeit-Durchlauf : 14 für P = 5
+Zeit-Durchlauf : 15 für P = 5
+Zeit-Durchlauf : 16 für P = 5
+Zeit-Durchlauf : 17 für P = 5
+Zeit-Durchlauf : 18 für P = 5
+Zeit-Durchlauf : 19 für P = 5
+Zeit-Durchlauf : 20 für P = 5
+Zeitwerte:{MatrixTyp,Durchschnitt,Varianz}
+ArrayListMatrix: 59.2, 21.138461538461534
+ListMatrix: 1450.4, 52773.42564102567
+ArrayMatrix: 2.15, 0.13076923076923075
+
+Neues P : 10 mit upperRange : 9
+Speicher-Durchlauf : 1 für P = 10
+Speicher-Durchlauf : 2 für P = 10
+Speicher-Durchlauf : 3 für P = 10
+Speicher-Durchlauf : 4 für P = 10
+Speicher-Durchlauf : 5 für P = 10
+Speicher-Durchlauf : 6 für P = 10
+Speicher-Durchlauf : 7 für P = 10
+Speicher-Durchlauf : 8 für P = 10
+Speicher-Durchlauf : 9 für P = 10
+Speicher-Durchlauf : 10 für P = 10
+Speicher-Durchlauf : 11 für P = 10
+Speicher-Durchlauf : 12 für P = 10
+Speicher-Durchlauf : 13 für P = 10
+Speicher-Durchlauf : 14 für P = 10
+Speicher-Durchlauf : 15 für P = 10
+Speicher-Durchlauf : 16 für P = 10
+Speicher-Durchlauf : 17 für P = 10
+Speicher-Durchlauf : 18 für P = 10
+Speicher-Durchlauf : 19 für P = 10
+Speicher-Durchlauf : 20 für P = 10
+Speicherwerte:{MatrixTyp,Durchschnitt,Varianz}
+ArrayListMatrix: 49275.85, 3968.8076271186123
+ListMatrix: 49275.85, 3968.8076271186123
+ArrayMatrix: 49284.0, 0.0
+Zeit-Durchlauf : 1 für P = 10
+Zeit-Durchlauf : 2 für P = 10
+Zeit-Durchlauf : 3 für P = 10
+Zeit-Durchlauf : 4 für P = 10
+Zeit-Durchlauf : 5 für P = 10
+Zeit-Durchlauf : 6 für P = 10
+Zeit-Durchlauf : 7 für P = 10
+Zeit-Durchlauf : 8 für P = 10
+Zeit-Durchlauf : 9 für P = 10
+Zeit-Durchlauf : 10 für P = 10
+Zeit-Durchlauf : 11 für P = 10
+Zeit-Durchlauf : 12 für P = 10
+Zeit-Durchlauf : 13 für P = 10
+Zeit-Durchlauf : 14 für P = 10
+Zeit-Durchlauf : 15 für P = 10
+Zeit-Durchlauf : 16 für P = 10
+Zeit-Durchlauf : 17 für P = 10
+Zeit-Durchlauf : 18 für P = 10
+Zeit-Durchlauf : 19 für P = 10
+Zeit-Durchlauf : 20 für P = 10
+Zeitwerte:{MatrixTyp,Durchschnitt,Varianz}
+ArrayListMatrix: 58.78333333333333, 21.664124293785303
+ListMatrix: 1838.4833333333333, 380806.1522598869
+ArrayMatrix: 2.1333333333333333, 0.11751412429378526
